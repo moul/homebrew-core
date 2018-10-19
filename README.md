@@ -1,4 +1,7 @@
 # Homebrew Core
+
+[![GuardRails badge](https://badges.production.guardrails.io/moul/homebrew-core.svg)](https://www.guardrails.io)
+
 Core formulae for the Homebrew package manager.
 
 ## How do I install these formulae?

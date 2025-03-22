@@ -2,8 +2,8 @@ class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
   homepage "https://argoproj.github.io/cd/"
   url "https://github.com/argoproj/argo-cd.git",
-      tag:      "v2.14.5",
-      revision: "f463a945d57267e9691cede37021d9ddc5994f36"
+      tag:      "v2.14.7",
+      revision: "d107d4e41a9b8fa792ed6955beca43d2642bad26"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -18,12 +18,12 @@ class Argocd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e44b5fa38e97a83865c701a2693f110bf44e3b8785b27345cde22c55defa64d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ab232b42438ab52be9dfdea342656efd3fb46d79bc678c9e2a17dc0c4d41633"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c38445c7c1068350ce35a6657d726f9b064b8d84dd8c72760eff55dc933a77c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b53c0b91bb7cd638d8fe5eed5a21729e296deba4adf8785b0349dfa69dd247c"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ab58b0e02e1b9c032a74f66abc04c8161aab5f99a115114e679b5eef456d6bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eae0ce8312756206a9a5aea6e4661a65feab0b912b397b04f39605e3d594306"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dac83f45ba333cdd265eea36b63f116daaf9e255a3c61695fc656ca22f30e20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da0f2a6cd04ace9e993f0f8e9fbeea168e10b6ed8607262e41edaf5a19294d9d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "50cafdf6c89d76adb8fd7225fc2b56317bac5bf9b70c220e9c78b35bd60a86f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39fb3af0ce9d81e07345c2bb62d0291669bb76b69ac69c493bf1586b5cdc135b"
+    sha256 cellar: :any_skip_relocation, ventura:       "72506b83e37b2108cd28548f6d3f490b457e3008b7d8b0fd70b4c8d8cd48421a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c76a6e837d246404c17e099ba5d885b5153b6cfa7b2fecd0822024ae5d6e7f92"
   end
 
   depends_on "go" => :build

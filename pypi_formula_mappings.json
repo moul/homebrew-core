@@ -414,6 +414,10 @@
   "gsan": {
     "exclude_packages": ["cryptography"]
   },
+  "gtk-doc": {
+    "package_name": "",
+    "extra_packages": ["lxml", "pygments"]
+  },
   "gyb": {
     "package_name": "",
     "exclude_packages": ["certifi"],
@@ -615,6 +619,8 @@
     "exclude_packages": ["cryptography"]
   },
   "osc": {
+    "package_name": "",
+    "extra_packages": ["rpm", "ruamel-yaml", "urllib3"],
     "exclude_packages": ["cryptography"]
   },
   "osc-cli": {

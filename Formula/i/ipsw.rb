@@ -1,8 +1,8 @@
 class Ipsw < Formula
   desc "Research tool for iOS & macOS devices"
   homepage "https://blacktop.github.io/ipsw"
-  url "https://github.com/blacktop/ipsw/archive/refs/tags/v3.1.584.tar.gz"
-  sha256 "e9b539bed451ad08a40129cd4cd27c1e47de0af49790bcd84dc3c4c0f08d65f3"
+  url "https://github.com/blacktop/ipsw/archive/refs/tags/v3.1.587.tar.gz"
+  sha256 "ff554149f9a696b04c7668c3c06343428e3b4649f4d02a1633804e55a668d6b0"
   license "MIT"
   head "https://github.com/blacktop/ipsw.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ipsw < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "329bc196ac502a40698964203b553f857c6c3cf25dd5c3f764a2da6fa6b0f6c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a433568b5e228ac249d7a46aa6e249cb96ef9b0447801cfdac0e88751c362ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b3ea23ce12e4a364e7f95cbe6d2335be7d6e9ad33c81dcd2df64a9237b476e8b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62689bacfa3e66f13705a23f50855eccc2fea07887327c3abd335811d0e409aa"
-    sha256 cellar: :any_skip_relocation, ventura:       "50538d916e394cd47dffc9b595732e4e3e422d4498eccfdff6d8e06b01969f0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96e8743b49328bae6399275687caf593b6293dd4580754d7f3b01905e0522c7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2d471b09f2ab18eb16bf23815eb2bec08e0d9d2b6ed6d17df75ca568e68d580"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b00c076d1c3b70b69b25f179e9b7ebf018685bc2f7a995fec652c6f66ca3a36d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ad1ec704111b024eb0fb7da8db359b9cdf6d4e435a287c1a2746d55467ab8de7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "427016cfb520d0a755865f5ad2fac750b47c72fc4b62a3a19f0ba59a5284176e"
+    sha256 cellar: :any_skip_relocation, ventura:       "b2bc7ad364f321826e35f3ae66201ff942a1d7d3e0f58d4865f747bb7debc80a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0125e10d62e8364a94715331b3de0f5249e7165d4910d273bd010a0be97a41e9"
   end
 
   depends_on "go" => :build
@@ -26,7 +26,7 @@ class Ipsw < Formula
     ldflags = %W[
       -s -w
       -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppVersion=#{version}
-      -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppBuildCommit=Homebrew
+      -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppBuildCommit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/ipsw"
     generate_completions_from_executable(bin/"ipsw", "completion")

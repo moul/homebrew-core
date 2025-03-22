@@ -14,6 +14,11 @@ class Gpac < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/gpac/gpac.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "5dd37f08f66d4cd6326954764aff8e02b44a534eb54ac5ebf336152153a1c65c"
     sha256 cellar: :any,                 arm64_sonoma:   "0db848b31b7bda589b829bef38fd0d99575d1303691a04a915d66548b3dac128"
@@ -22,6 +27,7 @@ class Gpac < Formula
     sha256 cellar: :any,                 sonoma:         "d689fcb607e52f1111fb9ddfb6bf107a40592e16c7f7f536bcbece0b76e69145"
     sha256 cellar: :any,                 ventura:        "be9dbecc82418f0ff125b5838d56ff7e37c7818f64f090df2fc0e35fdec969b4"
     sha256 cellar: :any,                 monterey:       "618101f402082ebc311574e2de377212b20386b346f1f12ab008ded4b647e5fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ccf5c3da135e37dd9e0b42fc2057eec92c01b9d9006229e2132936f0777973cb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fa932d0f671a1643b20f381bba3181328431e5ef9555444a8d25a983ace36e1"
   end
 

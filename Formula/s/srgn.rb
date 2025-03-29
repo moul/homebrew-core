@@ -1,19 +1,19 @@
 class Srgn < Formula
   desc "Code surgeon for precise text and code transplantation"
   homepage "https://github.com/alexpovel/srgn"
-  url "https://github.com/alexpovel/srgn/archive/refs/tags/srgn-v0.13.4.tar.gz"
-  sha256 "778766769b9c7845b6f24cb25c940f675c8634b3ba58bf1c552c717a12fe0ead"
+  url "https://github.com/alexpovel/srgn/archive/refs/tags/srgn-v0.13.6.tar.gz"
+  sha256 "7786ef149d990cd70c5df541e066aeb79aff7d7fa60e4c59e92ccebf8e606b5b"
   license "MIT"
   head "https://github.com/alexpovel/srgn.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a076d8eb261a0e155f3831f12e3fa9c20d2fb55f21956511bd8709e76069c217"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "486b86d4e32bfe9bc328228770cebbeff554e13f4c47c51507611abca172ecb3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3024bb99bc151548d81b9209827098f69ac8ac4443df3cb8826c964ad6e1ccb9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48c2a28bf3f26aff4691d7ff96174ff0d2d61c31e657789fb0ebe7c98d56b1ad"
-    sha256 cellar: :any_skip_relocation, ventura:       "7da2e134ada2cc0b4b0d0bcc3169553c29969b3c7de82e2ae020383271489c05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4b732ae9590d4d030261cb94737cb2e7db15dc6fce6bf7eee9a41ea0cd5c960"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aee23758b050640fcd4a4aaf2497f46e3bd8810bac75c6045f07eec8c3ba242e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ecb27613159d40d6e53ae40dd2d6a3ac1cfd9df1d1da21c799af35802246b81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a5ab99bcbea2c4a1aaa3bc35653938fb62815f7cb2ac4a269c7a19531819e41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6372bbaab4b1b8f8456c2fb23c217a57ca16ab40f8f45a0bcff64c4ec9c68391"
+    sha256 cellar: :any_skip_relocation, ventura:       "66199b4bf91c3c3b690595ade9d5917cf5fc7e739520a812fbe950538d9c98d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d569e847346a9666f183b143d24cb9724eb8aeb6bed381fc0b12c188971c86e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17c815e9b6270bbfb47dfe758a644eb66784898cacb0074441295421914cf1e6"
   end
 
   depends_on "rust" => :build

@@ -1,17 +1,18 @@
 class CloudflareWrangler < Formula
   desc "CLI tool for Cloudflare Workers"
   homepage "https://github.com/cloudflare/workers-sdk"
-  url "https://registry.npmjs.org/wrangler/-/wrangler-4.0.0.tgz"
-  sha256 "1bd9597d1d29a3c14030c13eb0423267f9a6b4f3bc2d29d69134cc7109e32d42"
+  url "https://registry.npmjs.org/wrangler/-/wrangler-4.6.0.tgz"
+  sha256 "3a78e673370cd45f158b9d44326621e42cc54d080652bb9bbc3873a607bd66b7"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bf749d07960cb71a5e1e4d8a3f559fdbbf99ad10a54c8adfc17e3f421f78ee2d"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf749d07960cb71a5e1e4d8a3f559fdbbf99ad10a54c8adfc17e3f421f78ee2d"
-    sha256 cellar: :any,                 arm64_ventura: "bf749d07960cb71a5e1e4d8a3f559fdbbf99ad10a54c8adfc17e3f421f78ee2d"
-    sha256                               sonoma:        "87ebc2031556e4fe36d494bc5f3b0074108655e6df4212bf713fb1fb501c8715"
-    sha256                               ventura:       "87ebc2031556e4fe36d494bc5f3b0074108655e6df4212bf713fb1fb501c8715"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf1ff64d174f7cedaed46f0d1dc9b27a1e3d3a479d150fc328284fbf3e8e3ed6"
+    sha256 cellar: :any,                 arm64_sequoia: "9de9a74654109d5493e6bbdaace1355fab49c7d0837cee033a24595a675e87e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "9de9a74654109d5493e6bbdaace1355fab49c7d0837cee033a24595a675e87e4"
+    sha256 cellar: :any,                 arm64_ventura: "9de9a74654109d5493e6bbdaace1355fab49c7d0837cee033a24595a675e87e4"
+    sha256                               sonoma:        "924b896cb6613df07737289b6fea3bac9be066580e996950b05858e84abb88aa"
+    sha256                               ventura:       "924b896cb6613df07737289b6fea3bac9be066580e996950b05858e84abb88aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9fb470846f6d9dd641ef9b3a6fb138fad5fbda9817487786754cc4d9b95b1e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d66b35279a4f41144ec2637f1b98a5fc633d76f33f99c66eef71485a4119518"
   end
 
   depends_on "node"

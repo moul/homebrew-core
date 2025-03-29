@@ -1,20 +1,21 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https://microsoft.github.io/garnet/"
-  url "https://github.com/microsoft/garnet/archive/refs/tags/v1.0.59.tar.gz"
-  sha256 "69f9addeeea587aa47f2610d82eb9e7b3260ce02d6f9037cedc2a008d0ae031a"
+  url "https://github.com/microsoft/garnet/archive/refs/tags/v1.0.61.tar.gz"
+  sha256 "faef1fac90b6479eb992ec9bec01e3dcff4bef164f425d96c4a10953b668868a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "957698c6db789a8511e2eac79413af01cb483a552b9040530ee7f29004af57ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b8c136f153cf7651e006f8ed7f89f5ef354b8d571674658a4091c61aa6d1969"
-    sha256 cellar: :any,                 arm64_ventura: "c86a7e9cde6f6b354b8e2449b7b147a4352b17450ea7e64ba540b52073f710ed"
-    sha256 cellar: :any,                 ventura:       "b2e6c8a4310db455e51bf61c02b4a4a9e83ae62b3ac782a5603bb9c902e126c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "042c1890436413f79f2f0cef12f00ef24f8cf78f3cb527ba60766d045d8df073"
+    sha256 cellar: :any,                 arm64_sequoia: "375542189a7e911f51493bf2521c901f72688dd1bdeecf5367e4609923035669"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec98dfc633be8abdf9ac5a4ac45ec4c009a0ef63266f6f8680b641fc097b4525"
+    sha256 cellar: :any,                 arm64_ventura: "b0e81a0695913eb8c1acc29f95cf63bba3698084a74cd9922f73117fad3fbd63"
+    sha256 cellar: :any,                 ventura:       "6779306205af0efe53e18b00e5fcdde336c1273c96f5d7ed3f53adf57da2641a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09f52cc4fcc79f9d8b1474da71d258305f27fb31b3614fa6a5aa8c5b63d991f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "269ee8f334c463551dffbf5f05f86bc9c6ce3baf9b29bcf7db7b6cdcbfcb1bb5"
   end
 
-  depends_on "redis" => :test
-  depends_on "dotnet@8"
+  depends_on "valkey" => :test
+  depends_on "dotnet"
 
   on_linux do
     depends_on "cmake" => :build
@@ -32,7 +33,7 @@ class Garnet < Formula
       end
     end
 
-    dotnet = Formula["dotnet@8"]
+    dotnet = Formula["dotnet"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
@@ -57,7 +58,7 @@ class Garnet < Formula
     end
     sleep 3
 
-    output = shell_output("#{Formula["redis"].opt_bin}/redis-cli -h 127.0.0.1 -p #{port} ping")
+    output = shell_output("#{Formula["valkey"].opt_bin}/valkey-cli -h 127.0.0.1 -p #{port} ping")
     assert_equal "PONG", output.strip
   end
 end

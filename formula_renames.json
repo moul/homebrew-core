@@ -28,6 +28,7 @@
   "cv": "progress",
   "cyassl": "wolfssl",
   "d-bus": "dbus",
+  "docker-slim": "mintoolkit",
   "fbida": "exiftran",
   "fcct": "butane",
   "ffmpeg28": "ffmpeg@2.8",
@@ -150,7 +151,6 @@
   "selenium-server-standalone": "selenium-server",
   "server-go": "openiothub-server",
   "singularity": "apptainer",
-  "sonar": "sonarqube",
   "speedtest_cli": "speedtest-cli",
   "ssreflect": "math-comp",
   "tachyon": "alluxio",
@@ -168,5 +168,6 @@
   "wires": "geckodriver",
   "wpcli-completion": "wp-cli-completion",
   "wxmac": "wxwidgets",
+  "xkeyboardconfig": "xkeyboard-config",
   "xu4": "scummvm"
 }

@@ -1,17 +1,18 @@
 class Mago < Formula
   desc "Toolchain for PHP to help developers write better code"
   homepage "https://github.com/carthage-software/mago"
-  url "https://github.com/carthage-software/mago/archive/refs/tags/0.20.2.tar.gz"
-  sha256 "a1ae5c465bfd98b1623cde74bca1806bd853fa4f7beff364144fa1d5ed6b6298"
+  url "https://github.com/carthage-software/mago/archive/refs/tags/0.22.1.tar.gz"
+  sha256 "56320190767144d360b4d756dd605fa98a23accaecf7f30e20057eef78a05c09"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebb25e416d4fe4726a59fba899ab9bdc93c9ea0942d1dbef51bf407adc4a8aec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03dd32fdc304c60196ec12aef2d69e98630d7adaaf666c6a1a8a53e6af5b502d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9400bfaa555795823c7efadf41fc58d26f02b7b8c8206bfd677df91dd6b475af"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e2d1de3ce2b93566b7ba88bfe0de6da7fc4a161428c09e673aa0f0950f56bfd"
-    sha256 cellar: :any_skip_relocation, ventura:       "8adff44d66840459bf6cc13721f610dff71da3a0bdea226facde6d38571757d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25f741841558da124e5d56bd7daa130d9006e00d6c1bb5823b0bcb6a271f7797"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1f1bb9083c5c6bee31bca4b0d39d4ec3684db554e566f1b85db62459f12cc64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d5049d73fc23ff72396d75dcab9ae532075b99ba4c5ec257bf869628bc69463"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c9e7801fd2a04e913f861116c8e9a3c34a2a7dd1b75bac260938649f21b0798"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6982846f66046d33388948ab3db759a1d0c57a6b2859ee7d6f9bf167c9c59015"
+    sha256 cellar: :any_skip_relocation, ventura:       "1badc4d1682cad53a4f1e7f0c4504115066ae982b1c9f7900cc5bd4e997b84d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b82a459b0e268307c18932eb0905a97689ec88324d3b945893cfd6e839045bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dd4900664639d22c570c5b42450414862b1430b409caf6b2ea3de7b1bd0380f"
   end
 
   depends_on "pkgconf" => :build

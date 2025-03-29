@@ -2,18 +2,18 @@ class GolangciLint < Formula
   desc "Fast linters runner for Go"
   homepage "https://golangci-lint.run/"
   url "https://github.com/golangci/golangci-lint.git",
-        tag:      "v1.64.7",
-        revision: "8cffdb7d21e5b2b89f163f70c60ac9686c9d6180"
+        tag:      "v2.0.2",
+        revision: "2b224c2cf4c9f261c22a16af7f8ca6408467f338"
   license "GPL-3.0-only"
   head "https://github.com/golangci/golangci-lint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b768e946365898af1dc7ef499ed4d38ccc798e6aea9f592ec35e2ef42c3424c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f56c8418bbce2eee76c66b7e3d9dc1fa311dc951be9bb0b3b8addfef15141cd7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "02738e6ba0676e86d087db1dd733c973e82444aa8b37ae0247d7db36bdea5bb3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "99326fa797b2e40abbc83082ed14086d231641f8538ebb9e3798790bc98ed6be"
-    sha256 cellar: :any_skip_relocation, ventura:       "27739b4bb7e2dbf9d9b5c45ff0b819c994cbe7f67a044b7370f0d3ce94a2a147"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a2cd1854b0d66afccd48be3568c9a4d9571b97de1cf8fc07916ad370f0070be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bc815d5638bf8af11cee9534391789ffe476b5605865edfd0ec7262a05a446a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "653f7c7630fd678e730821a2191da20c62cbb30c45b73cfe94fa2038dce71d62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4bf5531abcf6e15ab365c66ccd0f5c2e2116505883b58717b0d9a30d6fb76c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "21a9e6727e919d71dc8344ecee2b75c041d16fedac89ed83d5459a4997f52ddf"
+    sha256 cellar: :any_skip_relocation, ventura:       "c19559ff2ba3e695a3680b20b826045e5e838eee44d620dda9a8ae2631e3a02a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4284ed6237cae75d36798310f61545d168595d9a5cc15c67212c7fe6bd96d13"
   end
 
   depends_on "go"
@@ -55,14 +55,14 @@ class GolangciLint < Formula
 
     args = %w[
       --color=never
-      --disable-all
+      --default=none
       --issues-exit-code=0
-      --print-issued-lines=false
+      --output.text.print-issued-lines=false
       --enable=unused
     ].join(" ")
 
     ok_test = shell_output("#{bin}/golangci-lint run #{args} #{testpath}/try.go")
-    expected_message = "try.go:3:6: func `add` is unused (unused)"
+    expected_message = "try.go:3:6: func add is unused (unused)"
     assert_match expected_message, ok_test
   end
 end

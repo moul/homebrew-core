@@ -1,17 +1,18 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.107.1.tgz"
-  sha256 "922faf2e4dcd5f1efd69cbbe84688e04d30c50e768227ad163b73d21d5905c50"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.107.6.tgz"
+  sha256 "32e98050ed2c2f6c3ac168d7ad19e566d8f793386d17b24004cb3dd2252eb413"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b5138e2d77d77eb4dd7166a43aa85bda377aebbf7c96b9faa517e3f6150c64fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f135aadc873a0e7b357c3d0ce56b62c62e4723caa5b419fa24b6f7c51c8aa7f"
-    sha256 cellar: :any,                 arm64_ventura: "38c91de2c54763bc5c15443e775947ea22024f9fc8a0dd12415651cf868b617e"
-    sha256                               sonoma:        "ea83fae169e99ecf7d9ea478efe9159f6b8024d9f05467b088191555eec656c0"
-    sha256                               ventura:       "c9e47f65cd2e37eee61e71af30d4b4e3dbea61ae7dd6bc27f782e9e3e850091c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caf9ca1e2d43aa797cd1d430843ba524eedae9ca4bdd1b976313e263f73e4dfb"
+    sha256 cellar: :any,                 arm64_sequoia: "ff5d4730ad85df0eda41ea7e4025221609cca25cebfb3730945d5658f8660600"
+    sha256 cellar: :any,                 arm64_sonoma:  "16596fed5c370e4d256c4f378d78626c8ec6272ddaa49a54f24993fc98d0a43a"
+    sha256 cellar: :any,                 arm64_ventura: "fb1e42adf0c2011c378439b046c730fa90255f17ca2ec57e0aaee02760a323ec"
+    sha256                               sonoma:        "4458484bdf1f4fdf6f5ab5818215ec8ac949d1a396e419bf740f74ad4ef2120a"
+    sha256                               ventura:       "fe4cd0068597a4484cbe163c19ef060113d2a15d8605aee9a0827cbfda66d930"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9c25072bc2584f517ba97386d88f70f4292498abe2870e9075033c3f8901878"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "426368290051114d91fab908ea184e72a00852c25eda60b3054be8e60d3f4fef"
   end
 
   depends_on "node"

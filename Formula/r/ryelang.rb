@@ -1,8 +1,8 @@
 class Ryelang < Formula
   desc "Rye is a homoiconic programming language focused on fluid expressions"
   homepage "https://ryelang.org/"
-  url "https://github.com/refaktor/rye/archive/refs/tags/v0.0.36.tar.gz"
-  sha256 "4da76baeafa17ebc15a5b31cceeb543659cff9d021786edce80f21c0e4f0fe69"
+  url "https://github.com/refaktor/rye/archive/refs/tags/v0.0.55.tar.gz"
+  sha256 "1de07f9378debf7f1b11c60c424d72af06c461472ae52b03ca820584f7a72b88"
   license "BSD-3-Clause"
   head "https://github.com/refaktor/rye.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Ryelang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acae1623b60c5e624b24a25eb44ba24094884472f4f875aa8314c10698ad4955"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "219b6a80c83f132d3969fcf832c8c132116b85597eccd4831b52d00b450111a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c65e06f189d83a4856880f1d9075738e2d93d4032f9dcfcbd26782e6884d96cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d00f5b2f16cbcdea2e38c81688b966100c296dc8902519ddd0ccc42ebd2d2a6e"
-    sha256 cellar: :any_skip_relocation, ventura:       "6bd8185faf5a16e68b4f866822d31a13a8013fe63119e21eeb0d1474695f7dfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d1a0b37ddd1c197d6e9dd9c5ec78a942c7771d9467b84d0c75a69e5c0634552"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff58b3dba64bdcfaa00f753fbd25ddcebb1846b38b1be9c3d0b631399ca2feaa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8bc677da8e85a6d234270d164811b0a3b51549b5e71e14acca0460d6f351ccb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6957ebee010bd7d79ea1651124c5b5c15ff6778a82b59304791a662906122329"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2bb50988bc7d0cd3cab7286e4ff6e1e341d59f5111541536e5b81793e142ce14"
+    sha256 cellar: :any_skip_relocation, ventura:       "02cca9e77375375287348d310a96a9f3b8da54576ce85dee3390d0c302181a19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89f8a39789e9df6e10c39e1e800b878287f49805872549a49bc71895701ba751"
   end
 
   depends_on "go" => :build

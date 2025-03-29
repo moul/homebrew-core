@@ -2,10 +2,11 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.85.0-src.tar.gz"
-    sha256 "2f4f3142ffb7c8402139cfa0796e24baaac8b9fd3f96b2deec3b94b4045c6a8a"
+    url "https://static.rust-lang.org/dist/rustc-1.85.1-src.tar.gz"
+    sha256 "0f2995ca083598757a8d9a293939e569b035799e070f419a686b0996fb94238a"
 
     # From https://github.com/rust-lang/rust/tree/#{version}/src/tools
     resource "cargo" do
@@ -15,12 +16,13 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6184b7cc9e0f4b41dd6fd3cccf8420328a71b1868962b27339a6b24b0a5a84e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "7e04977b516e4470e111c83208d04c68fdd13659b16795a5807a44cc986ebe60"
-    sha256 cellar: :any,                 arm64_ventura: "e8c6edf61b4e6a039ebc9d8cb15719718859036dc4e0264a4706e22f149d0ee5"
-    sha256 cellar: :any,                 sonoma:        "946e602f325865d18b7a6ddb2d017aa4d28a9b97d0a685c4818f3bd6a84d5ff6"
-    sha256 cellar: :any,                 ventura:       "f5c3a5094a4d10645c2bc7351c88f81230e023ec21d50fb7f9cc2a79d01d1810"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb16dcc66e595ba48f01f815c8430f7a149550d1426bacf25450564aaa3aedc3"
+    sha256 cellar: :any,                 arm64_sequoia: "46cb7e6303f3e96866625894bad65b89c418d7dcf21ccc96513ee5542cf98550"
+    sha256 cellar: :any,                 arm64_sonoma:  "2faff7c4cfb27cfcbff3d2de3fd88180e6ee7062063977bf210c2b9cdf976bb2"
+    sha256 cellar: :any,                 arm64_ventura: "6e825608a4665f69e15387506056df0a3833c785fe38e06dd894b42f834634d9"
+    sha256 cellar: :any,                 sonoma:        "cc03f59d17b3496a3ef31d08ae18212e4660eefcc47192bbead33f4b64b5ab90"
+    sha256 cellar: :any,                 ventura:       "1d4a73e1ab305a387065efefe6620aa7539085d85b785737a029f2abae9b0062"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69d392edd77f221b7bc4a6d4f47d261e5f9843b14300f9e28f620c6bfe94f5c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9a20e8a7e8829e6e24c756ba48d531bc7ab576063ef1a8c603503404cbc0294"
   end
 
   head do
@@ -33,7 +35,7 @@ class Rust < Formula
 
   depends_on "libgit2@1.8" # upstream issue, https://github.com/rust-lang/cargo/issues/15043
   depends_on "libssh2"
-  depends_on "llvm"
+  depends_on "llvm@19" # migrate to LLVM 20 on 1.87.0, https://github.com/rust-lang/rust/pull/135763
   depends_on macos: :sierra
   depends_on "openssl@3"
   depends_on "pkgconf"
@@ -123,7 +125,7 @@ class Rust < Formula
   end
 
   def llvm
-    Formula["llvm"]
+    Formula["llvm@19"]
   end
 
   def install
@@ -213,7 +215,7 @@ class Rust < Formula
     end
     return unless OS.mac?
 
-    # Symlink our LLVM here to make sure the adjacent bin/rust-lld can find it.
+    # Symlink our LLVM here to make sure the adjacent bin/rust-* tools can find it.
     # Needs to be done in `postinstall` to avoid having `change_dylib_id` done on it.
     lib.glob("rustlib/*/lib") do |dir|
       # Use `ln_sf` instead of `install_symlink` to avoid resolving this into a Cellar path.

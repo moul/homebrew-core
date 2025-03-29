@@ -32,6 +32,7 @@ env:
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_FROM_API: 1
   HOMEBREW_NO_BUILD_ERROR_ISSUES: 1
+  HOMEBREW_ARM64_TESTING: 1
   RUN_URL: ${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}
   DISPATCH_BUILD_BOTTLE_SENDER: ${{ github.event.sender.login }}
   DISPATCH_BUILD_BOTTLE_FORMULA: ${{ inputs.formula }}
@@ -112,7 +113,9 @@ jobs:
           matrix.each do |entry|
             runner = entry.fetch("runner")
 
-            bottle_tag = if runner.start_with?("ubuntu") || runner.start_with?("linux")
+            bottle_tag = if runner.start_with?("ubuntu-") && runner.end_with?("-arm")
+              Utils::Bottles.tag(:arm64_linux)
+            elsif runner.start_with?("ubuntu") || runner.start_with?("linux")
               Utils::Bottles.tag(:x86_64_linux)
             elsif runner.match?(/^\d+-/)
               os_version, arch, _ = *runner.split("-")
@@ -218,7 +221,7 @@ jobs:
           test-bot: false
 
       - name: Download bottles from GitHub Actions
-        uses: actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806 # v4.1.9
+        uses: actions/download-artifact@95815c38cf2ff2164869cbab79da8d1f422bc89e # v4.2.1
         with:
           pattern: bottles_*
           path: ${{ env.BOTTLES_DIR }}

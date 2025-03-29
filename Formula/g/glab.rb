@@ -1,18 +1,18 @@
 class Glab < Formula
   desc "Open-source GitLab command-line tool"
   homepage "https://gitlab.com/gitlab-org/cli"
-  url "https://gitlab.com/gitlab-org/cli/-/archive/v1.53.0/cli-v1.53.0.tar.gz"
-  sha256 "2930aa5dd76030cc6edcc33483bb49dd6a328eb531d0685733ca7be7b906e915"
+  url "https://gitlab.com/gitlab-org/cli/-/archive/v1.55.0/cli-v1.55.0.tar.gz"
+  sha256 "21f58698b92035461e8e8ba9040429f4b5a0f6d528d8333834ef522a973384c8"
   license "MIT"
   head "https://gitlab.com/gitlab-org/cli.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de9a4698da8f10168e649efb68117db4ed7663eded0f813b0a2c7bef4bbc233d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de9a4698da8f10168e649efb68117db4ed7663eded0f813b0a2c7bef4bbc233d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "de9a4698da8f10168e649efb68117db4ed7663eded0f813b0a2c7bef4bbc233d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e2e749788e5ac0ea632ccf5224b125170a54aa5153be6bafd6e48d3ffd38d88"
-    sha256 cellar: :any_skip_relocation, ventura:       "0e2e749788e5ac0ea632ccf5224b125170a54aa5153be6bafd6e48d3ffd38d88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b47b72c3a59fd7d975f05d2be6c62c69d61940f679197657f6c28d29f10851d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3af9f7cae3c5ee6b52bf3cebbefd581878a1db6656ef6c89cb9cba0a7fc18abe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3af9f7cae3c5ee6b52bf3cebbefd581878a1db6656ef6c89cb9cba0a7fc18abe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3af9f7cae3c5ee6b52bf3cebbefd581878a1db6656ef6c89cb9cba0a7fc18abe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f040a094820c6987351c07170b8a3f7894901745a8b1d4f91ae29c435707037b"
+    sha256 cellar: :any_skip_relocation, ventura:       "f040a094820c6987351c07170b8a3f7894901745a8b1d4f91ae29c435707037b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7f31748b2a8a5b224afa5950e2cef5ee61ee2580aa174ed7b55636c7d13b7ba"
   end
 
   depends_on "go" => :build

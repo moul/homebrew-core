@@ -3,8 +3,8 @@ class Suricata < Formula
 
   desc "Network IDS, IPS, and security monitoring engine"
   homepage "https://suricata.io"
-  url "https://www.openinfosecfoundation.org/download/suricata-7.0.8.tar.gz"
-  sha256 "492928c622e170bd9c45d3530bc2b1033c5582dc18085c436fceafb62829d3ce"
+  url "https://www.openinfosecfoundation.org/download/suricata-7.0.10.tar.gz"
+  sha256 "197f925ea701bdcb4a15aca024b06546b002674cd958b58958f29a5bb214d759"
   license "GPL-2.0-only"
 
   livecheck do
@@ -13,12 +13,13 @@ class Suricata < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "35de3f019a15f56b0b332241bae0562da51f5357fcb235790fb0bbb7d23a250d"
-    sha256 arm64_sonoma:  "8ebe2c65d2e587ba3ebe2a51417a883897ba5b46f4ee3fca775eb7066086863f"
-    sha256 arm64_ventura: "070994cf2f912d0cb2943af064f1567836cd1f8b76ec5730eabc718e9b78ec1c"
-    sha256 sonoma:        "392b937038d6b930877fd0842c9076afcafa1cd12dd8140b389cd5d6b3756c83"
-    sha256 ventura:       "2aa8b08f41689b090a5cf0d7814aa97d84801205766120404a122d72c7e75c53"
-    sha256 x86_64_linux:  "57c918b1077649fbad26afd7218e1409c8ff8dc11b9829dd6d204e14665a7b85"
+    sha256 arm64_sequoia: "5e50075c07a38113f0905b09949d8edaf7b69f43348a9f90bbf906628b176ca7"
+    sha256 arm64_sonoma:  "d38da4f84e736c682dcc662bf774a9552680f51a4d0a8b2f28c185a9634d1a10"
+    sha256 arm64_ventura: "36156e9cff89c5efd7a27fa77527cb5e5a5ab61e85efa951cf8b5c6d1745a5d6"
+    sha256 sonoma:        "efd4d6e8ecf31f3f712b42803954c96c1cf04cd2b24ed383982d99bffda93b9c"
+    sha256 ventura:       "a14897dd0012afe2d61cee29e8cc672b93955151a727e8110fe21a90700c5d2f"
+    sha256 arm64_linux:   "6d14fa596b9c558e0b1234f3d17bbd4412d1390d7259f9802a50ff58a83e0719"
+    sha256 x86_64_linux:  "1bd7152a8f5ca94dbbc625a9417dd3c56c2370a13843e3050d58b561d705016b"
   end
 
   depends_on "pkgconf" => :build

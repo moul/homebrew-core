@@ -1,18 +1,19 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
   homepage "https://hk.jdx.dev"
-  url "https://github.com/jdx/hk/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "10a7c78a85b8ee5907e1650a77f508c9dd4c897af1950c9cad164ba2ab2f83bb"
+  url "https://github.com/jdx/hk/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "a752194f5bdaef6e6ed43e76d4b9e6b09aec917b45714a0f5bb87616cc6d2112"
   license "MIT"
   head "https://github.com/jdx/hk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "787fdf5d35ada68c1ca95999acd25e5abaf0200ceee2d75875a17078df124691"
-    sha256 cellar: :any,                 arm64_sonoma:  "7401c0565f3ac1738abe92da90778b037b0daed67f1e24b002fcd2e16652dae4"
-    sha256 cellar: :any,                 arm64_ventura: "d503cb4e6cbfa37c214760c0ded56be243df6ad0e941f34210fed6d4871fc180"
-    sha256 cellar: :any,                 sonoma:        "6ae41cba83228cc3aab27190e103db28830bd3f2718558ace1ebe013545328f6"
-    sha256 cellar: :any,                 ventura:       "692ffdc440708ecc66403de9313b006429d9aa4e0ea8946bae33eed7ff1769ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e742ea55e0038e8dd7a5a0647c153ff11be2a9bcfed03ffcdfe754c994535aad"
+    sha256 cellar: :any,                 arm64_sequoia: "1bd25eac2ca394e610a4eb07383691e2fa263d06bcb21f270e1ded5e665d983e"
+    sha256 cellar: :any,                 arm64_sonoma:  "05b80b4458e282c1f043f49cf30c75f48b975f22a07ed9bfb48a0f925ac70e69"
+    sha256 cellar: :any,                 arm64_ventura: "cd315e269e3ba01f9f1452f6956944d4233c4d83e05180259679dab8f6e8a8b3"
+    sha256 cellar: :any,                 sonoma:        "941ce57c17f15a891e13956315a6ecaa4d6b0041374821f167971759d24b9dcd"
+    sha256 cellar: :any,                 ventura:       "6a1c1f6621f3a31e395939d5ba1fcd07682bae1773b047866f6c833a20f25c48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08be643d62c6819c8178e0a0dd63b6134d1e2a282aabab81e7556b0c20a30ef0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e2834189c1aa13a9b984d9a1401922c309dbd6db621d37e4b970e489aa7f9cd"
   end
 
   depends_on "rust" => [:build, :test]
@@ -55,6 +56,6 @@ class Hk < Formula
     system "git", "commit", "-m", "Initial commit"
 
     output = shell_output("#{bin}/hk run pre-commit --all -v 2>&1")
-    assert_match(/cargo-clippy\s* ✓/, output)
+    assert_match(/✔\s*cargo-clippy/, output)
   end
 end

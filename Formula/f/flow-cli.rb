@@ -1,8 +1,8 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
   homepage "https://onflow.org"
-  url "https://github.com/onflow/flow-cli/archive/refs/tags/v2.2.5.tar.gz"
-  sha256 "65d8e9c249849d98f014efe285f2457a61f8a4dd56d49dda067e7f187239ce55"
+  url "https://github.com/onflow/flow-cli/archive/refs/tags/v2.2.8.tar.gz"
+  sha256 "2e6dba770478a9a68dfaee11d754831267bc3131bf285c9f0e45d5c25286f867"
   license "Apache-2.0"
   head "https://github.com/onflow/flow-cli.git", branch: "master"
 
@@ -12,15 +12,15 @@ class FlowCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fec2b0c66641df6c7ad6a915051bb114a27c467ea5cbd7c3393761f4203ee6bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94e778d92d425434060d81c381a11b0e36d6b604c0bad4691ece8b0237f38fc3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f977e1405cf05f001a8dfee02157f8c5f8e231d6233d1fb7f63158aa165507cc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c31b641c7615e8a0a3c6b8ee817d504fa87e41e5a2cdb74f8ed1698f16c62735"
-    sha256 cellar: :any_skip_relocation, ventura:       "fb29ffa182eb7103918a5870e7ded67f17f506d400c477c00540846ba85ee4f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bff4c10de8269fbcabf3538f981920d085c05a9ecc994ade16ef667b6dceb5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4191943630550e557d61b6e06e0f2f0c9a2e94cd7c0910ba795d836e9f51b5ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce8b7efc8da2a7a822341223cb93a3313886d50944e39efe26cb88166da2f701"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "70b6b03fd1ca4b0430156cd076f32a69d12db9fa0bc7808c278e7bbef97e0d78"
+    sha256 cellar: :any_skip_relocation, sonoma:        "223244851d090bf788031236410045644f312b12f83fe1bbf0fc596482fcc769"
+    sha256 cellar: :any_skip_relocation, ventura:       "ca65771408d5f7f9a162f736c43d7b52dff8601097eda08664dc3ccf45b5b16e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51b449f12388932b54cfb288db3cc9731fab76ed1878e097de680b437492d460"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.23" => :build # crashes with go 1.24, see https://github.com/onflow/flow-cli/issues/1902
 
   conflicts_with "flow", because: "both install `flow` binaries"
 

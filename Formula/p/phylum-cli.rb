@@ -1,18 +1,19 @@
 class PhylumCli < Formula
   desc "Command-line interface for the Phylum API"
   homepage "https://www.phylum.io"
-  url "https://github.com/phylum-dev/cli/archive/refs/tags/v7.3.0.tar.gz"
-  sha256 "8384841e47b7af39fb9501316b65908a0bce458e8721cf84f3d6339b2938bb41"
+  url "https://github.com/phylum-dev/cli/archive/refs/tags/v7.5.0.tar.gz"
+  sha256 "a3fe16d9e76872a1dc00c5ba7897806f0e8581a4f4ebb9cc8c4410ae2438d1a7"
   license "GPL-3.0-or-later"
   head "https://github.com/phylum-dev/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca60efb4f8c44c4613aa5f3d85f9e2ca601edff87c4bd5e9834604ca52b99b43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e560ece29541ebb903ab20b7a21821855b8890d56d6c626bd61dbf8a79fb6b28"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "902c2e55337cf81f5d013871d348ca0f718b29f78937213987d8563e20e6d218"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1802fc908f5f6ae4418f53492a39aed96667ca208db98f8575249b726e1998d"
-    sha256 cellar: :any_skip_relocation, ventura:       "8ec5fdf53567c7afa18578bfe86840e454d33368c1f7b9b6a2941d3d7f0d4c39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a6a728023b823f5f41b3776ef61326263444d1c964fe80d6f18eb3e444bdcbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0528cf65555a5f86e2f3a9db038dc40eb019d147df4aee9b6a53e873c05db0ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7717c20f5063a9e25a9b4c63a1aaa099623f16403803d24d86d9b3cd77822ca3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb9bcd54edc2c2a31f817c71a5ce5b5b2bccc818b8cd2ba1f71aedbc35465588"
+    sha256 cellar: :any_skip_relocation, sonoma:        "13b94a26a75cf78a3fe90e5fe425f0f69d82894785c65257b14656e6ab74cc39"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f842fa99341dcbe43ec4cfdce8c31f0be8545ae73cff012919728545d1e8a02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e9136f95e0097a22555e606e1b6c751012f740482b85c4c5677b3ad3b9b02fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e55839055bb0e1849b304b2f4c7e1395b5f6d0c00abb16b7167f7b2b2771738c"
   end
 
   depends_on "protobuf" => :build

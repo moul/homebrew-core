@@ -1,19 +1,19 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://github.com/ravachol/kew/archive/refs/tags/v3.0.3.tar.gz"
-  sha256 "fac446e2c78b6341dff46a88767dd0b9f75a4b2b60e03fc0623b09aa28ec5bba"
+  url "https://github.com/ravachol/kew/archive/refs/tags/v3.1.2.tar.gz"
+  sha256 "9f888090e458763962b91e25e01ea36d37f71be2ec69e2870c801287cd0c42e9"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/ravachol/kew.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a3461d8ea3f1e647d779cc2424b13518f05d74c257185106950ab0b0458e86c8"
-    sha256 cellar: :any,                 arm64_sonoma:  "5d7d3a5a94ee85a4efad70bc396eff62b21a1671b41cf563c36ddb7893ec182f"
-    sha256 cellar: :any,                 arm64_ventura: "c38040110f942283d5aa24b5df3afd4be3daea0bad8d58e4380dc4e065682efb"
-    sha256 cellar: :any,                 sonoma:        "00b8a0414c8b764a5dff621bbcb6f208e2b5fc1b9acc27157b9291c764eb4186"
-    sha256 cellar: :any,                 ventura:       "1f0975eae6e25f5c5254aa4781c07d711acbbc224beec86609fc6f4ef5a4339e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12319a316e8c765c0704a6dd7e063e35142e6209f4a7fc40a1b74ddb65c23156"
+    sha256 cellar: :any,                 arm64_sequoia: "93cd9e807d32cd0949893fa4d41cc4806239e1a3f07e184171fad0ff66f16358"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc0afad845e2e2a683e094d8b477dfdebcf3d3f719cdb1679202b0f03328e504"
+    sha256 cellar: :any,                 arm64_ventura: "8409f207003b286a1eaf8d63df70074d12d0c37c45b7aa0d73054ea2203ca8f9"
+    sha256 cellar: :any,                 sonoma:        "ace627d70569cae3b37b2df55d9459a0bc1a0dcf5b6db780e4fbe1af1adf89fc"
+    sha256 cellar: :any,                 ventura:       "3155803d178b14e49d0241bc7091726477b99a0f0aa2f0d7b4850bd826702bca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65fc9912217dffa2e5191d38748e55da10c749633e34c6f4a2023e1e761c1b30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "033ea60a7dd52b3d04298e2061ac01e7969f2c7e79f0aff37a887ddda1c92782"
   end
 
   depends_on "pkgconf" => :build
@@ -25,6 +25,8 @@ class Kew < Formula
   depends_on "libvorbis"
   depends_on "opusfile"
   depends_on "taglib"
+
+  uses_from_macos "curl"
 
   on_macos do
     depends_on "gettext"

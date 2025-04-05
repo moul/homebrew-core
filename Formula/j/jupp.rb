@@ -1,7 +1,7 @@
 class Jupp < Formula
   desc "Professional screen editor for programmers"
-  homepage "http://www.mirbsd.org/jupp.htm"
-  url "http://www.mirbsd.org/MirOS/dist/jupp/joe-3.1jupp41.tgz"
+  homepage "https://mbsd.evolvis.org/jupp.htm"
+  url "https://mbsd.evolvis.org/MirOS/dist/jupp/joe-3.1jupp41.tgz"
   version "3.1jupp41"
   sha256 "7bb8ea8af519befefff93ec3c9e32108d7f2b83216c9bc7b01aef5098861c82f"
   license "GPL-1.0-or-later"
@@ -22,6 +22,7 @@ class Jupp < Formula
     sha256 ventura:        "df22aefb2425b9730ca87ff48af85ef2a6660e8b2e6e6d8c68be5a20690553e7"
     sha256 monterey:       "d4a1370a276e3e6dbe6194ec7d99a488cf79e9a03e7bdef06a347c9210c4f365"
     sha256 big_sur:        "c2666e8966b8fc4322e70d4b5ccfe363b30ebb0166fc619cc354214bad9718f1"
+    sha256 arm64_linux:    "51d77066bd02369aac33dda74c4ed5c2dc66873e11ae1f64f329fb4872a7c5b5"
     sha256 x86_64_linux:   "903a19653cafcf340fce69eff4be1d4a5574dde54d87c5934aa269cb25050311"
   end
 

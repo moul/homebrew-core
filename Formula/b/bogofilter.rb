@@ -5,6 +5,10 @@ class Bogofilter < Formula
   sha256 "3248a1373bff552c500834adbea4b6caee04224516ae581fb25a4c6a6dee89ea"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later"]
 
+  livecheck do
+    url "https://sourceforge.net/projects/bogofilter/rss?path=/bogofilter-stable"
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9cdd5e3131e6b0880369ac2070e25880f55225b18eb6750bbcf997ffe7864555"
@@ -14,6 +18,7 @@ class Bogofilter < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f74ffa505ef0bddb0dd6ee98b6a555fb4db02c0634789c3a29113a0ca01e50c2"
     sha256 cellar: :any_skip_relocation, ventura:        "5177e2c0e637368f36783396144f66a4e4fbd7f4620e4a5a870ee5208feeba5a"
     sha256 cellar: :any_skip_relocation, monterey:       "7ba6d67f7e248ea1d7b89ce21480ba2145c2906f22e6db749f4fe68fe16f0406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a5402defe7709d89be4e8186a4babc6c90562f7ee88ae84dcaf4fd9f0d3caadd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "99ebd115fee3156d79ae0958b1326c7689e9af5092d5ef3e9adc915cbdff96f3"
   end
 

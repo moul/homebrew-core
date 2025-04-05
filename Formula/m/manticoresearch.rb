@@ -1,15 +1,14 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/7.4.6.tar.gz"
-  sha256 "413cf45b2cad144a40021aa1deb389ca2a5076a3c906759e66df0ca6e15570de"
+  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/9.2.18.tar.gz"
+  sha256 "23dca7a7e8c344778d93b195ec356c0b675bb77a5f794594a1c48a13647882eb"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
     { "GPL-2.0-only" => { with: "x11vnc-openssl-exception" } }, # galera
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
-  revision 1
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
 
@@ -20,12 +19,12 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "56c19826137702dbbeecf89f987ae2a707c75cf5d418ba52ad4d7762bc0b855a"
-    sha256 arm64_sonoma:  "c43d97d7afb287c0f4600cd0a0d3d5fdba5c7ffa44a4192c2f29910e268879bb"
-    sha256 arm64_ventura: "229035329a3b01f25026ccc761894b4da5f33acfc581a7bb18a30c29200cda5a"
-    sha256 sonoma:        "5900027fb06a504770a336736f5542608d6567980683bb1509fff1d628505551"
-    sha256 ventura:       "c52d2a1d121db1e48ad3c3d3dc4947852b9953a27fc67c286374ace0162288c0"
-    sha256 x86_64_linux:  "8c709ccb795665629b6e3929f793b4320c9c7da2d168c516ae3603303b50db78"
+    sha256 arm64_sequoia: "4e4ede5527b9342826e1ddd206d85fcb8759b0dfee941c5aea11a75493f9a118"
+    sha256 arm64_sonoma:  "fc6e601979a795deec25c20497b53f4ac2ab420a657974cb2c29bfde27b81ce4"
+    sha256 arm64_ventura: "c05df1802f6621d44c1c89581b10057677ee9eadfd434c72cbcb81b3a423e281"
+    sha256 sonoma:        "ece4e91f5de254cd965ab687cf93dde3160efa17a3f2153ef5ea1e305135a9d1"
+    sha256 ventura:       "4aeb350264d530ba00559d4fe350802c286b00dda8d83a2bb5253e20d0d911ee"
+    sha256 x86_64_linux:  "46749d24cdd07437be6ecae117095390764507e1e3642c56c305c6d022ace20c"
   end
 
   depends_on "cmake" => :build

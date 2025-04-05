@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.112.0",
-      revision: "b9523dbfc4c4b1d0aff3253b56764296215119c8"
+      tag:      "v1.117.0",
+      revision: "7f75347b325af9682a993f35fb0f106b4e4f43ae"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -15,12 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6fb6e444467f497235c806d869d31eda04ecae25a53c2bc2a7feac78289023aa"
-    sha256 cellar: :any,                 arm64_sonoma:  "eafa6a978169a7182105b8532422f8d39addb52081b86716db52f76b31000662"
-    sha256 cellar: :any,                 arm64_ventura: "9fbfe27730bdb97fbac31ee0ed777f9e843c1c8633e2d3fbe40d95761f7a289a"
-    sha256 cellar: :any,                 sonoma:        "0583ffdf8085d6ccdb3dca9630c759d189d657a0d63d9b29070177e9d547b5f7"
-    sha256 cellar: :any,                 ventura:       "97b96544dff7e899608c340ca73561bade06e461ce13990c36860f70e518e261"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69dac396da38f65a07f7681ae6a9e819affdfdf589552165c7374b2e0e3d08fb"
+    sha256 cellar: :any,                 arm64_sequoia: "1b1584dd00b3fe16b65e2bbeb5ad68ba11eb7e48182c5ea7580697a1b828bedb"
+    sha256 cellar: :any,                 arm64_sonoma:  "7859550cd0c11bad42202b35fa23d9690bbb59e7b6b2fc0881a8c72f2c584e70"
+    sha256 cellar: :any,                 arm64_ventura: "9cfdd746097b49719716b5871ed1f8f2647852b43cffd33713636a237faaa683"
+    sha256 cellar: :any,                 sonoma:        "ec0e7cf1bb5b8328affd450de9ccb75a28ccea5d34d6529ebd6cd7f2cc43985e"
+    sha256 cellar: :any,                 ventura:       "15820b1a9c628f8a7681e203adcc2332cfe5332dce00a657df34363cb0ffd9b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a8e907279dc370edc455f921bd11c3b147bd58d9aeec3d717af0f4349f2cb60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3433d1706d9d4d8855b3b35074850f7a7da4b98365f5dd8f1244ad3258b9da40"
   end
 
   depends_on "autoconf" => :build
@@ -71,8 +72,8 @@ class Semgrep < Formula
   end
 
   resource "click-option-group" do
-    url "https://files.pythonhosted.org/packages/e7/b8/91054601a2e05fd9060cb1baf56be5b24145817b059e078669e1099529c7/click-option-group-0.5.6.tar.gz"
-    sha256 "97d06703873518cc5038509443742b25069a3c7562d1ea72ff08bfadde1ce777"
+    url "https://files.pythonhosted.org/packages/b9/9f/1f917934da4e07ae7715a982347e3c2179556d8a58d1108c5da3e8f09c76/click_option_group-0.5.7.tar.gz"
+    sha256 "8dc780be038712fc12c9fecb3db4fe49e0d0723f9c171d7cda85c20369be693c"
   end
 
   resource "colorama" do
@@ -106,8 +107,8 @@ class Semgrep < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/41/4f/d8be74b88621131dfd1ed70e5aff2c47f2bdf2289a70736bbf3eb0e7bc70/googleapis_common_protos-1.69.1.tar.gz"
-    sha256 "e20d2d8dda87da6fe7340afbbdf4f0bcb4c8fae7e6cadf55926c31f946b0b9b1"
+    url "https://files.pythonhosted.org/packages/1b/d7/ee9d56af4e6dbe958562b5020f46263c8a4628e7952070241fc0e9b182ae/googleapis_common_protos-1.69.2.tar.gz"
+    sha256 "3e1b904a27a33c821b4b749fd31d334c0c9c30e6113023d495e48979a3dc9c5f"
   end
 
   resource "idna" do
@@ -221,8 +222,8 @@ class Semgrep < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/0a/79/2ce611b18c4fd83d9e3aecb5cba93e1917c050f556db39842889fa69b79f/rpds_py-0.23.1.tar.gz"
-    sha256 "7f3240dcfa14d198dba24b8b9cb3b108c06b68d45b7babd9eefc1038fdf7e707"
+    url "https://files.pythonhosted.org/packages/0b/b3/52b213298a0ba7097c7ea96bee95e1947aa84cc816d48cebb539770cdf41/rpds_py-0.24.0.tar.gz"
+    sha256 "772cc1b2cd963e7e17e6cc55fe0371fb9c704d63e44cacec7b9b7f523b78919e"
   end
 
   resource "ruamel-yaml" do
@@ -231,8 +232,8 @@ class Semgrep < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/32/d2/7b171caf085ba0d40d8391f54e1c75a1cda9255f542becf84575cfd8a732/setuptools-76.0.0.tar.gz"
-    sha256 "43b4ee60e10b0d0ee98ad11918e114c70701bc6051662a9a675a0496c1a158f4"
+    url "https://files.pythonhosted.org/packages/a9/5a/0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379/setuptools-78.1.0.tar.gz"
+    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
   end
 
   resource "tomli" do
@@ -241,8 +242,8 @@ class Semgrep < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+    url "https://files.pythonhosted.org/packages/0e/3e/b00a62db91a83fff600de219b6ea9908e6918664899a2d85db222f4fbf19/typing_extensions-4.13.0.tar.gz"
+    sha256 "0a4ac55a5820789d87e297727d229866c9650f6521b64206413c4fbada24d95b"
   end
 
   resource "urllib3" do
@@ -303,7 +304,7 @@ class Semgrep < Formula
       ENV["OPAMSOLVERTIMEOUT"] = "1200"
 
       system "opam", "init", "--no-setup", "--disable-sandboxing"
-      ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.5.2.1" }
+      ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.5.3.0" }
 
       # Manually run steps from `opam exec -- make setup` to link Homebrew's tree-sitter
       system "opam", "update", "-y"

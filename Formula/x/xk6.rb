@@ -1,8 +1,8 @@
 class Xk6 < Formula
   desc "Build k6 with extensions"
   homepage "https://k6.io"
-  url "https://github.com/grafana/xk6/archive/refs/tags/v0.14.3.tar.gz"
-  sha256 "35a7fa8e059caf7848a67d7dd271f754ef06cf52512b08da1134971b39004900"
+  url "https://github.com/grafana/xk6/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "fe777541a62eead0ca68f40a23340c60d5fb5e319835484a17b802dd86ac682d"
   license "Apache-2.0"
   head "https://github.com/grafana/xk6.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Xk6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2560adfdcd7e7a89a49a29444c369a2d16f60057a8d6b224f19bf2e8686b1147"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2560adfdcd7e7a89a49a29444c369a2d16f60057a8d6b224f19bf2e8686b1147"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2560adfdcd7e7a89a49a29444c369a2d16f60057a8d6b224f19bf2e8686b1147"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb7ff607339030f947cf90c8d58a2dc786831e7b94d22bab730698c2d5887f3e"
-    sha256 cellar: :any_skip_relocation, ventura:       "bb7ff607339030f947cf90c8d58a2dc786831e7b94d22bab730698c2d5887f3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55ad8aa5decacad6423bd22b41e20c2a350307807db7ffa62b0d1fcdcd82359d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2110f5d338f5538007afa2b272e852fabd1190274fcc418524d532866303df74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2110f5d338f5538007afa2b272e852fabd1190274fcc418524d532866303df74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2110f5d338f5538007afa2b272e852fabd1190274fcc418524d532866303df74"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b304f3820dbeee87de804a8b4691b1a56dd96fe23507eae3069a34af4ecb780"
+    sha256 cellar: :any_skip_relocation, ventura:       "6b304f3820dbeee87de804a8b4691b1a56dd96fe23507eae3069a34af4ecb780"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7a29f594799fae62f64beebe44908d90f5e4fab0955f6aba6ad12ea70403206"
   end
 
   depends_on "go"

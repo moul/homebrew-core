@@ -1,18 +1,19 @@
 class RedoclyCli < Formula
   desc "Your all-in-one OpenAPI utility"
   homepage "https://redocly.com/docs/cli"
-  url "https://registry.npmjs.org/@redocly/cli/-/cli-1.33.1.tgz"
-  sha256 "2221565c8b23321c53088543e48b0d71a082e62a5ef4190eafb9a230e0de161f"
+  url "https://registry.npmjs.org/@redocly/cli/-/cli-1.34.1.tgz"
+  sha256 "0904420828f3a389f77e167e03f373e8138b50662f1eb33863a9bcdc8249d366"
   license "MIT"
   head "https://github.com/redocly/redocly-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a25c2a01ccf9f05d275323dc2c465d693aa9bd74f58bce455d4423428d120565"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a25c2a01ccf9f05d275323dc2c465d693aa9bd74f58bce455d4423428d120565"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a25c2a01ccf9f05d275323dc2c465d693aa9bd74f58bce455d4423428d120565"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd7f361fee2f87a42c6bbfaea82c3c3da323f79435c5e8066f5151fed513f4d8"
-    sha256 cellar: :any_skip_relocation, ventura:       "cd7f361fee2f87a42c6bbfaea82c3c3da323f79435c5e8066f5151fed513f4d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ffff4b02e34d77bebf96371df139b4578e3002f3c3ff3b19987c042f7d21870"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d5be04d95335f23926c3c5f9c63d73a41e50fe9dc5a083502a761673954938d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d5be04d95335f23926c3c5f9c63d73a41e50fe9dc5a083502a761673954938d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d5be04d95335f23926c3c5f9c63d73a41e50fe9dc5a083502a761673954938d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae07ddc7203604c8a1147a2442947feb66e80d3a56ea2187601fd0807532bcb9"
+    sha256 cellar: :any_skip_relocation, ventura:       "ae07ddc7203604c8a1147a2442947feb66e80d3a56ea2187601fd0807532bcb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d5be04d95335f23926c3c5f9c63d73a41e50fe9dc5a083502a761673954938d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d5be04d95335f23926c3c5f9c63d73a41e50fe9dc5a083502a761673954938d"
   end
 
   depends_on "node"

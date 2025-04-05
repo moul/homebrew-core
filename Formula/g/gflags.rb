@@ -16,10 +16,17 @@ class Gflags < Formula
     sha256 cellar: :any,                 ventura:        "6b24b7f057edb2c37d9f423d29ead9a1ebf14e07217f43e0fb7bbf8393b0821c"
     sha256 cellar: :any,                 monterey:       "0436095f47bef8a2165b1829eb8ee6e77c8aa14553ef982bd3c6ecf5c7e9d47b"
     sha256 cellar: :any,                 big_sur:        "4702020c64f73c2e3e23997055a49711600a1af7834652be3923a1edb43a750c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "03c55bb2c70aaab30bf92eab3d2d90880eb647e2c9f070943b12a7723f0723eb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f11fa1aff8e21d32012f8fbb78a2f954241f4e026b8518a6c874e2d537201629"
   end
 
   depends_on "cmake" => [:build, :test]
+
+  # cmake 4.0 build patch, upstream pr ref, https://github.com/gflags/gflags/pull/367
+  patch do
+    url "https://github.com/gflags/gflags/commit/b14ff3f106149a0a0076aa232ce545580d6e5269.patch?full_index=1"
+    sha256 "84556b5cdfdbaaa154066d2fdd6b0d1d90991ac255600971c364a2c0f9549f84"
+  end
 
   def install
     args = %w[
@@ -63,7 +70,7 @@ class Gflags < Formula
     assert_match "Foo bar!", shell_output("./test --message='Foo bar!'")
 
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 2.8)
+      cmake_minimum_required(VERSION 4.0)
       project(cmake_test)
       add_executable(${PROJECT_NAME} test.cpp)
       find_package(gflags REQUIRED COMPONENTS static)

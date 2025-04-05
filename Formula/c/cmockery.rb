@@ -40,11 +40,15 @@ class Cmockery < Formula
     # workaround for Xcode 14.3
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
     # Fix -flat_namespace being used on Big Sur and later.
     # Need to regenerate configure since existing patches don't apply.
     system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
 
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 end

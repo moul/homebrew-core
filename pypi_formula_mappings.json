@@ -350,7 +350,13 @@
   "gallery-dl": {
     "exclude_packages": ["certifi"]
   },
+  "gamdl": {
+    "exclude_packages": ["certifi", "pillow"]
+  },
   "gcalcli": {
+    "exclude_packages": ["certifi"]
+  },
+  "gdown": {
     "exclude_packages": ["certifi"]
   },
   "ggshield": {
@@ -376,6 +382,7 @@
   },
   "gnuradio": {
     "package_name": "",
+    "exclude_packages": ["rpds-py"],
     "extra_packages": [
       "click", "jsonschema", "lxml", "mako",
       "packaging", "pygccxml", "pyyaml", "setuptools"
@@ -413,6 +420,10 @@
   },
   "gsan": {
     "exclude_packages": ["cryptography"]
+  },
+  "gtk-doc": {
+    "package_name": "",
+    "extra_packages": ["lxml", "pygments"]
   },
   "gyb": {
     "package_name": "",
@@ -615,6 +626,8 @@
     "exclude_packages": ["cryptography"]
   },
   "osc": {
+    "package_name": "",
+    "extra_packages": ["rpm", "ruamel-yaml", "urllib3"],
     "exclude_packages": ["cryptography"]
   },
   "osc-cli": {

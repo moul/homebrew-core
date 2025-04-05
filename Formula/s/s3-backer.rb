@@ -7,6 +7,7 @@ class S3Backer < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "ee382388c60623851403b783c23c973120a0a0e568ab99f9dcff7b1068d65d5b"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "60886e9f4d464c3050a711c732717fc833fa1364b60acbe1f07a15e2d13e8728"
   end
 
@@ -16,13 +17,18 @@ class S3Backer < Formula
   depends_on "libfuse@2"
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "openssl@3"
+  depends_on "zlib"
+  depends_on "zstd"
 
   def install
-    system "./configure", "--disable-silent-rules", *std_configure_args
+    system "./configure", "--disable-silent-rules",
+            *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 
   test do
-    system bin/"s3backer", "--version"
+    assert_match version.to_s, shell_output("#{bin}/s3backer --version 2>&1")
+
+    assert_match "no S3 bucket specified", shell_output("#{bin}/s3backer 2>&1", 1)
   end
 end

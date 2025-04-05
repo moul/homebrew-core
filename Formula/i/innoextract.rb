@@ -1,11 +1,20 @@
 class Innoextract < Formula
   desc "Tool to unpack installers created by Inno Setup"
   homepage "https://constexpr.org/innoextract/"
-  url "https://constexpr.org/innoextract/files/innoextract-1.9.tar.gz"
-  sha256 "6344a69fc1ed847d4ed3e272e0da5998948c6b828cb7af39c6321aba6cf88126"
   license "Zlib"
   revision 10
   head "https://github.com/dscharrer/innoextract.git", branch: "master"
+
+  stable do
+    url "https://constexpr.org/innoextract/files/innoextract-1.9.tar.gz"
+    sha256 "6344a69fc1ed847d4ed3e272e0da5998948c6b828cb7af39c6321aba6cf88126"
+
+    # Backport commit to fix build with CMake 4
+    patch do
+      url "https://github.com/dscharrer/innoextract/commit/83d0bf4365b09ddd17dddb400ba5d262ddf16fb8.patch?full_index=1"
+      sha256 "fe5299d1fdea5c66287aef2f70fee41d86aedc460c5b165da621d699353db07d"
+    end
+  end
 
   livecheck do
     url :homepage
@@ -18,6 +27,7 @@ class Innoextract < Formula
     sha256 cellar: :any,                 arm64_ventura: "9d5d41064e579dc82059762171e6d11be09e09de1a04f2d14cc9f714c8b8e0d0"
     sha256 cellar: :any,                 sonoma:        "ebf2344eeb9e6be6f8cf2cdcdd7ae9226d4500c63f1e18aeb32fdb20655b11f8"
     sha256 cellar: :any,                 ventura:       "0b6bc1f911b58b61398f21afd839843cdd1502d2728f0e906d79dd5b74398f3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e549b003391b65591c063ef0f0f476b923b2cb83b44de1d3e89443277da5843a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "494cfd4d754e4eecf0b7b7d2097878fb2cfb3d3a45567f286ef79527b77cc37c"
   end
 

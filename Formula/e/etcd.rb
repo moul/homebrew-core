@@ -2,18 +2,18 @@ class Etcd < Formula
   desc "Key value store for shared configuration and service discovery"
   homepage "https://github.com/etcd-io/etcd"
   url "https://github.com/etcd-io/etcd.git",
-      tag:      "v3.5.19",
-      revision: "815eaba08570ab0a123d65c12ef419e5b3f8e250"
+      tag:      "v3.5.21",
+      revision: "a17edfd59754d1aed29c2db33520ab9d401326a5"
   license "Apache-2.0"
   head "https://github.com/etcd-io/etcd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66e0e099be6db567d0c1ef961adeef1656100fbe2b3393d68174794f43ce9654"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66e0e099be6db567d0c1ef961adeef1656100fbe2b3393d68174794f43ce9654"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "66e0e099be6db567d0c1ef961adeef1656100fbe2b3393d68174794f43ce9654"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eaa8bb0aa7d9a509d18f75bb9781c1319517a4f8d258f3bdc30c3547ac8fcc3c"
-    sha256 cellar: :any_skip_relocation, ventura:       "eaa8bb0aa7d9a509d18f75bb9781c1319517a4f8d258f3bdc30c3547ac8fcc3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69faa2bd694fd31d7059047aca6b912d6cc56ad8ba43bf84986605aed5834fb4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f7df9c92b0178937ca77e6902881e3ee68674b5a08801da80798f469cda3d18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f7df9c92b0178937ca77e6902881e3ee68674b5a08801da80798f469cda3d18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f7df9c92b0178937ca77e6902881e3ee68674b5a08801da80798f469cda3d18"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be8125212266c3e3c07819e542d6025060778991c973ac7c8e0adf8a47028994"
+    sha256 cellar: :any_skip_relocation, ventura:       "be8125212266c3e3c07819e542d6025060778991c973ac7c8e0adf8a47028994"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09f2a324b713c3e1dbbfde336753899e8553bf3587b8e5dc9abf79a7ef60be03"
   end
 
   depends_on "go" => :build

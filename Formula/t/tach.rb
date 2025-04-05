@@ -3,18 +3,19 @@ class Tach < Formula
 
   desc "Tool to enforce dependencies using modular architecture"
   homepage "https://docs.gauge.sh/getting-started/introduction"
-  url "https://files.pythonhosted.org/packages/b3/4b/e618b08b1e6354673cb39f8d52bf4677448b81404579073e1c4e85401d79/tach-0.28.1.tar.gz"
-  sha256 "c03bf287e22672eba61329d9cdc586e4cfa97f6ce7d774f33ff20af9caed531f"
+  url "https://files.pythonhosted.org/packages/55/b3/678f4deb5d7f3d6b269025fe290b90a09b0c2ab981784f2e3cd7c3a2ee34/tach-0.28.5.tar.gz"
+  sha256 "89f734901d5330acf4fd9cc57a8239d9045b75a32854db9c5e50e3ab41f05966"
   license "MIT"
   head "https://github.com/gauge-sh/tach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "48f46160d07eca2e71d0d544716de72c29d1dceb01a0c0e975a3b6fc629282a1"
-    sha256 cellar: :any,                 arm64_sonoma:  "7df68fbfab3b1aa6f07c15f2ce25c30a2ba1f7e945dccdbe15773aa707938d3a"
-    sha256 cellar: :any,                 arm64_ventura: "248594099414e5293d600021f3512b4e8a16d23725bba2120fbfb4a7ae87cb6a"
-    sha256 cellar: :any,                 sonoma:        "238b7871e3853924e1bd180b3f78d4000f7bde46d1959d049d03ea809b3ece45"
-    sha256 cellar: :any,                 ventura:       "92741c1eee165a0b088f117a416fc8f84e06ca8fdd0ee28aaf90038c1c8d66a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbb8fa0a638743e5dbca6d5244c50f69c5fc3e9ec641405934e7f0f6aa2b3acb"
+    sha256 cellar: :any,                 arm64_sequoia: "7be3083584aee39401e1270ffd80d20b07c24f90ab8608e267da336a4e52d5a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "45fe1163ae77c62a58965a721dd12d8099fab5df58acba70ee41a400087fe270"
+    sha256 cellar: :any,                 arm64_ventura: "5dd05850764cc077c89fbacb028f84ddfa43a3fb1e6a3dea3e176c05577439cd"
+    sha256 cellar: :any,                 sonoma:        "7af0beb53c3631f5bafe6cedf4f6536ac66746151fde539a4deae41f5a27aa27"
+    sha256 cellar: :any,                 ventura:       "bfc0f9ff857b2b7739bc37815d06168f0277ac1d3104cfa30b21f4cfea66a697"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72590041a66f230ba7a6172785fd95a534820fb9f15f8d85166d7ea7753d473b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60f639dece4da665df210f97a8a82c8c85f07208700dd02308a2eb72ff90f6c7"
   end
 
   depends_on "rust" => :build
@@ -62,8 +63,8 @@ class Tach < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/8b/1a/3544f4f299a47911c2ab3710f534e52fea62a633c96806995da5d25be4b2/pyparsing-3.2.1.tar.gz"
-    sha256 "61980854fd66de3a90028d679a954d5f2623e83144b5afe5ee86f43d762e5f0a"
+    url "https://files.pythonhosted.org/packages/bb/22/f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60f/pyparsing-3.2.3.tar.gz"
+    sha256 "b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be"
   end
 
   resource "pyyaml" do
@@ -94,6 +95,12 @@ class Tach < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+  end
+
+  # version patch, upstream pr ref, https://github.com/gauge-sh/tach/pull/723
+  patch do
+    url "https://github.com/gauge-sh/tach/commit/18327d468a9c7301bf6736cfc0918d71bc26610d.patch?full_index=1"
+    sha256 "860af2fe8e912e41a22deaa5d3779cf6d79f3936636fe08aa5ee068d00185bfb"
   end
 
   def install

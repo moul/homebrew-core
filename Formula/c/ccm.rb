@@ -2,12 +2,12 @@ class Ccm < Formula
   include Language::Python::Virtualenv
 
   desc "Create and destroy an Apache Cassandra cluster on localhost"
-  homepage "https://github.com/riptano/ccm"
+  homepage "https://github.com/apache/cassandra-ccm"
   url "https://files.pythonhosted.org/packages/f1/12/091e82033d53b3802e1ead6b16045c5ecfb03374f8586a4ae4673a914c1a/ccm-3.1.5.tar.gz"
   sha256 "f07cc0a37116d2ce1b96c0d467f792668aa25835c73beb61639fa50a1954326c"
   license "Apache-2.0"
   revision 4
-  head "https://github.com/riptano/ccm.git", branch: "master"
+  head "https://github.com/apache/cassandra-ccm.git", branch: "trunk"
 
   bottle do
     rebuild 1
@@ -16,6 +16,7 @@ class Ccm < Formula
     sha256 cellar: :any,                 arm64_ventura: "a8231ecd1b2f906259979cc35186be52000c4b7786dbb55c8c3cd13c52b5402a"
     sha256 cellar: :any,                 sonoma:        "528a3299799df8daf15b07e0a0670df132ae046f0f52466defe58e968bc54a11"
     sha256 cellar: :any,                 ventura:       "9912048114592dbd5fd7be13ab693bd12c6dabe896f2b953802c383c3483e7c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a04076ec09207028fa744de13afaa744462f24fde634d9308147952e1855d07"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cf8010b7799a42307a71b081fdb9afa505ecc13b7ad8fa4fb826f257eafc364"
   end
 

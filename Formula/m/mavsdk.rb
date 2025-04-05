@@ -2,9 +2,10 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https://mavsdk.mavlink.io"
   url "https://github.com/mavlink/MAVSDK.git",
-      tag:      "v3.1.0",
-      revision: "effa4a8ff433ce1d6734c990b5105d1f358399d7"
+      tag:      "v3.2.0",
+      revision: "c4a070f974b3d91375f096095d952cb8ef416849"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +13,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "f62b521d2ffd61f2ed85a2805309f95b4b9fe9047cec49d13e96dcacdbcfab5f"
-    sha256                               arm64_sonoma:  "223e73749a9ab2301659baad42620515a0fe98887ab343e91d87bf742fc31bcc"
-    sha256                               arm64_ventura: "98281048c7f655f9c4efd5166902da688cf817d0b3663a827a518abc21ff6138"
-    sha256 cellar: :any,                 sonoma:        "01c20f9524b230d80c87d8a7c4100a4d32bcf49a1d9e04356aee67410fb5154f"
-    sha256 cellar: :any,                 ventura:       "639127f982b40712ea321cd133d7e436be991d70d6253ab35a98a1ff32909e6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cc592ea9d794440191f2c5ed01626e3db60d8a24b9f7c660d931f9b040c285c"
+    sha256                               arm64_sequoia: "e9ab3127375a7ca1c74223f271349839167cd89acdc8b5070e71d1aae218ee57"
+    sha256                               arm64_sonoma:  "9d3edba1a89b066feafa83cf231e7c58c0b997186f318441d24771b6233f73c4"
+    sha256                               arm64_ventura: "50cfd1bccdfe6929018c314a2638d70fdb57b35a4721525a57f5217651301157"
+    sha256 cellar: :any,                 sonoma:        "ccb1251bdd37b4d31c7d5bbf1e2fce3ac6a3fbf896b1a19e7f34c42fb66f9fd0"
+    sha256 cellar: :any,                 ventura:       "21292c7f1fe9c56314a07ac3a704608a205f9ea47c818a9336ab4e806db7a7fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbd827747a8ff881f6b9afecd4b70662490d6ac794a151143b33ab33bb811df3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7b1f7a6c62b8fe187042c3be66176ee9078f2975e1d4368d4faa3b6dac4e6eb"
   end
 
   depends_on "cmake" => :build

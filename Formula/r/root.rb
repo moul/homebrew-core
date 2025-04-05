@@ -1,10 +1,29 @@
 class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https://root.cern"
-  url "https://root.cern/download/root_v6.34.04.source.tar.gz"
-  sha256 "e320c5373a8e87bb29b7280954ca8355ad8c4295cf49235606f0c8b200acb374"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
+
+  stable do
+    url "https://root.cern/download/root_v6.34.06.source.tar.gz"
+    sha256 "a799d632dae5bb1ec87eae6ebc046a12268c6849f2a8837921c118fc51b6cff3"
+
+    # Backport unbundling of libraries on macOS
+    patch do
+      url "https://github.com/root-project/root/commit/73054b434996a530bfd0669d4ef5c1767a93ef70.patch?full_index=1"
+      sha256 "430c1e8aeafe5db1bd4298db27e1aecf903ad7f630465551e66ba70868747293"
+    end
+
+    # Apply fix for building with macOS 15.4, https://github.com/root-project/root/pull/18243
+    patch do
+      url "https://github.com/root-project/root/commit/0c3644b47f9dd59d33dffa6467275accd9824468.patch?full_index=1"
+      sha256 "5b2e8cc151e945cb46e60a1654f4ea3bc51477ae6b1485e8eda22674dd287875"
+    end
+    patch do
+      url "https://github.com/root-project/root/commit/7952c382eee83f222d724d43946ac6b9a7ffe486.patch?full_index=1"
+      sha256 "7214cf81275838cc95086c2d6828f661a85c467f2bf424dfc025585b7979a946"
+    end
+  end
 
   livecheck do
     url "https://root.cern/install/all_releases/"
@@ -15,12 +34,13 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "c795614a01a887ebf51918e4e0f5d50dd32b29fdbb8540cdbf56b50d5d56b939"
-    sha256 arm64_sonoma:  "943fa93aa59e03e53bca7b9723d88b09e2a8ecb004de93930056348e009d55fc"
-    sha256 arm64_ventura: "92e704a197505f29cd9530ec158496cb87d8e0696e7cf88d60f475fde6a38204"
-    sha256 sonoma:        "a108f575edca912e22e468b2cf013d0def14fe0e5bfd1c718835ae17a0aed7ec"
-    sha256 ventura:       "f565e670a9aeab04be5f665119681f4093d334a94ebecbbba4de5b766bf9678a"
-    sha256 x86_64_linux:  "9254f31ab37919c5eb58fe3c0d275f98424bbf1e57c1249a0632c676c930ceb4"
+    rebuild 1
+    sha256 arm64_sequoia: "35e3f2a154030e3b5b6d3b58292ead50b140ca502dc2e9fe002e3cd73aadfc34"
+    sha256 arm64_sonoma:  "c21ad5487dc64c403d03525aca64868a4794e32aa3fbbd2c10a61adf42138005"
+    sha256 arm64_ventura: "187de4ce65fbd6abf027647935fabfe7aee007a71f1e97655b8df76619a3ef3a"
+    sha256 sonoma:        "973502e0ff6483aa5ded98a134bf8e68b006eeaf68d0890d1cdf34a761d70a85"
+    sha256 ventura:       "858e267200bdacbea023a60628ecb69341931aa8a2640861f6d25169d0e84876"
+    sha256 x86_64_linux:  "cb65cef8eab49c4c5186b4f5ad6460a370246440aa6f7ada291de40839e913ca"
   end
 
   depends_on "cmake" => :build
@@ -32,10 +52,14 @@ class Root < Formula
   depends_on "freetype"
   depends_on "ftgl"
   depends_on "gcc" # for gfortran
+  depends_on "giflib"
   depends_on "gl2ps"
   depends_on "glew"
   depends_on "graphviz"
   depends_on "gsl"
+  depends_on "jpeg-turbo"
+  depends_on "libpng"
+  depends_on "libtiff"
   depends_on "lz4"
   depends_on "mariadb-connector-c"
   depends_on "nlohmann-json"
@@ -62,10 +86,6 @@ class Root < Formula
   end
 
   on_linux do
-    depends_on "giflib"
-    depends_on "jpeg-turbo"
-    depends_on "libpng"
-    depends_on "libtiff"
     depends_on "libx11"
     depends_on "libxext"
     depends_on "libxft"
@@ -81,6 +101,9 @@ class Root < Formula
   end
 
   def install
+    # Workaround for CMake 4 due to VDT, https://github.com/dpiparo/vdt/blob/master/CMakeLists.txt
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
     # Skip modification of CLING_OSX_SYSROOT to the unversioned SDK path
     # Related: https://github.com/Homebrew/homebrew-core/issues/135714
     # Related: https://github.com/root-project/cling/issues/457

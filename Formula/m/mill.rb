@@ -1,20 +1,17 @@
 class Mill < Formula
-  desc "Scala build tool"
-  homepage "https://mill-build.com/mill/Scala_Intro_to_Mill.html"
-  url "https://github.com/com-lihaoyi/mill/releases/download/0.12.5/0.12.5-assembly"
-  sha256 "0c7b25412feecf06d955d013418de9a9080ce755bedbac7601c9109c33d5a057"
+  desc "Fast, scalable JVM build tool"
+  homepage "https://mill-build.org/"
+  url "https://search.maven.org/remotecontent?filepath=com/lihaoyi/mill-dist/0.12.10/mill-dist-0.12.10.jar"
+  sha256 "4c44b0212173e177ff1789209da4d06e2fee56b73be5b79aae287c9b274fa873"
   license "MIT"
 
-  # There can be a notable gap between when a version is tagged and a
-  # corresponding release is created, so we check the "latest" release instead
-  # of the Git tags.
   livecheck do
-    url :stable
-    strategy :github_latest
+    url "https://search.maven.org/remotecontent?filepath=com/lihaoyi/mill-dist/maven-metadata.xml"
+    regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5cc436fd296cf06161609cc7181ab82307d1d4c0d23392d2f0f04cf3b6ddd196"
+    sha256 cellar: :any_skip_relocation, all: "52ad05722eb687cfa184cdb8d69de16fa2edfe8e730f3436a3943c51596e3818"
   end
 
   depends_on "openjdk"

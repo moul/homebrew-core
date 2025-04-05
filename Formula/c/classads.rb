@@ -39,10 +39,14 @@ class Classads < Formula
   patch :DATA
 
   def install
+    args = ["--enable-namespace"]
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
     # Run autoreconf on macOS to rebuild configure script so that it doesn't try
     # to build with a flat namespace.
     system "autoreconf", "--force", "--verbose", "--install" if OS.mac?
-    system "./configure", "--enable-namespace", "--prefix=#{prefix}"
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 end

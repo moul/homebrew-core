@@ -3,17 +3,18 @@ class Solargraph < Formula
   homepage "https://solargraph.org"
   # Must be git, because solargraph.gemspec uses git ls-files
   url "https://github.com/castwide/solargraph.git",
-      tag:      "v0.52.0",
-      revision: "1ba47849f81813428b4144ff8320b59d5277a378"
+      tag:      "v0.53.4",
+      revision: "390a1b766cf1933a3f4bd35bb6c3cfca7edd2bc8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "43f48accdfccc507fe348fd63f1052d0de029bf4895330c0ba07b578be130b2a"
-    sha256 cellar: :any,                 arm64_sonoma:  "be92cbb5c33820cc74fa52a4378cbb1aa1a4b9fd42f9e553034cd255ceba93cf"
-    sha256 cellar: :any,                 arm64_ventura: "0300f2bf1af3e8e3a5abd88ffe6be107d9707f4fbc9ea319f6a104340d2cd03d"
-    sha256 cellar: :any,                 sonoma:        "766da144671b0e3051254b616697c818ee64872135f7aefcff3358ca6a089f6a"
-    sha256 cellar: :any,                 ventura:       "0faf97bec7311e2640b1005864bd1f401dcdb992333947013dbccbe48306fba4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2ed1766c1e719f4631c2602aab068045259588d92bce0a4c5a00a3b0b16cacc"
+    sha256 cellar: :any,                 arm64_sequoia: "6c444b5ba211db8d50e15e5766270700a83584cd5af79205c1a9bb9fc0fb5d91"
+    sha256 cellar: :any,                 arm64_sonoma:  "504665beec0e6cd6f74d285de31bea80b4e30250b291c3d4e3b317013586c016"
+    sha256 cellar: :any,                 arm64_ventura: "cb792e5c2fe26be09e9196000e982e502eb56aa4fff641cb2ec1207de5847cf6"
+    sha256 cellar: :any,                 sonoma:        "cefce402c8eb6c868725e26ffb54e597bcb46b50409d7b7bae5e8248445bc527"
+    sha256 cellar: :any,                 ventura:       "7943b09d7795a048b46f2306d56de9fa0179c56e9a7acd2184b91197dd1ee329"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b191d120229d210c82b6363dee49cece5b79871a1f8c22f1c482b1a538a3f47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3545b209b6370df2266e2a610f5f0255acc003283b018aafff5dfaba337cbd4e"
   end
 
   depends_on "ruby" # Requires >= Ruby 2.7

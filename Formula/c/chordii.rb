@@ -27,6 +27,9 @@ class Chordii < Formula
   end
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end

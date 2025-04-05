@@ -1,18 +1,18 @@
 class Sops < Formula
   desc "Editor of encrypted files"
   homepage "https://getsops.io/"
-  url "https://github.com/getsops/sops/archive/refs/tags/v3.9.4.tar.gz"
-  sha256 "3e0fc9a43885e849eba3b099d3440c3147ad0a0cd5dd77a9ef87c266a8488249"
+  url "https://github.com/getsops/sops/archive/refs/tags/v3.10.1.tar.gz"
+  sha256 "f3e98fdc35c3a6f2b5fd6a0764b1218a292946f9264dac44ebf8918920a267b8"
   license "MPL-2.0"
-  head "https://github.com/getsops/sops.git", branch: "master"
+  head "https://github.com/getsops/sops.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47fb0da48816583bb499374230d9a1eb3d568dbfb3e5dad262b2b416f13c71c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47fb0da48816583bb499374230d9a1eb3d568dbfb3e5dad262b2b416f13c71c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "47fb0da48816583bb499374230d9a1eb3d568dbfb3e5dad262b2b416f13c71c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b6714897154831757549504869480fdd212b3ff6249f547b1c321e8173fa4750"
-    sha256 cellar: :any_skip_relocation, ventura:       "b6714897154831757549504869480fdd212b3ff6249f547b1c321e8173fa4750"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8787fc174766bbf18e0014ae7b80438e12db9a5db76d0b9645842c867135d10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6483f4eaa1728676510a009ef7f8372cbcf1e3f204f51caad0ad0e39eedef5a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6483f4eaa1728676510a009ef7f8372cbcf1e3f204f51caad0ad0e39eedef5a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6483f4eaa1728676510a009ef7f8372cbcf1e3f204f51caad0ad0e39eedef5a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9cfeb721bcd3905f22ff1170d4f6c4657817d872689088cd6f081fce74c3b9b8"
+    sha256 cellar: :any_skip_relocation, ventura:       "9cfeb721bcd3905f22ff1170d4f6c4657817d872689088cd6f081fce74c3b9b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e395949652afc37d66373af18862cbcac33f559b9fa15b436dc42fbbfe3d7b5b"
   end
 
   depends_on "go" => :build

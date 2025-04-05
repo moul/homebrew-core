@@ -1,8 +1,8 @@
 class FluentBit < Formula
   desc "Fast and Lightweight Logs and Metrics processor"
   homepage "https://github.com/fluent/fluent-bit"
-  url "https://github.com/fluent/fluent-bit/archive/refs/tags/v3.2.8.tar.gz"
-  sha256 "60af0b45435e211375aa044e8bdd0588e28452872aff320549ef015be33331cf"
+  url "https://github.com/fluent/fluent-bit/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "ef9a479c8cc12e01de6682e0cfd21a0a5d335a0ab9be14bbca37211fbf428cad"
   license "Apache-2.0"
   head "https://github.com/fluent/fluent-bit.git", branch: "master"
 
@@ -12,12 +12,13 @@ class FluentBit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "327e62547f63baccedfa1141e2d111036fcba66f2ee8fbf0fd181545a8815389"
-    sha256 cellar: :any,                 arm64_sonoma:  "5d1b19f474b985836328928547ed9d5233c51c070257f4c5cdf094c3ecde7cd3"
-    sha256 cellar: :any,                 arm64_ventura: "70409cc17c0065b55edfa2b5b337155cc7f40c15f63e13872fa2b1f59c37ae42"
-    sha256 cellar: :any,                 sonoma:        "1dbfecb3b7a9ab0384a4f98a824819f2067f53af1d247f49bbed013862eee9bc"
-    sha256 cellar: :any,                 ventura:       "0af9d76bea778996c806d0244a79cb1ed56a6825d848af3f7bf9928bae5ad12e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec3703d53a0c8a2fee468aa2c2624a20ea63519942909cefbf96c0fbb8c06ba9"
+    sha256 cellar: :any,                 arm64_sequoia: "74c47d1ce2677dd4c383414e66d860c1b4090fbe6c79a07ec2e34ddaecb24d57"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b0cb73d2022316af625711758365079fc350ef07fe087da0c4c4d3f1990c1a5"
+    sha256 cellar: :any,                 arm64_ventura: "5bbc4aea7c2aa51d472a85aa04239a5b3a34c58b0906a3aaefa13d8605c3dd9b"
+    sha256 cellar: :any,                 sonoma:        "fde1e2b5cdb3c5e3e72820b2287ef180caf75fca89eb0c29f6ff1ec1cc5d4da6"
+    sha256 cellar: :any,                 ventura:       "852c9196040d453adf66407de1206e06c7ad9b298093603d991fe77a127d1f9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4cbc597cce999207095e78b6aff82a40299231b532b12e4697c127ddd512a91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83e4eb6d683d250ee6b4b70924833656599c6ecd14bc6f4f81bdbae4b9a8e6ae"
   end
 
   depends_on "bison" => :build
@@ -38,6 +39,7 @@ class FluentBit < Formula
 
     args = %w[
       -DFLB_PREFER_SYSTEM_LIB_LUAJIT=ON
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

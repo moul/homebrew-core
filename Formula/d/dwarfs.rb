@@ -1,23 +1,24 @@
 class Dwarfs < Formula
   desc "Fast high compression read-only file system for Linux, Windows, and macOS"
   homepage "https://github.com/mhx/dwarfs"
-  url "https://github.com/mhx/dwarfs/releases/download/v0.10.2/dwarfs-0.10.2.tar.xz"
-  sha256 "36767290a39f92782e41daaa3eb45e39550ad1a4294a6d8365bc0f456f75f00c"
+  url "https://github.com/mhx/dwarfs/releases/download/v0.11.3/dwarfs-0.11.3.tar.xz"
+  sha256 "5ccfc293d74e0509a848d10416b9682cf7318c8fa9291ba9e92e967b9a6bb994"
   license "GPL-3.0-or-later"
-  revision 4
 
   livecheck do
     url :stable
     regex(/^(?:release[._-])?v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ad2eaa193d6374af66ada7733b2e6fa2b6c27e347434f2b550735fee97441901"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff45598fc6847fb7c675937b4998a105cd5280c5164453ea2b4f25f7e0a202ea"
-    sha256 cellar: :any,                 arm64_ventura: "33256d84a1085f934f23d0179cad5f386f2830f7012eec15eab5a29623e891f6"
-    sha256 cellar: :any,                 sonoma:        "8cae0eecf71be61fb511813e80026b19bc6006b90a020f3c55c84cb8629f4b24"
-    sha256 cellar: :any,                 ventura:       "2b5d279136905a3665ccfca287ab813b453929107efd80e546be9754f5c20a74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42862236f005936ca20c4bc05d614280b3d592d5e32e55839677b16c4bb554c8"
+    sha256                               arm64_sequoia: "ee48a79a72ef1a1dc96d86b467a7b4c1a9fd8ddccf71c684d0932df726acddcc"
+    sha256                               arm64_sonoma:  "c94948fc5aee93e64a1c53d29df4589af17fd2454a49134502e55feaf83b81a9"
+    sha256                               arm64_ventura: "9bf358118fd31a0901d4141b3bb1e58334672d9f6809529db375b3a21f3a0716"
+    sha256 cellar: :any,                 sonoma:        "0788e7539e03265d6b2451299afc5cb2f8e1c86071bf9375fcc98caec84b6670"
+    sha256 cellar: :any,                 ventura:       "ab214e70ea62ad01c9c7ecbbfc3833cd14bcb89f7b7fea1715fda6fac3b27183"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89ad78dd543574f1d69a9c7cff4961e9c16d1fd0dfb6b020e7ef519276ce107a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d1adc2ca92720340ba458aa4d8003e90b011f01ef16f01236e8a1fda02c833e"
   end
 
   depends_on "cmake" => :build
@@ -58,6 +59,11 @@ class Dwarfs < Formula
   end
 
   def install
+    # Workaround for CMake 4 until https://github.com/facebook/folly/pull/2398
+    # This only goes into effect if it is higher than `cmake_minimum_required`
+    # so it only impacts submodules and not the main DwarFS which uses 3.28.0
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
@@ -80,7 +86,7 @@ class Dwarfs < Formula
 
       # Needed in order to find the C++ standard library
       # See: https://github.com/Homebrew/homebrew-core/issues/178435
-      ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/c++ -L#{Formula["llvm"].opt_lib} -lunwind"
+      ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/c++ -L#{Formula["llvm"].opt_lib}/unwind -lunwind"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

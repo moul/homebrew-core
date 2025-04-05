@@ -1,18 +1,17 @@
 class Kubevpn < Formula
   desc "Offers a Cloud-Native Dev Environment that connects to your K8s cluster network"
   homepage "https://www.kubevpn.dev"
-  url "https://github.com/kubenetworks/kubevpn/archive/refs/tags/v2.4.1.tar.gz"
-  sha256 "e734f22be1b18f379916059300a448a64ab84f8b9fea896750ef9cc3bd002315"
+  url "https://github.com/kubenetworks/kubevpn/archive/refs/tags/v2.5.1.tar.gz"
+  sha256 "3e6e45c422e946502b540e53d4ff2d56524d8cb9ba0a9fc402420b595500f92b"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c9f807b32245fbd8d9754cb6bb58e369851ac0c4e5d1cb0b4d958c29bb97ba1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b8a68419bf69937e88a4da864860714be16a5b870757c26741919e8dd337fc9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "49d1bea9b4c9a6e4b5aa269aac80281affb2640e93855f36fa688f7a116e7b22"
-    sha256 cellar: :any_skip_relocation, sonoma:        "45345c411c89d3545626049d31fc28bd0a1e7dec6689516553ca80bf3664471c"
-    sha256 cellar: :any_skip_relocation, ventura:       "68812a6bcc8b26e66cebc919d702347851c17d667f30414dcc2045dcfb8c180e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5165de9fc2dbaa9bcab06ef72a67bf6e14156fb5f5b857a2f37d6e7a51952a01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73cf5f4eb3d1a5879e9d841436c30131395c247739bf0c35a49244bac3665748"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3038ee6c1f1e1da7fa08454a22dc1db2b1f6aef0cbb4e1a4e8d29b88aa4eb73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "48618c8c9e722af1f0fe5eeb69836980637d660edd0158c3d2b54cce5f1bfa84"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b111f160f449ba541f4ca649c4e14da2913b3a415c0a596e6d434f3fc2f8904e"
+    sha256 cellar: :any_skip_relocation, ventura:       "2a248034749dc088498fc4ea5d84f6ba4f0ae5a19d0eaa5a2a21d9e0831b27cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "deb6d719d2dc3813ac96c488243be13d28ac10b1d22adc207bf141c4cb8d05a2"
   end
 
   depends_on "go" => :build

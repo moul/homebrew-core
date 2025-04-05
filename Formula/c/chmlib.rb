@@ -2,7 +2,6 @@ class Chmlib < Formula
   desc "Library for dealing with Microsoft ITSS/CHM files"
   homepage "http://www.jedrea.com/chmlib/"
   url "http://www.jedrea.com/chmlib/chmlib-0.40.tar.gz"
-  mirror "https://download.tuxfamily.org/slitaz/sources/packages/c/chmlib-0.40.tar.gz"
   sha256 "512148ed1ca86dea051ebcf62e6debbb00edfdd9720cde28f6ed98071d3a9617"
   license "LGPL-2.1-or-later"
 
@@ -27,6 +26,7 @@ class Chmlib < Formula
     sha256 cellar: :any,                 high_sierra:    "426b95744d071ad76399ee240400ab74bcec9057735cbfeb2d433501105060ef"
     sha256 cellar: :any,                 sierra:         "9781c76f933beca002df542d2db0644e51766568d9399f9e73dc39b9e896f539"
     sha256 cellar: :any,                 el_capitan:     "6b834a6ae6e95f8daaa726fd6ae1a2d3e60335f98862fea9e790c24e5a6411d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dc0799919a7cc91ec7505ec8e8a7290baa38342a10e4e4ca9017f417ffda95c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "61a085287bba377e847d027575fd848cbadc0f6b5bd8f2efc008cc54d8f32d32"
   end
 
@@ -41,7 +41,15 @@ class Chmlib < Formula
   patch :DATA
 
   def install
-    system "./configure", "--disable-io64", "--enable-examples", "--prefix=#{prefix}"
+    args = %W[
+      --disable-io64
+      --enable-examples
+      --prefix=#{prefix}
+    ]
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system "./configure", *args
     system "make", "install"
   end
 

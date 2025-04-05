@@ -1,17 +1,18 @@
 class Cspell < Formula
   desc "Spell checker for code"
   homepage "https://cspell.org"
-  url "https://registry.npmjs.org/cspell/-/cspell-8.17.5.tgz"
-  sha256 "8f2eabe7948718bc5b0833fdd68e4cf304140ecbc3ec501a7a59795a2ecc5861"
+  url "https://registry.npmjs.org/cspell/-/cspell-8.18.1.tgz"
+  sha256 "5c2d72afd2ca753946bffa74829cb8a24d57eb8fa14f63326157463f3a00b49c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6474dd6ac9362297069a3e3baaf42e53ed253f2ba5602b1f7b94783dc46e8443"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6474dd6ac9362297069a3e3baaf42e53ed253f2ba5602b1f7b94783dc46e8443"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6474dd6ac9362297069a3e3baaf42e53ed253f2ba5602b1f7b94783dc46e8443"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0feb6f04a93ca87c4a4de8bc04c1bef7cb97c6a79ce758e93d6520f3bb8d958"
-    sha256 cellar: :any_skip_relocation, ventura:       "c0feb6f04a93ca87c4a4de8bc04c1bef7cb97c6a79ce758e93d6520f3bb8d958"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6474dd6ac9362297069a3e3baaf42e53ed253f2ba5602b1f7b94783dc46e8443"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c7de9ec19160ae96bee1076a66166a6479a2960512ba8eeca13e71fdfee0d0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c7de9ec19160ae96bee1076a66166a6479a2960512ba8eeca13e71fdfee0d0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c7de9ec19160ae96bee1076a66166a6479a2960512ba8eeca13e71fdfee0d0a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aaf897168839f843fcf5807020eeda1baa0bfd3ff2b485723d1938ff4be2f28e"
+    sha256 cellar: :any_skip_relocation, ventura:       "aaf897168839f843fcf5807020eeda1baa0bfd3ff2b485723d1938ff4be2f28e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c7de9ec19160ae96bee1076a66166a6479a2960512ba8eeca13e71fdfee0d0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c7de9ec19160ae96bee1076a66166a6479a2960512ba8eeca13e71fdfee0d0a"
   end
 
   depends_on "node"

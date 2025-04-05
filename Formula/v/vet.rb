@@ -1,17 +1,17 @@
 class Vet < Formula
   desc "Policy driven vetting of open source dependencies"
   homepage "https://github.com/safedep/vet"
-  url "https://github.com/safedep/vet/archive/refs/tags/v1.9.6.tar.gz"
-  sha256 "024cee0a5af4130723eeb00be8f7d38434e68d62a430d61eb4bcb0536ea87122"
+  url "https://github.com/safedep/vet/archive/refs/tags/v1.9.9.tar.gz"
+  sha256 "8f639957b6964a8afa104f4dcd151c08143fafe1832435fbfab15a6abdd701a4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c4fa95cf1b36505d94e430819b54961f96cdef4acbbdcc491cd5ce5e81a9f76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7eebe25404ea1d1fe9a839dd626b45c1b98c0578930099d45aa34fd53ebc3f27"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5b01efb87d8962e669c99ff882d54ffb5e4dbf6ed76d5e8397f35434ead34fb1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b17add447f019b0b3796e4fece3d02145fde0bfec8070e51603ba4b3f1a44d0"
-    sha256 cellar: :any_skip_relocation, ventura:       "8f61050521245cb94787d012aeb16a0e0680460df5c3732b162b0e84d14e1159"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26d2d242fae6af8c65c4ff163b995ae10d346e7fb07fe0d879ad1199fee97b74"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7972b36137fd9ab2f77dd83288afef3438e88de4a3657ceb7897aaa737eedd3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc28e27e0c4baa179c80d7f715d47b5e9f5042920117f1de2918edb786459ac6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "70c9b936803bd56839ad2448bedf1d04ec1482b057f5cf3ba6a4bfa23fa1fa0e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d12d497b0128bc2aa933927edc41d183dc448c077c250d445fef7592106fe70"
+    sha256 cellar: :any_skip_relocation, ventura:       "171ddc008d44db530113d864446425620487083c5f2f830d7b22a0bdce3a7c03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9ea0d20e0619d75fd1663a27514db4b2bf9d3f624208cdddebb65a9ba1caea8"
   end
 
   depends_on "go"
@@ -24,7 +24,7 @@ class Vet < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/vet version 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/vet version 2>&1")
 
     output = shell_output("#{bin}/vet scan parsers 2>&1")
     assert_match "Available Lockfile Parsers", output

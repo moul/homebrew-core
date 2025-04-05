@@ -41,9 +41,9 @@ class Cmigemo < Formula
       "gcc"
     end
     system "make", os
+    ENV.deparallelize # Install can fail on multi-core machines unless serialized
     system "make", "#{os}-dict"
     system "make", "-C", "dict", "utf-8" if build.stable?
-    ENV.deparallelize # Install can fail on multi-core machines unless serialized
     system "make", "#{os}-install"
   end
 

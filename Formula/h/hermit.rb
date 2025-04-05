@@ -1,17 +1,17 @@
 class Hermit < Formula
   desc "Manages isolated, self-bootstrapping sets of tools in software projects"
   homepage "https://cashapp.github.io/hermit"
-  url "https://github.com/cashapp/hermit/archive/refs/tags/v0.44.3.tar.gz"
-  sha256 "3fc3ba4b6578d513f72a7366a9247b09e1f73c4fe5b8cf0e50376838a93615e8"
+  url "https://github.com/cashapp/hermit/archive/refs/tags/v0.44.5.tar.gz"
+  sha256 "cf5def9512ba8bda98a58a530688b1c9a730ee759ed50802bdc689608543888a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63599ef4c71fcf45d776447ccf5a0e20da62314fff20da21a048c6705a5536cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "860b8707b388b7a2bd39ee62c053461cc483b59ab003f11748058f8877f5415f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ebf1450f34b6c4ba6eed2757551c5cf0436e65ea91a74c91597f13b9b15b70dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2337e55d06bd6d71e5998a3aa76b00dc8973dc9bd510ad8e272be971a12f6256"
-    sha256 cellar: :any_skip_relocation, ventura:       "913fe1cd98795430936ac21f2b41c7f73a489db98019ea4776f4fb62e8ed8885"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00602b796943420000a8f6272ed172bee83e7c20db25cb2030180debac701cd9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae2fa718b9b90ab184e43ff65d656ba9c03f1948a3932f0d5957b1e6c2d87753"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60d995e0401664765da51a4ae7d613fb167b56b9ed97dac0b9bd48b49205dd28"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e075cb6aa76da1667a0c23a8bc79874d850b27ca3221504acfef832191ab56a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9bad02750adfdee33ee387908a64ece5de7876e3b9fe3a568c32a758f6baf866"
+    sha256 cellar: :any_skip_relocation, ventura:       "a113371cfd14144bd52282a38b6f7894eb7882ab2f42d3cd05c1906ce11615a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b9232c72493ffe355ab76313d97654d9626f54a89048f8a6c12f8c2de5a3872"
   end
 
   depends_on "go" => :build

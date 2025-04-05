@@ -1,27 +1,18 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https://livekit.io"
+  url "https://github.com/livekit/livekit-cli/archive/refs/tags/v2.4.2.tar.gz"
+  sha256 "10b5acc2c48949da60831769e01836a3b0226b2b86358fad714f40b70ea09da9"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit-cli.git", branch: "main"
 
-  stable do
-    url "https://github.com/livekit/livekit-cli/archive/refs/tags/v2.3.3.tar.gz"
-    sha256 "a01ce7e297566aab77f97fabf4a4fe13755a5039bd35a5e440c9e94630125bd2"
-
-    # version patch, upstream pr ref, https://github.com/livekit/livekit-cli/pull/521
-    patch do
-      url "https://github.com/livekit/livekit-cli/commit/9a8ecb16d1822d1ec5fe3d78df91ec93dd7e6f4b.patch?full_index=1"
-      sha256 "ca323f16e12ab9afaa129c27ecd24d82f18d68404b4d05d6dd0cdc43255278e1"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d6c5ff4844f6d3da36ea78a7ac94fc8b1ad086a66e27c997a8aef81dc210a32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d6c5ff4844f6d3da36ea78a7ac94fc8b1ad086a66e27c997a8aef81dc210a32"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8d6c5ff4844f6d3da36ea78a7ac94fc8b1ad086a66e27c997a8aef81dc210a32"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1179da87f66c3d90513b012262168a28e2c2976d32bfd337984f45ca4c1f68f7"
-    sha256 cellar: :any_skip_relocation, ventura:       "1179da87f66c3d90513b012262168a28e2c2976d32bfd337984f45ca4c1f68f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5431e35b11f5920ae906e70b52c6937ce1d445a2a7eb5d929072aa3e94791d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49fe53ebce3fcc0ebef25865166f1d7a6573b28524e6fd8df8b2f885660dd7a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49fe53ebce3fcc0ebef25865166f1d7a6573b28524e6fd8df8b2f885660dd7a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "49fe53ebce3fcc0ebef25865166f1d7a6573b28524e6fd8df8b2f885660dd7a2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b050e681113ad5624d64a161ee058900121a918347a7ff38a774bce66b7ec4f"
+    sha256 cellar: :any_skip_relocation, ventura:       "7b050e681113ad5624d64a161ee058900121a918347a7ff38a774bce66b7ec4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecf1377acb05c8cf5620450620f2fc290f66146cb42458a3c1b04e2001e34006"
   end
 
   depends_on "go" => :build

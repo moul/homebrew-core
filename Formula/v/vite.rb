@@ -1,17 +1,18 @@
 class Vite < Formula
   desc "Next generation frontend tooling. It's fast!"
   homepage "https://vitejs.dev/"
-  url "https://registry.npmjs.org/vite/-/vite-6.2.2.tgz"
-  sha256 "ab4de1c849b11191bf8847e9abc07912d314e96ccda5d12338974819344e4121"
+  url "https://registry.npmjs.org/vite/-/vite-6.2.5.tgz"
+  sha256 "9b04e5c1d46d830601d2e2fbf11b2503026b78ea406fd46c9fd6661b38370451"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a51a6fa21dc1b5e1c0cfd3eafbbe7283d5f697bb13fe328fb9d068308152c1c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "a51a6fa21dc1b5e1c0cfd3eafbbe7283d5f697bb13fe328fb9d068308152c1c5"
-    sha256 cellar: :any,                 arm64_ventura: "a51a6fa21dc1b5e1c0cfd3eafbbe7283d5f697bb13fe328fb9d068308152c1c5"
-    sha256 cellar: :any,                 sonoma:        "07241f8eda06f7ef18cbf9e0e21c09cd0ee532f90798b9fa3d814e8161197e8d"
-    sha256 cellar: :any,                 ventura:       "07241f8eda06f7ef18cbf9e0e21c09cd0ee532f90798b9fa3d814e8161197e8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54fbf6df42b89faac77078088977e503070e780afa0b8ec42c6d32b02d53ab58"
+    sha256 cellar: :any,                 arm64_sequoia: "aa39260849586a8fb2b29a3dbb3d389e4e478ba2b095f423719718f21d15666e"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa39260849586a8fb2b29a3dbb3d389e4e478ba2b095f423719718f21d15666e"
+    sha256 cellar: :any,                 arm64_ventura: "aa39260849586a8fb2b29a3dbb3d389e4e478ba2b095f423719718f21d15666e"
+    sha256 cellar: :any,                 sonoma:        "f3e3538962d6b3383ff1f810fe2dcd145078040abfd796158383e10b823d1cd6"
+    sha256 cellar: :any,                 ventura:       "f3e3538962d6b3383ff1f810fe2dcd145078040abfd796158383e10b823d1cd6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48a77f766ec6dee35e0556589f05b902e9acdba29216a59f819250a381cc0134"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c047b1b34881d7a0333a3545316e1b095d637ceb6b035fbff4d427825fe5e13b"
   end
 
   depends_on "node"

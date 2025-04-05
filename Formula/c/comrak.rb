@@ -1,18 +1,19 @@
 class Comrak < Formula
   desc "CommonMark + GFM compatible Markdown parser and renderer"
   homepage "https://github.com/kivikakk/comrak"
-  url "https://github.com/kivikakk/comrak/archive/refs/tags/v0.36.0.tar.gz"
-  sha256 "2192177a284992fcd437f6c248f70f0ca9df7e62aadc281ff049731c29ff3e10"
+  url "https://github.com/kivikakk/comrak/archive/refs/tags/v0.38.0.tar.gz"
+  sha256 "b09ef8f84e7f8c7ef6d248dd7fdae3f2ecc3e511b7ee7db20f3c196832353782"
   license "BSD-2-Clause"
   head "https://github.com/kivikakk/comrak.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0277b844b2b72772060d4e9e512e2766e85e6be81670765ff2b046fed63f0659"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f342591433ab74e398b2309f812c185c49e9077f9a32168e2dbbc678848bd0c2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3de0e5fbae08f90e2fa0f2b2292ce181616ebfefe77648c51a5db1da7142d434"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48cbd4221b625462ca6958b788a5624996db9af8153b52cbc359b611a26020e8"
-    sha256 cellar: :any_skip_relocation, ventura:       "8b054cb812585d2271d28c437dc98ddbe7d00e934ca6f2bfb3ef01ea2ff1eb7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f8f9fffb3c14d60f6a87416bb1e199c2b98eb37f9c8be9cc6e7430625bdf77e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57faeb8e33ae1bfb8f26cec0b9064102820f887337aa2101c20601ec4376e6d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6e76259e13e1aebbb8c3eebaf6916a1f6ede9bf748aa895f5c5cb692c084a36"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "af0e09958c334bbd1ced95d663cd5516089f138a5fbaaad9abc133754cca5566"
+    sha256 cellar: :any_skip_relocation, sonoma:        "212954f2f2c242dc6553c7a98cc3e9bfdd4e8b224e79befc4e0f9697a650f2de"
+    sha256 cellar: :any_skip_relocation, ventura:       "f163c91fdc5afa92630d51cbc15ca360e2ca806490c66d5b4fc7038df03b1275"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34e7c5323feb6b9f926c973f104a123fa2800328020902b5f1194af3826c6c46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80a5450bc283b11e2d099da9a1c1a3a95635aa08638de1b015379818bd952e7f"
   end
 
   depends_on "rust" => :build

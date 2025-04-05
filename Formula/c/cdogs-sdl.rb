@@ -35,7 +35,10 @@ class CdogsSdl < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DCDOGS_DATA_DIR=#{pkgshare}/", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DCDOGS_DATA_DIR=#{pkgshare}/",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+                    *std_cmake_args
     system "cmake", "--build", "build"
 
     bin.install %w[build/src/cdogs-sdl build/src/cdogs-sdl-editor]

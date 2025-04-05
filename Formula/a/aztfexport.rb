@@ -2,18 +2,18 @@ class Aztfexport < Formula
   desc "Bring your existing Azure resources under the management of Terraform"
   homepage "https://azure.github.io/aztfexport/"
   url "https://github.com/Azure/aztfexport.git",
-      tag:      "v0.16.0",
-      revision: "ec548e436a5229db4121e165eae0c3e4ac9e153b"
+      tag:      "v0.17.1",
+      revision: "aa75416cc3159a277f2e54cc2044ddea7122bc98"
   license "MPL-2.0"
   head "https://github.com/Azure/aztfexport.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c67c91a2255003dc1c3a8bf9ab140402eb5f80814fb26f7b0a33753cd1040307"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c67c91a2255003dc1c3a8bf9ab140402eb5f80814fb26f7b0a33753cd1040307"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c67c91a2255003dc1c3a8bf9ab140402eb5f80814fb26f7b0a33753cd1040307"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8e2cb0d3ad411bb655e9a954cbfb9a907540f70272476a72f4bf7284d674887"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8e2cb0d3ad411bb655e9a954cbfb9a907540f70272476a72f4bf7284d674887"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d28e7c27f5c43bca47a0d39e5df2288d3004575c1dc01130bfd1ad340e9a222b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "494fd1d33cf38dae763505225a477cfe42730434250c67aeb314d1c5283948c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "494fd1d33cf38dae763505225a477cfe42730434250c67aeb314d1c5283948c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "494fd1d33cf38dae763505225a477cfe42730434250c67aeb314d1c5283948c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff3e1fb1e23a62f75599e01e3a5330d3a5aedd11993183b27f3c5e47def155d0"
+    sha256 cellar: :any_skip_relocation, ventura:       "ff3e1fb1e23a62f75599e01e3a5330d3a5aedd11993183b27f3c5e47def155d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b3c53c15e3bb6b3ad58789f9d95c18f3b7f04201e963a23272655fabec4bdfb"
   end
 
   depends_on "go" => :build

@@ -1,17 +1,18 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.107.1.tgz"
-  sha256 "922faf2e4dcd5f1efd69cbbe84688e04d30c50e768227ad163b73d21d5905c50"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.108.0.tgz"
+  sha256 "10934bcc1d7d86ac424cdd57116ab19b64916811e81245e315d46d87f57e0a40"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b5138e2d77d77eb4dd7166a43aa85bda377aebbf7c96b9faa517e3f6150c64fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f135aadc873a0e7b357c3d0ce56b62c62e4723caa5b419fa24b6f7c51c8aa7f"
-    sha256 cellar: :any,                 arm64_ventura: "38c91de2c54763bc5c15443e775947ea22024f9fc8a0dd12415651cf868b617e"
-    sha256                               sonoma:        "ea83fae169e99ecf7d9ea478efe9159f6b8024d9f05467b088191555eec656c0"
-    sha256                               ventura:       "c9e47f65cd2e37eee61e71af30d4b4e3dbea61ae7dd6bc27f782e9e3e850091c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caf9ca1e2d43aa797cd1d430843ba524eedae9ca4bdd1b976313e263f73e4dfb"
+    sha256 cellar: :any,                 arm64_sequoia: "31840591fd3dda61dc29b14d8e6dd2b2bd79c1a241f173305d3b1a80b2e9383a"
+    sha256 cellar: :any,                 arm64_sonoma:  "32a1e7f3f243c71c5159e9a58b7b47bd352b6f2a69070a570d982a66c611d713"
+    sha256 cellar: :any,                 arm64_ventura: "3a8e7e2d8988b4bd80270932e229948c9df407eb0f46439afca1a112c5051551"
+    sha256                               sonoma:        "d22aaaaf284929b09fc882f7b3598fba61a3824cd79bde24a5306d470c9578b3"
+    sha256                               ventura:       "c3e8a57722460c9114bc0e57c286fcda5d8d1d958f208e81c995b3ab24602fbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ea40c4066508086a2881d010e8ece8b3c52c9a60ec5415603897c8e7ba49fb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14aa18bde09569524f697b1ea3c02b8cc3b9c6d1b3e3636ec00180bc4cfc2d7d"
   end
 
   depends_on "node"

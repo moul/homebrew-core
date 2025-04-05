@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-24.2.8.tar.xz"
-  sha256 "999d0a854f43864fc098266aaf25600ce7961318a1e2e358bff94a7f53580e30"
+  url "https://archive.mesa3d.org/mesa-25.0.3.tar.xz"
+  sha256 "5ff426ed6ce0588fd96d18975bdff451ae2ab2fe98b5d1528842ee71ec66711b"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -23,57 +23,72 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "59d25f8ac493c61555438878dd9488b3ec7ede62aacc7306f689a6997c32cf14"
-    sha256 arm64_sonoma:  "9924126d64e4933dbdddd6fcf94bcf3d03552e4b0c5e83d402adf6e7c195f49d"
-    sha256 arm64_ventura: "126e0420f890a18fca9007e5c84e78c757144467c204b54695e9c100309991de"
-    sha256 sonoma:        "f06a41a3cdfda318809abeff6441638e49897f8260f26f1895b1ac226d9f9ae9"
-    sha256 ventura:       "6eb15ed0640b9324b26b24659c36a6669fb823b463791d75dd7dcf3ffc885ec1"
-    sha256 x86_64_linux:  "85a6f29e14a8b813b6c7f8edade7bb850e630656220682f6f4c137bd5f44152f"
+    sha256 arm64_sequoia: "20ef139b1b2bf8c241b050e32adf3257454a6fcd720c8edde6afafb54d3efee2"
+    sha256 arm64_sonoma:  "d3dbac5ced158853a58d52185409de8a728f0e85473e09cdb3da6b43e8f4607b"
+    sha256 arm64_ventura: "76f044bde4461e2d1474f07f02ee00c342879fc578561b916b72e0583c4b4b56"
+    sha256 sonoma:        "c0dd4f775ad3ba935beccb4ff5880f05e385ee1c5f86ef48b8e0d6f447fe1fba"
+    sha256 ventura:       "1f34b6fd57f3f35e643ae9af4d980dd697892ecdbf73e78d9ba255a9673090cd"
+    sha256 arm64_linux:   "758a414828ca52d42ec9412910ef61d114bcd77a9f4a8b6021bfd5abd082ab26"
+    sha256 x86_64_linux:  "5cd387e8d900ede2c1af59b083a3d7de2e5ea61b4ca8dfe367950ff7d3c57b8d"
   end
 
+  depends_on "bindgen" => :build
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
+  depends_on "glslang" => :build
+  depends_on "libxrandr" => :build
+  depends_on "libxrender" => :build
+  depends_on "libxshmfence" => :build
   depends_on "libyaml" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.13" => :build
+  depends_on "rust" => :build
   depends_on "xorgproto" => :build
 
+  depends_on "libclc" # OpenCL support needs share/clc/*.bc files at runtime
+  depends_on "libpng"
   depends_on "libx11"
   depends_on "libxcb"
   depends_on "libxext"
   depends_on "libxfixes"
-  depends_on "libxrandr"
+  depends_on "llvm"
+  depends_on "spirv-llvm-translator"
+  depends_on "spirv-tools"
+  depends_on "zstd"
 
   uses_from_macos "flex" => :build
   uses_from_macos "expat"
-  uses_from_macos "llvm"
   uses_from_macos "zlib"
 
   on_linux do
+    depends_on "directx-headers" => :build
+    depends_on "gzip" => :build
+    depends_on "libva" => :build
+    depends_on "libvdpau" => :build
+    depends_on "valgrind" => :build
+    depends_on "wayland-protocols" => :build
+
     depends_on "elfutils"
-    depends_on "glslang"
-    depends_on "gzip"
-    depends_on "libclc"
     depends_on "libdrm"
-    depends_on "libva"
-    depends_on "libvdpau"
     depends_on "libxml2" # not used on macOS
     depends_on "libxshmfence"
-    depends_on "libxv"
     depends_on "libxxf86vm"
     depends_on "lm-sensors"
-    depends_on "spirv-llvm-translator"
-    depends_on "spirv-tools"
-    depends_on "valgrind"
     depends_on "wayland"
-    depends_on "wayland-protocols"
-    depends_on "zstd"
+
+    on_arm do
+      depends_on "pycparser" => :build
+    end
+
+    on_intel do
+      depends_on "cbindgen" => :build
+    end
   end
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/fa/0b/29bc5a230948bf209d3ed3165006d257e547c02c3c2a96f6286320dfe8dc/mako-1.3.6.tar.gz"
-    sha256 "9ec3a1583713479fae654f83ed9fa8c9a4c16b7bb0daba0e6bbebff50c0d983d"
+    url "https://files.pythonhosted.org/packages/62/4f/ddb1965901bc388958db9f0c991255b2c469349a741ae8c9cd8a562d70a6/mako-1.3.9.tar.gz"
+    sha256 "b5d65ff3462870feec922dbccf38f6efb44e5714d7b593a656be86663d8600ac"
   end
 
   resource "markupsafe" do
@@ -101,25 +116,43 @@ class Mesa < Formula
   end
 
   def install
+    # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
+    # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
+    # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
+    if OS.mac? && MacOS.version < :sequoia
+      env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
+      ENV.remove env_vars, /(^|:)#{Regexp.escape(Formula["expat"].opt_prefix)}[^:]*/
+      ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
+    end
+
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources.reject { |r| OS.mac? && r.name == "ply" }
     ENV.prepend_path "PYTHONPATH", venv.site_packages
     ENV.prepend_path "PATH", venv.root/"bin"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}" if OS.mac?
 
     args = %w[
       -Db_ndebug=true
+      -Dopengl=true
       -Dosmesa=true
+      -Dstrip=true
+      -Dllvm=enabled
+      -Dgallium-drivers=auto
+      -Dvideo-codecs=all
+      -Dgallium-opencl=icd
+      -Dgallium-rusticl=true
     ]
-    if OS.mac?
-      args << "-Dgallium-drivers=softpipe"
+    args += if OS.mac?
+      %w[
+        -Dvulkan-drivers=swrast
+        -Dvulkan-layers=intel-nullhw,overlay,screenshot
+        -Dtools=etnaviv,glsl,nir,nouveau,asahi,imagination,dlclose-skip
+      ]
     else
-      args += %w[
-        -Ddri3=enabled
+      %w[
         -Degl=enabled
         -Dgallium-extra-hud=true
         -Dgallium-nine=true
-        -Dgallium-omx=disabled
-        -Dgallium-opencl=icd
         -Dgallium-va=enabled
         -Dgallium-vdpau=enabled
         -Dgallium-xa=enabled
@@ -129,22 +162,15 @@ class Mesa < Formula
         -Dglx=dri
         -Dintel-clc=enabled
         -Dlmsensors=enabled
-        -Dllvm=enabled
         -Dmicrosoft-clc=disabled
-        -Dopengl=true
         -Dplatforms=x11,wayland
         -Dshared-glapi=enabled
-        -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,lima
+        -Dtools=drm-shim,dlclose-skip,etnaviv,freedreno,glsl,intel,lima,nir,nouveau,asahi,imagination
         -Dvalgrind=enabled
-        -Dvideo-codecs=vc1dec,h264dec,h264enc,h265dec,h265enc
-        -Dvulkan-drivers=amd,intel,intel_hasvk,swrast,virtio
-        -Dvulkan-layers=device-select,intel-nullhw,overlay
+        -Dvulkan-drivers=auto
+        -Dvulkan-layers=device-select,intel-nullhw,overlay,screenshot
+        --force-fallback-for=indexmap,paste,pest_generator,roxmltree,syn
       ]
-      if Hardware::CPU.intel?
-        args << "-Dgallium-drivers=r300,r600,radeonsi,nouveau,virgl,svga,softpipe,llvmpipe,i915,iris,crocus,zink"
-      end
-      # Strip executables/libraries/object files to reduce their size
-      args << "-Dstrip=true"
     end
 
     system "meson", "setup", "build", *args, *std_meson_args
@@ -169,16 +195,7 @@ class Mesa < Formula
     end
 
     %w[glxgears.c gl_wrap.h].each { |r| resource(r).stage(testpath) }
-    flags = %W[
-      -I#{include}
-      -L#{lib}
-      -L#{Formula["libx11"].lib}
-      -L#{Formula["libxext"].lib}
-      -lGL
-      -lX11
-      -lXext
-      -lm
-    ]
-    system ENV.cc, "glxgears.c", "-o", "gears", *flags
+    flags = shell_output("pkgconf --cflags --libs gl x11 xext").chomp.split
+    system ENV.cc, "glxgears.c", "-o", "gears", *flags, "-lm"
   end
 end

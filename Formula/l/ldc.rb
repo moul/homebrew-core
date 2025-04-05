@@ -1,9 +1,10 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://github.com/ldc-developers/ldc/releases/download/v1.40.0/ldc-1.40.0-src.tar.gz"
-  sha256 "80a3ddd7b7292818cdf6c130e55f1246a19b5fce96139a49b45ccf4e2be99e5f"
+  url "https://github.com/ldc-developers/ldc/releases/download/v1.40.1/ldc-1.40.1-src.tar.gz"
+  sha256 "b643bee2ee6f9819084ef7468cf739257974a99f3980364d20201bc806a4a454"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
   livecheck do
@@ -12,20 +13,20 @@ class Ldc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sequoia: "e808f999194ca3eba130a0af7a1d22dc3f4b3517585ac8cc9c7683b297660871"
-    sha256                               arm64_sonoma:  "f1d86593fcaea9f4b538b3fbe5d670f0b34fad8e164b6f065f6bd789e5628fe8"
-    sha256                               arm64_ventura: "e5c0f5489f286dd3e95a96a7bd5e83d2ee3fc603492ff5a36379332b25215b47"
-    sha256                               sonoma:        "ac627761215658218e7ada36064408e571b6aab4478a269e51d9f2e1f1e35560"
-    sha256                               ventura:       "f7991b66fa0f9fe37b009ff096d3ab0800f4707ed1e594b20082fedd57c2ba82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efc8a940fd3aa01005a8b9f646eb8937da4c98d1141a4f7c661dee6aeead8fe4"
+    sha256                               arm64_sequoia: "bf62f0e0c7a7eb72db23404decbcb150d0e45b1562db44df733fc7f325c76d44"
+    sha256                               arm64_sonoma:  "4d22f4d7c6623ceea882c608f008218b96deac008d5e2902c34ccc79fb8df50a"
+    sha256                               arm64_ventura: "ef232af8cbe6880220437658f33e946d899f880da8f726d21a23e3d0720ffff5"
+    sha256                               sonoma:        "bc74c7e7324ee29cc9eb33f8c3580ba4185640bc28c0515aa82603657f02d64f"
+    sha256                               ventura:       "aac0761e4cba1a2dbb862cd2f3b4e3899bd76e6738016cb24f33885eef355c73"
+    sha256                               arm64_linux:   "2b685946656c81c99e5a1ce6a2c4b8ef77c320cda2bb0a3f33638dd7e7a5d345"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b644f70c0fa431945753c3bd4cc59f02febdc4569a17517fca3f0e6e7e9c0ba"
   end
 
   depends_on "cmake" => :build
   depends_on "libconfig" => :build
   depends_on "pkgconf" => :build
-  depends_on "lld"
-  depends_on "llvm"
+  depends_on "lld@19" => :test
+  depends_on "llvm@19" # LLVM 20 PR: https://github.com/ldc-developers/ldc/pull/4843
   depends_on "zstd"
 
   uses_from_macos "libxml2" => :build
@@ -94,7 +95,8 @@ class Ldc < Formula
     D
     system bin/"ldc2", "test.d"
     assert_match "Hello, world!", shell_output("./test")
-    with_env(PATH: "#{llvm.opt_bin}:#{ENV["PATH"]}") do
+    lld = deps.map(&:to_formula).find { |f| f.name.match?(/^lld(@\d+(\.\d+)*)?$/) }
+    with_env(PATH: "#{lld.opt_bin}:#{ENV["PATH"]}") do
       system bin/"ldc2", "-flto=thin", "--linker=lld", "test.d"
       assert_match "Hello, world!", shell_output("./test")
       system bin/"ldc2", "-flto=full", "--linker=lld", "test.d"

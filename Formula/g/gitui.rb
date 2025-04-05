@@ -4,6 +4,7 @@ class Gitui < Formula
   url "https://github.com/extrawurst/gitui/archive/refs/tags/v0.27.0.tar.gz"
   sha256 "55a85f4a3ce97712b618575aa80f3c15ea4004d554e8899669910d7fb4ff6e4b"
   license "MIT"
+  head "https://github.com/gitui-org/gitui.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2b153db2c3519ec2f197cd128b34732ec2e2b90355d7f05e46629853060e5a9d"
@@ -11,6 +12,7 @@ class Gitui < Formula
     sha256 cellar: :any,                 arm64_ventura: "911bfd33ff0f35e6f39dd2ae4b472fb2bc42cc51aa378c2b0d4a4280f6cf103a"
     sha256 cellar: :any,                 sonoma:        "c734edd0329e21b2d5f08cc847f9780eed6eb51e27e029d807270f140ef4e22e"
     sha256 cellar: :any,                 ventura:       "031988daf2b09dee6f249501354de183538753578d99fc61432da8ba77df4384"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb2397cc161b3efcd5b6b7957d607ca1102ad158117f0c3f8358b4134c6e6b6a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "92f54255b0500c4831f812986017344dcfd8c7a971a994de024e945df3f4c886"
   end
 

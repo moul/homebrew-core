@@ -2,17 +2,18 @@ class RustAnalyzer < Formula
   desc "Experimental Rust compiler front-end for IDEs"
   homepage "https://rust-analyzer.github.io/"
   url "https://github.com/rust-lang/rust-analyzer.git",
-       tag:      "2025-03-17",
-       revision: "b0632f749e6abf0f82f71755d7eaca4884c1a808"
+       tag:      "2025-03-31",
+       revision: "fb133c8c8064d9f18f19eae8721347872f1679e4"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6125e569e6f461668ecacc9a9bcaeec798e4e15d382c103f3bc206fc2e34afa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18b3f9fafabf496800ca8ae0347cbef8b3d8aec7cef00d242ca6055668eb386d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b99d3898df6764892d9f81748cf490b144dddcffd42741b707d9b8680cf4e1a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68286fc369018e85b33f641c24e4806a4b384052fe9888a4443f65dfa4ffa10d"
-    sha256 cellar: :any_skip_relocation, ventura:       "ac958c91c098a1fe2e003d3adb44abc2bf6d4b9dd4e1994fb899f59f13c8ca08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dd4706fcaabce2b0403b084113fb73e4729b6ab125367211c997f969b8cb26a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f45667d5434463e6fb64dd24ca61fb55fc412cc29bf69f303e01d76beaffeb02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "795f33008809c0fb990831bd51916a27506d1e78ad77c4297b287cc437f17847"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "edcc704047cf5352ae43ffe8603cae3b5c1e70fdd2769f55ff9291a94dc5ca55"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04ed650a293b0943b051c22b956a799bc5e1f62d49f4d5446c35ad67c3897d5a"
+    sha256 cellar: :any_skip_relocation, ventura:       "5d5d9c07e477a4c7b06b148f51c3f79dfec94067dcea75450c5b7ed5c08c861b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd3897a8b1a7ccf6b6693a6fe3cbe4d4a7e8c67b4d61d4cf4f2640f9ded34029"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9276e2dc37be2ba809954f2a7183af93a40a323fea76d8718ef0d3dc03d0711b"
   end
 
   depends_on "rust" => :build

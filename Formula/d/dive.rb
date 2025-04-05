@@ -1,18 +1,18 @@
 class Dive < Formula
   desc "Tool for exploring each layer in a docker image"
   homepage "https://github.com/wagoodman/dive"
-  url "https://github.com/wagoodman/dive/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "2b69b8d28220c66e2575a782a370a0c05077936ae3ce69180525412fcca09230"
+  url "https://github.com/wagoodman/dive/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "2a9666e9c3fddd5e2e5bad81dccda520b8102e7cea34e2888f264b4eb0506852"
   license "MIT"
-  revision 1
+  head "https://github.com/wagoodman/dive.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44b9241dc0d0cedd1eec7b294b1fcfea2f01afc319709b88ad5ba61fb7c69df4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44b9241dc0d0cedd1eec7b294b1fcfea2f01afc319709b88ad5ba61fb7c69df4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44b9241dc0d0cedd1eec7b294b1fcfea2f01afc319709b88ad5ba61fb7c69df4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8e2e5f58c3bd4a14dd5439a912ad552fe5396fe9d2e318995fa1a0e50c7ea275"
-    sha256 cellar: :any_skip_relocation, ventura:       "8e2e5f58c3bd4a14dd5439a912ad552fe5396fe9d2e318995fa1a0e50c7ea275"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e45819927ba03dad0ff53a6549135d7bfc7b84c6e49ad6cac64829fa13e124ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f09a27e21a4b76122d74e9a776219ab7377efaf30dff7d8d7e3016aac375d14a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f09a27e21a4b76122d74e9a776219ab7377efaf30dff7d8d7e3016aac375d14a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f09a27e21a4b76122d74e9a776219ab7377efaf30dff7d8d7e3016aac375d14a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "676549efe805835ddb82aed795bd168b5ea9bb07ffbdb6500965c59474e035ca"
+    sha256 cellar: :any_skip_relocation, ventura:       "676549efe805835ddb82aed795bd168b5ea9bb07ffbdb6500965c59474e035ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0eea0c4d2dc63bfa43c121fc136bd18ba3b1fed57f5e3aedae0ca2c57b35097"
   end
 
   depends_on "go" => :build

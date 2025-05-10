@@ -1,17 +1,18 @@
 class Undercutf1 < Formula
   desc "F1 Live Timing TUI for all F1 sessions with variable delay to sync to your TV"
   homepage "https://github.com/JustAman62/undercut-f1"
-  url "https://github.com/JustAman62/undercut-f1/archive/refs/tags/v3.1.44.tar.gz"
-  sha256 "e2016cf19b184a44557d4a89fe66937fa895abe834ee1b9b4c496ee0c7be6129"
+  url "https://github.com/JustAman62/undercut-f1/archive/refs/tags/v3.1.70.tar.gz"
+  sha256 "99a9afa66e9f97596ddacea0f1cc183736f6c3ab4f9f331380bcb015b0d91ccb"
   license "GPL-3.0-only"
   head "https://github.com/JustAman62/undercut-f1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "393c39bf49ccad140758dd223b8b28310c0d71f7eb782b8b0c9b0d69a73057a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5f6e5a70f920b28ba10a791ac64fcc9d7cddd1d88f3bd8a0a6ee81d1c07bc8d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "890534b7dd46ec41771a661304d7f0c4083f6907a96b9a9b484feffe8ff45d8d"
-    sha256 cellar: :any_skip_relocation, ventura:       "f5b64f54beafee397e678b7a3d48e4b4309eba91947fd2c1e1d3dcedea07565e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9df08d65910fc9db57280ab10eb55c321f47635e9053df447e5c501b5fce3bba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d15f3c92e58295630b9f958ec5d5b033e6ad9a66120da04245fdb5f1c17a4bed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5de72159df4ff87fdb08da169196044f390a2e5b809b9bd1f565a2b99bfeff5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "db29e0d5d38fd1ee455b22c7ab27d708adfeb4ee7d3678b45e463717ccd0eec6"
+    sha256 cellar: :any_skip_relocation, ventura:       "de573df2e30566da948c3b5a5513e7bd6d36b6c3f9a537bd8e28d2afb10d928b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b459e3f9a31fb2890cf4aa01480360155ea5ab13d1b8e226fcf00872949e04e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84e3cf23b2b82aca2461119884fd10fc9f84a1b74e14601c789adfdb7a9654d6"
   end
 
   depends_on "dotnet"

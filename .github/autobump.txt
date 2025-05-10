@@ -606,6 +606,7 @@ coder
 codesnap
 codespell
 codevis
+codex
 cog
 coin3d
 coinutils
@@ -1001,6 +1002,7 @@ exim
 exiv2
 exodriver
 exploitdb
+extra-cmake-modules
 exult
 eza
 f2
@@ -1486,6 +1488,7 @@ hcxtools
 heartbeat
 hebcal
 helix
+hellwal
 helm
 helm-docs
 helm-ls
@@ -1731,6 +1734,7 @@ kamel
 kanata
 kapacitor
 kapp
+karchive
 karmadactl
 kaskade
 katago
@@ -1740,6 +1744,7 @@ kcat
 kcgi
 kcov
 kcptun
+kdoctools
 kea
 keep-sorted
 keeper-commander
@@ -1752,6 +1757,7 @@ keyring
 kfr
 khal
 ki
+ki18n
 kickstart
 kics
 killport
@@ -1783,6 +1789,7 @@ krep
 krew
 ksh93
 ksops
+ktexttemplate
 ktfmt
 ktor
 kty
@@ -3086,6 +3093,7 @@ risor
 river
 rizin
 rke
+rlwrap
 rmlint
 rmw
 rnr
@@ -3597,6 +3605,7 @@ tgui
 thanos
 the-way
 theharvester
+threadweaver
 threatcl
 thrift
 thriftgo
@@ -3626,6 +3635,7 @@ tmt
 tmux-mem-cpu-load
 tmux-sessionizer
 tmux-xpanes
+tmuxai
 tmuxp
 tmx
 toast
@@ -3826,7 +3836,11 @@ vte3
 vtk
 vue-language-server
 vulkan-extensionlayer
+vulkan-headers
+vulkan-loader
 vulkan-profiles
+vulkan-tools
+vulkan-utility-libraries
 vulkan-validationlayers
 vulkan-volk
 vulsio-gost
@@ -3982,6 +3996,7 @@ yaws
 yaz
 yazi
 ydiff
+yeet
 yewtube
 yices2
 ykman

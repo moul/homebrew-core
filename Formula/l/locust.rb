@@ -3,18 +3,18 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/6d/90/55d4fbc8911e5e6ec4072caaca9e8b7b2b11279435c0d1330c9966b0c898/locust-2.36.2.tar.gz"
-  sha256 "604aff7535f5a83b7f666d32373b2dc74ad260c7c3d1dc274f4c82844be72eb6"
+  url "https://files.pythonhosted.org/packages/6a/8f/e358f3e3850a4057c05f635d94e27a2fe739301fae5f2ece230a6a8ea282/locust-2.37.1.tar.gz"
+  sha256 "97951b319cb08c8853ef76d4732359f04617d27be41c1bf91469b9a528b652e0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6f0d3f74a28617f9e18af254aa6852509ec30ab1540c027e5892710e20ac0022"
-    sha256 cellar: :any,                 arm64_sonoma:  "29f147bcf2b50d70f135948ef0414cda8e5c66f1eefba76fd04b043f37b0ea4d"
-    sha256 cellar: :any,                 arm64_ventura: "f6f786f7cae834337385f4ac88c092ad53231c365c8d65807a67b17043e0b690"
-    sha256 cellar: :any,                 sonoma:        "5f7fe3d90925a6cd47c1cb672da590b8383b87c249a8114debaecc89721396e2"
-    sha256 cellar: :any,                 ventura:       "bbdd39eb4353b4feba7aed0c2b00c3e7dda6893346a0a39ba5d2643fe0a7704d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5600911fff0d30e47c64416caead382d56093011e1fd6af8441f46ddd5064d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b4d29329f1a8a99eb34440dd0525863530fcff0ca75021aa6cb7d699a382e70"
+    sha256 cellar: :any,                 arm64_sequoia: "6b1a8f0959c887bb34e2bb70e08ea5736ad1a3f3db0fe1829f84d6d43997f16c"
+    sha256 cellar: :any,                 arm64_sonoma:  "45a89ef095a29f5bfeb425b348f821534d8f56f6e7f7bc31ae56be020771e809"
+    sha256 cellar: :any,                 arm64_ventura: "1b1b7a071ede35833e7bd49f34ccdf93a9b1e98a97811d66b52d5eb12069c3ca"
+    sha256 cellar: :any,                 sonoma:        "59d2b0884abcb525bd2625ebf4a46ecf527e683781460891fcf27c5dcaec7fbe"
+    sha256 cellar: :any,                 ventura:       "cb3f148777fe52a45a8c58148239043a9cb2bdd5f8868dbb34ff82f6f36dd8bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e600e8dcc60f339bc2af442ee4a4352ddd77e1da28649545f23d658e1fcf9b0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae1ecba0127225994115f103f071ac3489badcd92fd51b4c246c020a37e2d58f"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -39,8 +39,8 @@ class Locust < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
@@ -104,8 +104,8 @@ class Locust < Formula
   end
 
   resource "locust-cloud" do
-    url "https://files.pythonhosted.org/packages/e9/0a/19a1fe79968b499e2ffd2a24b33335ea1383b32d2d7c7de2874e196c4c16/locust_cloud-1.20.5-py3-none-any.whl"
-    sha256 "db76c98883a3bf114e1994af618a98207595fc3767800d9674c42e43e5e80eff"
+    url "https://files.pythonhosted.org/packages/22/6b/886a625ec10c429091473abfe96ccddff84e7de97dfc2abce450e2fc3ff7/locust_cloud-1.21.2.tar.gz"
+    sha256 "f780dccc41910cc406da7e67adc411eab6e02dc198eb0c0e037347632d75791a"
   end
 
   resource "markupsafe" do
@@ -149,8 +149,8 @@ class Locust < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/bb/71/b6365e6325b3290e14957b2c3a804a529968c77a049b2ed40c095f749707/setuptools-79.0.1.tar.gz"
-    sha256 "128ce7b8f33c3079fd1b067ecbb4051a66e8526e7b65f6cec075dfc650ddfa88"
+    url "https://files.pythonhosted.org/packages/70/dc/3976b322de9d2e87ed0007cf04cc7553969b6c7b3f48a565d0333748fbcd/setuptools-80.3.1.tar.gz"
+    sha256 "31e2c58dbb67c99c289f51c16d899afedae292b978f8051efaf6262d8212f927"
   end
 
   resource "simple-websocket" do

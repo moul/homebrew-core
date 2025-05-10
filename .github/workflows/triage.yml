@@ -251,6 +251,7 @@ jobs:
                 openfast|\
                 openvino|\
                 pcl|\
+                percona-server|\
                 ponyc|\
                 pytorch|\
                 qt|\
@@ -277,6 +278,7 @@ jobs:
                 dav1d|\
                 freetype|\
                 gcc|\
+                gettext|\
                 ghc|\
                 glib|\
                 gsettings-desktop-schemas|\
@@ -312,6 +314,7 @@ jobs:
                 python@3.13|\
                 rav1e|\
                 rust|\
+                sdl2|\
                 shared-mime-info|\
                 suite-sparse|\
                 qt|\

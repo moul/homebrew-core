@@ -1,16 +1,16 @@
 class Infat < Formula
   desc "Tool to set default openers for file formats and url schemes on MacOS"
   homepage "https://github.com/philocalyst/infat"
-  url "https://github.com/philocalyst/infat/archive/refs/tags/v2.3.3.tar.gz"
-  sha256 "d07e1331d8afc54302c09e35c392255be8484d4fc1c30a953190e892115253a2"
+  url "https://github.com/philocalyst/infat/archive/refs/tags/v2.3.4.tar.gz"
+  sha256 "5dd263952f49617ce688d3ec6c043e3dce8c5766fab9a4aef31f99c010c1ccd5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5f699e34947ef6255614d5ef43ad57750e023da0df9a78cee225e21d6550c4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13f0d101acfc9a1f39ccc323f3b9cf1565fd1e86166467066189d31dbba8c005"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "81973d25b586288015ef7f7c5e0900939dec2507109d71ead89e77765cd36609"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c22114954d58710a37a7d9786ce99a3cbf807b53dd8ec78ef330770f4e0d2f26"
-    sha256 cellar: :any_skip_relocation, ventura:       "4465edf89ddbe68a0a267dac3577a9ac40b37f1e8e5318a21dea1a2f0153839c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e263c627344fa10c4373c6f7f76b96bbf090703a2e1761ed247f04f385deaf56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db3419a6e095edcea41b5a029dcbc2aa1a94b70c684e42c67e38019de59dbf69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0c57aaf12f258985b59315f828aaee79cb6fda188dca639a29407205cef827ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "76e0af0201e4226d74e7b95c0217b0b3a1bdd21f98de04cf2c7f07a7d4bb6d3a"
+    sha256 cellar: :any_skip_relocation, ventura:       "be3d4afc2a8963e9e6bdafdf6b6dd7522b5bb0594fabd7bec6a669eeeaac78e9"
   end
 
   depends_on :macos
@@ -19,6 +19,8 @@ class Infat < Formula
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release", "--static-swift-stdlib"
     bin.install ".build/release/infat"
+
+    generate_completions_from_executable(bin/"infat", "--generate-completion-script")
   end
 
   test do

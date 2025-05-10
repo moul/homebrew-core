@@ -1,19 +1,19 @@
 class Ftxui < Formula
   desc "C++ Functional Terminal User Interface"
   homepage "https://github.com/ArthurSonzogni/FTXUI"
-  url "https://github.com/ArthurSonzogni/FTXUI/archive/refs/tags/v6.1.1.tar.gz"
-  sha256 "eb3546cc662c18f0c3f54ece72618fe43905531d2088e4ba8081983fa8986b95"
+  url "https://github.com/ArthurSonzogni/FTXUI/archive/refs/tags/v6.1.9.tar.gz"
+  sha256 "45819c1e54914783d4a1ca5633885035d74146778a1f74e1213cdb7b76340e71"
   license "MIT"
   head "https://github.com/ArthurSonzogni/FTXUI.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "43e131da77307e2d821862475ffc19abe5b9c1e5deaf2c0a4e8e23a32b768d4c"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ae886feb179dba64d7bf7abe9f9c6da85e73557c5f7d863d845f083f1d4aa9d"
-    sha256 cellar: :any,                 arm64_ventura: "907524828d75c8312aa28ec0695e0c6884ef24799762f21286a5cac794409cc0"
-    sha256 cellar: :any,                 sonoma:        "7b8f0d9e9506cb7315031a52270da314175fbddf4573d2f68315b0e3494ae1d5"
-    sha256 cellar: :any,                 ventura:       "a28fd0c4cc55f959949c587ffe1f21c602967f784f8c101ea62d76dbc9a22c88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da8e336bef055efab0ba1263942e90284560b7aba4dd151a06f05d97a85cc9b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecf48d26995804162af6612009efb446d06ebed2c2e9a81b00234950336fc1ed"
+    sha256 cellar: :any,                 arm64_sequoia: "5b3e3442ed075b99e3604bea2a515ebb1cbbd9d806386e040d925d38a54692f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "04064b1363f454f0f9cbbbeb16d98d8d5fef2daf3e0bef0c5e168a73e8b54b89"
+    sha256 cellar: :any,                 arm64_ventura: "2ea1f6c02f9a1c4cf135a928a6dd9c4ee0e839b113307f436963558c5acd3007"
+    sha256 cellar: :any,                 sonoma:        "dd41f7868452173504be6f2786966ed4836c1531d06c7f1f9c3b46fb8b587ba9"
+    sha256 cellar: :any,                 ventura:       "798c20dcbe2d7f97f44a52237d58d7097c3b80fb879427fc6be532467277f8f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf56dd804ae10402637a259399706b18d9db65477f5472282181c8beff69f9e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26a35edfd086bb2cdc76b5e8d699094882a633285a4a2ead8323bb8bb2fc9b78"
   end
 
   depends_on "cmake" => :build

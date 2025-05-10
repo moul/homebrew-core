@@ -4,16 +4,16 @@ class Ortp < Formula
   license "GPL-3.0-or-later"
 
   stable do
-    url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.12/ortp-5.4.12.tar.bz2"
-    sha256 "73500254f630861a8c2f213cd5fdde698b2cae915d15cdb7c38e220ad05da933"
+    url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.4.15/ortp-5.4.15.tar.bz2"
+    sha256 "463a2f3bb2da09937dc587dad6afd948d928cda4ebf9ec9e750312ca9fe70778"
 
     depends_on "mbedtls"
 
     # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
     # https://github.com/BelledonneCommunications/bctoolbox
     resource "bctoolbox" do
-      url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.12/bctoolbox-5.4.12.tar.bz2"
-      sha256 "1833c0dd2630cadf87686c1f14771cf9c173f6fd04a527f47213de7e0f7d0a7c"
+      url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.4.15/bctoolbox-5.4.15.tar.bz2"
+      sha256 "ca6c43592d9c7f915b9a0d7767deb7fbff54b777947070212901ba566c0dca27"
 
       livecheck do
         formula :parent
@@ -23,14 +23,16 @@ class Ortp < Formula
     end
   end
 
+  no_autobump! because: "resources cannot be updated automatically"
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3bc8c110106d005b1d42f068747aac2e8dff0a3715172601f0fcd9f23a467d28"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7992b8263e2584329f85445e9f7f0b7d9aa942abcd1382b386938ff16cdb954"
-    sha256 cellar: :any,                 arm64_ventura: "dc3a8cce8b7e7d942b662bbf07785fca8d40d7cfaf784d9a5c08a7593c4bd64c"
-    sha256 cellar: :any,                 sonoma:        "92e8d74449192cc95cfa7c01e0327f6b5659e5811299523c3ef27821b6c53599"
-    sha256 cellar: :any,                 ventura:       "97f2f3683b7525bf607eb084ac8cd45821afdb437dbffaa4e2f93d024df55a1e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53167867d7ea521ca48c6a5666a8f312f18c4af106008394b442b083b0c9fd5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad8b35b17de2a2feaa622d5407738dc93aa9b59393f7b11e1b40b9aeeefa7b49"
+    sha256 cellar: :any,                 arm64_sequoia: "2182e953d4b591fbc3f7c649e71b1bf70ef3bc7cb74102ad1aa2b77414de549c"
+    sha256 cellar: :any,                 arm64_sonoma:  "1652eab81e33e472541404591cf9464d954da74816276cdd1bfb8d2d27ab72df"
+    sha256 cellar: :any,                 arm64_ventura: "2fb6fb95bb806a05158b013fb0e6a11657ac7eeab2d41e392c3451147b1a5d40"
+    sha256 cellar: :any,                 sonoma:        "ff6ee4c95d0ee48f6bf26f62a354d5d2379e2b42643e5fc6f609562e1dbcf42b"
+    sha256 cellar: :any,                 ventura:       "e6eb1c0397b19d2cb59eaa3f847cae1e2a8311a77cb67b112e98b7d9cb9ab60d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8357c50b8179031066d3403a84199299a854bcf047e7ecfa92ad8eb1f9dc0c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1244b6dd6fd2438e24994a84a3c7160638dbdbbb3935bf6a194addb6abc4f280"
   end
 
   head do

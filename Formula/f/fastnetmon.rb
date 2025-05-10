@@ -4,16 +4,16 @@ class Fastnetmon < Formula
   url "https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.8.tar.gz"
   sha256 "d16901b00963f395241c818d02ad2751f14e33fd32ed3cb3011641ab680e0d01"
   license "GPL-2.0-only"
-  revision 2
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "502471ce98ff40751358e06205ccb27b0c2958cf0cb465acd7a5fa6b3b8f3ed1"
-    sha256 cellar: :any,                 arm64_sonoma:  "b82534612cdf19d5def09217f3479bc2d5988fde0de59275476bf19bdf0c6e98"
-    sha256 cellar: :any,                 arm64_ventura: "e2530b3ffb32ed6d1f59477e8a386a26b67c22b8d97c1d17f8cf29e4fb9a6f25"
-    sha256 cellar: :any,                 sonoma:        "c5d588e9df7de66bfa4b5b6811c53e77b3a9c71664c3a9ba545c17ca035bad49"
-    sha256 cellar: :any,                 ventura:       "7a382ab9ccd06b253513ec09fc893c4d6f8f16890a2b275fae8fef0da307b50d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "560edebb2a8096a1b1c9122a4e347ba19ea0d24fd6dcbcd06b2d58a72d7e4744"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f18e30c7ca5bb802b2e1d224f7ceb423cba03da5a833932a38e69740a4ccf353"
+    sha256 cellar: :any,                 arm64_sequoia: "e99bfab39b5215fb2bd7ef02f0f716c9db020d0c108d658a0c8034cd619e0c0e"
+    sha256 cellar: :any,                 arm64_sonoma:  "76a6b96a13afb8d0e680091bdb5264b7df56547581907e34ba426c5e5cf6830d"
+    sha256 cellar: :any,                 arm64_ventura: "6e89014d50e782f57b686af3d0ae73d88da319a9f117f87dbde7657a11526925"
+    sha256 cellar: :any,                 sonoma:        "50a4589d8725403b4b8929fb0b4e1c7adf7c699bd52bb376b0c6f0a50c9084d5"
+    sha256 cellar: :any,                 ventura:       "3cc79f1f1333fbf40439a6086fecf80a5b8b74dcac8fad203ea915d1b8a77193"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f39c5e75613c10bd713b9ebb34e0add4af5d49120197bba4a380ed7e4a90c0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b8a1faccbd8e54415cecd622da4a857d3d15051188f2c5e33ad73af13268996"
   end
 
   depends_on "cmake" => :build

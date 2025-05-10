@@ -1,18 +1,18 @@
 class Opkssh < Formula
   desc "Enables SSH to be used with OpenID Connect"
   homepage "https://eprint.iacr.org/2023/296"
-  url "https://github.com/openpubkey/opkssh/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "e178a1a57715dfaa2128ff4cfb70f4269243d0e246dcd67a66e050d726e54a49"
+  url "https://github.com/openpubkey/opkssh/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "edb4b2ef3aaf9a16d409e92b27ed1467494edebedcca8ad51060916b175e401b"
   license "Apache-2.0"
   head "https://github.com/openpubkey/opkssh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30b99b05d642470a9afaf636a5fd3b65a71832009a6914c8f2e1c7752c35d569"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30b99b05d642470a9afaf636a5fd3b65a71832009a6914c8f2e1c7752c35d569"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "30b99b05d642470a9afaf636a5fd3b65a71832009a6914c8f2e1c7752c35d569"
-    sha256 cellar: :any_skip_relocation, sonoma:        "515dbf57d7f5df1039e21ac8c1a7ff217f922c4c2d7bac499596661db2d2b469"
-    sha256 cellar: :any_skip_relocation, ventura:       "515dbf57d7f5df1039e21ac8c1a7ff217f922c4c2d7bac499596661db2d2b469"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e98210a50e087103791f0601d5bfb9b93d416ba7ec14ba18845312cf11207507"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0640a6e10bcf5282b59ab11d54b3a3973aef75cda201bfef82ea154038874049"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0640a6e10bcf5282b59ab11d54b3a3973aef75cda201bfef82ea154038874049"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0640a6e10bcf5282b59ab11d54b3a3973aef75cda201bfef82ea154038874049"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8cea435db14b96a57869334e18959795cbc81374161dc21aef66a46474b01008"
+    sha256 cellar: :any_skip_relocation, ventura:       "8cea435db14b96a57869334e18959795cbc81374161dc21aef66a46474b01008"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45007bb3b43f295e163035bcb02ded4287029f227c936f42a632e6f3f4830675"
   end
 
   depends_on "go" => :build

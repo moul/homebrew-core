@@ -861,7 +861,8 @@
     "exclude_packages": ["certifi"]
   },
   "snowflake-cli": {
-    "exclude_packages": ["certifi", "cryptography"]
+    "exclude_packages": ["certifi", "cryptography"],
+    "extra_packages": ["snowflake-core"]
   },
   "snapcraft": {
     "exclude_packages": ["certifi", "cryptography", "pygit2"],

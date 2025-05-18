@@ -501,6 +501,7 @@ chaoskube
 charm-tools
 charmcraft
 chars
+chart-releaser
 chart-testing
 chatblade
 chdig
@@ -560,6 +561,7 @@ clinfo
 cling
 clingo
 clipboard
+clive
 cljfmt
 cloc
 clojure
@@ -1807,6 +1809,7 @@ ksh93
 ksops
 ktexttemplate
 ktfmt
+ktoblzcheck
 ktor
 kty
 kube-bench
@@ -1830,6 +1833,7 @@ kubergrunt
 kubernetes-cli
 kubernetes-cli@1.30
 kubernetes-cli@1.31
+kubernetes-cli@1.32
 kubescape
 kubeseal
 kubeshark
@@ -2260,6 +2264,7 @@ mariadb@10.11
 mariadb@10.5
 mariadb@10.6
 mariadb@11.4
+marisa
 markdown-oxide
 markdownlint-cli
 markdownlint-cli2
@@ -2366,6 +2371,7 @@ mmctl
 mmdbctl
 mmseqs2
 mmv
+moarvm
 mockery
 mockolo
 mockserver
@@ -2546,6 +2552,7 @@ nping
 npm-check-updates
 npth
 nq
+nqp
 nrm
 nrpe
 ns-3
@@ -3044,6 +3051,7 @@ rage
 railway
 rain
 rainfrog
+rakudo
 rakudo-star
 ramalama
 rancher-cli
@@ -3643,6 +3651,7 @@ tika
 tile38
 timewarrior
 timg
+timoni
 tin
 tintin
 tiny
@@ -3754,6 +3763,7 @@ umka-lang
 unar
 unbound
 uncover
+uncrustify
 undercutf1
 ungit
 uni
@@ -3802,6 +3812,7 @@ vapoursynth
 varnish
 vault-cli
 vc
+vcftools
 vcluster
 vcsh
 vdirsyncer

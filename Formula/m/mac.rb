@@ -1,9 +1,9 @@
 class Mac < Formula
   desc "Monkey's Audio lossless codec"
   homepage "https://www.monkeysaudio.com"
-  url "https://monkeysaudio.com/files/MAC_1111_SDK.zip"
-  version "11.11"
-  sha256 "d477452c31dfd1be567c910a1f06e210bf5f6197ba8f20f879cdd0c8c3d35cf3"
+  url "https://monkeysaudio.com/files/MAC_1114_SDK.zip"
+  version "11.14"
+  sha256 "ae929340951b3458b92da0520f567967405eac5b2304685617b84588e1f5d179"
   license "BSD-3-Clause"
 
   livecheck do
@@ -14,13 +14,13 @@ class Mac < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "41e91f7dcc53ea35a5c5ae78dd08431efb9c2d7de35f62376842aff5bd51c9d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "103c49813e23de001f3807dcfb04729b01060360751290ae909b4b5a3df64b48"
-    sha256 cellar: :any,                 arm64_ventura: "c6eb5081d170aac3294b23de63a4e6885bc757641a89a135548ad6ade489a4fc"
-    sha256 cellar: :any,                 sonoma:        "b50f6017a179baec04b42fd90b413097eda52dd4b6d7d6b3181ac92f776e5c92"
-    sha256 cellar: :any,                 ventura:       "41bbd7396c83d11c5e425c880b2f9c910c5d9f9d73f0c94c816410cb9a9017ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b58597d7910a504fb6d4c3040b3635275660f196a8f97b16b75be9e24ae3e3a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b85302c79cc549434857134f091874a5f73d912d6140f45de79bc0b614ef83ff"
+    sha256 cellar: :any,                 arm64_sequoia: "292166fa67324332787ecdf77d54da2ec61901a076a99f2e9864d16751c335f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd5617946096532490a2a843a16ccd646f7380d9435f7eaa35643200a0befe2e"
+    sha256 cellar: :any,                 arm64_ventura: "8c155a32986f86a4a672d93f4f9e413150474e15b422e4f5e2b46f16d5506a8f"
+    sha256 cellar: :any,                 sonoma:        "e44d1d6a08a82225eb1ffb53bc995a375414df908d34a584efd35d71de45a511"
+    sha256 cellar: :any,                 ventura:       "47de4b1d9c8999bb4341bb7f6ceb73bdb1db02135342bf41148f91fce1d582e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60e1af874d02670fe83de7ad7c1b8f3b4110dbf934a2f560dab45705f8c1c7af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "456037233d18067c6f3d0ad340f5e1e5615f3b09fdd38c47958e39cc5f67f4c4"
   end
 
   depends_on "cmake" => :build

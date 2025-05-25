@@ -1,8 +1,8 @@
 class Vsce < Formula
   desc "Tool for packaging, publishing and managing VS Code extensions"
   homepage "https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce"
-  url "https://registry.npmjs.org/@vscode/vsce/-/vsce-3.4.0.tgz"
-  sha256 "c32c2df34a752388f3fec0fc02ab15a3db2b11a57b58af15556dd1f1288c52b0"
+  url "https://registry.npmjs.org/@vscode/vsce/-/vsce-3.4.2.tgz"
+  sha256 "50a4d47a38c7bf8b04332dc2c9c30e8772b44d8e430fb50fd3911706320e043a"
   license "MIT"
   head "https://github.com/microsoft/vscode-vsce.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Vsce < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "5b509cc5b1e9ded5b6f522a25364c7a29c831d1279cabc1e2187de42c0cffe87"
-    sha256                               arm64_sonoma:  "203cd0b78833ee333823fa993ecf2cdff97f0ca59547d0393dcdc66b20a01033"
-    sha256                               arm64_ventura: "0d488294cc71f75bd2b5e8e8ee50f67ec96de4869d0c24b924d2e0247ef29249"
-    sha256                               sonoma:        "9c94d1048cdf9c4ca43fd898debe8de160643375d7c1031341e1d0974842e96e"
-    sha256                               ventura:       "1a13b816877e2caf83211242af9e03e007e762eb647f3feb59f7679b43a5bc18"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2381d5bec341f81b55f44b2d33e1135a080e50c43564fb68466f7af5e16fa61d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27e9631fe29147affdcacd0a03e2dd6f004685148b17402c01ecfe3d14f68231"
+    sha256                               arm64_sequoia: "b24a646ffe3394a8d6645ae8a4f98b9473966810c1f00ed24575e31d2fe23a67"
+    sha256                               arm64_sonoma:  "7e2cc6ff5907578406123f9b21d77008474952f4310179d67730ae7c8928e786"
+    sha256                               arm64_ventura: "c6725b4473fc154d7946157565ed0a6d5f79bbfa726d7e549ba5432488e2d680"
+    sha256                               sonoma:        "a12a0c57153008e6b0865f5d6bd62d3b7da4df47934b52267eec3cae7f193e69"
+    sha256                               ventura:       "9386ee42a9c61fe5f0997080ce4e31a14549e15bcc74b4c255985f06a86fe4b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e63bb13eb7b7947cb9060f9ab9fe2d8b23e0d1f6b1ddfad72f5eb35bdb6cf00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf936e711330acf51518ef9fe322b5aeade391b3790d8ee269f48e8b9243981a"
   end
 
   depends_on "node"

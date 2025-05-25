@@ -1,19 +1,19 @@
 class Cookcli < Formula
   desc "CLI-tool for cooking recipes formated using Cooklang"
   homepage "https://cooklang.org"
-  url "https://github.com/cooklang/cookcli/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "6832191a18e4e4a2d9f5e3227631b7c598d239f01f0560bc226cc3ef3948194b"
+  url "https://github.com/cooklang/cookcli/archive/refs/tags/v0.12.1.tar.gz"
+  sha256 "fb271f7d52f62a3be3f1feece68f8ec1fac65721c24a4def0586dc1c834148d4"
   license "MIT"
   head "https://github.com/cooklang/cookcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01306fee0d7da8501ff32659dcdab40c5705d12d042641a666708dfebb3efe17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "952bef99a47f0fed5596abc7c6a0e842aeaec2d3d4bc10abd49eb95d0eefe943"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "266922100f1e6d6722969acc076b1580e6a5e6a66c7c7a37856529740449564d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a1657416d697b0cb55e057aa31658b514814b349c106c8576c096cac9c333b81"
-    sha256 cellar: :any_skip_relocation, ventura:       "792fc80ab06153e4a6291dfbe1a450c270a3b9cc6f71e2ad32b82b4c77c191c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae275d3f812b9edd4b008a48a15e8deb4d5b9f5dc789f3971b0e188f73f881fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edb7a7f5ca3d7610a1ae9fe6e6963313a146a366440c4f948ba37697cd543be9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61f01f09c04d9981694142e9c7041cd6dc8f64f206ce68bfae444f1d24426ec3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f46d49616202e6219c80fe88a0eea1ba8b00e2195f7198a54845ea8fd030cc4f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "63be6766ed9189c65d1a20b79efd998a7bfa13edc61d57f5ca8d21852a65264a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b88216e4102ef6eecb8fd16908b00c034c5fc51eae1dac4d80b7dc0c1c2334fd"
+    sha256 cellar: :any_skip_relocation, ventura:       "a94a7738afc2ceb2f50462d9681ed1c7f0964c5fb4fc399c8f1be1fe095db73c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "849335be5b14c590b959edfaadbe7ecce43b181d801aebfdf5145ce4b35c039a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d62d6abacc43e2a000e65a7b2803e11fba212fcca4432febc9658f8dcc57770b"
   end
 
   depends_on "rust" => :build

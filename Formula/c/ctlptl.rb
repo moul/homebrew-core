@@ -1,19 +1,19 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters fun and easy to set up"
   homepage "https://github.com/tilt-dev/ctlptl"
-  url "https://github.com/tilt-dev/ctlptl/archive/refs/tags/v0.8.40.tar.gz"
-  sha256 "150c80e1855530871bd815cae466d559bddebae88e74e80f64a743bf10236d4d"
+  url "https://github.com/tilt-dev/ctlptl/archive/refs/tags/v0.8.42.tar.gz"
+  sha256 "2f940b982ec10dbd5464a4c65947a022a345b1d76b5c0446dae1cd2459eff669"
   license "Apache-2.0"
   head "https://github.com/tilt-dev/ctlptl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08791701e964b9592a0e70ebe6f66a60c4ef45f60da25a34487ebed9aa2ea6d0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "930e48d7e62fb86dc4a3d833dc7bc709cd52ebf3ecccb29c29fcc85cbf76db73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "849305be4d6845d03a45a4095182744cf52a23674ab47f975a7b77fe5e2d79e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7659d74ff23c82f25783815074811622c79b35749537f0843daf1c41556d8123"
-    sha256 cellar: :any_skip_relocation, ventura:       "e5b1ace1ff8e2ffbe788d0f33f7969d2d2272b4217b38bd5137c685c74dd01ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0282da94f64161002eab49d6d3846d600849b36e63c36db96b4bfb4b740e0c6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "300432a6c6c1ef111b46a4fed7af24162e918da54cdd676f7687a5390fa78b02"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f65690a21428923a104907bf1f36d68fe5548a8d1818bdd2c6b9d70ce9dd3c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95a9e91c72dc187882d2535aac2e1be20ee15b562434b087cbcba5bd282e6fb8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eecec056b5b5043254277ef00a8b2932996ea9a2df185159959f91fe1ecf100e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56d950a9ca79bbc3bd4d86a61c6364f7977a74c8b51c76c45a5adeebe46552cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "a191ccf424740643e74d5cb4e9e8b3a4837cad39fe5751a6ef9562eb9deca4b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d1b016bf961588b50c6727a161afad481658bf78bd0c3dc099a2dacef6a6a2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de48874a9cf5ae452d730dfa21b239ead2c042396e056a4b571c03fcf44ae14e"
   end
 
   depends_on "go" => :build

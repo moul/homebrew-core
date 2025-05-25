@@ -1,19 +1,19 @@
 class Boring < Formula
   desc "Simple command-line SSH tunnel manager that just works"
   homepage "https://github.com/alebeck/boring"
-  url "https://github.com/alebeck/boring/archive/refs/tags/0.11.2.tar.gz"
-  sha256 "d583878608549fcefa4fbe469d37a2e839c4d69a4167bc6a1a8babb31d594c98"
+  url "https://github.com/alebeck/boring/archive/refs/tags/0.11.4.tar.gz"
+  sha256 "a812f1475b5937d9b6d6b993fed34f3554a7ff9338ea6b6d21b19d4f9b5fc1e3"
   license "MIT"
   head "https://github.com/alebeck/boring.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c5129cfdcd553feb66d99dea071355a2da7780b791484138fd6266941456046"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c5129cfdcd553feb66d99dea071355a2da7780b791484138fd6266941456046"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c5129cfdcd553feb66d99dea071355a2da7780b791484138fd6266941456046"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1fc79b3983465481774760be3e7aaa4006ebdd67d953f41125b013eb51fcc0f6"
-    sha256 cellar: :any_skip_relocation, ventura:       "1fc79b3983465481774760be3e7aaa4006ebdd67d953f41125b013eb51fcc0f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1b5bc0c35384e727d57d6c6e83e8ca1d77f8db478f4c33df5b009fa1a2d13d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09d6dc5f307e18e7947b4f72ede1744ae436f6aff9b4e38d5abf5a7198adb5c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebf05f99bd43f16fdd89a8884b3c6be5b3cd86097ea9a73f746221cd277043a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebf05f99bd43f16fdd89a8884b3c6be5b3cd86097ea9a73f746221cd277043a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ebf05f99bd43f16fdd89a8884b3c6be5b3cd86097ea9a73f746221cd277043a2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fed2db3cc5792d30011ed4e887869b275b0ee357dd88733601c4b407d8563ecd"
+    sha256 cellar: :any_skip_relocation, ventura:       "fed2db3cc5792d30011ed4e887869b275b0ee357dd88733601c4b407d8563ecd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd80ecd0cc095245eadbfc52ecd8a2e8d30b71d970c4f4854feeb0405481a2c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebb99a37b8bded7f8667d915865cae568800494d8a6b15306ed3172f5872f16f"
   end
 
   depends_on "go" => :build

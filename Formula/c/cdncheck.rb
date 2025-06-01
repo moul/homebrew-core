@@ -1,8 +1,8 @@
 class Cdncheck < Formula
   desc "Utility to detect various technology for a given IP address"
   homepage "https://projectdiscovery.io"
-  url "https://github.com/projectdiscovery/cdncheck/archive/refs/tags/v1.1.17.tar.gz"
-  sha256 "87216de7e623a293d405a90d0769a014eeb169a64a471c2e117c07ac303b7fda"
+  url "https://github.com/projectdiscovery/cdncheck/archive/refs/tags/v1.1.20.tar.gz"
+  sha256 "6b69cbbd79bed2c109d8a5f204b307c416ba6408ee3e904841a2b959fbcfc8d3"
   license "MIT"
   head "https://github.com/projectdiscovery/cdncheck.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Cdncheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d89d18dd3e2961adee82e6047392a200846d8663c2f1ac5807da1d52d4fd807d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f289a97f36b26a9e5ca0678391f3833c690c103855dde9bf6119e3d9650a094d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "753e51b7a35e63bf79e15c2357cca0048d7fb3f5ca29dec8e3d122486a239828"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3c9b2cda2aad799828030d9d039249286a48bd2e11c32a5984629174932a5c4"
-    sha256 cellar: :any_skip_relocation, ventura:       "4159a1e6aa00d8e56bf0455c5c39f885ec52b15049d8b37a81380055f41b899c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a02a3048d6a23bb256c4d3fbe7c66d80793e6c0f367c94a1ea5dd3a9a98e15c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9e5fe42989f8852dd3e8371400bd3af3f017ee82bd5ccd66c681b98dcdf8cff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "442ab26ef44aa221cd6dfb53b20a60f28a37efe51db7e6622d396cbb340a2b60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2da911a3cadd11a514e952646a985a1003cd545c707ca5feece8763e14f20148"
+    sha256 cellar: :any_skip_relocation, sonoma:        "91262e4e8f809c4236e11a79c55dd634d5369408de69acfe7135cc12c353ba1d"
+    sha256 cellar: :any_skip_relocation, ventura:       "97cfcbfda54b589aa86a84ba03d48fb9773e378f9d68a7dd622e019d4bd28b16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85460dcf21fed1725c8f081f02072b93ba9a8c8d7f13e3c0ae63a51d652bec90"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https://werf.io/"
-  url "https://github.com/werf/werf/archive/refs/tags/v2.36.0.tar.gz"
-  sha256 "c8b74b71f25921b468d2813b41e7c694886940b3633da92d1f513f626a7e3a4c"
+  url "https://github.com/werf/werf/archive/refs/tags/v2.36.4.tar.gz"
+  sha256 "4e085c5f00aee601e9ea7db6f4169352526351ac7a24a28c749ef08069426f77"
   license "Apache-2.0"
   head "https://github.com/werf/werf.git", branch: "main"
 
@@ -15,19 +15,19 @@ class Werf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c1fef22b6e8302b20cd266db9b57d0a8587d886ac0deae92290e36655f5fe6a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e64cc4f0869ba2dd580de248aa1f61f9ae6bf46ca4384e276b75b9dce859667"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "416a95fc4c9f559bed5f36605e916e3b900ffebad050c0819f9a6186d3691061"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f02dab9dab7e7d1741333415b7378959c04ea1ce45caf1e4fa25f990548604b4"
-    sha256 cellar: :any_skip_relocation, ventura:       "2c567c3584480e040a87fa9f5c22f658232a8a18f1ddc7782863569e968d7b93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4552f5b063c45f4c5bc94863c820f6b2422576a5e02d423a877baecee123335"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b430b85c0d0b2d661f8b9b0e901aa2b39673a264c0e3542de3d0fa5323402015"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cedf99c4e386576305a0920f9e388d29bd99bfeaf3212ae403967b118171cbfa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32399efa6460ed3302325666079939bae438b8f93ff6db275398a643ae11b54b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "68aa908eaa71daf71ca532089e140df4b030528040f278af7e11e9aa72b69942"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fad2363287e25e7e4e6fb7f63ebf760398caee0526077af9166700eb5ee2a0cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "d56751ccea145c39a08b1ab8bc6bb5ca881bb1624c420ac2c69fc7155b901e29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "257d8916d437ade241069afda5948244735edda2aeb30be050036f605f3c2e9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee88cc5db3c4d393992d4e1871c4484299ddc2ef587bbf2c4112e6ac103574d3"
   end
 
   depends_on "go" => :build
+  depends_on "pkgconf" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "btrfs-progs"
     depends_on "device-mapper"
   end

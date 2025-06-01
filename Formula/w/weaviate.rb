@@ -1,17 +1,17 @@
 class Weaviate < Formula
   desc "Open-source vector database that stores both objects and vectors"
   homepage "https://weaviate.io/developers/weaviate/"
-  url "https://github.com/weaviate/weaviate/archive/refs/tags/v1.30.3.tar.gz"
-  sha256 "6680c87953376b72c3325fe2757790fad745ea14e4a6fc78208140edcb5c8462"
+  url "https://github.com/weaviate/weaviate/archive/refs/tags/v1.31.0.tar.gz"
+  sha256 "70df7afd139798657da8bcee20dcb3b50946a25ac5bc26dce51e74afa726615c"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9d3bbbda72fa3a140fcc398d59ed75e64fe0704ac42e2f0a8f62b6a13d6a277"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9d3bbbda72fa3a140fcc398d59ed75e64fe0704ac42e2f0a8f62b6a13d6a277"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9d3bbbda72fa3a140fcc398d59ed75e64fe0704ac42e2f0a8f62b6a13d6a277"
-    sha256 cellar: :any_skip_relocation, sonoma:        "431b95ebdb73b7eeafbdec3ffba86ecb5d91e69fb3a41763d7e689b059fa734c"
-    sha256 cellar: :any_skip_relocation, ventura:       "431b95ebdb73b7eeafbdec3ffba86ecb5d91e69fb3a41763d7e689b059fa734c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd05d35f5a837a0060328885d02f56331bd2c928c799674f72c03b715b1b0c96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "114ee0ce050044c216def57124fd075fb93a5c8f94c84d6c878c844ca809dcbb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "114ee0ce050044c216def57124fd075fb93a5c8f94c84d6c878c844ca809dcbb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "114ee0ce050044c216def57124fd075fb93a5c8f94c84d6c878c844ca809dcbb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a030472b1807e2e6aa2bed996a73031a1bca7565277ec8024f9dfb052c99c2c5"
+    sha256 cellar: :any_skip_relocation, ventura:       "a030472b1807e2e6aa2bed996a73031a1bca7565277ec8024f9dfb052c99c2c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8bc3d71d841c2d85794a312ecce7ec2bfa36bb81623830f90bfcbb88e1d819f"
   end
 
   depends_on "go" => :build

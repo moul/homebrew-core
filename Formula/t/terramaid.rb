@@ -1,18 +1,18 @@
 class Terramaid < Formula
   desc "Utility for generating Mermaid diagrams from Terraform configurations"
   homepage "https://github.com/RoseSecurity/Terramaid"
-  url "https://github.com/RoseSecurity/Terramaid/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "75c6d87aac78397ff3c7b54bd963b1624a3d24d9507c3377fe127ee5a3862d5c"
+  url "https://github.com/RoseSecurity/Terramaid/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "fb7a6686e5d8845e457a0838ad689ea654beb569283b80591bf59556dee3bcf1"
   license "Apache-2.0"
   head "https://github.com/RoseSecurity/Terramaid.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12a551cff811a599349a4106d29bd467cece4098bdcd96a38b7563e1c2851269"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12a551cff811a599349a4106d29bd467cece4098bdcd96a38b7563e1c2851269"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "12a551cff811a599349a4106d29bd467cece4098bdcd96a38b7563e1c2851269"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc20dc9f7135d34b801269d2d252013787c3b847b1385db7ae33e797077df6a0"
-    sha256 cellar: :any_skip_relocation, ventura:       "cc20dc9f7135d34b801269d2d252013787c3b847b1385db7ae33e797077df6a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0b20d4ec0bdd2a037d6c16920ef2c7cbe005492fd1871dbc5a8234f9406aa49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d9abf66f02f175a1ee5a3ffb00dfa0d67bf67cdc51b66d68fd9a1b92925c6ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d9abf66f02f175a1ee5a3ffb00dfa0d67bf67cdc51b66d68fd9a1b92925c6ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d9abf66f02f175a1ee5a3ffb00dfa0d67bf67cdc51b66d68fd9a1b92925c6ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b7d9d4df774d6be1ec76e26df93fbfa26c9936cb3ca813a3fa84092c20b9008"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b7d9d4df774d6be1ec76e26df93fbfa26c9936cb3ca813a3fa84092c20b9008"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "423a09cccf5152a5db5e2272b0d277297f4655266fce49017b3430fe0722b3d5"
   end
 
   depends_on "go" => [:build, :test]

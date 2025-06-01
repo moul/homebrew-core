@@ -1,8 +1,8 @@
 class Asdf < Formula
   desc "Extendable version manager with support for Ruby, Node.js, Erlang & more"
   homepage "https://asdf-vm.com/"
-  url "https://github.com/asdf-vm/asdf/archive/refs/tags/v0.16.7.tar.gz"
-  sha256 "095b95ec198b53a5240b41475e7dc423a055e57ee3490e325b8af11f22f03bd8"
+  url "https://github.com/asdf-vm/asdf/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "47446cd6007b743ee207541fa8ebcddaae2c988f4cbd9dd845a2a7806d5d2f90"
   license "MIT"
   head "https://github.com/asdf-vm/asdf.git", branch: "master"
 
@@ -12,16 +12,18 @@ class Asdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b11cb41bc93a3cebef6569e49be6f5d0e10ab5ec73a9d2ace497051be47d86f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b11cb41bc93a3cebef6569e49be6f5d0e10ab5ec73a9d2ace497051be47d86f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1b11cb41bc93a3cebef6569e49be6f5d0e10ab5ec73a9d2ace497051be47d86f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "adbd7a982debcdc997738056fdcc6660e374b827f5343de7718a71dd23328426"
-    sha256 cellar: :any_skip_relocation, ventura:       "adbd7a982debcdc997738056fdcc6660e374b827f5343de7718a71dd23328426"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "556fbd603b7a063de705436994807f5312f507b25df48db43245c3c4351081f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8faea147297d8c56864d414580966e398edf447b47a21d125c7accddb886fed"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fd57ba8ec2e1b39ed8d34efb08c794c7f0ea05e6e352e2ab7a8b974ee82b644"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fd57ba8ec2e1b39ed8d34efb08c794c7f0ea05e6e352e2ab7a8b974ee82b644"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1fd57ba8ec2e1b39ed8d34efb08c794c7f0ea05e6e352e2ab7a8b974ee82b644"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59d0ac671690b617c0711a827af5e8b09ca0a102ee1aac5452b80e865e8c679e"
+    sha256 cellar: :any_skip_relocation, ventura:       "59d0ac671690b617c0711a827af5e8b09ca0a102ee1aac5452b80e865e8c679e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb61474dd1cdf6aa17db4b0c28ecf5e5e969634f26b8a9f91a3cb8fddc1ad1b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9661381baaa99124e46746a0181b5b808db58b66bb9d6c25be76f934f104b38b"
   end
 
   depends_on "go" => :build
+  depends_on "git"
 
   def install
     # fix https://github.com/asdf-vm/asdf/issues/1992

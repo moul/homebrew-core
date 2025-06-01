@@ -1,8 +1,8 @@
 class Foundry < Formula
   desc "Blazing fast, portable and modular toolkit for Ethereum application development"
   homepage "https://github.com/foundry-rs/foundry"
-  url "https://github.com/foundry-rs/foundry/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "6c2e543baadc3bf2cdaf44fe1e916e0c27501a333ddc56f15ee0aea5ace90cb3"
+  url "https://github.com/foundry-rs/foundry/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "cf4a21092f2cd29acf03aaab45233ff5703d38cd7b136d90bd118213562def94"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/foundry-rs/foundry.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Foundry < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "78ff8652a90cb8d32de04aa6809e9e6c2561eb3c3cbdda338e715b316ccc96ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0de976f21af591c1c6d9eebf189dd7331ba73ec0696158a1c63a466af50cdd8"
-    sha256 cellar: :any,                 arm64_ventura: "cbcf0183338dd2c1fe828751be9beff628b463dc9823de6663d862f880b9d3b3"
-    sha256 cellar: :any,                 sonoma:        "63ffceae04fa1e06412b6f3ac9d0d31add503b6640024d0c36884dbb6b7968da"
-    sha256 cellar: :any,                 ventura:       "d4b44ff2c60a65e49040aa6f8d1caac6ffab4a762420fdb1fe85afd1221487bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cc23104260e5ccc7ae875eae176fbcba7505970217a200c2ceaee3e97ececbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c3e2a9cb0a69adb19eb0deb11f5ae79b24830ae17e0eb12120622fa60de017e"
+    sha256 cellar: :any,                 arm64_sequoia: "9a35da0906034cb7c70eefac70a87757f07d7558c5c354d615b00acb5406f963"
+    sha256 cellar: :any,                 arm64_sonoma:  "78c9103bff047747dc3c80dbca809cec0e6491a8aea5509d0fe53042a7e12825"
+    sha256 cellar: :any,                 arm64_ventura: "d9fc3e66d66a881e705fd184229f13ee982a2fc87d85a4e5a1b71b4bbc1ef302"
+    sha256 cellar: :any,                 sonoma:        "9285b6e12a6feb82923c9dd184217d772378dd7a1ae4cd70d8f763ae2f335833"
+    sha256 cellar: :any,                 ventura:       "d923a4b381ddb6b6553d1bc54eff1249176f6d6c02ff79781be731f36de3f3be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c21e5271fb8ad752efebfb3759a2295f8985f449b24e8a68f6ef8b36119e6cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e4e713ea97c234b4322b699f01f75af290ebae92b7f04330ecf291e9e9152e7"
   end
 
   depends_on "help2man" => :build

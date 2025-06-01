@@ -3,18 +3,18 @@ class Circleci < Formula
   homepage "https://circleci.com/docs/2.0/local-cli/"
   # Updates should be pushed no more frequently than once per week.
   url "https://github.com/CircleCI-Public/circleci-cli.git",
-      tag:      "v0.1.31687",
-      revision: "83b96d30cb8e66c3c57539b7cbaf4ae6fe6d6760"
+      tag:      "v0.1.32145",
+      revision: "8605aaa05a338254534eb5062b8859b3569c830c"
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32c3b5fe4cfa643bd67cde6f535e24dec8a10cf99ead1498e783b7a538090e7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32c3b5fe4cfa643bd67cde6f535e24dec8a10cf99ead1498e783b7a538090e7f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "32c3b5fe4cfa643bd67cde6f535e24dec8a10cf99ead1498e783b7a538090e7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "30972352c3cb9a8e65d5e92be5b001216ba18d800c19cf6a8bae94419c7379aa"
-    sha256 cellar: :any_skip_relocation, ventura:       "30972352c3cb9a8e65d5e92be5b001216ba18d800c19cf6a8bae94419c7379aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f1416f2b5e761d20fa5792ed5c8d91dfbd536ab81d939153fa6490e46e3422f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7b87636a3e28a95bebe23613a172afa000293af94348031fcd3fb6859b2b12e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7b87636a3e28a95bebe23613a172afa000293af94348031fcd3fb6859b2b12e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b7b87636a3e28a95bebe23613a172afa000293af94348031fcd3fb6859b2b12e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b5e536642d5bcbc1341e823184d58bf02ce92bb9e0ac851fded92c2881e7f3c5"
+    sha256 cellar: :any_skip_relocation, ventura:       "b5e536642d5bcbc1341e823184d58bf02ce92bb9e0ac851fded92c2881e7f3c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13148d06a64c4089a37c13181aefb49cb30b96b5b41e8bfe4efef50cb5ec3d6a"
   end
 
   depends_on "go" => :build

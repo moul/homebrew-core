@@ -1,18 +1,18 @@
 class Sleek < Formula
   desc "CLI tool for formatting SQL"
   homepage "https://github.com/nrempel/sleek"
-  url "https://github.com/nrempel/sleek/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "503e9535ebd7640a4c98c7fd1df2eb98eebed27f9862b4b46e38adbd4a9cf08f"
+  url "https://github.com/nrempel/sleek/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "fcb589fdc5ece8c050883ff0b56aec6bd25e2e4d6e77a1d52e870535d66fdf67"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91a9ef96d0eb6c5a90745fc5d0bd73b426be96d18b4293c48fccd3a9de933bc5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c8a08f1994cd26924faec694399aeeeb94b8b82a1b8f5b7e67773c763d4b618"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5cfcc553c15db6aa1eee7fb3c1c9f57d36728f2325aa3f679910ed79f8ca6396"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7fbd67bbb52e8072bffe8b656161e894f35156daafa3a53496aae7e8b3e50deb"
-    sha256 cellar: :any_skip_relocation, ventura:       "0c26c3a372199175fe36833996cac1f619b5415442414cf3652af72eeb01f3c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de48a122749e442e4d2fe472b7b1c5b7f3cb17b7fde3a82efe99313954c5b244"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3f2f948129d7eb704889e0ca9f8132b2632e525ca1f239089c4aeb22f3810d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7da065a9d2a8bc8f87ea6d2eb19cee0c60a358349761d9ea559ffb4c566f984"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "777c706a4f2d429718d04629533688315ff6156d1689984d1e10702eb36bdaae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "92fd6bdce1efc958d4df0bfb47b7d3b31fabb6cfe175bbb5b11f7e20e62d368a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4e2ac88f2fdb8c1418d82f19ba13ad142f7c111fa5e9e143212167a9c80b99f"
+    sha256 cellar: :any_skip_relocation, ventura:       "38411eb332d28f569c81c6907a0df972efbd0e9abea5d1a86bb6c1bb3ab76834"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0787c89db269a455792647f92c31b3dd0a8222ae400ce37ac22a8c11c694742"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a9e38b97cbd5cdcd3b1f8a2d77472dc4911e65ed205932606d1f56b752c21c8"
   end
 
   depends_on "rust" => :build

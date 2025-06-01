@@ -74,7 +74,7 @@
     "extra_packages": ["fitsio"]
   },
   "aws-elasticbeanstalk": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "cryptography"]
   },
   "aws-google-auth": {
     "exclude_packages": ["certifi", "pillow"]
@@ -176,8 +176,7 @@
     "exclude_packages": ["pycparser"]
   },
   "charm-tools": {
-    "exclude_packages": ["certifi", "cryptography"],
-    "extra_packages": ["pip==22.3.1"]
+    "exclude_packages": ["certifi", "cryptography"]
   },
   "charmcraft": {
     "extra_packages": ["jeepney", "secretstorage"],
@@ -618,7 +617,7 @@
       "python-cloudkittyclient", "python-designateclient",
       "python-glanceclient", "python-heatclient", "python-ironicclient",
       "python-magnumclient", "python-manilaclient", "python-mistralclient",
-      "python-octaviaclient", "setuptools"
+      "python-octaviaclient"
     ],
     "exclude_packages": ["certifi", "cryptography"]
   },
@@ -861,7 +860,8 @@
     "exclude_packages": ["certifi"]
   },
   "snowflake-cli": {
-    "exclude_packages": ["certifi", "cryptography"]
+    "exclude_packages": ["certifi", "cryptography"],
+    "extra_packages": ["snowflake-core"]
   },
   "snapcraft": {
     "exclude_packages": ["certifi", "cryptography", "pygit2"],

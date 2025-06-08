@@ -1,29 +1,29 @@
 class Marisa < Formula
   desc "Matching Algorithm with Recursively Implemented StorAge"
   homepage "https://github.com/s-yata/marisa-trie"
-  url "https://github.com/s-yata/marisa-trie/archive/refs/tags/v0.2.6.tar.gz"
-  sha256 "1063a27c789e75afa2ee6f1716cc6a5486631dcfcb7f4d56d6485d2462e566de"
-  license all_of: ["BSD-2-Clause", "LGPL-2.1-or-later"]
+  url "https://github.com/s-yata/marisa-trie/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "a3057d0c2da0a9a57f43eb8e07b73715bc5ff053467ee8349844d01da91b5efb"
+  license any_of: ["BSD-2-Clause", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3e875c402f816ea59607b35dfaba1ca3556934b77f3adf9522a662b474a531de"
-    sha256 cellar: :any,                 arm64_sonoma:  "71fa0487725231a5d3c5d53f7564279b4f40d684939392d90f2d446502304666"
-    sha256 cellar: :any,                 arm64_ventura: "96d9aac1c7bd7c4f0d927619215b2216791f83ed80693b86706e0077062dfe81"
-    sha256 cellar: :any,                 sonoma:        "89899d1173f4dcacc825068599a458c818f42c9ff2c6ae9dccac56a0eec837e6"
-    sha256 cellar: :any,                 ventura:       "fc0d60913ac0333a5dc9f977e77f466388b5484c8e77cf190e80c48b582f9deb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85694a17eae4c73ae6a61c691bc6fa526a662389bc215decaf9e2d4cd97465c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45455df30c80232d1c7d16146b550fea52fbd71d0bc341bdbe3acae2038b4286"
+    sha256 cellar: :any,                 arm64_sequoia: "9b617849fc8bb7a8c9ed63b5ee71fab11ba94ba0f00e8b63db1e2bc573ae4862"
+    sha256 cellar: :any,                 arm64_sonoma:  "dc850a0aa5890573f4bb3805b44dd1595748ea7527aafc94d164f9a5a2ab8363"
+    sha256 cellar: :any,                 arm64_ventura: "cbe7c42f5ed3dc9ac48d00460b63f21abc11e705a78271ab97a9ad33f8518719"
+    sha256 cellar: :any,                 sonoma:        "d8cc02d1a54409724d92e360b3de75428f8e790121efcb06661f2451595f85f5"
+    sha256 cellar: :any,                 ventura:       "e4a170f02d2eba533082e3f0f8c6197046963a35c3a4bf5c5e11d508d9b256c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "673092e00b51563cfc9ecbceed7d8ade2636d31ea545e15d9404525f516e4f42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c72c3f928765d60e2ecb504f95f3ed2b2e8e2ae2454b1e31d9b4b5ce6e4e3cf"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
 
   def install
-    system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build",
+                     "-DBUILD_SHARED_LIBS=ON",
+                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                     *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -45,7 +45,7 @@ class Marisa < Formula
       }
     CPP
 
-    system ENV.cxx, "./test.cc", "-o", "test"
+    system ENV.cxx, "-std=c++17", "./test.cc", "-o", "test"
     assert_equal "200,100", shell_output("./test").strip
   end
 end

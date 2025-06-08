@@ -1,18 +1,18 @@
 class Pscale < Formula
   desc "CLI for PlanetScale Database"
   homepage "https://www.planetscale.com/"
-  url "https://github.com/planetscale/cli/archive/refs/tags/v0.241.0.tar.gz"
-  sha256 "3bf31157a13d6b62cac6867e59ab5f762ad95a60c0c3957ecb9dcf3820438f5d"
+  url "https://github.com/planetscale/cli/archive/refs/tags/v0.245.0.tar.gz"
+  sha256 "143f8f75bd398f848a646485ec646bfb2aad635f4626c28fa3f80e622cbd0a0c"
   license "Apache-2.0"
   head "https://github.com/planetscale/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00bc49bde51ecc834a3e20f90644b1538d4fd695423611602a8012c4938da247"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee7b3d608f465be46c2abaa3c52aa111272db6e1f9575c68b0bc26ae4fdf3625"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f68bbeaac64e2d7b9681b18fc0bdab2c88fb6011c87c424b05e5e24e4f641048"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3222a624b9a57c1b4bd298ae2276293b4819c7592751cabe79be6aa78d4e1c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "13d46468ca32b19034371133dbaba4b5a9347e247177a86b952a24d4b080d594"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a743c7ef4e8f84d8440f5b885baa449a9db7820f960a8ae88917ea92db66164c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f041a0600f505aa4284aeb808fc53d7a0e18c1c5faa98c1e2cea3644b1c07c92"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b98bd8274c4c6789570d821b1758042d09d6e4059d25fca4dcc5da1f1b5ce81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ed445a1a1966ed2b4da582d461a7c46bf3e8d3257588235acb08d8025168063"
+    sha256 cellar: :any_skip_relocation, sonoma:        "740b28940316f410fb804c53e32516f6ccd0b78a436a1f6cdf5560b62c40991a"
+    sha256 cellar: :any_skip_relocation, ventura:       "0ec2ffff6198e83fa5334a5532f1ba48ed5ae3dd86c114560308a6f012b8e18c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12b8c0b874cc52ef9d5bc92b9bfa88aea054da2166b12084ff00abcff152fa09"
   end
 
   depends_on "go" => :build

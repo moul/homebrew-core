@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https://mise.jdx.dev/"
-  url "https://github.com/jdx/mise/archive/refs/tags/v2025.5.5.tar.gz"
-  sha256 "6ac35ea90bed5ee28db23a85877839a7043b414ba70a3127df712b1e6e82a5a2"
+  url "https://github.com/jdx/mise/archive/refs/tags/v2025.6.0.tar.gz"
+  sha256 "9b495ba075165f07d814b75f64635e1c9cdf18ae1aba786514e1716d4ce9e743"
   license "MIT"
   head "https://github.com/jdx/mise.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Mise < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cde523a1d6934b1a43691b78c45f2f17d00e943c27f74010f6768ddc600ce50e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a769accfb2095e959dbc362ceb127bcdc70757195e5c2f159177db53335229d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c6c16671d7c9aeb6718399e0c3581f1c367965097e8a82aa4dc82db357cf6e8b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de644e4d0960d84a1d9fd930618bcf19cd045a13027cb38464dc81ed63fa2cbe"
-    sha256 cellar: :any_skip_relocation, ventura:       "651c6c68d1f7448844bbd26b597843197e9dfa57b892c41e82544cf0e3e8bbd9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b5f4dd62ec34e2a59f235dc5dfb950953befa4d00dc25c3520f3cdbfc9f924c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "792372aa18cb323dbaec28a61f64a015d83c2611a30cafa1d49b803acb9d690c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbb8ea8285af9658366eb88c2da2fa989c7c85b59647e48cad30a9684b2b1d08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edfbc87aba309bd687849240c2a72aacf0a9400da743afa081200e28354c261a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b5d67b9bd795db4b86be404551caf496570f52dce8913a756eb37d678aff050"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae7d5ce23ecc4f3b04a683ace21410b988842ee2fa11e1032c9787ab2f12b05f"
+    sha256 cellar: :any_skip_relocation, ventura:       "81f925ebec7acb19c08b5b0f4e14a4b0fd26c67d58519366cfd2ca3b4d170565"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "472921d99a84f0112a0d450b62d1ff59d857723ced90ff5083ea28990e02a400"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b49874b20feabab20da392f6cbdc1b391dbff54a11bed5df197603db78f68cba"
   end
 
   depends_on "pkgconf" => :build
@@ -41,7 +41,6 @@ class Mise < Formula
 
     system "cargo", "install", *std_cargo_args
     man1.install "man/man1/mise.1"
-    generate_completions_from_executable(bin/"mise", "completion")
     lib.mkpath
     touch lib/".disable-self-update"
     (share/"fish"/"vendor_conf.d"/"mise-activate.fish").write <<~FISH
@@ -49,6 +48,11 @@ class Mise < Formula
         #{opt_bin}/mise activate fish | source
       end
     FISH
+
+    # Untrusted config path problem, `generate_completions_from_executable` is not usable
+    bash_completion.install "completions/mise.bash" => "mise"
+    fish_completion.install "completions/mise.fish"
+    zsh_completion.install "completions/_mise"
   end
 
   def caveats

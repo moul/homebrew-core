@@ -1,18 +1,18 @@
 class Heroku < Formula
   desc "CLI for Heroku"
   homepage "https://www.npmjs.com/package/heroku/"
-  url "https://registry.npmjs.org/heroku/-/heroku-10.7.0.tgz"
-  sha256 "518e73915bd2134e68ccd04741a0f790f35847dc39951b3edc27cd634e37550f"
+  url "https://registry.npmjs.org/heroku/-/heroku-10.10.0.tgz"
+  sha256 "0270050995643d37f9f024ae258df3ad2a0d6c0b60291781d26724fe1adb1bbe"
   license "ISC"
 
   bottle do
-    sha256                               arm64_sequoia: "ba167e543e9529e78ce6c7106c32678f24ad0d59b5f9af0bd959db047f99b0e3"
-    sha256                               arm64_sonoma:  "dafe1bae56a7f0a43f512032b794a04d4d96ec64b824d4d1e7f5405cc5d0c4ab"
-    sha256                               arm64_ventura: "53bd059bf3d2a323e4b5c2e63b7d3d621a1f9d5b64a486b2aba33f18460547f3"
-    sha256                               sonoma:        "48041780138edd9a4868f848838fd7642b695c8d4ba63a58b580169c8596fa6b"
-    sha256                               ventura:       "ed5b029b88e298d35add4198f4086cb7dfe1676ff1ce188976a1370126a45c88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4b8f063121a6735395a5d0dbd3d42fb56c569daa993dee84cb0a80cd1eade73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8dd0f9a00e54e78e28a19f3b38f53fe255a769c853ba50b99f35c5966b5c64b"
+    sha256                               arm64_sequoia: "efd4904a8c584c7348d4732cde3f257f4b374379c3faf7e549b2297c59d089d6"
+    sha256                               arm64_sonoma:  "36313d308586dd377e6cd585b0b954f942ad4290d81a8846f7ec8d95dcb82326"
+    sha256                               arm64_ventura: "f4443ec1b325033b6b01cb6096e49ab2534fe49e889f7d1399aed989ed95c414"
+    sha256                               sonoma:        "f28191ab390d04fbc95a301f6ceff3d3b72e1dd1e40d11b7e03fd0eacb09994b"
+    sha256                               ventura:       "ea2576656f7c0b9650db8b522e935dccbd8ac27768656bdb9f48ea8ac9a5e147"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9051cd6f5f4555594dca48202650711623a9e241bc8a9a24e4db5ea7f96d63e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63b4d7e2c0e04bf62e8d506387203b945904c5808de089c3f76bbf4fe57c43a1"
   end
 
   depends_on "node"

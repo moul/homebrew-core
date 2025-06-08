@@ -1,18 +1,18 @@
 class Nfpm < Formula
   desc "Simple deb and rpm packager"
   homepage "https://nfpm.goreleaser.com/"
-  url "https://github.com/goreleaser/nfpm/archive/refs/tags/v2.42.0.tar.gz"
-  sha256 "038541bc4d22fe52f79e2925d6b64d25398970ac9ddc32a4ff1823f189cd8ea4"
+  url "https://github.com/goreleaser/nfpm/archive/refs/tags/v2.43.0.tar.gz"
+  sha256 "5575a14fc6bd4ce555d3bdfc5453e65bcd62e592a5163aa65ef9f1434bdbb283"
   license "MIT"
   head "https://github.com/goreleaser/nfpm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39d4448467d5d192affcbedf2c70f701567ef024cdcbcd94b3335a4921e3d4f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39d4448467d5d192affcbedf2c70f701567ef024cdcbcd94b3335a4921e3d4f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "39d4448467d5d192affcbedf2c70f701567ef024cdcbcd94b3335a4921e3d4f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d11a3bbff39d65b432875c056285d9c7bf3c4458793a653ed33125524503101"
-    sha256 cellar: :any_skip_relocation, ventura:       "1d11a3bbff39d65b432875c056285d9c7bf3c4458793a653ed33125524503101"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01075afc56f6fbbe34b4e5de4a5bb4b3d7617fb77abedcfcdaede017aba6bb45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "330ede9afc1032c0f42e600c33d6c1a7f3a2f1558600ee8e560b8513c03d912a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "330ede9afc1032c0f42e600c33d6c1a7f3a2f1558600ee8e560b8513c03d912a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "330ede9afc1032c0f42e600c33d6c1a7f3a2f1558600ee8e560b8513c03d912a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b38534997ec8301872086c84b74445b1a5cec0960cd195b2d444b6b2b729443c"
+    sha256 cellar: :any_skip_relocation, ventura:       "b38534997ec8301872086c84b74445b1a5cec0960cd195b2d444b6b2b729443c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc22f1ba1f8307683c5075681b37ad011dd41ddfff2d04aee9e72d8ab8eb6c33"
   end
 
   depends_on "go" => :build

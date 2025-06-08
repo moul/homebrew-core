@@ -1,8 +1,8 @@
 class Chafa < Formula
   desc "Versatile and fast Unicode/ASCII/ANSI graphics renderer"
   homepage "https://hpjansson.org/chafa/"
-  url "https://hpjansson.org/chafa/releases/chafa-1.14.5.tar.xz"
-  sha256 "7b5b384d5fb76a641d00af0626ed2115fb255ea371d9bef11f8500286a7b09e5"
+  url "https://hpjansson.org/chafa/releases/chafa-1.16.1.tar.xz"
+  sha256 "4a25debb71530baf0a748b15cfee6b8da6b513f696d9484987eaf410ecce1129"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Chafa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ea6049848cb7fd6d0f094877c2a451f3c04abc24fc32c1e6cf9fe4b9dc1381e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "718bad199de13187fdff368cb98f7163162bf76d57c0a6ba1cb2c151ec98a4df"
-    sha256 cellar: :any,                 arm64_ventura: "5af1c494a1b7daceb2e8d10cc895fe6e59fa3f10fbd493150cdc24cee1ee1150"
-    sha256 cellar: :any,                 sonoma:        "e83b7e5f17bcb3b0698797f5b50f952a5ca09cf9f0489bb4842ae21d0d066b12"
-    sha256 cellar: :any,                 ventura:       "b36b0aa9e21626083a0e6e86d33e3a96f935f7c47640292f202823b3c8fc402b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a18bdb4424e04b4319bd6f7b99153dcb7c231b778ae21d64484cd88408deae75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bc49d8207b352f3adf9b570363b0a40986addfc14deedab6181c55594e6d18a"
+    sha256 cellar: :any,                 arm64_sequoia: "b47791ad994a4308ec6953961070a7b87d375c02a267d51126672a4a98cae288"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee5a09d5ede1dcbc5f73f8e6f0b00d88598c3ce7e46936fc2a3c121b46150245"
+    sha256 cellar: :any,                 arm64_ventura: "a47d806bacd65b10cd53aef2177dc9f8f634db185e75cd12c5f0e9e5c08afb21"
+    sha256 cellar: :any,                 sonoma:        "26fd74c17eb1ec652698842902c0417feb5da973e62d81d1ddcb8c12bf57b34e"
+    sha256 cellar: :any,                 ventura:       "eea6878b22a219dc0d5694c89f4b3be1475935b6f49a4f76c6094cfa1f8a792b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3285c74e450f5e7bcb52ccd45039f95fb1a06c5b1b492f970e323a1476fcbe01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a4be7443e2d8cfc43c5b78758944850ce359a48ab988144b2bd8724341ab0e2"
   end
 
   depends_on "pkgconf" => :build

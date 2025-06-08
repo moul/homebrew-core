@@ -1,8 +1,8 @@
 class Jaguar < Formula
   desc "Live reloading for your ESP32"
   homepage "https://toitlang.org/"
-  url "https://github.com/toitlang/jaguar/archive/refs/tags/v1.51.0.tar.gz"
-  sha256 "87cd58bca9d8ff4d6be6c22a3b5c62b76aab81e8298cd3cd5f7b265f5947e5f3"
+  url "https://github.com/toitlang/jaguar/archive/refs/tags/v1.53.0.tar.gz"
+  sha256 "5113cee9128c64cecfe6fa6896e8373a30d14c7f2bcb3614a575fbd024bb5681"
   license "MIT"
   head "https://github.com/toitlang/jaguar.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Jaguar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "963d22d8a13fae117c811c0ca722640d4a2b3d3bbd47dba0029fe1d2f7291404"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "963d22d8a13fae117c811c0ca722640d4a2b3d3bbd47dba0029fe1d2f7291404"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "963d22d8a13fae117c811c0ca722640d4a2b3d3bbd47dba0029fe1d2f7291404"
-    sha256 cellar: :any_skip_relocation, sonoma:        "88a4001106d27e68ae85e818910ad7c269fb4211d43f2e2be41143f785b77eec"
-    sha256 cellar: :any_skip_relocation, ventura:       "88a4001106d27e68ae85e818910ad7c269fb4211d43f2e2be41143f785b77eec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d13bc01462df5a7e34f7390b3d86b4ef2ee0b121687a9c2b1a7459c985277e42"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e69f79679330be182ebf77132894e788f200c651f861b7f7ec6f4d4b116b4643"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e69f79679330be182ebf77132894e788f200c651f861b7f7ec6f4d4b116b4643"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e69f79679330be182ebf77132894e788f200c651f861b7f7ec6f4d4b116b4643"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e016507acd858b8d9d67a2d8aa714e55d68fbe1ef957bc2b5d2fff9cbea9c4d1"
+    sha256 cellar: :any_skip_relocation, ventura:       "e016507acd858b8d9d67a2d8aa714e55d68fbe1ef957bc2b5d2fff9cbea9c4d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aea9ee77fee06d17f55f058b3889689043a952c598e2c6bf74fca55f2fe71595"
   end
 
   depends_on "go" => :build
@@ -36,12 +36,12 @@ class Jaguar < Formula
   test do
     assert_match "Version:\t v#{version}", shell_output(bin/"jag --no-analytics version 2>&1")
 
-    (testpath/"hello.toil").write <<~TOIL
+    (testpath/"hello.toit").write <<~TOIT
       main:
         print "Hello, world!"
-    TOIL
+    TOIT
 
     # Cannot do anything without installing SDK to $HOME/.cache/jaguar/
-    assert_match "You must setup the SDK", shell_output(bin/"jag run #{testpath}/hello.toil 2>&1", 1)
+    assert_match "You must setup the SDK", shell_output(bin/"jag run #{testpath}/hello.toit 2>&1", 1)
   end
 end

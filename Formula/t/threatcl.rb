@@ -1,19 +1,19 @@
 class Threatcl < Formula
   desc "Documenting your Threat Models with HCL"
   homepage "https://github.com/threatcl/threatcl"
-  url "https://github.com/threatcl/threatcl/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "de8d140cad1d5d00114712d2cb8325a1f3a8a8dac94f0e0d25c590bfb486639e"
+  url "https://github.com/threatcl/threatcl/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "0f4b73b4ae878ba1be624c3089c51fcbb298548f160ab26f52412e1407d762c8"
   license "MIT"
   head "https://github.com/threatcl/threatcl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e719ca2e07fe822fe369f7c29d1a9c24bb22db51f1a2117e415e7acd203ee3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "677b1c7428e696e7fda2b42adc3b25c5324ff0260db256f0e45249407b4eaec0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a9ba82386458b23a469c2a44f63d0082f29a70e0b4fae6e2f1639d5ea70a4c0f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46da682adf6735fdadae113fc41d653e5c9ea7a8166baea4f3cc1488454b430f"
-    sha256 cellar: :any_skip_relocation, ventura:       "7a88eab63c27dffe542c17e399c31f3e66c4b094fe84d2e30c0aa9b642fee91b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09cfa3f948a2085274aa67e048987c2696ecc609aabbf8092e13c304474ceaf2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc4b42f55268b9805ae1f337db8491a91f7ac456cd27b07f3320ecd427355801"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e497682ed959de11b926acb83dbae171570044a7e53fefd5a3d387c42e2155b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "506db8b6b2f9dee428b700fe7ab43f1de1327e3d84e4911d1c3a2ec84cc82c88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d94034e5b346ef3ffe5243a6f667948b1d776e1162c75e891f867e5a15842c0f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8f00ecbe796c5ac8e7e10b9a0698bf1fbbc54d2a699cd7df04c325d5e1eae23"
+    sha256 cellar: :any_skip_relocation, ventura:       "53bf7140cabf4bfbc3672693135078f6f371018af67a71a6c2087eb603d86b4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "80a355421d8d42280c76963720be6f75846e7aed77ddde545cc07ababff58d84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eacd0a15abb6284ed16f0be1ddae2dac8833aeb571d4ad159284a09069815113"
   end
 
   depends_on "go" => :build

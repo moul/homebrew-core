@@ -1,18 +1,18 @@
 class Fabio < Formula
   desc "Zero-conf load balancing HTTP(S) router"
   homepage "https://github.com/fabiolb/fabio"
-  url "https://github.com/fabiolb/fabio/archive/refs/tags/v1.6.5.tar.gz"
-  sha256 "c7fda4db197bcde05c14e4f8fcaf88de20986519573dc0cfcc127a18d2a2cddc"
+  url "https://github.com/fabiolb/fabio/archive/refs/tags/v1.6.7.tar.gz"
+  sha256 "846ac67c68b41428586f28183f772b5a3d5a9003b21625bc6f0f0ed361c8a890"
   license "MIT"
   head "https://github.com/fabiolb/fabio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5148ef8bee593a0f11afdf6b1c1b0366cd86e1c1b4317da9ec5a1444409abf3a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3168263299a8c34e266a3219c2f9f7cd10f9284e4336020e455ce9cadc036cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9102ccc21dd2bba4e6cb464aca0c5c89ad1b66019237ceb4ac6a93bec96a6993"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f1d61e1d97947218fe1b4e07500833c4ddd10fbe628b7ca67790acf2e46aeac"
-    sha256 cellar: :any_skip_relocation, ventura:       "a55e0969c554cd7e99b1c2ab2540cc6a6b866566a23b6209c759d11aff859e53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03f15dc71c7d36337cbd1698507190939b27724e5c91f7b879f3b316ba111fe7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31bc78f40b86f6687211aece737253a395f1f052d9b489b5d1bb5dcb2b434b5e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61cd285af8c4af56ded6264910244e04e6f3473053d0276892df2b9fcb694bb0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "abd359ebaafe391dc7747a40efee2e9afc96da013f32ec05892396b251d0c402"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ac7d11c7b8d2a319ddf65a6aeb22c5518c6da3881b16c1a18b98ca75dc5dbf2"
+    sha256 cellar: :any_skip_relocation, ventura:       "3b4717f13ab398f9cb648db3cf8ee0c2c692f0255ffe050f2e706085c23efa13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf6037cb7efd47d8b75ab54327b54a8505cba26c0f8b8cbd7be90a4aaf96fda4"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,19 @@
 class Sdns < Formula
   desc "Privacy important, fast, recursive dns resolver server with dnssec support"
   homepage "https://sdns.dev/"
-  url "https://github.com/semihalev/sdns/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "0ab9d6a7ad3ae13688a10bae0b0738ca0089c81c1c7af9febcb3335f9d0aeadc"
+  url "https://github.com/semihalev/sdns/archive/refs/tags/v1.5.2.tar.gz"
+  sha256 "52d75a4d4e4c09982e7b1f66e93cdd3eadc57a6c3112f84ede7cd94b902ad19c"
   license "MIT"
   head "https://github.com/semihalev/sdns.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8879f8051f9fcda4339f0858b235382cfb0a65b494da5ce24e12eaa56fa8d6f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5a9fa5686de687d6204a8b30f0657a3cb141b5335c4d6c79c2dea41a439aaa3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0e704009281c8d500596e10e6210a3f440ed667315c5e62169bb84aa022a8b87"
-    sha256 cellar: :any_skip_relocation, sonoma:        "838b9c51f9b668d478df8b3361509d5aae4313f5966a571ef35aa40448d5029f"
-    sha256 cellar: :any_skip_relocation, ventura:       "4f679204866d04a4ea2e2ea11b15c36529495b750ac7036ca9bcc23006331508"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78f1646258a3c18aa81544897254a79994824fce14fbf8bdcc1061c36ba8278c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8124cce9441d54dc25ef3783f90e047e346e5799e44ff0222acf73061a99df18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4064e44c2a1a85d75b5f14b9b73cca90ddae74e71603c739ceedd13f382c546c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77984cb1b823d23f0f3d6520d9966e480da483d4757fb4099cec19a04feef0ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c99084bd16ab5af032af3c772738057d75826b0b7c9b2003d46e861e87e88021"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a4cda2d0f8c878e05f6f325b277df2d39acd884258153e397b3a8d1ff0299b0a"
+    sha256 cellar: :any_skip_relocation, ventura:       "99f5feddd9eb110578e38eeb70fa8ce4402534cef244a154182b1971b43f6d60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6127f64d913ece10acf827cab12db488e6069bc0b28baa0583c4b94bc9863183"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a20163180f6650265add0d6c5c5805f1547516f823bd7c0499d4505d11690fd8"
   end
 
   depends_on "go" => :build
@@ -24,7 +24,7 @@ class Sdns < Formula
   end
 
   service do
-    run [opt_bin/"sdns", "-config", etc/"sdns.conf"]
+    run [opt_bin/"sdns", "--config", etc/"sdns.conf"]
     keep_alive true
     require_root true
     error_log_path var/"log/sdns.log"
@@ -33,10 +33,8 @@ class Sdns < Formula
   end
 
   test do
-    fork do
-      exec bin/"sdns", "-config", testpath/"sdns.conf"
-    end
-    sleep(2)
+    spawn bin/"sdns", "--config", testpath/"sdns.conf"
+    sleep 2
     assert_path_exists testpath/"sdns.conf"
   end
 end

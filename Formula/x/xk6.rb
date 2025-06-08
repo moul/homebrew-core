@@ -1,8 +1,8 @@
 class Xk6 < Formula
   desc "Build k6 with extensions"
   homepage "https://k6.io"
-  url "https://github.com/grafana/xk6/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "72f3b29f63ddbe5512979a54defa6bf0b94f629b9af9f6d07ada9043ade7dc43"
+  url "https://github.com/grafana/xk6/archive/refs/tags/v0.20.1.tar.gz"
+  sha256 "db0af1b8969e307a531b362039fbfb030a568de17763a6825195d958c73352bb"
   license "Apache-2.0"
   head "https://github.com/grafana/xk6.git", branch: "master"
 
@@ -12,22 +12,23 @@ class Xk6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e2f511e5ccecf0b60aeb7e486679d1537a5820576edade43c1bc890994a668c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e2f511e5ccecf0b60aeb7e486679d1537a5820576edade43c1bc890994a668c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e2f511e5ccecf0b60aeb7e486679d1537a5820576edade43c1bc890994a668c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "655da2d18fef74606659e8ae5d85498aa02be42e9cc0183aba14af1ec22115e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "655da2d18fef74606659e8ae5d85498aa02be42e9cc0183aba14af1ec22115e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2c14fe47f1fffb75284b2ef2ae8e09f3c9f4c334ea9de2a59c7413caafbc65b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e20d80d6dce1d8d3fe65f5f09d709c01c20a87aab6590f4cc10edbb3fea3e1d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e20d80d6dce1d8d3fe65f5f09d709c01c20a87aab6590f4cc10edbb3fea3e1d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1e20d80d6dce1d8d3fe65f5f09d709c01c20a87aab6590f4cc10edbb3fea3e1d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a0a0f3825ef3f80275ec37a02f0321b57a84605c06c683e69d296c04335c02e"
+    sha256 cellar: :any_skip_relocation, ventura:       "1a0a0f3825ef3f80275ec37a02f0321b57a84605c06c683e69d296c04335c02e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "954dc78481339ce43e2da09648d31a2bf739c77f74817173ae8b43009d280b72"
   end
 
   depends_on "go"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/xk6"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X go.k6.io/xk6/internal/cmd.version=#{version}")
   end
 
   test do
-    str_build = shell_output("#{bin}/xk6 build")
-    assert_match "xk6 has now produced a new k6 binary", str_build
+    assert_match "xk6 version #{version}", shell_output("#{bin}/xk6 version")
+    assert_match "xk6 has now produced a new k6 binary", shell_output("#{bin}/xk6 build")
   end
 end

@@ -11,6 +11,8 @@ class Click < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e987eede7eef110c096c8093ccfbf321f3835378f8a65619627eabe348e0d985"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aece6aa76034deb2d8e1437d85f4e4c94195de67eb7948d19b2fc2423824808c"
@@ -23,10 +25,10 @@ class Click < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b30c2c15da3c503a541a5f751928abf68496261df9374a23c6d5dce58b9d2b8"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

@@ -1,19 +1,19 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
   homepage "https://hk.jdx.dev"
-  url "https://github.com/jdx/hk/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "c2a338a8d9ed574ff2be84b5cc84a904bdf311e0c635736e4ac9cd2673c9fb3c"
+  url "https://github.com/jdx/hk/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "e533b9664673333bfc1abf837d052d435aa88ca76a8fa2b61332701118110368"
   license "MIT"
   head "https://github.com/jdx/hk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "40c6717baafe8d20a8c4ae9150ca357489ebdc92dd6dc56ac8efcd9ff775f81a"
-    sha256 cellar: :any,                 arm64_sonoma:  "df5fb743251e5a5b7be64f3652e0e5d12e634cf9b2e74edd63b07f28ca4d7bf7"
-    sha256 cellar: :any,                 arm64_ventura: "61c68e54443ba445cda2dbfcd995976cc89102f2cd68e36202e5287191fd7b04"
-    sha256 cellar: :any,                 sonoma:        "c5a73b3d27a0bb95fb60a0f19913ccc7c2eb3cadc3cc807192788f642c982ad6"
-    sha256 cellar: :any,                 ventura:       "a554e87a809f7deb1baa78e18043ae9f99130852b67f1a94157c77af1b0c023e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "134e8cc2e90d5dad534421bd8196da6dc355db5d1273e4c37103e08375c022a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe872014624c193f20827165321607f6dbdc5a8ef163af6926e086fa39e47377"
+    sha256 cellar: :any,                 arm64_sequoia: "3acee0a2b3e1e159e6e20615791307eddfdeb8af490ee692ac5f1f62217b4a82"
+    sha256 cellar: :any,                 arm64_sonoma:  "56be2c05ce36e4ccd21dc72bcf25d93356e2b15cc4448f7334b85e8dedb76144"
+    sha256 cellar: :any,                 arm64_ventura: "1ce0b36dd0f4c1e9c47634bb7ccba343972c97f5b3d1e0cf488527002d887f66"
+    sha256 cellar: :any,                 sonoma:        "d4ca424a99a8f178932660e8e6f80d6d058eb8110a1da22f472b798a6ee560c0"
+    sha256 cellar: :any,                 ventura:       "7801eb1359ca2b3e59f854d54ec7bb8aa3a84634e93cc22417bf0ba414f3c1be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da6ff17c34633e62aa54cf7a1234670a85043be2469befa78113f765b0a7938e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31d172b4de7ffbf0ea8f2a066ce0743703e6678d1574209f8f30a6315549cdc5"
   end
 
   depends_on "rust" => [:build, :test]

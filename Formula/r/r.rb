@@ -4,6 +4,7 @@ class R < Formula
   url "https://cran.r-project.org/src/base/R-4/R-4.5.0.tar.gz"
   sha256 "3b33ea113e0d1ddc9793874d5949cec2c7386f66e4abfb1cef9aec22846c3ce1"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://cran.rstudio.com/banner.shtml"
@@ -11,13 +12,13 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "48e4817e21ff16cd70fe7a3bd11ffb6b117f43b4a6a710d7bbb3c70bb374e239"
-    sha256 arm64_sonoma:  "f2f3b9c3ea83b6a6418ef6d277b46cbaaf58da22fb1bf98bd40ceb4be5bc3bd3"
-    sha256 arm64_ventura: "b4eeb8e81c83ee1d4d2c3e346c06abb71cfcb173f26cf351011edf5304cf660b"
-    sha256 sonoma:        "87bde25906088da3adaec6dfe8526b8e6992532ffcadfa76039d215cd8dcef72"
-    sha256 ventura:       "6af721dd46ae2605802e8b4719f20d9a8be745da7a8742ad06d9dc40a9bf9316"
-    sha256 arm64_linux:   "d21463fdd1a28126e092e84c3ff604dfc51d21c8a612c5aa4de89b986a070b37"
-    sha256 x86_64_linux:  "030a0cc88f27535c502c31118d10cae6d8398c519df565b275c15dea3d1b9379"
+    sha256 arm64_sequoia: "0de6e135c11600d2d2c30ff1063f2c118189cef828ee9c70a2c2749f1eb82d89"
+    sha256 arm64_sonoma:  "4a1f7e24f55875da53aff9efca460e6c45b47fe590b9bfa580db30227b311ff9"
+    sha256 arm64_ventura: "fdf624f1fa9fa2b797c060c7b64a3030544dda61cf9609a199b9518672361f79"
+    sha256 sonoma:        "dc243c6b9a04996402859305aeb2cee79eb99f232c40a3394b41f0ed76d26ff9"
+    sha256 ventura:       "c5c3429d72db5e748b3dfcd62d74fdf6d6905badd022ac5e91876208f22f2f66"
+    sha256 arm64_linux:   "19fd51f9f938013a09b9a12aaacf490fdb880c273ce7116200033cb9c1ae545e"
+    sha256 x86_64_linux:  "d06cfe5a03a20a1d6a285981e8afe3a10d5781e59f360bb73939f7c54f10bb62"
   end
 
   depends_on "pkgconf" => :build
@@ -64,6 +65,10 @@ class R < Formula
 
   # needed to preserve executable permissions on files without shebangs
   skip_clean "lib/R/bin", "lib/R/doc"
+
+  # Fix build with clang 17
+  # https://github.com/wch/r-source/commit/489a6b8d330bb30da82329f1949f44a0f633f1e8
+  patch :DATA
 
   def install
     # `configure` doesn't like curl 8+, but convince it that everything is ok.
@@ -165,3 +170,28 @@ class R < Formula
                  shell_output("#{bin}/Rscript -e 'library(tcltk)' -e 'tclvalue(.Tcl(\"tk windowingsystem\"))'").chomp
   end
 end
+__END__
+diff -pur R-4.5.0/src/nmath/mlutils.c R-4.5.0-patched/src/nmath/mlutils.c
+--- R-4.5.0/src/nmath/mlutils.c	2025-03-14 00:02:15
++++ R-4.5.0-patched/src/nmath/mlutils.c	2025-05-24 12:16:15
+@@ -105,7 +105,20 @@ double R_pow_di(double x, int n)
+     return pow;
+ }
+ 
++/* It is not clear why these are being defined in standalone nmath:
++ * but that they are is stated in the R-admin manual.
++ *
++ * In R NA_AREAL is a specific NaN computed during initialization.
++ */
++#if defined(__clang__) && defined(NAN)
++// C99 (optionally) has NAN, which is a float but will coerce to double.
++double NA_REAL = NAN;
++#else
++// ML_NAN is defined as (0.0/0.0) in nmath.h
++// Fails to compile in Intel ics 2025.0, Apple clang 17, LLVM clang 20
+ double NA_REAL = ML_NAN;
++#endif
++
+ double R_PosInf = ML_POSINF, R_NegInf = ML_NEGINF;
+ 
+ #include <stdio.h>

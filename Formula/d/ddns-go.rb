@@ -1,18 +1,18 @@
 class DdnsGo < Formula
   desc "Simple and easy-to-use DDNS"
   homepage "https://github.com/jeessy2/ddns-go"
-  url "https://github.com/jeessy2/ddns-go/archive/refs/tags/v6.9.2.tar.gz"
-  sha256 "a7023da2082182df5cf5547601048e7624cf13c988068697ff07ddcd3dfa5e60"
+  url "https://github.com/jeessy2/ddns-go/archive/refs/tags/v6.9.5.tar.gz"
+  sha256 "b84ef5cfe1db70dee2f15e58e396407625d8a2ce3582ab414608ac7fd2200d90"
   license "MIT"
   head "https://github.com/jeessy2/ddns-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc24e60f6bf8ba052d5016b91a1a2fd641109533abc6675981768bcc3fc94eae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc24e60f6bf8ba052d5016b91a1a2fd641109533abc6675981768bcc3fc94eae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc24e60f6bf8ba052d5016b91a1a2fd641109533abc6675981768bcc3fc94eae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff9b6a366a6941c647d53b0ceff396013255716f4274471eb3c3fd4bd6ff326f"
-    sha256 cellar: :any_skip_relocation, ventura:       "ff9b6a366a6941c647d53b0ceff396013255716f4274471eb3c3fd4bd6ff326f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af465f7c258449f1ae6c65227a87977cbc67218e12d0ace1ff1bfb49adb09430"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b36dce839497f8139fd6ba2c4d7b08f4bdfdd904232661202699aea1ddc9807b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b36dce839497f8139fd6ba2c4d7b08f4bdfdd904232661202699aea1ddc9807b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b36dce839497f8139fd6ba2c4d7b08f4bdfdd904232661202699aea1ddc9807b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38c6fe0a6cd1a24ccb1d6edf89b290ec04e75ec04f6d8a79c485e6d195eab2e2"
+    sha256 cellar: :any_skip_relocation, ventura:       "38c6fe0a6cd1a24ccb1d6edf89b290ec04e75ec04f6d8a79c485e6d195eab2e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1830545656ff61b38e4c3388c974dc8bb076c999cdf75025dda379c3792238a1"
   end
 
   depends_on "go" => :build

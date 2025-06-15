@@ -5,6 +5,8 @@ class Crfsuite < Formula
   sha256 "ab83084ed5d4532ec772d96c3e964104d689f2c295915e80299ea3c315335b00"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "a927557fa509ed7f639826d4ba8c469eb580b53dcceeab6268a6519fc1b41813"
     sha256 cellar: :any,                 arm64_sonoma:   "80a144cb4f7425ae6d43e321080cbaad697626aba0356c787ab62a53514a5804"
@@ -28,11 +30,6 @@ class Crfsuite < Formula
 
   conflicts_with "freeling", because: "both install `crfsuite` binaries"
 
-  resource "homebrew-conll2000-training-data" do
-    url "https://www.cnts.ua.ac.be/conll2000/chunking/train.txt.gz"
-    sha256 "bcbbe17c487d0939d48c2d694622303edb3637ca9c4944776628cd1815c5cb34"
-  end
-
   # Fix autoconf failure.
   patch do
     url "https://github.com/chokkan/crfsuite/commit/a6a4a38ccc4738deb0e90fc9ff2c11868922aa11.patch?full_index=1"
@@ -51,6 +48,11 @@ class Crfsuite < Formula
   end
 
   test do
+    resource "homebrew-conll2000-training-data" do
+      url "https://www.cnts.ua.ac.be/conll2000/chunking/train.txt.gz"
+      sha256 "bcbbe17c487d0939d48c2d694622303edb3637ca9c4944776628cd1815c5cb34"
+    end
+
     resource("homebrew-conll2000-training-data").stage testpath
 
     # Use spawn instead of {shell,pipe}_output to directly read and write

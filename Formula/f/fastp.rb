@@ -1,18 +1,18 @@
 class Fastp < Formula
   desc "Ultra-fast all-in-one FASTQ preprocessor"
   homepage "https://github.com/OpenGene/fastp"
-  url "https://github.com/OpenGene/fastp/archive/refs/tags/v0.24.1.tar.gz"
-  sha256 "dd8a1b7e0410a800f80939e4d14b116e90bbec83ef7294a5f13fdaaba3fcc719"
+  url "https://github.com/OpenGene/fastp/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "cd8ba4bbadacadf22a8dd83445455717689a01c774a0a0c23cf36f7a05496c91"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d1d632493ed11e7c6db44c6265d9936f00026a0012ce2a2c42f6a39c224409d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "7726820f8746ddc91660e300e03e1752de97d00d05da3246058a3e74b1fd9fbb"
-    sha256 cellar: :any,                 arm64_ventura: "607b3abec7359671bdd813a97e884e1440ff06e8447415dbb211863f08876016"
-    sha256 cellar: :any,                 sonoma:        "b057cf1f75d8be26c6f54c4da3a787de2b519c1a98d82912cc988a4089a318ee"
-    sha256 cellar: :any,                 ventura:       "69b7ab175dd72f8eb15f2a40dcfee38636ba96d056fc7dd61cd437595d304481"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85b0013a05762141221ea1c320ba1c17a77f824083cc816b52d63c16a2060b6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cc80baf649052c86fbcfe150552298c3036804a15217395ab4bd4528295e475"
+    sha256 cellar: :any,                 arm64_sequoia: "abf213d067a6e80c8058042527c5a985514c4b52ec6e5b43f877a99a35c611b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "50ccc67d66768d2dd24a6b83488f928d1b7e288b9d5bbf4a9c748fa58b0637b5"
+    sha256 cellar: :any,                 arm64_ventura: "ac172a82c29a53312a39423b66b3ac7ac935d0c93fbbec87f392f5b7ecad4de7"
+    sha256 cellar: :any,                 sonoma:        "5c0a2e8ea04344f2247039f59cc93613a9b12e91ceb623e606c5c9524f6391f6"
+    sha256 cellar: :any,                 ventura:       "e024e174932a8ee69481892e69ac54f146527b406eb5b89447d3fd1dc9a1a26f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ecea2fb766c29a9cdc93d6c056448c3b1a328c34d50f12455f79ee9389f53b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5279e5aa2abde6a63b3422e42d7ec9aa753d59cbd0ccff68163d65ea71ccc96"
   end
 
   depends_on "isa-l"

@@ -1,28 +1,38 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide"
-  url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2025.5.0.tar.gz"
-  sha256 "956e9cf01b5f3735a7f032eb1c7f1977345b4bca5997ce6c8fb7daf5f15d8fe8"
+  url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2025.6.0.tar.gz"
+  sha256 "5d1dc902930bca96b4d97d7204f6472c53ae04f523f55f2803e8115c99310912"
   license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "974bf7430857d1dd6daaa5400c373cae875f464a9c2a9fb3e0608913fb0bbeec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4f60667540f577b82784c6a674ea8cbadb3a1629627fc019a7f075ba1042e0a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cdf16454ecc2fcc285ec76f683c10e9fa0d62b45afee18d470b8771b4889e03b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85b16789b560619f53fd2cffc5e20fea285ebd95f96b829b9aba7edba40e6ad6"
-    sha256 cellar: :any_skip_relocation, ventura:       "a35bf2b0750e6278855a2b929959df8e1f5c09d007c1f1aff7e33955686a1feb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a67987f86336cdc31764f3b30fa46a54914e1db4c26acc022da5ca0c3c58f57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06d80d13b621c422ee6fd3c4b9b644df34f1b7de1aab8b50b7609a58826bb0fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06d80d13b621c422ee6fd3c4b9b644df34f1b7de1aab8b50b7609a58826bb0fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "06d80d13b621c422ee6fd3c4b9b644df34f1b7de1aab8b50b7609a58826bb0fc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b39d02ec9ff00ff5764bf902d7d1a3b7877c0a6321eab4e1ae46fb4f8390e123"
+    sha256 cellar: :any_skip_relocation, ventura:       "b39d02ec9ff00ff5764bf902d7d1a3b7877c0a6321eab4e1ae46fb4f8390e123"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2af04d526409b6ca38f0703e5ce50cc657ec8fed5674b77ae90d9efcab20e202"
   end
 
   depends_on "go" => :build
 
   def install
-    system "make", "install",
-      "VERSION=#{version}",
-      "DATE=#{time.iso8601}",
-      "PACKAGE_MANAGER=#{tap.user}",
-      "PREFIX=#{prefix}"
+    # We avoid using the `Makefile` to ensure usage of our own `go` toolchain.
+    # Set `gobuildid` to create an LC_UUID load command.
+    # This is needed to grant user permissions for local network access.
+    ldflags = %W[
+      -B gobuildid
+      -X main.Version=#{version}
+      -X main.BuildTime=#{time.iso8601}
+      -X github.com/cloudflare/cloudflared/cmd/cloudflared/updater.BuiltForPackageManager=#{tap.user}
+    ]
+    system "go", "build", *std_go_args(ldflags:), "./cmd/cloudflared"
+    inreplace "cloudflared_man_template" do |s|
+      s.gsub! "${DATE}", time.iso8601
+      s.gsub! "${VERSION}", version.to_s
+    end
+    man1.install "cloudflared_man_template" => "cloudflared.1"
   end
 
   service do
@@ -40,5 +50,9 @@ class Cloudflared < Formula
     assert_match "Error locating origin cert", shell_output("#{bin}/cloudflared tunnel run abcd 2>&1", 1)
     assert_match "cloudflared was installed by #{tap.user}. Please update using the same method.",
       shell_output("#{bin}/cloudflared update 2>&1")
+
+    return unless OS.mac?
+
+    refute_empty shell_output("dwarfdump --uuid #{bin}/cloudflared").chomp
   end
 end

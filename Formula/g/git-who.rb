@@ -1,18 +1,18 @@
 class GitWho < Formula
   desc "Git blame for file trees"
   homepage "https://github.com/sinclairtarget/git-who"
-  url "https://github.com/sinclairtarget/git-who/archive/refs/tags/v0.7.tar.gz"
-  sha256 "457a31f9421053cec30c26305badc9288f1645f0ca46829e00c3b3574297ee59"
+  url "https://github.com/sinclairtarget/git-who/archive/refs/tags/v1.1.tar.gz"
+  sha256 "b88efe18a39987006df113e097a0e96493955237613997b56c940ff591473ea2"
   license "MIT"
   head "https://github.com/sinclairtarget/git-who.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2573864e506810bb5cdf009de69ffec294ed93b19d9ae98dc71d88a88d32de8f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2573864e506810bb5cdf009de69ffec294ed93b19d9ae98dc71d88a88d32de8f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2573864e506810bb5cdf009de69ffec294ed93b19d9ae98dc71d88a88d32de8f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de40e9aab5e4e48c42cbf2edd7f1ad5c1562396757bf6a229e52ada3bf20b5a8"
-    sha256 cellar: :any_skip_relocation, ventura:       "de40e9aab5e4e48c42cbf2edd7f1ad5c1562396757bf6a229e52ada3bf20b5a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cc8bcd7b086f6cc7fa8873c9bf3af24a78fa0911a0dcf68eb9bc0be43f858d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1a53fb17a9a37e67ca3f9e59b2816c53ca34204c0779ed84a94aa27e1f5e10d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1a53fb17a9a37e67ca3f9e59b2816c53ca34204c0779ed84a94aa27e1f5e10d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1a53fb17a9a37e67ca3f9e59b2816c53ca34204c0779ed84a94aa27e1f5e10d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "738e5938dbf462fcf3d297d72a77ca47252fcfacc7202296fc78bc0987875364"
+    sha256 cellar: :any_skip_relocation, ventura:       "738e5938dbf462fcf3d297d72a77ca47252fcfacc7202296fc78bc0987875364"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d740e976ce6a927fafe9f33d361079510d3388307e61d85273f2d048932e321"
   end
 
   depends_on "go" => :build

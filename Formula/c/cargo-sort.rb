@@ -1,19 +1,19 @@
 class CargoSort < Formula
   desc "Tool to check that your Cargo.toml dependencies are sorted alphabetically"
   homepage "https://github.com/devinr528/cargo-sort"
-  url "https://github.com/DevinR528/cargo-sort/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "2add0719d3309e868e8e305ce33bfbbd59554853e1cef2866af6745b750a689a"
+  url "https://github.com/DevinR528/cargo-sort/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "1e345b7ce5e88b347895e602757c344f8a996700a34dd367d8ad35728ebb846b"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/devinr528/cargo-sort.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f705b9d2acf22f9d3a938c0a6fcfd91542216c3c5708ca9b925b6306335cad00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50433c453c2b06805d430060ab93af25bf7c357a6561d7ecdb5f20b005b5ee2e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cce8f602feae89f057f651943a59cb19054ac9dfd795b55ec036c83c0e6277e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d07ea46096df39b7e931785beff09de82825d8312599c62d2768c9809b53e70"
-    sha256 cellar: :any_skip_relocation, ventura:       "8f7d7d7098162924d7b52634dcc6b8e79c488340a440a414884ccfd61dac769c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "854534758b149b5c0d7258e12ce22ed0dc04edfa3f5c2cd306c93d10288562f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4dca60b315658ddd7aecbddae66691dc439fcdf620325e5cb367df4c754f4a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62b987eaf83d9abfa459ad7b89b3bf3fd622b99b179f0ba472b9708543a4c938"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d424c55d557d82be49dcb3c3f300405b3b5d80e0fef403a465af864d508e4d48"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "49803c11c02f3fd6b857e977a4133b1ce131d7b1ada07c9666065882d4749422"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2cfc77ca9bbfdf53b8f1eb03a88d41379bf4fd1985d3c4450a1879b6596e1f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "d2339c88c6751fc6167b6570b4d2c09912f70e385c8fb7db9c08459892b018f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cf954a174829ca3a76871682c76f0a8a39583ac3a86cf7ace9b3341a7d01d3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "816e7ed9f55591b73663162de5bd7a1b514c01ce3ccc7cfca49b6e67a1f9e793"
   end
 
   depends_on "rust" => :build

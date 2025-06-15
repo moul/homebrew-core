@@ -1,18 +1,18 @@
 class Cue < Formula
   desc "Validate and define text-based and dynamic configuration"
   homepage "https://cuelang.org/"
-  url "https://github.com/cue-lang/cue/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "dbf683785e5f3ee148345c31330b8aac6078e82d2d4c99c938315f5aecfeeb8b"
+  url "https://github.com/cue-lang/cue/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "531dd591a164a351a2e7f2ecb38170ec129de2e7033d34d46887b34c70643942"
   license "Apache-2.0"
   head "https://github.com/cue-lang/cue.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "579de2e923c0c7d7db17ec8e410a86186d3aca8930af2d99ae0690d6aa1884bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "579de2e923c0c7d7db17ec8e410a86186d3aca8930af2d99ae0690d6aa1884bf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "579de2e923c0c7d7db17ec8e410a86186d3aca8930af2d99ae0690d6aa1884bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b79869217afdcd5dc25eb65dde44d021330105b285f0fe592195c845bba423e3"
-    sha256 cellar: :any_skip_relocation, ventura:       "b79869217afdcd5dc25eb65dde44d021330105b285f0fe592195c845bba423e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7f102fafb95b80f149b82a86f57fea7dc694f9369037cb5d09115aed545eba8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "013fb591722c7861abcdfaf4de06031876f581cd1259495b7155abddf7bbb44e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "013fb591722c7861abcdfaf4de06031876f581cd1259495b7155abddf7bbb44e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "013fb591722c7861abcdfaf4de06031876f581cd1259495b7155abddf7bbb44e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6a365c109fc0140f8df79e1a52bd28da303355f2d9413b24f8109e06138de86"
+    sha256 cellar: :any_skip_relocation, ventura:       "f6a365c109fc0140f8df79e1a52bd28da303355f2d9413b24f8109e06138de86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcfde5c0d2f8b69f843dcb8d0e814be62d32439060fc09ff85742f8ddea98c32"
   end
 
   depends_on "go" => :build

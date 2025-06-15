@@ -7,6 +7,8 @@ class Dcadec < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/foo86/dcadec.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3ae8134706fc28f0b3e951bd4dddbba4c3e13b58b61484e5988180fba679570f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a38744f8f827e1d1b9b8cec9c825699c2d2b3f5186a05d9dc72b44ad1c5f390"
@@ -31,17 +33,17 @@ class Dcadec < Formula
 
   conflicts_with "libdca", because: "both install `dcadec` binaries"
 
-  resource "homebrew-testdata" do
-    url "https://github.com/foo86/dcadec-samples/raw/fa7dcf8c98c6d/xll_71_24_96_768.dtshd"
-    sha256 "d2911b34183f7379359cf914ee93228796894e0b0f0055e6ee5baefa4fd6a923"
-  end
-
   def install
     system "make", "all"
     system "make", "PREFIX=#{prefix}", "install"
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https://github.com/foo86/dcadec-samples/raw/fa7dcf8c98c6d/xll_71_24_96_768.dtshd"
+      sha256 "d2911b34183f7379359cf914ee93228796894e0b0f0055e6ee5baefa4fd6a923"
+    end
+
     resource("homebrew-testdata").stage do
       system bin/"dcadec", resource("homebrew-testdata").cached_download
     end

@@ -3,18 +3,19 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/13/48/fd6d948ab1ab6aa60ea26fec77366a732a19d7db4bb0efe130b647024ad9/molecule-25.4.0.tar.gz"
-  sha256 "c531e2a1051f827f3878dcd7d40d6d6868da066d461ef28b5e8fedea5e93f0f9"
+  url "https://files.pythonhosted.org/packages/51/d8/3b029e082247fc988fa9869edf39dd3188d929db19f47e91181dff907db5/molecule-25.5.0.tar.gz"
+  sha256 "585d8ce0ad493be3ae94de096f8b4a896ab9010a7ea36a869fdf5e29bd668f4b"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ed13a6a442814b0d4250b459845b57000b29530f0029d66acab0e3a21a366daa"
-    sha256 cellar: :any,                 arm64_sonoma:  "da756af8b3b12b24fccd1ac93bb3ff4177d7bfe95b45d05173f6e67f5ea410cb"
-    sha256 cellar: :any,                 arm64_ventura: "93d37c01816fd2faa0fbf752b10f67d77789007964d5ab3cac0920fc9159c185"
-    sha256 cellar: :any,                 sonoma:        "10193238dbf0163f0166671840e736e5d2bc927c88186f80a640e9b31df8f54b"
-    sha256 cellar: :any,                 ventura:       "caa149049a7ca2ea664b87a3c1f1d406575d62620c0b5a1efa745e49c17b9344"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98066dc81f221d85f25fad10395b0c6bdaac3edb522d421981dbfad33ad1635b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79f2fd80152a6576cb39f8af85b7f82d07d3e11cdcb7d032eb725c90e9da258a"
+    sha256 cellar: :any,                 arm64_sequoia: "e5b06a38c2bc38fb543e89a9a299ae19cd4bc340830dcd87e984fb7db229abbb"
+    sha256 cellar: :any,                 arm64_sonoma:  "333be3c67c93221f1b70fec38a3f0d55d06f72d659ed97b2e8e2db5fb75dc26a"
+    sha256 cellar: :any,                 arm64_ventura: "85954f4d7ff1683c9a218618cd97b2ca9cc2543bf66634162e4c48a10166df3f"
+    sha256 cellar: :any,                 sonoma:        "f4cc0b08694cad35fae4f77665959f752b1d1fdbe926990f95d1e47207a3e8fa"
+    sha256 cellar: :any,                 ventura:       "010d8d2f778fdc42ef3f3cf941915814484468fb2bf0f74b61ec62c031803213"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16f7d2e8ca52da9d01aca5ea05281931d907ff937a50b3fa4dd5985535f3fdb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fb5e5489b0bc31d77bd8b32f1b2037e05ee90a0ab23c01eaa324d599727cb87"
   end
 
   depends_on "rust" => :build
@@ -31,13 +32,13 @@ class Molecule < Formula
   end
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/b9/51/52af1cd75769bcc9cd54b012210c400eafaa6cd459302517fec08899b3ed/ansible_compat-25.1.4.tar.gz"
-    sha256 "ebf8620021dd25c2d7c3e8e9382efbe7328db58ea396cbbe688ebef80dc8f8ae"
+    url "https://files.pythonhosted.org/packages/30/66/5ab513ccbc8a5820056ee06eab293591a3ed0908eff47e7d3447a4280e20/ansible_compat-25.5.0.tar.gz"
+    sha256 "0b71052313596e128d2bf60166a1d2ac41c6d140a0ca97d56b878e3c23bfce42"
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/9c/cc/ffab05d33cb327001cd5b48209cbf4312608b09c8604286eab3da1263912/ansible_core-2.18.4.tar.gz"
-    sha256 "e1f8f5c33546362b0ee933e0969a3ba364b486515a6fa1bc25ebb5d95f8ec5f4"
+    url "https://files.pythonhosted.org/packages/4c/1e/c5d52171ae2b86689e3ef9e4f578c605a7f53a862d1e9fe8c254deb75fe1/ansible_core-2.18.6.tar.gz"
+    sha256 "25bb20ce1516a1b7307831b263cef684043b3720711466bd9d4164e5fd576557"
   end
 
   resource "attrs" do
@@ -51,13 +52,13 @@ class Molecule < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "click-help-colors" do
@@ -96,13 +97,13 @@ class Molecule < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/38/2e/03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deec/jsonschema-4.23.0.tar.gz"
-    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
+    url "https://files.pythonhosted.org/packages/bf/d3/1cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177/jsonschema-4.24.0.tar.gz"
+    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/10/db/58f950c996c793472e336ff3655b13fbcf1e3b359dcf52dcf3ed3b52c352/jsonschema_specifications-2024.10.1.tar.gz"
-    sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
+    url "https://files.pythonhosted.org/packages/bf/ce/46fbd9c8119cfc3581ee5643ea49464d168028cfb5caff5fc0596d0cf914/jsonschema_specifications-2025.4.1.tar.gz"
+    sha256 "630159c9f4dbea161a6a2205c3011cc4f18ff381b189fff48bb39b9bf26ae608"
   end
 
   resource "markdown-it-py" do
@@ -126,13 +127,13 @@ class Molecule < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/96/2d/02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6/pluggy-1.5.0.tar.gz"
-    sha256 "2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
   end
 
   resource "pygments" do
@@ -156,8 +157,8 @@ class Molecule < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "resolvelib" do
@@ -171,8 +172,8 @@ class Molecule < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/0b/b3/52b213298a0ba7097c7ea96bee95e1947aa84cc816d48cebb539770cdf41/rpds_py-0.24.0.tar.gz"
-    sha256 "772cc1b2cd963e7e17e6cc55fe0371fb9c704d63e44cacec7b9b7f523b78919e"
+    url "https://files.pythonhosted.org/packages/8c/a6/60184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921/rpds_py-0.25.1.tar.gz"
+    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
   end
 
   resource "selinux" do
@@ -191,8 +192,8 @@ class Molecule < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   resource "wcmatch" do

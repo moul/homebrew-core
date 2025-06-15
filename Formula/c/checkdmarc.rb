@@ -3,13 +3,14 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/f7/e6/813515c22640d19be3abf40ba6e1c7390b540f11249fe6d928d9ed22577e/checkdmarc-5.8.2.tar.gz"
-  sha256 "f7775bf19d2841b412e5b954c9f543fc735c83d3a872eb3fb2324e87f0005c92"
+  url "https://files.pythonhosted.org/packages/de/86/0f0d08402bc7184d5cd04be366b66087c93cd8616f008f8b808888e3a0da/checkdmarc-5.8.6.tar.gz"
+  sha256 "1e36d52fc73bdcad8f9904e47c3213c71126eb1ca69b6aa8e43f460cf8e4d52c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/domainaware/checkdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1e4b05d56b7c8033e7f24df7199c7d9a76e8dfd43cc1eb7316e32ec1b316561c"
+    sha256 cellar: :any_skip_relocation, all: "bb94624ba5d0c93ce57b5450b65d7f7ea3012e6e79da3858b57f6578750db734"
   end
 
   depends_on "certifi"
@@ -47,8 +48,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/42/52/4d2fe190c785fd8930917bb1412b4c1eff11564e835a63495cf946630236/publicsuffixlist-1.0.2.20250509.tar.gz"
-    sha256 "4fa37440456e71989ee079144ae279068dcb1cc5625d126affcc8bbc012fda5d"
+    url "https://files.pythonhosted.org/packages/84/a7/5e93777bf7989ef23694169637c3344f369c756453ea96f581e97e134b97/publicsuffixlist-1.0.2.20250608.tar.gz"
+    sha256 "0b8472c18bf1e5b36ea2be1a81704de97a682e4c47246300b81a1c67d15c1983"
   end
 
   resource "pyleri" do
@@ -57,13 +58,13 @@ class Checkdmarc < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/9f/26/e25b4a374b4639e0c235527bbe31c0524f26eda701d79456a7e1877f4cc5/pyopenssl-25.0.0.tar.gz"
-    sha256 "cd2cef799efa3936bb08e8ccb9433a575722b9dd986023f1cabc4ae64e9dac16"
+    url "https://files.pythonhosted.org/packages/04/8c/cd89ad05804f8e3c17dea8f178c3f40eeab5694c30e0c9f5bcd49f576fc3/pyopenssl-25.1.0.tar.gz"
+    sha256 "8d031884482e0c67ee92bf9a4d8cceb08d92aba7136432ffb0703c5280fc205b"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "timeout-decorator" do

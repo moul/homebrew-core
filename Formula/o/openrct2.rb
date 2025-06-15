@@ -2,17 +2,18 @@ class Openrct2 < Formula
   desc "Open source re-implementation of RollerCoaster Tycoon 2"
   homepage "https://openrct2.io/"
   url "https://github.com/OpenRCT2/OpenRCT2.git",
-      tag:      "v0.4.22",
-      revision: "b7199e30991d52ca66e416c4604bbe31c0a826d5"
+      tag:      "v0.4.23",
+      revision: "b8d73b523c906993a593a2c2b80d661dbe3da5ee"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "c1f7ee4afbf3562352e459004395faafcf8a1766ca007c6351a7942b71b1c7e6"
-    sha256 cellar: :any, arm64_sonoma:  "223c776a2034bc006f21f8ddf54c96d8fda19f4090d8625bdd4cab8348c1b162"
-    sha256 cellar: :any, sonoma:        "69f288a413ba65d9df377d47ce87aa50c8d4d099c8aa70f00425c5df2679d31a"
-    sha256               arm64_linux:   "43f42a4cc57a1cc3edf61eeda95f825c61f0619fb8d01fec565927f160e162f1"
-    sha256               x86_64_linux:  "d0c938effee1cfaf81194bbb335b6e9f040605ca5886da83845ae507c74b43a8"
+    sha256 cellar: :any, arm64_sequoia: "cdd04cef69d9c4c56e75eee791d51295d5142461250934e72dc3f56accde2d68"
+    sha256 cellar: :any, arm64_sonoma:  "3530881c112f7c8a880f1f5f3c778f3c64aa9ee90eba7c28fb026398f2780e84"
+    sha256 cellar: :any, sonoma:        "9a7226b35e2187a64bece91a53172036c45b35610ae3fb380a1ad98cf076f8a3"
+    sha256               arm64_linux:   "581606d8d9ecc464e2a18d641560ed4f363301335ec40b536662cc6551ebbdac"
+    sha256               x86_64_linux:  "4ca2181aa36f3b62c973196364f9989e4de09c57b3ae6d0fae6ad4f7fa26468b"
   end
 
   depends_on "cmake" => :build
@@ -46,8 +47,8 @@ class Openrct2 < Formula
   end
 
   resource "objects" do
-    url "https://github.com/OpenRCT2/objects/releases/download/v1.6.1/objects.zip"
-    sha256 "6829186630e52c332b6a4847ebb936c549a522fcadaf8f5e5e4579c4c91a4450"
+    url "https://github.com/OpenRCT2/objects/releases/download/v1.7.0/objects.zip"
+    sha256 "c6fdbcb85816fac7cd870cad63aa067376b6bca579991400e8941c0e2b78bbd2"
   end
 
   resource "openmusic" do
@@ -90,10 +91,7 @@ class Openrct2 < Formula
 
     # By default, the macOS build only looks for data in app bundle Resources.
     libexec.install bin/"openrct2"
-    (bin/"openrct2").write <<~BASH
-      #!/bin/bash
-      exec "#{libexec}/openrct2" "$@" "--openrct2-data-path=#{pkgshare}"
-    BASH
+    (bin/"openrct2").write_env_script "#{libexec}/openrct2", "--openrct2-data-path=#{pkgshare}", {}
   end
 
   test do

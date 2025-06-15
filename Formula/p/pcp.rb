@@ -7,6 +7,8 @@ class Pcp < Formula
   license "Apache-2.0"
   head "https://github.com/dennis-tra/pcp.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b70326a9568fb548f3ce008619104436192af8cd247f06eb722057d8188e828d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1aaac9b306226ce54909757ccdb10996d84803605c1e01f6f08e907ba7b30ec0"
@@ -21,6 +23,8 @@ class Pcp < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "d5e48f3b7f8e0e0034dede947f94b0d5a23311e6ced60093b2cdfea9427389e2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "be128448d96fd7005c9cbda1c1ba2c71e7f7a58468c1c5bb3ec7a1f75c5109c5"
   end
+
+  deprecate! date: "2025-05-17", because: :repo_archived
 
   depends_on "go" => :build
 

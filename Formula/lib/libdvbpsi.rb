@@ -11,6 +11,8 @@ class Libdvbpsi < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "cdb91a9f85c8f2f255cc0269d01bff6ccd1952f4895a6d26c6cb26e7e5bcb2f7"
@@ -34,11 +36,6 @@ class Libdvbpsi < Formula
     depends_on "libtool" => :build
   end
 
-  resource "homebrew-sample-ts" do
-    url "https://filesamples.com/samples/video/ts/sample_640x360.ts"
-    sha256 "64804df9d209528587e44d6ea49b72f74577fbe64334829de4e22f1f45c5074c"
-  end
-
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", "--prefix=#{prefix}", "--disable-debug", "--disable-dependency-tracking", "--enable-release"
@@ -47,6 +44,11 @@ class Libdvbpsi < Formula
   end
 
   test do
+    resource "homebrew-sample-ts" do
+      url "https://filesamples.com/samples/video/ts/sample_640x360.ts"
+      sha256 "64804df9d209528587e44d6ea49b72f74577fbe64334829de4e22f1f45c5074c"
+    end
+
     # Adjust headers to allow the test to build without the upstream source tree
     cp pkgshare/"dump_pids.c", testpath/"test.c"
     inreplace "test.c",

@@ -1,8 +1,8 @@
 class Objfw < Formula
   desc "Portable, lightweight framework for the Objective-C language"
   homepage "https://objfw.nil.im/"
-  url "https://objfw.nil.im/downloads/objfw-1.3.tar.gz"
-  sha256 "de9e8a84437c01dacb9e83d7de0e3f7add3152165707d51a4caec640e4f56ba6"
+  url "https://objfw.nil.im/downloads/objfw-1.3.2.tar.gz"
+  sha256 "8148df0d55d1a3218fe9965144b5c3ee2a7f4d8e43e430a6107e294043872cab"
   license "LGPL-3.0-only"
   head "https://objfw.nil.im/", using: :fossil
 
@@ -12,13 +12,13 @@ class Objfw < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "4c9acb6b2cbb4c5f60327bc0b45eaded42f416f56efcaa4b079b1841b563e486"
-    sha256 arm64_sonoma:  "e07a67967f009dad95cac824238475e5509ddabb2908c8a8318ed600b54bef8c"
-    sha256 arm64_ventura: "c2263362599830bcb994be5ec834960386f52542d8aed892837c418d6b821fb8"
-    sha256 sonoma:        "105960305b587763883ef15b78e9babb71bd74d64328e37d4c438ab4dbaedfe2"
-    sha256 ventura:       "e13c3bf6a4a1f6d389d75978d3c8ccc3236d0c599a4c24b133a024dcf48274fc"
-    sha256 arm64_linux:   "02e8e1ec91e72f84e041911ab4fadd221c5d54d78b3660dcd84d4d705a028f6d"
-    sha256 x86_64_linux:  "abc0b34c221438f218cb7b667bde87c888d05a1c6f4bafe333e2052d668305a4"
+    sha256 arm64_sequoia: "beae7540863a1bd426dc471cf9c2673344008fd266edd41b9a103ab7e10b6141"
+    sha256 arm64_sonoma:  "43829254ef245340617d632f201caac594c76b81c0ec1907c554d0e0509a86db"
+    sha256 arm64_ventura: "321bd53c3b72dc7783866636035f70c7243a900fdca2094739c03a0fc9df7cfd"
+    sha256 sonoma:        "daf32fc7c8401967220ae43d63702c8bad70da6df970c3cd25c306aed93d8a7a"
+    sha256 ventura:       "78a1f38e646712a0368a178c537b6842f38512a1dd68341fd7a56020f73f74e9"
+    sha256 arm64_linux:   "ee605e9810975310d29f96a2b3652d056d3f5959e09551acb0c6547b71242e9e"
+    sha256 x86_64_linux:  "3006257b454f839712b9b53634178d3b60926962e4db04acc54719fa724f7e29"
   end
 
   depends_on "autoconf" => :build
@@ -33,11 +33,6 @@ class Objfw < Formula
   fails_with :gcc
 
   patch :DATA
-  patch do
-    # Fix building for macOS 13 with old SDK, as used by Homebrew.
-    url "https://github.com/ObjFW/ObjFW/commit/2d297b2d3702d24662819016b57f0a67d902990d.patch?full_index=1"
-    sha256 "39ccc15f5f5123dae4c86ce6dfbb21ce08a4b4b600e6d6faa19268657e5cf3e8"
-  end
 
   def install
     ENV.clang if OS.linux?

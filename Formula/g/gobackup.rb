@@ -1,18 +1,20 @@
 class Gobackup < Formula
   desc "CLI tool for backup your databases, files to cloud storages"
   homepage "https://gobackup.github.io"
-  url "https://github.com/gobackup/gobackup/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "87ad4c89cf1cee047d9c1e68559322653dda62c830408066c954d07c40ebcc90"
+  url "https://github.com/gobackup/gobackup/archive/refs/tags/v2.15.1.tar.gz"
+  sha256 "ed98caafe426954b81c58164d1c3712b150a0e14ce041f717f134c4b64226412"
   license "MIT"
   head "https://github.com/gobackup/gobackup.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4c4cd8178fd7b42c5efe4cdb0a8af8eae612c3dc2cccb3d396c759979f87033"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4c4cd8178fd7b42c5efe4cdb0a8af8eae612c3dc2cccb3d396c759979f87033"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b4c4cd8178fd7b42c5efe4cdb0a8af8eae612c3dc2cccb3d396c759979f87033"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4793fc54b645330b80fc5a8df570c495372322b40d9107bfa2c2630cddd6543b"
-    sha256 cellar: :any_skip_relocation, ventura:       "4793fc54b645330b80fc5a8df570c495372322b40d9107bfa2c2630cddd6543b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8f9c4843e273d3f385b9ce369864b2ac568d9ad2ff7da1ba920063bae4fa2fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d243bfd20d216240ac0fa2d2ecb4f6974f484cbdcb60b465c2d9442055271a02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d243bfd20d216240ac0fa2d2ecb4f6974f484cbdcb60b465c2d9442055271a02"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d243bfd20d216240ac0fa2d2ecb4f6974f484cbdcb60b465c2d9442055271a02"
+    sha256 cellar: :any_skip_relocation, sonoma:        "287526b952fe7df30ec856351d57051390502a478d95063eb289d438787e6721"
+    sha256 cellar: :any_skip_relocation, ventura:       "287526b952fe7df30ec856351d57051390502a478d95063eb289d438787e6721"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "350e540e9cc5c9f72c2ab051a58173d021eb4e8574b304f215b7e2a4fd7700db"
   end
 
   depends_on "go" => :build

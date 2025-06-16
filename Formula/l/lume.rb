@@ -1,8 +1,8 @@
 class Lume < Formula
   desc "Create and manage Apple Silicon-native virtual machines"
   homepage "https://github.com/trycua/cua"
-  url "https://github.com/trycua/cua/archive/refs/tags/lume-v0.2.14.tar.gz"
-  sha256 "974dd0dc00c1bf387ff174afc3cf767014251755aacf1f793345e8639f7bd290"
+  url "https://github.com/trycua/cua/archive/refs/tags/lume-v0.2.15.tar.gz"
+  sha256 "13e33eeaa7cc459975a2045cc7c81128ea030988f8c493d2e903967fefd98d8c"
   license "MIT"
   head "https://github.com/trycua/cua.git", branch: "main"
 
@@ -12,8 +12,9 @@ class Lume < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9f5647807cc84126eb98db2503cf9ea25efa32375926d2d7a67d6bdbe12eb80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3448eab1082d9bd9f9f721695e00787f98bd620ada6c636f4f626e6251eb3974"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77bb23d3c58147d030d07d5548d81c3d54e79d5b39158daf5bb74098e26e78ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84bb13d84c4fd64cb8c818158f9ebbb955c2b6b196c7b2bb887c9bc4994ffda6"
   end
 
   depends_on xcode: ["16.0", :build]
@@ -30,15 +31,27 @@ class Lume < Formula
     end
   end
 
+  service do
+    run [opt_bin/"lume", "serve"]
+    keep_alive true
+    working_dir var
+    log_path var/"log/lume.log"
+    error_log_path var/"log/lume.log"
+  end
+
   test do
     # Test ipsw command
     assert_match "Found latest IPSW URL", shell_output("#{bin}/lume ipsw")
 
     # Test management HTTP server
-    # Serves 404 Not found if no machines created
     port = free_port
-    fork { exec bin/"lume", "serve", "--port", port.to_s }
+    pid = spawn bin/"lume", "serve", "--port", port.to_s
     sleep 5
-    assert_match %r{^HTTP/\d(.\d)? (200|404)}, shell_output("curl -si localhost:#{port}/lume").lines.first
+    begin
+      # Serves 404 Not found if no machines created
+      assert_match %r{^HTTP/\d(.\d)? (200|404)}, shell_output("curl -si localhost:#{port}/lume").lines.first
+    ensure
+      Process.kill "SIGTERM", pid
+    end
   end
 end

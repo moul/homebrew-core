@@ -3,25 +3,25 @@ class TerraformLocal < Formula
 
   desc "CLI wrapper to deploy your Terraform applications directly to LocalStack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/52/7c/ab31630035e2617420a76c2df8a92628798221e6d68d3116d0f0a3121933/terraform_local-0.22.0.tar.gz"
-  sha256 "9724ab31837ef930d27cc57b09ebce4612f43338ccf2c10ba9518dde4070319f"
+  url "https://files.pythonhosted.org/packages/29/a4/97ef909b1e70e117032227bac56e1c23cee01551a586c5f67bb8d4885e1b/terraform_local-0.23.1.tar.gz"
+  sha256 "c56b025bef52d4af2246d49f00c3103f2678326e7eefbed8b74ae34a1478fe06"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0dd79bcf14897f294199a12bfeea2abae996498421d7abdb16b3c02c8531912e"
+    sha256 cellar: :any_skip_relocation, all: "80f734bb8fb6f72f4807ed7d4bc156895a53176a0a9b2324ed628e4ec8aae351"
   end
 
   depends_on "localstack"
   depends_on "python@3.13"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/a5/dd/68ea8ab6dfbed46b75fcfe0bbd5ae19e4d3ef094b749ff8d944398e90f2d/boto3-1.38.17.tar.gz"
-    sha256 "6058feef976ece2878ad3555f39933e63d20d02e2bbd40610ab2926d4555710a"
+    url "https://files.pythonhosted.org/packages/ad/95/99046c55799732d97b0f9a0bb99b64760f07dd55ac793393a6c4e847d8d6/boto3-1.38.33.tar.gz"
+    sha256 "6467909c1ae01ff67981f021bb2568592211765ec8a9a1d2c4529191e46c3541"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/33/73/8b831403be00dbea152d4827929a5772f58e0413dd3e6b6d4b3592d88d39/botocore-1.38.17.tar.gz"
-    sha256 "f2db4c4bdcfbc41d78bfe73b9affe7d217c7840f8ce120cff815536969418b18"
+    url "https://files.pythonhosted.org/packages/9d/aa/1521d7e1dcb76af8dca81539eec141ee3581a32e0dc1f31d092b59feb06a/botocore-1.38.33.tar.gz"
+    sha256 "dbe8fea9d0426c644c89ef2018ead886ccbcc22901a02b377b4e65ce1cb69a2b"
   end
 
   resource "jmespath" do
@@ -55,8 +55,8 @@ class TerraformLocal < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/fc/9e/73b14aed38ee1f62cd30ab93cd0072dec7fb01f3033d116875ae3e7b8b44/s3transfer-0.12.0.tar.gz"
-    sha256 "8ac58bc1989a3fdb7c7f3ee0918a66b160d038a147c7b5db1500930a607e9a1c"
+    url "https://files.pythonhosted.org/packages/ed/5d/9dcc100abc6711e8247af5aa561fc07c4a046f72f659c3adea9a449e191a/s3transfer-0.13.0.tar.gz"
+    sha256 "f5e6db74eb7776a37208001113ea7aa97695368242b364d73e91c981ac522177"
   end
 
   resource "six" do

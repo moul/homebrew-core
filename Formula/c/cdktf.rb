@@ -1,17 +1,17 @@
 class Cdktf < Formula
   desc "Cloud Development Kit for Terraform"
   homepage "https://github.com/hashicorp/terraform-cdk"
-  url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.20.12.tgz"
-  sha256 "90bb30b7eae861d2a7ab21d1fe4ddbf71c8f74e7b2c31052c9b9265ff69d4c6e"
+  url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.21.0.tgz"
+  sha256 "5885318063a55b44f87c917fe5806379937f7aecad5fe766bc898a1519de56b6"
   license "MPL-2.0"
 
   bottle do
-    sha256                               arm64_sequoia: "c1f18f63b582964297038bb4b67726fdd4f3679da303fe3db743bc50f8415b31"
-    sha256                               arm64_sonoma:  "e69789750019da67bc16c2e137228306528a18f2bf92499c027f40cc98749980"
-    sha256                               arm64_ventura: "44219e68aa1993c579b5f973322703f64209ed42b9bb4bbce4ad49a5d82a7bbc"
-    sha256                               sonoma:        "3219484a717ff464e6bce5bf60688d37dda8a1544f80235ec15e5325bf1c8f6e"
-    sha256                               ventura:       "055c2f47d7e4ed2fb81f2c978a9281e49dbfb802b7aa23a0efdd4092028a7840"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd71b277d96e93d200479006af9ee8987034fc8e3706a9f2e6cd88619ee6cac9"
+    sha256                               arm64_sequoia: "f5e3dddef4a75c7db589bc1d1052e974c1b2fc209a2bba4efd379da5227db4f8"
+    sha256                               arm64_sonoma:  "4febb127a3888f57b9c2992f4c5894028154ffb4c938cd9dad6cf9bf222de47f"
+    sha256                               arm64_ventura: "07de2f8ab86258e1413e355a5ace5ce1bed2f637031861b013b1ccb04ba044b6"
+    sha256                               sonoma:        "4307f3bd75cc1b46b281df158e32c299bfa0051bbe57fe4139a427e229524c45"
+    sha256                               ventura:       "eda9a5cd48c776d1a99ed9afbca4706178f793166dd1aa062233eb728d2d0fd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "361f8a42a54fda4f627e1b9fa593f68a68f557e963a8bb6f82bd0a6998fae7cc"
   end
 
   depends_on "opentofu" => :test

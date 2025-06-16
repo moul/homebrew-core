@@ -1,8 +1,8 @@
 class Melange < Formula
   desc "Build APKs from source code"
   homepage "https://github.com/chainguard-dev/melange"
-  url "https://github.com/chainguard-dev/melange/archive/refs/tags/v0.25.1.tar.gz"
-  sha256 "83c5fc92464a3b82f4c90a16e34fb18150ab1815a5923be115e2dc3067d0ed77"
+  url "https://github.com/chainguard-dev/melange/archive/refs/tags/v0.26.12.tar.gz"
+  sha256 "9c9476491a58f22528af57f30ac614f6454d72bb2cc6df9a6cf716e8211560b9"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/melange.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Melange < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "307a93301405fe1de342b34c5b55b4bea235cf72a302a6d5bd5d0267b50eab6f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be06c039be036e4d920cddcde7db2e89ee4cf41f8d10f0315ef98676f3e3f3df"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "554bc98fadab640d5f9a9c098e15e5f3052ba93f49fa7e99abf4ce9bfae192ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d38f771abddd3795d83fd10a591f62bfc8d927bbfffa697b52c81aa8fbeac7ce"
-    sha256 cellar: :any_skip_relocation, ventura:       "538698a93289b8480d2d86a539fa7ead2c61a91f518164bd45412d178347dce2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "589d280b0639cc1bfbb1815ac81307c6aefb6c06672a35d451e34647202ad5d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5347f80492c6e153c90b2321dcc65d6c12b7c1d3c59c5426a0470860f2091566"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "341628c88218379b80450b5ab6091fca98af83a949ff418ae656b3fdae2c2a7e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "11fa364b42b11fa67bd5bdeb20bbf084808fa90ba59c018e76a4d3b647fcb3e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "43d1076664ecd780aa0c442822286db9ddf884ff2caaf3f3cf7836bbf13575d1"
+    sha256 cellar: :any_skip_relocation, ventura:       "e19860fcadb06e5a659cd79e2d0fb1a261541716ead65970f6af5ed865f45ddd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0f69bf6a6779e80972c2b2205bb04f03116c1895f42a639d86c65f3c0c32195"
   end
 
   depends_on "go" => :build

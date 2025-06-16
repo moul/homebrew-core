@@ -8,6 +8,7 @@ on:
     paths:
       - .github/workflows/cache.yml
     branches:
+      - main
       - master
   schedule:
     - cron: '30 19/6 * * *'
@@ -33,6 +34,7 @@ jobs:
     if: github.repository_owner == 'Homebrew'
     runs-on: ubuntu-latest
     container:
+      # TODO: switch to main when we're pushing those images
       image: ghcr.io/homebrew/ubuntu22.04:master
     outputs:
       runners: ${{ steps.determine-runners.outputs.runners }}

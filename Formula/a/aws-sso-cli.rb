@@ -1,18 +1,18 @@
 class AwsSsoCli < Formula
   desc "Securely manage AWS API credentials using AWS SSO"
   homepage "https://synfinatic.github.io/aws-sso-cli/"
-  url "https://github.com/synfinatic/aws-sso-cli/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "8a994f14daf5284fcbe6112c0d224e033b8e737c1dfcbef234017a2abe1ac4d7"
+  url "https://github.com/synfinatic/aws-sso-cli/archive/refs/tags/v2.0.3.tar.gz"
+  sha256 "7ebb5d64260ac43d9f70c5f9ef2d04567006df4458dd94a27cb53178956c2eb3"
   license "GPL-3.0-only"
   head "https://github.com/synfinatic/aws-sso-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b9fd58bc39c986a20efc08e5df37994681bf3dac203ffb46f1f339259380879"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d492eace65bc2fb63751ac9295d23deb58b069c839c4a9bd4ae34a365296785"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a05fc92c44cfecbf666d53eece42ca995f7843172557622c450d4f7faadc15f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11bc8478f9d2ac373265949e2b55fb3e8178fe40ee55386d4b2d07b19e16edd5"
-    sha256 cellar: :any_skip_relocation, ventura:       "0c7d6289c62d9ecd13374c0a8aa89c05d59e0bc2a3400a4c4d21d2139b8bcac0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42866f0177ad09637c6fd11c92e9035a35ecdb25e949de3a73e2e6ac63e52e80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8eea421dbbe3524c366b98590ed2984f0adbed717ff2078042786e04cfe78b7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "624ad5cfc367441ae2eebda85aa63180d74d2351481ada1b2e89a76edb62cc37"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "34f9dc776a3f8a2922a32851555e0c91dc5b61fb02c6199b6950b37c692794cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a08b9ce059ae0993c9ee9d287a690397b4dee77a9a388cbc4da8e4f88455752c"
+    sha256 cellar: :any_skip_relocation, ventura:       "623c98e74ab33aab440d6cf773ea58b49fc5db39d242a3aa000563fa2e8a743a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baf1985f646b6882b97edecdff708060997ad382612c287888cff78de36e513e"
   end
 
   depends_on "go" => :build

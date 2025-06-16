@@ -3,6 +3,7 @@ name: Scheduled online check
 on:
   push:
     branches:
+      - main
       - master
     paths:
       - .github/workflows/scheduled.yml
@@ -32,6 +33,7 @@ jobs:
     if: startsWith( github.repository, 'Homebrew/' )
     runs-on: ubuntu-latest
     container:
+      # TODO: switch to main when we're pushing those images
       image: ghcr.io/homebrew/ubuntu22.04:master
     outputs:
       json: ${{ steps.matrix.outputs.json }}
@@ -96,6 +98,7 @@ jobs:
     if: startsWith( github.repository, 'Homebrew/' )
     runs-on: ubuntu-latest
     container:
+      # TODO: switch to main when we're pushing those images
       image: ghcr.io/homebrew/ubuntu22.04:master
     permissions:
       issues: write

@@ -20,6 +20,8 @@ class Macpine < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e93c3ad2fff32d4d7010b2d1fda57f8b82abc315ad3254ae6594f26675957ca"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c6b779505c84d4e020509ba403ae177f2ffaff724fb3063267ec0210489de1f"

@@ -1,12 +1,12 @@
 class GitQuickStats < Formula
   desc "Simple and efficient way to access statistics in git"
   homepage "https://git-quick-stats.sh/"
-  url "https://github.com/arzzen/git-quick-stats/archive/refs/tags/2.5.8.tar.gz"
-  sha256 "75a171042472a0415324c9e903e80be24c2ec32d366a3e1f67ca838a33ecad8f"
+  url "https://github.com/arzzen/git-quick-stats/archive/refs/tags/2.6.1.tar.gz"
+  sha256 "75a8ea93359f1655ab9a8230309216d31de87c3eae77d600873f22d97e2f24ea"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "de09916b90af58cd011cf6faa7be119d581f0ea26a8dd16f66e94fe865aa8298"
+    sha256 cellar: :any_skip_relocation, all: "75c8c68f213c7d1a87e530d5dd8f5a961385d9ada0c244751f317321120458a0"
   end
 
   on_macos do

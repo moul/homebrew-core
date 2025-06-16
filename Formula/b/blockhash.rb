@@ -7,6 +7,8 @@ class Blockhash < Formula
   revision 4
   head "https://github.com/commonsmachinery/blockhash.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "da404e78c996ce8a8cc0f39fb53c7b98de1df04a20f3f04224ef34d181d427e1"
     sha256 cellar: :any,                 arm64_sonoma:  "570d07a44d4c376152581378e09887c872ff761622c559dce4018466cb964c69"
@@ -22,11 +24,6 @@ class Blockhash < Formula
 
   uses_from_macos "python" => :build
 
-  resource "homebrew-testdata" do
-    url "https://raw.githubusercontent.com/commonsmachinery/blockhash/ce08b465b658c4e886d49ec33361cee767f86db6/testdata/clipper_ship.jpg"
-    sha256 "a9f6858876adadc83c8551b664632a9cf669c2aea4fec0c09d81171cc3b8a97f"
-  end
-
   def install
     system "python3", "./waf", "configure", "--prefix=#{prefix}"
     # pkg-config adds -fopenmp flag during configuring
@@ -37,6 +34,11 @@ class Blockhash < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https://raw.githubusercontent.com/commonsmachinery/blockhash/ce08b465b658c4e886d49ec33361cee767f86db6/testdata/clipper_ship.jpg"
+      sha256 "a9f6858876adadc83c8551b664632a9cf669c2aea4fec0c09d81171cc3b8a97f"
+    end
+
     resource("homebrew-testdata").stage testpath
     hash = "00007ff07ff07fe07fe67ff07560600077fe701e7f5e000079fd40410001ffff"
     result = shell_output("#{bin}/blockhash #{testpath}/clipper_ship.jpg")

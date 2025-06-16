@@ -6,6 +6,8 @@ class Flif < Formula
   license "LGPL-3.0-or-later"
   head "https://github.com/FLIF-hub/FLIF.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "7ab5f6dea4a3bf05a201e221b47042ea4ff6d4372f64c1be2a306604d5710b38"
     sha256 cellar: :any,                 arm64_sonoma:   "6e2f70fa17688130a568e64fd6a4abdfe8e61681c1948cf2ecca01dfb04ee535"
@@ -26,11 +28,6 @@ class Flif < Formula
   depends_on "libpng"
   depends_on "sdl2"
 
-  resource "homebrew-test_c" do
-    url "https://raw.githubusercontent.com/FLIF-hub/FLIF/dcc2011/tools/test.c"
-    sha256 "a20b625ba0efdb09ad21a8c1c9844f686f636656f0e9bd6c24ad441375223afe"
-  end
-
   def install
     system "cmake", "-S", "src", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -39,6 +36,11 @@ class Flif < Formula
   end
 
   test do
+    resource "homebrew-test_c" do
+      url "https://raw.githubusercontent.com/FLIF-hub/FLIF/dcc2011/tools/test.c"
+      sha256 "a20b625ba0efdb09ad21a8c1c9844f686f636656f0e9bd6c24ad441375223afe"
+    end
+
     testpath.install resource("homebrew-test_c")
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lflif", "-o", "test"
     system "./test", "dummy.flif"

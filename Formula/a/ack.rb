@@ -1,8 +1,8 @@
 class Ack < Formula
   desc "Search tool like grep, but optimized for programmers"
   homepage "https://beyondgrep.com/"
-  url "https://beyondgrep.com/ack-v3.8.1"
-  sha256 "ab0fe23f02bb602088a1ce41c0ed728bf4b00d57eb3e1b4e5d51e320cab253d3"
+  url "https://beyondgrep.com/ack-v3.9.0"
+  sha256 "b8916abc9d42ebe8cc82264e047ccff5cbc976401e32a3dc6fc01c551c0cb5f8"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,7 +11,8 @@ class Ack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5d4e0402d6f880fe439cc7721b712f263f63f36af3e98458903a078d2e936c31"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8d040693538ad8d489770cf4186a47364fc2bbe4d47e863c491b863e04b4df30"
   end
 
   head do
@@ -50,6 +51,13 @@ class Ack < Formula
       system "#{Formula["pod2man"].opt_bin}/pod2man", bin/"ack", "ack.1", "--release=ack v#{version}"
       man1.install "ack.1"
     end
+  end
+
+  def post_install
+    # FIXME: keg relocation breaks the shebang, so we unbreak it here.
+    #        See https://github.com/Homebrew/brew/issues/20023
+    # We need `audit_result: false` because this replacement only needs to be done when poured from an `:all` bottle.
+    inreplace bin/"ack", "#!#{Formula["perl"].opt_bin}/perl", "#!/usr/bin/env perl", audit_result: false
   end
 
   test do

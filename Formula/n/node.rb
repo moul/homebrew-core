@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v23.11.0/node-v23.11.0.tar.xz"
-  sha256 "f2c5db21fc5d3c3d78c7e8823bff770cef0da8078c3b5ac4fa6d17d5a41be99d"
+  url "https://nodejs.org/dist/v24.2.0/node-v24.2.0.tar.xz"
+  sha256 "40143d43efbdeeb9537995f532126c494d63a31da332acb5022f76f00afc62ab"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,14 +12,13 @@ class Node < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "5e18e143193267631cacdb1b349af222a4e0354461a844840b8f74e1096ee187"
-    sha256 arm64_sonoma:  "9bbd828006bd4a3beacca4c5c4169921c0652f71c5f329a6d41dfac23c36a0bd"
-    sha256 arm64_ventura: "9be149abb8ce827d580ea1557c6be8a71222fa38cb785af0cb879694bd0db28d"
-    sha256 sonoma:        "31eb61b74270e89351c557b688948fe90a50f9838ca1870fe304c19816e6a7af"
-    sha256 ventura:       "815de04f73bb36c3d71799b1f44601a2d7b10b56bc16fee1fac1d8c39c7c2c75"
-    sha256 arm64_linux:   "f82e24cf67c6b2d58da09272dda33d760834aabed910267847c09265b2320f71"
-    sha256 x86_64_linux:  "2cee5b721e8a6f1dd08dd9117222ddc3353d368153e5ecbeff2cb3e21eb76da7"
+    sha256 arm64_sequoia: "e88d6ae68a2c5a0a23c69e79274d7ffb2f79a3bfa6ab65df494312bc6d00aedc"
+    sha256 arm64_sonoma:  "24fe223b14e125d4e6631f01a2b123ed25780a21fa0ef2f24fbbb05c08f1b707"
+    sha256 arm64_ventura: "6c1e84a522f6d2ae85ebcfe301f41928805286c30c7b55cead32b8137da09a39"
+    sha256 sonoma:        "f5c2b4020409ef1943d3530a2eeb0ac3d49a26340c3249616037caa3e4bc6f49"
+    sha256 ventura:       "95d71229eba75556b5e0c768e76d011bf1bb5d3f443189f0cf6ea362e1c253b9"
+    sha256 arm64_linux:   "847a82a6b40ce00ea584f82c23c7b280dcd9eb3dd85a0b6e5dce7a8a2a127909"
+    sha256 x86_64_linux:  "24840cbebc6e64c04d21d00785631b7e48ac0c0f218d19d0ae0599e8e5418aab"
   end
 
   depends_on "pkgconf" => :build
@@ -35,7 +34,7 @@ class Node < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
   on_linux do
@@ -43,10 +42,12 @@ class Node < Formula
     depends_on "gcc@12" => :build if DevelopmentTools.gcc_version("/usr/bin/gcc") < 12
   end
 
-  # https://github.com/swiftlang/llvm-project/commit/94461822c75d5080bf648f86552f7a59b76905c9
+  link_overwrite "bin/npm", "bin/npx"
+
+  # https://github.com/swiftlang/llvm-project/commit/078651b6de4b767b91e3e6a51e5df11a06d7bc4f
   fails_with :clang do
-    build 1500
-    cause "needs std::ranges::elements_view"
+    build 1699
+    cause "needs SFINAE-friendly std::pointer_traits"
   end
 
   # https://github.com/nodejs/node/blob/main/BUILDING.md#supported-toolchains
@@ -59,12 +60,12 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-10.9.2.tgz"
-    sha256 "5cd1e5ab971ea6333f910bc2d50700167c5ef4e66da279b2a3efc874c6b116e4"
+    url "https://registry.npmjs.org/npm/-/npm-11.3.0.tgz"
+    sha256 "1c2dd63f96799ed4bf92b7806d8509302a0f8da68ca452aae27f24388bb41df4"
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1699
 
     # The new linker crashed during LTO due to high memory usage.
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
@@ -102,7 +103,8 @@ class Node < Formula
     # terminate called after throwing an instance of 'std::out_of_range'
     # macOS also can't build with LTO when using LLVM Clang
     # LTO is unpleasant if you have to build from source.
-    args << "--enable-lto" if OS.mac? && DevelopmentTools.clang_build_version > 1500 && build.bottle?
+    # FIXME: re-enable me, currently crashes sequoia runner after 6 hours
+    # args << "--enable-lto" if OS.mac? && DevelopmentTools.clang_build_version > 1699 && build.bottle?
 
     system "./configure", *args
     system "make", "install"

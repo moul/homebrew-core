@@ -3,19 +3,20 @@ class Safety < Formula
 
   desc "Checks Python dependencies for known vulnerabilities and suggests remediations"
   homepage "https://safetycli.com/product/safety-cli"
-  url "https://files.pythonhosted.org/packages/2d/9c/df6ab5f077e22bb4a10aa9208691c6be5c0ad15193439435216ed536f7f3/safety-3.5.1.tar.gz"
-  sha256 "7fde2dbb497f2a167fe2dd864c8ab3296bbcd6e8a4f0490b047d5c84a60a653f"
+  url "https://files.pythonhosted.org/packages/33/af/f135abb8d147629e9a27f436db5135314adc864a98b62922b33d6f05c836/safety-3.5.2.tar.gz"
+  sha256 "ecbb2e76f9574284f2c0e168e71ec92b39018ae9516b3b00f132de57ecaa09cb"
   license "MIT"
+  revision 1
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "edac706c31f93a579208f86ab327fc0090cb5699af86f5e3a92a3664944ce0ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "4847fb07d411d4d404cd7dfae6a1872e4bc9a4a2cbab3dc49b6a5b311ed511a7"
-    sha256 cellar: :any,                 arm64_ventura: "67c6d5156fc4be4bcd514b8d5d963b950aaff52336361057d002f642f025d919"
-    sha256 cellar: :any,                 sonoma:        "f895e0dc48273e95e8356bbdf36e2973d85eb4e4977037418542fe5eab089be6"
-    sha256 cellar: :any,                 ventura:       "136fcbc770dfc0f1e6763c063cc61bb0b624a92a7a1fffcc986e1d8d129be990"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33d7d9e11710de28422e9cb741af333165dd0c6b0eef98307e853ac86add23b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bed57859863321e621124a7e022a48007f1daa1400224b40e700a479e8cc519"
+    sha256 cellar: :any,                 arm64_sequoia: "d2114f59b289d8fe2b13aa0f471f0d6347d16be40959ea31e65d6a127f177833"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb885994626f605de592f48f8165c4400b75262cae32357ead5d4fc5fc5e093a"
+    sha256 cellar: :any,                 arm64_ventura: "e789cd397c3306ffb8e4112d9453a9dd539a03303b5ae9f3899bb696e3dab957"
+    sha256 cellar: :any,                 sonoma:        "75b352fb42a98c16fde56725fae800d6715e18f4cea1b1b0a155075f488d5266"
+    sha256 cellar: :any,                 ventura:       "0819c3fbacd956059e339699005719ea8600d8f61f8d5cedcab687ebade17e1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28c98f5db9c2be18d20f64fb9d6f259d8fbe7426642d101f7bb179bf18c65b3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6077f71360aa94cc9a7a89629ec2a8af3c0e219d9fd37ce6151b6013a2fc694"
   end
 
   depends_on "cmake" => :build
@@ -35,8 +36,8 @@ class Safety < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/2a/b3/5f5bc73c6558a21f951ffd267f41c6340d15f5fe0ff4b6bf37694f3558b8/authlib-1.5.2.tar.gz"
-    sha256 "fe85ec7e50c5f86f1e2603518bb3b4f632985eb4a355e52256530790e326c512"
+    url "https://files.pythonhosted.org/packages/a2/9d/b1e08d36899c12c8b894a44a5583ee157789f26fc4b176f8e4b6217b56e1/authlib-1.6.0.tar.gz"
+    sha256 "4367d32031b7af175ad3a323d571dc7257b7099d55978087ceae4a0d88cd3210"
   end
 
   resource "charset-normalizer" do
@@ -85,8 +86,8 @@ class Safety < Formula
   end
 
   resource "joblib" do
-    url "https://files.pythonhosted.org/packages/30/08/8bd4a0250247861420a040b33ccf42f43c426ac91d99405374ef117e5872/joblib-1.5.0.tar.gz"
-    sha256 "d8757f955389a3dd7a23152e43bc297c2e0c2d3060056dad0feefc88a06939b5"
+    url "https://files.pythonhosted.org/packages/dc/fe/0f5a938c54105553436dbff7a61dc4fed4b1b2c98852f8833beaf4d5968f/joblib-1.5.1.tar.gz"
+    sha256 "f4f86e351f39fe3d0d32a9f2c3d8af1ee4cec285aafcb27003dda5205576b444"
   end
 
   resource "markdown-it-py" do
@@ -145,8 +146,8 @@ class Safety < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rich" do
@@ -155,8 +156,13 @@ class Safety < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/ea/46/f44d8be06b85bc7c4d8c95d658be2b68f27711f279bf9dd0612a5e4794f5/ruamel.yaml-0.18.10.tar.gz"
-    sha256 "20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58"
+    url "https://files.pythonhosted.org/packages/39/87/6da0df742a4684263261c253f00edd5829e6aca970fff69e75028cccc547/ruamel.yaml-0.18.14.tar.gz"
+    sha256 "7227b76aaec364df15936730efbf7d72b30c0b79b1d578bbb8e3dcb2d81f52b7"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https://files.pythonhosted.org/packages/20/84/80203abff8ea4993a87d823a5f632e4d92831ef75d404c9fc78d0176d2b5/ruamel.yaml.clib-0.2.12.tar.gz"
+    sha256 "6c8fbb13ec503f99a91901ab46e0b07ae7941cd527393187039aec586fdfd36f"
   end
 
   resource "safety-schemas" do
@@ -165,8 +171,8 @@ class Safety < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/95/32/0cc40fe41fd2adb80a2f388987f4f8db3c866c69e33e0b4c8b093fdf700e/setuptools-80.4.0.tar.gz"
-    sha256 "5a78f61820bc088c8e4add52932ae6b8cf423da2aff268c23f813cfbb13b4006"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "shellingham" do
@@ -185,8 +191,8 @@ class Safety < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/b1/09/a439bec5888f00a54b8b9f05fa94d7f901d6735ef4e55dcec9bc37b5d8fa/tomlkit-0.13.2.tar.gz"
-    sha256 "fff5fe59a87295b278abd31bec92c15d9bc4a06885ab12bcea52c71119392e79"
+    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
+    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
   end
 
   resource "tqdm" do
@@ -195,13 +201,13 @@ class Safety < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/98/1a/5f36851f439884bcfe8539f6a20ff7516e7b60f319bbaf69a90dc35cc2eb/typer-0.15.3.tar.gz"
-    sha256 "818873625d0569653438316567861899f7e9972f2e6e0c16dab608345ced713c"
+    url "https://files.pythonhosted.org/packages/c5/8c/7d682431efca5fd290017663ea4588bf6f2c6aad085c7f108c5dbc316e70/typer-0.16.0.tar.gz"
+    sha256 "af377ffaee1dbe37ae9440cb4e8f11686ea5ce4e9bae01b84ae7c63b87f1dd3b"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/37/23083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061/typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "urllib3" do

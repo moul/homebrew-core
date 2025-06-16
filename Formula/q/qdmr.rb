@@ -1,17 +1,17 @@
 class Qdmr < Formula
   desc "Codeplug programming tool for DMR radios"
   homepage "https://dm3mat.darc.de/qdmr/"
-  url "https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "80eaadc6f817894fde6773d1b021e7a8ec051cbb774f63e6a097e21d8a56d8b5"
+  url "https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.12.3.tar.gz"
+  sha256 "1ee2adc912120025190eff65c78b1f8a153d1cab14909cbd5291403fb7b04643"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "466b1ea108063ed50d951b3e79694867255e395d516cbb43e294cbb9ffce4ca0"
-    sha256 arm64_sonoma:  "b16fb78360a1a05305e2f31dc1b6949e45271b57589b486e930bd77814d2b6cc"
-    sha256 arm64_ventura: "04817d917185b0e67cd0f9791108465ac2d01b54351931c2c902725f9c17bc91"
-    sha256 sonoma:        "86034b508621ad37972850dc34850dff0031e1ad7827b6ee69f60cc11e79b774"
-    sha256 ventura:       "43852bc488a99f1ea2eeeb638b59c24ddb30b8d559a45e0a978b26efca56b0e7"
-    sha256 x86_64_linux:  "7fbb488e9feba30be04cfa868546e46ea105bae7041549c7132a7e25eacb0910"
+    sha256 arm64_sequoia: "beb390820470fa2c825dc25a14c2d40de8770f9d513ca639085335773571a730"
+    sha256 arm64_sonoma:  "58d13f717ae94f13d6cdcef192691b031ea352b85bffd2c0948aa75831a3e59f"
+    sha256 arm64_ventura: "5c19013fde907534ed1e008086dd0af7e58f52091820a503058e6d155690a290"
+    sha256 sonoma:        "d80d900ac2c58bdc5d66d31e8c843f24809ceb8934688da4d5f08f9f2da755f4"
+    sha256 ventura:       "d272e84ab9b72bbff9e33fbf75983668a1cd2196e81e848a439a8ec57eafc1d4"
+    sha256 x86_64_linux:  "88fecf14b35168081be6da6a39e1b8326aa94429c2de4d12cd555220f66b2d67"
   end
 
   depends_on "cmake" => :build
@@ -20,7 +20,11 @@ class Qdmr < Formula
   depends_on "yaml-cpp"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DINSTALL_UDEV_RULES=OFF", *std_cmake_args
+    args = %w[
+      -DINSTALL_UDEV_RULES=OFF
+    ]
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" # Cmake 4 workaround
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

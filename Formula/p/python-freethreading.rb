@@ -1,24 +1,25 @@
 class PythonFreethreading < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.3/Python-3.13.3.tgz"
-  sha256 "988d735a6d33568cbaff1384a65cb22a1fb18a9ecb73d43ef868000193ce23ed"
+  url "https://www.python.org/ftp/python/3.13.5/Python-3.13.5.tgz"
+  sha256 "e6190f52699b534ee203d9f417bdbca05a92f23e35c19c691a50ed2942835385"
   license "Python-2.0"
 
   livecheck do
     formula "python"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "780698a792348a25f93c7b284a922a8c70bcc2d45b2d48448ff8f930356c83a9"
-    sha256 arm64_sonoma:  "d5b4985f277da8b709d9fefb01db68d6dd9ce06d5cb4a79d188184f47877ca67"
-    sha256 arm64_ventura: "595d95dd44ff8977a90b93ba19e06d955bcc22d3bccd8167f37a45dcd348bc58"
-    sha256 sequoia:       "c2b278641312607921e8b492893c70792564497caa30ca6ca90f6ae69d5b093b"
-    sha256 sonoma:        "429c39c05aaa5c7e347938ae3a32fd46af6a953ecc9e830b185b19697596446e"
-    sha256 ventura:       "d5c3801396068e28ee0ce985a859c0536faf5086083ac0407eaf999ce5ed295f"
-    sha256 arm64_linux:   "325bf7a74398a202e6200dfb833a0023cd541eca5bb3ee30ba72e9dfee769bcb"
-    sha256 x86_64_linux:  "5b8957b64f45da4232da4a675f650447e609c2f61c3225568e6c40e190d3890b"
+    sha256 arm64_sequoia: "b9c0c3dc0a2d7c1046de2882358dbe6cfe22ca8307b3a99d90731c66bb5c4c97"
+    sha256 arm64_sonoma:  "e328895cb1bc0c8226fd1f821278bb5cd2e98472ad18baccca1cc0e39de69090"
+    sha256 arm64_ventura: "9f08e025e60eed7a068ce64fc2e7c833db1c691ec0b0a3767856378f1f1734d5"
+    sha256 sequoia:       "c5e8398d27194f97c51bb744f3bf7182ad03a7b62129b661abd34056a1712869"
+    sha256 sonoma:        "765d9d6a86a004185ea5965457d34b2f0304b523f226a7b14e358086d4dd96b8"
+    sha256 ventura:       "ebcb7c2ee423ca32a51fcff7f4c9f282c3be0dfc01a9172c6da66169807c3d48"
+    sha256 arm64_linux:   "f91e6b35fa3a699eab0340629d60064a0589277330faa623d22eeb1eb204f8df"
+    sha256 x86_64_linux:  "88d8b56d861e4e3a2fb735919d07fc2a302220c34bc18edbf32327f897f57944"
   end
 
   depends_on "pkgconf" => :build
@@ -49,18 +50,18 @@ class PythonFreethreading < Formula
 
   # Always update to latest release
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/d5/ae/09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622/flit_core-3.10.1.tar.gz"
-    sha256 "66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7"
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/f4/b1/b422acd212ad7eedddaf7981eee6e5de085154ff726459cf2da7c5a184c1/pip-24.3.1.tar.gz"
-    sha256 "ebcb60557f2aefabc2e0f918751cd24ea0d56d8ec5445fe1807f1d2109660b99"
+    url "https://files.pythonhosted.org/packages/59/de/241caa0ca606f2ec5fe0c1f4261b0465df78d786a38da693864a116c37f4/pip-25.1.1.tar.gz"
+    sha256 "3de45d411d308d5054c2168185d8da7f9a2cd753dbac8acbfa88a8909ecd9077"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/43/54/292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0/setuptools-75.6.0.tar.gz"
-    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
+    url "https://files.pythonhosted.org/packages/9e/8b/dc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15/setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "wheel" do

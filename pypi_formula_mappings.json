@@ -74,7 +74,7 @@
     "extra_packages": ["fitsio"]
   },
   "aws-elasticbeanstalk": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "cryptography"]
   },
   "aws-google-auth": {
     "exclude_packages": ["certifi", "pillow"]
@@ -132,6 +132,10 @@
   "bpython": {
     "exclude_packages": ["certifi"]
   },
+  "btcli": {
+    "exclude_packages": ["certifi", "cffi", "cryptography", "numpy", "pycparser", "six"],
+    "extra_packages": ["setuptools"]
+  },
   "buku": {
     "package_name": "buku[server]",
     "exclude_packages": ["certifi", "cryptography"]
@@ -176,8 +180,7 @@
     "exclude_packages": ["pycparser"]
   },
   "charm-tools": {
-    "exclude_packages": ["certifi", "cryptography"],
-    "extra_packages": ["pip==22.3.1"]
+    "exclude_packages": ["certifi", "cryptography"]
   },
   "charmcraft": {
     "extra_packages": ["jeepney", "secretstorage"],
@@ -398,7 +401,8 @@
     "exclude_packages": ["certifi"]
   },
   "gptline": {
-    "exclude_packages": ["certifi", "pillow"]
+    "exclude_packages": ["certifi", "pillow"],
+    "extra_packages": ["lxml-html-clean"]
   },
   "gptme": {
     "exclude_packages": ["certifi", "pillow"]
@@ -567,6 +571,9 @@
   "mongo-orchestration": {
     "exclude_packages": ["certifi"]
   },
+  "moodle-dl": {
+    "exclude_packages": ["certifi"]
+  },
   "moto": {
     "package_name": "moto[all,server]",
     "exclude_packages": ["certifi", "cryptography"]
@@ -618,7 +625,7 @@
       "python-cloudkittyclient", "python-designateclient",
       "python-glanceclient", "python-heatclient", "python-ironicclient",
       "python-magnumclient", "python-manilaclient", "python-mistralclient",
-      "python-octaviaclient", "setuptools"
+      "python-octaviaclient"
     ],
     "exclude_packages": ["certifi", "cryptography"]
   },
@@ -632,6 +639,9 @@
   },
   "osc-cli": {
     "exclude_packages": ["certifi"]
+  },
+  "oterm": {
+    "exclude_packages": ["certifi", "cffi", "cryptography", "pycparser"]
   },
   "otterdog": {
     "exclude_packages": ["certifi", "cryptography"]
@@ -657,6 +667,9 @@
   },
   "pferd": {
     "exclude_packages": ["certifi", "cryptography"]
+  },
+  "pieces-cli": {
+    "exclude_packages": ["certifi"]
   },
   "pip-audit": {
     "exclude_packages": ["certifi"]
@@ -861,7 +874,8 @@
     "exclude_packages": ["certifi"]
   },
   "snowflake-cli": {
-    "exclude_packages": ["certifi", "cryptography"]
+    "exclude_packages": ["certifi", "cryptography"],
+    "extra_packages": ["snowflake-core"]
   },
   "snapcraft": {
     "exclude_packages": ["certifi", "cryptography", "pygit2"],
@@ -897,7 +911,7 @@
     "exclude_packages": ["pygit2"]
   },
   "theharvester": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["cffi", "certifi"]
   },
   "tmt": {
     "exclude_packages": ["certifi"]

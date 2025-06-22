@@ -1,8 +1,8 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
   homepage "https://www.nushell.sh"
-  url "https://github.com/nushell/nushell/archive/refs/tags/0.104.0.tar.gz"
-  sha256 "2964ef7148d0f67fa4860fa3eab1c7d15c51ec5292be0cd0865996816f46fe84"
+  url "https://github.com/nushell/nushell/archive/refs/tags/0.105.1.tar.gz"
+  sha256 "2c52ef5aef2ba1a3ae873e84bf72b52220f47c8fe47b99950b791e678a43d597"
   license "MIT"
   head "https://github.com/nushell/nushell.git", branch: "main"
 
@@ -13,15 +13,16 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1262513559b84e8f818f3389e8c36dee5d0ceaab8db24926ec9527383f412dc5"
-    sha256 cellar: :any,                 arm64_sonoma:  "86c404706c73487df9f2cbb8db52485696915d17425c1a55c71b6f16ca27f5d1"
-    sha256 cellar: :any,                 arm64_ventura: "090650105b09f896f1dad6866b1572874b40c2b69b7d4509bfe32f50a230e6fc"
-    sha256 cellar: :any,                 sonoma:        "88b286ab8c4ab3608d952b507c74e0e7212ed3be9ce32c34c1ca804a8e37bc43"
-    sha256 cellar: :any,                 ventura:       "ce3f3dc6f3c22dc2c94bc8cafd6f66c8685db02fd9f1ba6c0d3c333d8e1b9843"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94e3a3a5e15e2acf70cfc156479b15af9c2c4698a1b217ec6f147f64969d6044"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74df9f405ca0e22317fa1efe0ddfffb7a62ab2603b375a9f35a46aabd3c10e61"
+    sha256 cellar: :any,                 arm64_sequoia: "e2ed65e85de69f990bb670b00a12b813b705d04f42b4896149f70dd4c375f445"
+    sha256 cellar: :any,                 arm64_sonoma:  "2ffbe28e45e386980cb861d928d04245d5970b9678032e90071b96a9b4b0ec6c"
+    sha256 cellar: :any,                 arm64_ventura: "6a9683c1e59dba3d31b0b8f5a83bc1cd5789a7f89a4a8d9f830a37aaceb19457"
+    sha256 cellar: :any,                 sonoma:        "151497d52b06e4574c71dc687cf06f1a79b5a7a6af64a6a7dd1d404260691c69"
+    sha256 cellar: :any,                 ventura:       "61c10fe3d29d1db968dc982cdc9e19b0fe137457d819e8a2825061b4ebe795e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1840d6b340b1e29e306d53ad7522ec6471949eebd14e1a4aa5ca6cddd6234e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acd14e16853bdb98c51f0da288aaf45f499fd7fda965fbc7787dc04f66083925"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
@@ -29,7 +30,6 @@ class Nushell < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "libgit2" # for `nu_plugin_gstat`
     depends_on "libx11"
     depends_on "libxcb"

@@ -1,8 +1,8 @@
 class Less < Formula
   desc "Pager program similar to more"
   homepage "https://www.greenwoodsoftware.com/less/index.html"
-  url "https://www.greenwoodsoftware.com/less/less-668.tar.gz"
-  sha256 "2819f55564d86d542abbecafd82ff61e819a3eec967faa36cd3e68f1596a44b8"
+  url "https://www.greenwoodsoftware.com/less/less-679.tar.gz"
+  sha256 "9b68820c34fa8a0af6b0e01b74f0298bcdd40a0489c61649b47058908a153d78"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Less < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d697a1fe935515da404479a4886cf9f44f377cf09d93b5b85596774030efc2b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "a187e2013023daa1910e3ba51e317c7958b14eff51ae7f0ac50b0c239062a70f"
-    sha256 cellar: :any,                 arm64_ventura: "58a76058176707e39b5065c4a105b2f7f45c868845a411d81b15ce613cbb3ecb"
-    sha256 cellar: :any,                 sonoma:        "1194fae6d84f21aa62a7872af689067e67acc4f3c95baa5a75c04cf2a1946931"
-    sha256 cellar: :any,                 ventura:       "704d6a4b11de0f6e2662a7363c1793499bd4855b16e5ff63039b7bdba24ac902"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a45ea206d3258be6b1d99b09aecdc72d19a5ecac6e462207feea6e3ce364d24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e86542d7e69cbe139d7cb84746d0567fc997ace251a2e443600c5957af7eb9c"
+    sha256 cellar: :any,                 arm64_sequoia: "2c167ef66f66ea608f4d8c2a62daf90c54d209c492ca36373b6c4b21889c2124"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8d271ef876c5591a67460068226247fb597f1b802b2616c85ba43d6b6b842e4"
+    sha256 cellar: :any,                 arm64_ventura: "bd30a0f7e3b09305d58c8b943341d19480292bfc0316a60c731ef95e7d943170"
+    sha256 cellar: :any,                 sonoma:        "6cb7136c30fc4695d509bb6fa174245f54fad777bdfc1cdd2d42e23708408128"
+    sha256 cellar: :any,                 ventura:       "56563af2638138d67278c41a1cdfc42a4ffaa2c85c7d89f3ec350a5a2b4d3f05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7c4d002465a313676bc41faf9720028b932b49f83429bbaff52c1d94d62238a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f68b1ad54d048a50a5d738a1c38ad43c7a1789b9f8b5168d77fa8dc8ab21aa17"
   end
 
   head do

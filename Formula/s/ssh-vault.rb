@@ -6,6 +6,8 @@ class SshVault < Formula
   license "BSD-3-Clause"
   head "https://github.com/ssh-vault/ssh-vault.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c27ff2adc2e2a950011fb85982e3475dd00f95696354090bd0d498448a65aa76"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b55c4f946385ceff1df3a4f742f53a895d1582faff4b3ed155b2c8947a2d5e8"
@@ -16,10 +18,10 @@ class SshVault < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e813a71072ece7cdca7723f9fe65f7d79709de88ee0240f9fdfe8febac4929a"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

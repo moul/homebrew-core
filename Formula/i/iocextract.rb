@@ -6,26 +6,27 @@ class Iocextract < Formula
   url "https://files.pythonhosted.org/packages/ad/4b/19934df6cd6a0f6923aabae391a67b630fdd03c12c1226377c99a747a4f1/iocextract-1.16.1.tar.gz"
   sha256 "ec1389a76a5083f643652579610e8313d27ed5821fc57e7b046c23ddec181d44"
   license "GPL-2.0-only"
-  revision 6
+  revision 8
   head "https://github.com/InQuest/iocextract.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77906e2e0c46fc8af0b0e771f466e8cf8e5e9aa8f1a73262fda532e2916626be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47808e0f042ab926754f5dc822682dfbfb18eaff3bb961cdfaac4bb86dee8edc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6164ec611b5570c2998714a6fb0ab559f14e0c358ab5bdc95f221a8bbe3c952c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c7934084e14ae5bd78c08be3b6cd69d417e03c3343e2653b91d3c7505289b15a"
-    sha256 cellar: :any_skip_relocation, ventura:       "6bb94f5f1ac212b6e2de7d35de7e9df3658e9f85b230d4b30c5916ee83f2ae6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45d25b9b2f7a6324f95efcc256be1b26b99c139a78a5d3af479cf6d0dded4189"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d21ed8761747b89d58f0362ab3cea3dec8dafc22180f88fc4f017894bccbf55c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9201c8ee75261633b76636bb1e7d051d8c71ea2d2910d681ece7bceccad75f3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b3831b339d144ed98f9c483a690db69433fc95a26672d8c3db0054b6d5ad5b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "525e6ee333e21f8017f19e516de4a0e18bcccf85f014dee030806917f0464c2e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fcfdc5526ade0f51277f83ae66ab64bf0c9ce843e576e28aef18bfdd78433e2c"
+    sha256 cellar: :any_skip_relocation, ventura:       "a87de6601c6811989dec795aff47c6669848e79374cfdd93d7d2e15a39cc59a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce5d3655d0e9883a3b9e66133cfc06478e12564524a3dc15e58389523b34582f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc7d6d5e1a009d6971338f0890ed8c36474aa646d1c292820bd02735895313a7"
   end
 
   depends_on "certifi"
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/f2/4f/e1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1e/charset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "idna" do
@@ -34,18 +35,18 @@ class Iocextract < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/f9/38/148df33b4dbca3bd069b963acab5e0fa1a9dbd6820f8c322d0dd6faeff96/regex-2024.9.11.tar.gz"
-    sha256 "6c188c307e8433bcb63dc1915022deb553b4203a70722fc542c363bf120a01fd"
+    url "https://files.pythonhosted.org/packages/8e/5f/bd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cb/regex-2024.11.6.tar.gz"
+    sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/ed/63/22ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260/urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

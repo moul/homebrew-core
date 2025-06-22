@@ -6,6 +6,8 @@ class LunchyGo < Formula
   license "MIT"
   head "https://github.com/sosedoff/lunchy-go.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fba65395dd87db751184f0d6a5023465484f321d47b4cd62ff0095837656c1e6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce24f8e0a143748b271ad64e33834336cc504c8e14f8dd61ebaac7b06f4eafd5"
@@ -26,10 +28,14 @@ class LunchyGo < Formula
 
   conflicts_with "lunchy", because: "both install a `lunchy` binary"
 
+  # Add go.mod
+  patch do
+    url "https://github.com/sosedoff/lunchy-go/commit/756ad7892ca91763c9c1e70ff9c6570607843725.patch?full_index=1"
+    sha256 "e929312d6bb2441343e488988981e27fedab365fd963020089553608a9f93d5b"
+  end
+
   def install
-    ENV["GO111MODULE"] = "auto"
-    system "go", "build", *std_go_args
-    bin.install bin/"lunchy-go" => "lunchy"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"lunchy")
   end
 
   test do

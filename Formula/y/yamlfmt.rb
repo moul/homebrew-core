@@ -1,18 +1,18 @@
 class Yamlfmt < Formula
   desc "Extensible command-line tool to format YAML files"
   homepage "https://github.com/google/yamlfmt"
-  url "https://github.com/google/yamlfmt/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "989d9010e2498b4f97608b1c64798c700012840e739bc9001e42ddf3f25125a2"
+  url "https://github.com/google/yamlfmt/archive/refs/tags/v0.17.1.tar.gz"
+  sha256 "5ec696bb4451bdee3354bcb01b22e6105937490b7e8ce5b72c28dddb0d3a414d"
   license "Apache-2.0"
   head "https://github.com/google/yamlfmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "432bc292d0feb0e9597bd786e628e01b0557a847d303cf1e5006c5b70111041f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "432bc292d0feb0e9597bd786e628e01b0557a847d303cf1e5006c5b70111041f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "432bc292d0feb0e9597bd786e628e01b0557a847d303cf1e5006c5b70111041f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "899210545175b84e91bee5ae9337912ce1d6d755d462f9ec2620a2f8a722d0ff"
-    sha256 cellar: :any_skip_relocation, ventura:       "899210545175b84e91bee5ae9337912ce1d6d755d462f9ec2620a2f8a722d0ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "818289e664422a8c73aea66665a680d7bfbd4e18d5b34b06e081a68cfb3478ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9967d4470f8013dba71c383bb30e8001408e94027087b1a870291b2cef820ecc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9967d4470f8013dba71c383bb30e8001408e94027087b1a870291b2cef820ecc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9967d4470f8013dba71c383bb30e8001408e94027087b1a870291b2cef820ecc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ebd685d2bb6f3b4e01ed8be2017f09a2f4be049fb9cbffb30f273e5d7ff3fd6"
+    sha256 cellar: :any_skip_relocation, ventura:       "9ebd685d2bb6f3b4e01ed8be2017f09a2f4be049fb9cbffb30f273e5d7ff3fd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "621fc16b6e71841c9daeb13d9e56c373f8816dad3c839eff7f1298d363b620ab"
   end
 
   depends_on "go" => :build

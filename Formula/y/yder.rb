@@ -5,6 +5,8 @@ class Yder < Formula
   sha256 "c1a7f2281514d0d0bba912b6b70f371d8c127ccfd644b8c438c9301a0fd4c5f2"
   license "LGPL-2.1-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "742de6bb638644e32ac9153a26fb2cecbaa8575b765ab4166221389efc71b80e"
     sha256 cellar: :any,                 arm64_sonoma:   "17f19f57371282f824f622fbc956fbdb620cc2f41558e2b7a046ee80afab7594"
@@ -21,10 +23,10 @@ class Yder < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "pkgconf" => :build
   depends_on "orcania"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "systemd"
   end
 

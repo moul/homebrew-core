@@ -1,10 +1,10 @@
 class Openldap < Formula
   desc "Open source suite of directory software"
   homepage "https://www.openldap.org/software/"
-  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.9.tgz"
-  mirror "http://fresh-center.net/linux/misc/openldap-2.6.9.tgz"
-  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.9.tgz"
-  sha256 "2cb7dc73e9c8340dff0d99357fbaa578abf30cc6619f0521972c555681e6b2ff"
+  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.10.tgz"
+  mirror "http://fresh-center.net/linux/misc/openldap-2.6.10.tgz"
+  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.10.tgz"
+  sha256 "c065f04aad42737aebd60b2fe4939704ac844266bc0aeaa1609f0cad987be516"
   license "OLDAP-2.8"
 
   livecheck do
@@ -13,13 +13,14 @@ class Openldap < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "d46daf11a6c5a4dc952cf9bb6eb2e9fd9b8d413939052ceee114108b15584adf"
-    sha256 arm64_sonoma:  "f7a11d5195b4e1426d6690470ccfe7dee9f7e8bc524b9af7519b97e67f10346c"
-    sha256 arm64_ventura: "f9f450125e7b6548a81b0d9f83babf08409a6cbe80d40617b8c3f256261a2a6b"
-    sha256 sonoma:        "1c584b75365da368f6aec0830d6e5cddbdb1dc5fb7a16a818c299574c173f904"
-    sha256 ventura:       "542bbb6594a79baf910a87c265ae57d33d6cd0dec19ed536596ab26b2131b623"
-    sha256 arm64_linux:   "3fca9fbb6de4c3c9115041de0adef3c683f51e347e8af2990bba5c37e687c418"
-    sha256 x86_64_linux:  "f4ae258483526f378f60511ec5ecb77f3aeea3819ac2b9d369d6c76d2d74c563"
+    rebuild 1
+    sha256 arm64_sequoia: "90749053fa49720027fec10a7f6b69d12e3a7aa2c319fed0c9021ce4a1ee5873"
+    sha256 arm64_sonoma:  "8d4319c2a4e33ded3d0650b1e9bd56f4e087a3c72dda53aa1e7fc1c5747dbd93"
+    sha256 arm64_ventura: "3f6ac8d8010ce41c011a300b68a93ada298fe35f1c1577f1d9413c2e892d3d06"
+    sha256 sonoma:        "dbfb4021fc4b5b3df381c2ec339ed0801952b1d93728152cc30edf6e3e8da1ac"
+    sha256 ventura:       "0cca5d539102430ce70d06b5956b6cc9b658a495edb3c7abb13582872f171daf"
+    sha256 arm64_linux:   "dd8990617d2d310cf965ff185b405d0b903860b2b535d45d3ddfc6409dd5fa97"
+    sha256 x86_64_linux:  "c618d0eb76c5e2cf57846bd6be286018e00da7eb37f5a5b3a6d22ff0ed7885d9"
   end
 
   keg_only :provided_by_macos
@@ -59,6 +60,7 @@ class Openldap < Formula
       --enable-refint
       --enable-retcode
       --enable-seqmod
+      --enable-sssvlv
       --enable-translucent
       --enable-unique
       --enable-valsort

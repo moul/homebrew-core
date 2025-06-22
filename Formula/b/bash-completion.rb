@@ -12,6 +12,8 @@ class BashCompletion < Formula
     skip "1.x versions are no longer developed"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6727e6e418e740531b75aebedaac6ceece0a0865f4f46dd0351d265035b497e9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "60e79daad9283c5e9f4c814eed837c86aab0b5172c633e7171cbbf26a434bcff"
@@ -59,23 +61,13 @@ class BashCompletion < Formula
   end
 
   def caveats
-    s = <<~EOS
+    <<~EOS
       Add the following line to your ~/.bash_profile:
         [[ -r "#{etc}/profile.d/bash_completion.sh" ]] && . "#{etc}/profile.d/bash_completion.sh"
-    EOS
-    version_caveat = <<~EOS
 
       This formula is mainly for use with Bash 3. If you are using Homebrew's Bash or your
       system Bash is at least version 4.2, then you should install `bash-completion@2` instead.
     EOS
-    if Formula["bash"].any_version_installed?
-      s += version_caveat
-    else
-      on_linux do
-        s += version_caveat
-      end
-    end
-    s
   end
 
   test do

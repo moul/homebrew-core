@@ -3,18 +3,19 @@ class Notifiers < Formula
 
   desc "Easy way to send notifications"
   homepage "https://pypi.org/project/notifiers/"
-  url "https://files.pythonhosted.org/packages/51/c2/1e36b5774b3ccbcb5f63133bf3fade097cd58fbdd9947248ab43777f705a/notifiers-1.3.5.tar.gz"
-  sha256 "bae24057f4dcb85563712c57bb1439dd96aeb0794df6697dff77c17efbc4dd43"
+  url "https://files.pythonhosted.org/packages/f2/da/a8c87ce1f82ed0a3940ff80cf74c2e565ffdf1e35aa1e981856f8dd8dc4a/notifiers-1.3.6.tar.gz"
+  sha256 "070d69dc34892b0675bdbca8529fb13d542f0c84052c6fef48fe2ab1d98d661f"
   license "MIT"
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "11ebab39c6d85a806a6e9fc9f1b72adf92f8993783f8a75312bb1a5794e83c5f"
-    sha256 cellar: :any,                 arm64_sonoma:  "c615419b970c4dcfd8728efe90253909e8211054cb92d8980afd9b44462df506"
-    sha256 cellar: :any,                 arm64_ventura: "9e9f4b2e767226a0817e045f475f589c9bdda8fc34538cd37ef25b6d49012034"
-    sha256 cellar: :any,                 sonoma:        "c23986b48ab53a2b654b61c02dde1ef9f107f3155f1625c25e3f6e71b36a2bc5"
-    sha256 cellar: :any,                 ventura:       "cba2fdef7b1f6da1ba6584d6d4656c25222aacdb00a2cf51e77d2bd78a1aee8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90abd812f4f5d7d295cb4187b26842221edc9f0fa8a124e1eb0e5acf85da08db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88ae7c98d8435e74025269957c336a44b975dbffe26eba29e1b192bb55cb9807"
+    sha256 cellar: :any,                 arm64_sequoia: "0637bb3675b3356c37dce045581e65d2da9283ceb7c110417c1155a51835deb5"
+    sha256 cellar: :any,                 arm64_sonoma:  "dc7d48a5a4ed68a79c1283c7ca50f2ebb41db20873fbcff2bf912f2cde8866e4"
+    sha256 cellar: :any,                 arm64_ventura: "5965974db5b317abff2529cd8141ff788b9c5178f6b63359bf4a6af216ac3f0d"
+    sha256 cellar: :any,                 sonoma:        "0339f4b0978405a1f3e5e26728635fb553085906d8df21c52474996b80e9b12c"
+    sha256 cellar: :any,                 ventura:       "71c0d272547f189249a7d1403860ab965d39108ff4ada03ee256d777a8e2b192"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0d27dca6998ad4666103909c60ced1757347e8bdd1b63b2afa48decaa0860d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78c31bb847915cf426d38beec2f1585f229686c322d1bdd8ccafa646b8c7a399"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -27,13 +28,13 @@ class Notifiers < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "idna" do
@@ -41,14 +42,19 @@ class Notifiers < Formula
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
+  resource "importlib-metadata" do
+    url "https://files.pythonhosted.org/packages/76/66/650a33bd90f786193e4de4b3ad86ea60b53c89b669a5c7be931fac31cdb0/importlib_metadata-8.7.0.tar.gz"
+    sha256 "d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000"
+  end
+
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/38/2e/03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deec/jsonschema-4.23.0.tar.gz"
-    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
+    url "https://files.pythonhosted.org/packages/bf/d3/1cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177/jsonschema-4.24.0.tar.gz"
+    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/10/db/58f950c996c793472e336ff3655b13fbcf1e3b359dcf52dcf3ed3b52c352/jsonschema_specifications-2024.10.1.tar.gz"
-    sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
+    url "https://files.pythonhosted.org/packages/bf/ce/46fbd9c8119cfc3581ee5643ea49464d168028cfb5caff5fc0596d0cf914/jsonschema_specifications-2025.4.1.tar.gz"
+    sha256 "630159c9f4dbea161a6a2205c3011cc4f18ff381b189fff48bb39b9bf26ae608"
   end
 
   resource "referencing" do
@@ -57,18 +63,23 @@ class Notifiers < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/0b/b3/52b213298a0ba7097c7ea96bee95e1947aa84cc816d48cebb539770cdf41/rpds_py-0.24.0.tar.gz"
-    sha256 "772cc1b2cd963e7e17e6cc55fe0371fb9c704d63e44cacec7b9b7f523b78919e"
+    url "https://files.pythonhosted.org/packages/8c/a6/60184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921/rpds_py-0.25.1.tar.gz"
+    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+  end
+
+  resource "zipp" do
+    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
+    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
   def install

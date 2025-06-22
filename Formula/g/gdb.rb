@@ -7,6 +7,8 @@ class Gdb < Formula
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "9e5f18aa75cef9f236a7f07d4e444d54a8cccf3ff7e119f9923db8bef62d1252"
     sha256 arm64_sonoma:  "06baf22991ec402640b1d6d886e3218d208abd368e8ba50c2116b17923f633ae"
@@ -17,6 +19,7 @@ class Gdb < Formula
     sha256 x86_64_linux:  "5dce623e116162d2edb8668a5f5b5085dea0b0dbce8b245985de933ed0079097"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "python@3.13"
@@ -38,7 +41,6 @@ class Gdb < Formula
   end
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "guile"
   end
 

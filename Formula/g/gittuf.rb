@@ -1,18 +1,18 @@
 class Gittuf < Formula
   desc "Security layer for Git repositories"
   homepage "https://gittuf.dev/"
-  url "https://github.com/gittuf/gittuf/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "0346b622ab1d4790e8adbe21256518e185fcc2bd379d5448b03662d7301e988c"
+  url "https://github.com/gittuf/gittuf/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "3398a7eab1cc620db39687115683198bded36540d628742239b4d93af45cbe80"
   license "Apache-2.0"
   head "https://github.com/gittuf/gittuf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1131ad7d204dc211f4327a846ffd8ec9f9129cef7a5824b22d3c519d98506a9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1131ad7d204dc211f4327a846ffd8ec9f9129cef7a5824b22d3c519d98506a9d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1131ad7d204dc211f4327a846ffd8ec9f9129cef7a5824b22d3c519d98506a9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6226a8745ed006d838c437f244e6ce96490f365e227af7b7f782e617ed666c6"
-    sha256 cellar: :any_skip_relocation, ventura:       "ef1e87bffee157892fcdf68bfab537bb3effaa21896ca08e998e9089f35bb9bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4415568133b0eebd11f73a426afc95f0a423d7b0a4dc3a974ec6dd9324caa139"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "188b3bf3b5350963833378bbd9ec752a8c6b1f9654258005889f24d2c94eb060"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "188b3bf3b5350963833378bbd9ec752a8c6b1f9654258005889f24d2c94eb060"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "188b3bf3b5350963833378bbd9ec752a8c6b1f9654258005889f24d2c94eb060"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ceaf2408fb6adc5735c2fbebf008e034dbd50f85ce4d9895e24924390d047362"
+    sha256 cellar: :any_skip_relocation, ventura:       "5aeafe5344a73294a6532e55e21e6f287c41b2a9140946c3fe951ffd7f8f19e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f91f807d9ae091139a64817a9a9aee58aabcfe903edba6f8130e487e94dbc11"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Gauge < Formula
   desc "Test automation tool that supports executable documentation"
   homepage "https://gauge.org"
-  url "https://github.com/getgauge/gauge/archive/refs/tags/v1.6.15.tar.gz"
-  sha256 "19cb937635bbc260452b1ab7979d017c5dab7f483f465f43cac24509057b3ee5"
+  url "https://github.com/getgauge/gauge/archive/refs/tags/v1.6.18.tar.gz"
+  sha256 "103d4a567e9e9bbd2cfc9569603f6069dc3c8787d76eeb7ae93787aeea7db68f"
   license "Apache-2.0"
   head "https://github.com/getgauge/gauge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9aaddc6d88c42f1a9610c326795a6ca6d3a9b767657e4c85dbcd9b8317c6cb2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ebf9f59fc33da5d8af6c792f9dba342c014426ab669cbaa8f213d615e04ecd4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "68ad4df098c28c71640762b85e52531a39402f0aeb92b26b2e1629cdf77d12a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "868c8a1ec76518606b0a00c244283b83011e3a02b1767b7ae61219fe41da2641"
-    sha256 cellar: :any_skip_relocation, ventura:       "a8e81e7d54e7b55f785237a3f0c19c7314b3646ddadf77331d14257adf5b33e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b58654b2af8e69d38597ea641a0ac98405f7ad37ebc3c1b6213e074026ec3908"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "642b5b0bc143826cbd923c54356e06832124b95aef8f865d46fe9131c4781e45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9b7b4a0b5629a4ffd5c86f301e7f2589442924b0788ac3f4ca1b4ee69fdc2ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "77b7b849fb1960ffa259912282aae83223edc022da7e348e12602b3c8bf73f9c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "60e9f9762bbbc6c64246f7581b11bd410cb240c38f146380cdf54fd281d05921"
+    sha256 cellar: :any_skip_relocation, ventura:       "f95fc4467de072fb53e558b793ad40ff72490611beb1f364189e5a867bd48880"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa8613b526748a8b7e90efdb021c46f7103eacd146538e65a520ecb795df02e3"
   end
 
   depends_on "go" => :build

@@ -1,9 +1,11 @@
 class Ata < Formula
   desc "ChatGPT in the terminal"
-  homepage "https://github.com/rikhuijzer/ata"
-  url "https://github.com/rikhuijzer/ata/archive/refs/tags/v2.0.4.tar.gz"
+  homepage "https://github.com/transformrs/ata"
+  url "https://github.com/transformrs/ata/archive/refs/tags/v2.0.4.tar.gz"
   sha256 "a70498492fce7b46a2a62175886a801f61f9f530c5c6d01b664af2750d3af555"
   license "MIT"
+
+  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e4e98e4c055e41cc706441024e03f621e29598cf9889dd8735542dea055a34e1"

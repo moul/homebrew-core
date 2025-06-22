@@ -7,6 +7,8 @@ class Textract < Formula
   sha256 "68f0f09056885821e6c43d8538987518daa94057c306679f2857cc5ee66ad850"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9d99fe84d6451dad89f286e0fd1b66279c5f33da07e712f51f6ab3cc51d7e719"
@@ -22,6 +24,7 @@ class Textract < Formula
 
   # https://github.com/deanmalmgren/textract/issues/498
   deprecate! date: "2024-06-18", because: :unmaintained
+  disable! date: "2025-06-21", because: :unmaintained
 
   depends_on "antiword"
   depends_on "flac"

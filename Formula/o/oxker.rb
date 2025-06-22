@@ -1,19 +1,19 @@
 class Oxker < Formula
   desc "Terminal User Interface (TUI) to view & control docker containers"
   homepage "https://github.com/mrjackwills/oxker"
-  url "https://github.com/mrjackwills/oxker/archive/refs/tags/v0.10.3.tar.gz"
-  sha256 "6d27d6e9dfbe38270560751f932cd72659b73d4891117042aa21eba800f2ad9e"
+  url "https://github.com/mrjackwills/oxker/archive/refs/tags/v0.10.5.tar.gz"
+  sha256 "d8c79a1732320d84d149b0db892f3875a6513c7c36b05b4c37d22dfebdf5dee0"
   license "MIT"
   head "https://github.com/mrjackwills/oxker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e02a7a9d1545f4e9d227c5fbb1046f72611e43bc4480270f573cb87c0a625cbf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a5cf4e716332ded13596d787d5c23f73897c7a77fbe086b480e1e1307f6d702"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "198fa27793541fb09603c68c74b516c3c702495c1b4ae935a17d8e3b1ed521e6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a80cddf2f024cb60e2b5c3896671befa452d74541c330c80c2b5c5d35fbdf7a5"
-    sha256 cellar: :any_skip_relocation, ventura:       "8c6b2986ce0c4bd11e40722188c53f746f4309b5d6348823dcece4f8dc8ac396"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4414e8f4e92b3d7c8f745957f3d193f2120bf2c68146afd55b2a67dc6da28aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc321af614e20ee574d398ddad12d4b50a5b75761464162aac094986ca7c4287"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6bbdfda2462128afbb22b9d2f2339fcde3755c33adeb401b01e5ad5921644f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee21610c29540759038ff8f31f3dd11c809c6e2784644125432b76d53ed8a940"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "771e84d6fe6dce8c77e96f2595f4f62b5cb29b8876b8b6c54d66fb92478e2bc9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c073241a7b1eca4bb481952924c4af1014882d7a0f191bdc52e12aa4352ab908"
+    sha256 cellar: :any_skip_relocation, ventura:       "0e3f8baba042ec37a564da20f07d36610c0cdb0f07b813ba01c4d5d101ee5533"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f45e11a6f1f5659d325e63ae33c85a5b625f25e7abc66255924eed8cb68b9ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9f56e0e566f6adf60002c2ae8601ee988e76c7448519d707f5db4638990a486"
   end
 
   depends_on "rust" => :build

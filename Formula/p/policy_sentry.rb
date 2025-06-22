@@ -6,17 +6,17 @@ class PolicySentry < Formula
   url "https://files.pythonhosted.org/packages/bc/4b/e03bbe626379bfee06c944a01ef25ad14ce30bc9dd86988dfda1cf343347/policy_sentry-0.14.0.tar.gz"
   sha256 "5c52cebebad26e2360393f34af523c1685541d67b0dfd721b0779dbe9e327f1a"
   license "MIT"
+  revision 2
   head "https://github.com/salesforce/policy_sentry.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "860c76164176b1eeff4f588f406f401dde52783bd361ba984510b6ce91f0b5a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "3555491fe5d02633cf2a50f65547fc2fb80525c56a3ef99a95d626832a6cb6f8"
-    sha256 cellar: :any,                 arm64_ventura: "aaa2e1c8171a28f5d2f86cb44d7c040edcfc7902da1f7e089aaeeb47829e12e2"
-    sha256 cellar: :any,                 sonoma:        "bcca67ecf36d4e7fbac2f7e820d8200cb51530e3e40c0f13fff17b96d31d232a"
-    sha256 cellar: :any,                 ventura:       "9242e399c04dc2bdd00852dc63f5310ef080a7cb43b25f5f2783754a770be818"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c392a8829cfe475ad49180103fec41f2c113845605080cc2de5fa4c2b13d044b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c73b7b5dea54f6d5e0902da6190458092be9a7e5652d76baf2c9fe654e76417"
+    sha256 cellar: :any,                 arm64_sequoia: "c4bfdf7d1ca10359b721ad58fba1b33e631fd57fba623ba3e3cef243a0d68f26"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7d31909c5732e8dd10570a155c97cc0a03dd18a4a35ed158687019738873601"
+    sha256 cellar: :any,                 arm64_ventura: "a1e515dbe0a2da72a4e40a52199bb653041bb283760b7c1c4027efd790500bcd"
+    sha256 cellar: :any,                 sonoma:        "c7652fbf34b514c7c9f272b3b749fab80ddd57f94bcb6573113a1093f3bc4264"
+    sha256 cellar: :any,                 ventura:       "e1c42231dd7f07dda17e4610c5b114361db50f1bf08a14cf4f8e9f0a20103be4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c61b11ed32c270e2c5df8b87db0c6ff3036d213bd47e85a107def54fb2a7165"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f26e8bafd4c6bf15034feb1f7a6332a089ddccbd511c0891d9e89fdc241ef82d"
   end
 
   depends_on "rust" => :build # for orjson
@@ -25,18 +25,18 @@ class PolicySentry < Formula
   depends_on "python@3.13"
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/b3/ca/824b1195773ce6166d388573fc106ce56d4a805bd7427b624e063596ec58/beautifulsoup4-4.12.3.tar.gz"
-    sha256 "74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051"
+    url "https://files.pythonhosted.org/packages/d8/e4/0c4c39e18fd76d6a628d4dd8da40543d136ce2d1752bd6eeeab0791f4d6b/beautifulsoup4-4.13.4.tar.gz"
+    sha256 "dbb3c4e1ceae6aefebdaf2423247260cd062430a410e38c66f2baa50a8437195"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "idna" do
@@ -45,8 +45,8 @@ class PolicySentry < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/45/0b/8c7eaf1e2152f1e0fb28ae7b22e2b35a6b1992953a1ebe0371ba4d41d3ad/orjson-3.10.13.tar.gz"
-    sha256 "eb9bfb14ab8f68d9d9492d4817ae497788a15fd7da72e14dfabc289c3bb088ec"
+    url "https://files.pythonhosted.org/packages/81/0b/fea456a3ffe74e70ba30e01ec183a9b26bec4d497f61dcfce1b601059c60/orjson-3.10.18.tar.gz"
+    sha256 "e8da3947d92123eda795b68228cafe2724815621fe35e8e320a9e9593a4bcd53"
   end
 
   resource "pyyaml" do
@@ -55,8 +55,8 @@ class PolicySentry < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "schema" do
@@ -65,13 +65,18 @@ class PolicySentry < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/d7/ce/fbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfb/soupsieve-2.6.tar.gz"
-    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
+    url "https://files.pythonhosted.org/packages/3f/f4/4a80cd6ef364b2e8b65b15816a843c0980f7a5a2b4dc701fc574952aa19f/soupsieve-2.7.tar.gz"
+    sha256 "ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

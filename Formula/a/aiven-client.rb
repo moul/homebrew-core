@@ -3,13 +3,14 @@ class AivenClient < Formula
 
   desc "Official command-line client for Aiven"
   homepage "https://aiven.io/docs/tools/cli"
-  url "https://files.pythonhosted.org/packages/7f/a4/69f54a86b576cba4331ca6ecd34f7c5a4167b8040f623dc8b810daf8561f/aiven_client-4.7.1.tar.gz"
-  sha256 "a9ea25eab4888d35fe47de90e66b4e2bba172cc419c022bf56b6b8f4607e29c4"
+  url "https://files.pythonhosted.org/packages/a0/62/55a75ab81c5d030ad45cf66ad35545abf907bab5608be234e6bb1c3fa1d6/aiven_client-4.7.3.tar.gz"
+  sha256 "ec823cb3b5065417c6b4875c9c42f1810cad265f941974d618d602698647d29f"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d3773dd54f682aa0af8bbbd1668ac7a5d6b0a3331b8e58dcd2bebbdee623ea41"
+    sha256 cellar: :any_skip_relocation, all: "48480052c82e6d42e9f06cf61a030f807c3fecb16e4d2d674d4a58e93cd5f796"
   end
 
   depends_on "certifi"
@@ -26,8 +27,8 @@ class AivenClient < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "requests-toolbelt" do
@@ -36,8 +37,8 @@ class AivenClient < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

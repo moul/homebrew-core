@@ -97,6 +97,8 @@ class Bash < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 arm64_sequoia: "e77d408d550e8e9f6669abf16759e35d0b867fe2126121eaa1ff39a94921cd86"

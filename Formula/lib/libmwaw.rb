@@ -5,6 +5,8 @@ class Libmwaw < Formula
   sha256 "a1a39ffcea3ff2a7a7aae0c23877ddf4918b554bf82b0de5d7ce8e7f61ea8e32"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e1a2a5f288071c5a5c899ed113f87a841ec434bce245a98750a1ee1b0b2c0b64"
     sha256 cellar: :any,                 arm64_sonoma:   "952e2d7978c0a53b42c6c3bcef9faf03e878069664710baed01bbf696527f329"
@@ -24,17 +26,17 @@ class Libmwaw < Formula
 
   uses_from_macos "zlib"
 
-  resource "homebrew-test_document" do
-    url "https://github.com/openpreserve/format-corpus/raw/825c8a5af012a93cf7aac408b0396e03a4575850/office-examples/Old%20Word%20file/NEWSSLID.DOC"
-    sha256 "df0af8f2ae441f93eb6552ed2c6da0b1971a0d82995e224b7663b4e64e163d2b"
-  end
-
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
+    resource "homebrew-test_document" do
+      url "https://github.com/openpreserve/format-corpus/raw/825c8a5af012a93cf7aac408b0396e03a4575850/office-examples/Old%20Word%20file/NEWSSLID.DOC"
+      sha256 "df0af8f2ae441f93eb6552ed2c6da0b1971a0d82995e224b7663b4e64e163d2b"
+    end
+
     testpath.install resource("homebrew-test_document")
     # Test ID on an actual office document
     assert_equal "#{testpath}/NEWSSLID.DOC:Microsoft Word 2.0[pc]",

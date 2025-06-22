@@ -20,6 +20,8 @@ class PerconaServer < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "667692148bc552e299c087fe201d5b3c2433853d83d319f788e12c890d920563"
     sha256 arm64_sonoma:  "aef3e0bec890a7011a100df94c56d672f0b05c408f45691c3cb65615c67e1937"
@@ -171,6 +173,13 @@ class PerconaServer < Formula
     # Make sure the var/mysql directory exists
     (var/"mysql").mkpath
 
+    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
+      opoo <<~EOS
+        A "#{my_cnf}" from another install may interfere with a Homebrew-built
+        server starting up correctly.
+      EOS
+    end
+
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
@@ -182,7 +191,7 @@ class PerconaServer < Formula
   end
 
   def caveats
-    s = <<~EOS
+    <<~EOS
       We've installed your MySQL database without a root password. To secure it run:
           mysql_secure_installation
 
@@ -191,14 +200,6 @@ class PerconaServer < Formula
       To connect run:
           mysql -u root
     EOS
-    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
-      s += <<~EOS
-
-        A "#{my_cnf}" from another install may interfere with a Homebrew-built
-        server starting up correctly.
-      EOS
-    end
-    s
   end
 
   service do

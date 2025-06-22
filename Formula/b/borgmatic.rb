@@ -6,15 +6,16 @@ class Borgmatic < Formula
   url "https://files.pythonhosted.org/packages/86/8c/0a80f219d9ca4c70cf345489b55a9c3e5c859c4d7bc99675ac1bc09eadb7/borgmatic-2.0.6.tar.gz"
   sha256 "cb102d0fbb0a3a8d2fa04f01bdf2f41c6b273f42f6b1cd5fd1481704db7f6905"
   license "GPL-3.0-or-later"
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4955b8d13f39ea0860c1d9adf9fe5124abca2188a3ceae2cc71b00bc72666473"
-    sha256 cellar: :any,                 arm64_sonoma:  "318aa7cd47a7ab9b0137f2382eb5d3109978fc788390000f8f31ec35f21c7ff5"
-    sha256 cellar: :any,                 arm64_ventura: "093568962c6a132bfbc48769e216e60471182562a1413a49bcde7fd7a900da33"
-    sha256 cellar: :any,                 sonoma:        "a5299c9dbb9f6abcbf2557bb5117e9a91a3fd7ef5d08a35468bfbd899c1761a6"
-    sha256 cellar: :any,                 ventura:       "2878db66e946d8792c77970ce0f992fd010e13cb02d09074126e5308120873a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "398e2afda5ca89c526da068b58191882e1a6d99f28fc6bd661cdda35b8f6ef0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a4d48220d8d13853fe9dd47850f022e3e62ae781f8d3146a7f4b5218c0e042"
+    sha256 cellar: :any,                 arm64_sequoia: "f07e9807fe6d8cf01274987bf5f99cdc591379e6bd9d3819629ca4fb8f6d5a67"
+    sha256 cellar: :any,                 arm64_sonoma:  "eae630489dda739b34b690db8d977f564794f6b88820a0f75a8f6e5c6aa8dec5"
+    sha256 cellar: :any,                 arm64_ventura: "56ba3943ab76d5f5dbf79690d8c939be86a3660d516c97733775fad8e904f0ce"
+    sha256 cellar: :any,                 sonoma:        "eafec5d74e002767fbbfdefc567f95b14b6522b43f072b45f560cb50c3c0b0a6"
+    sha256 cellar: :any,                 ventura:       "29e90a9c20eb04849e5f37cbc01337a6418f46c3de0595eed82449890909ca35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b7e030ae29986505bee4ffb494c90fb3121e7e3d18f0a3bc60fe6f37ec957db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb9e4a5f52608d8b07b7c744638bbaec3e91a302ee1f7d44a4f3c59e672c20a3"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -37,8 +38,8 @@ class Borgmatic < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/38/2e/03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deec/jsonschema-4.23.0.tar.gz"
-    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
+    url "https://files.pythonhosted.org/packages/bf/d3/1cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177/jsonschema-4.24.0.tar.gz"
+    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
   end
 
   resource "jsonschema-specifications" do
@@ -57,23 +58,28 @@ class Borgmatic < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/0b/b3/52b213298a0ba7097c7ea96bee95e1947aa84cc816d48cebb539770cdf41/rpds_py-0.24.0.tar.gz"
-    sha256 "772cc1b2cd963e7e17e6cc55fe0371fb9c704d63e44cacec7b9b7f523b78919e"
+    url "https://files.pythonhosted.org/packages/8c/a6/60184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921/rpds_py-0.25.1.tar.gz"
+    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/ea/46/f44d8be06b85bc7c4d8c95d658be2b68f27711f279bf9dd0612a5e4794f5/ruamel.yaml-0.18.10.tar.gz"
-    sha256 "20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58"
+    url "https://files.pythonhosted.org/packages/39/87/6da0df742a4684263261c253f00edd5829e6aca970fff69e75028cccc547/ruamel.yaml-0.18.14.tar.gz"
+    sha256 "7227b76aaec364df15936730efbf7d72b30c0b79b1d578bbb8e3dcb2d81f52b7"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https://files.pythonhosted.org/packages/20/84/80203abff8ea4993a87d823a5f632e4d92831ef75d404c9fc78d0176d2b5/ruamel.yaml.clib-0.2.12.tar.gz"
+    sha256 "6c8fbb13ec503f99a91901ab46e0b07ae7941cd527393187039aec586fdfd36f"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

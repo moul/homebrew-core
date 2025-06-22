@@ -1,8 +1,8 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https://cli.github.com/"
-  url "https://github.com/cli/cli/archive/refs/tags/v2.72.0.tar.gz"
-  sha256 "5a2cd4f2601d254d11a55dab463849ccccb5fa4bdcaa72b792ea9c3bf8c67d23"
+  url "https://github.com/cli/cli/archive/refs/tags/v2.74.2.tar.gz"
+  sha256 "58d383e75e1a6f3eb5e5694f232d1ed6f7f53681fda9c6a997e6e1be344edd94"
   license "MIT"
   head "https://github.com/cli/cli.git", branch: "trunk"
 
@@ -11,13 +11,15 @@ class Gh < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d410ae1b49862ac691753deccfcd7167da4e9a88466c01e17e1e8fddd1bff6ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d410ae1b49862ac691753deccfcd7167da4e9a88466c01e17e1e8fddd1bff6ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d410ae1b49862ac691753deccfcd7167da4e9a88466c01e17e1e8fddd1bff6ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e54cf664dcc6e4493a9bf50e12946adfa8242734792620a9b9c1c7df7275c36"
-    sha256 cellar: :any_skip_relocation, ventura:       "46d113ea2cfb36f3980e98f21acf8f97fbf0c4ded57946e3ae4bb7247088975b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df94de12df3c9d99fd0608fad282f5efae282323b8b19eda0bbcea2eff8e5ff7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8d12facc23d7e2efdb21bc4eaa55058d8385609d1c8734685f406996074ff12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8d12facc23d7e2efdb21bc4eaa55058d8385609d1c8734685f406996074ff12"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d8d12facc23d7e2efdb21bc4eaa55058d8385609d1c8734685f406996074ff12"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f3f8a873387da7e9087c2ce2e38ddcf9bdd8e5365033db59c10517972c741062"
+    sha256 cellar: :any_skip_relocation, ventura:       "53d91576a846085b553ec452e38ebbca52202fa5957b5576140fdc8aa42965e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3e209130aadf0f998201e5b588498b6f538488bf55eadd4672822a7ab4a8161"
   end
 
   depends_on "go" => :build
@@ -32,8 +34,9 @@ class Gh < Formula
     end
 
     with_env(
-      "GH_VERSION" => gh_version,
-      "GO_LDFLAGS" => "-s -w -X main.updaterEnabled=cli/cli",
+      "GH_VERSION"   => gh_version,
+      "GO_LDFLAGS"   => "-s -w",
+      "GO_BUILDTAGS" => "updateable",
     ) do
       system "make", "bin/gh", "manpages"
     end

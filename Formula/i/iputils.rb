@@ -1,14 +1,14 @@
 class Iputils < Formula
   desc "Set of small useful utilities for Linux networking"
   homepage "https://github.com/iputils/iputils"
-  url "https://github.com/iputils/iputils/archive/refs/tags/20240905.tar.gz"
-  sha256 "055b4e6e4f298c97fd5848898099e59b4590db63fac3f7ad4fa796354ad44403"
+  url "https://github.com/iputils/iputils/archive/refs/tags/20250605.tar.gz"
+  sha256 "19e680c9eef8c079da4da37040b5f5453763205b4edfb1e2c114de77908927e4"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   head "https://github.com/iputils/iputils.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "9881e8da206fa156f109ae29a816d2927eee1366b5f38e32c22cbcb7987ab14f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5e17cf0b22d54026f33a2a0883726815e6a98b31a838e2c644b6c2b219c1b934"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "37484fe1294ed3aa7acb9e302b59eff14e200c35659d8e1efdfdfb1fad80ecae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "70b1f0b987ee90225aecb3dec9012bdc1a8e25cb5f6b0530af39dae2c46970bc"
   end
 
   depends_on "meson" => :build

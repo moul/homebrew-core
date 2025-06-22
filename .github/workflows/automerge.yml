@@ -65,9 +65,10 @@ jobs:
           publishable=true
           while IFS='' read -r label
           do
-            if [[ "$label" = "automerge-skip" ]] ||
-               [[ "$label" = "pre-release" ]] ||
-               [[ "$label" = "CI-published-bottle-commits" ]]
+            if [[ "$label" = "CI-published-bottle-commits" ]] ||
+               [[ "$label" = "automerge-skip" ]] ||
+               [[ "$label" = "maintainer feedback" ]] ||
+               [[ "$label" = "pre-release" ]]
             then
               publishable=false
               break

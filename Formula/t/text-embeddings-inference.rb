@@ -1,18 +1,18 @@
 class TextEmbeddingsInference < Formula
   desc "Blazing fast inference solution for text embeddings models"
   homepage "https://huggingface.co/docs/text-embeddings-inference/quick_tour"
-  url "https://github.com/huggingface/text-embeddings-inference/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "f8aa773a15e15bbbd4b793aa79fe65c16bc50c52e7aa710690a7a312c69d159c"
+  url "https://github.com/huggingface/text-embeddings-inference/archive/refs/tags/v1.7.2.tar.gz"
+  sha256 "1b6c877419662f0ddd287d917b71790a1812d4ffd6feb916718e475842fee4a9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b31c7b07243ae9eac43a5720ea5a0c943478130a6774b2ab37dd9433607878cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac1df833c4b595c2306fbd150c94d7471f3c462bd22937e8558834e11ff76a2b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3cfff674ba4adc56cb746ef985e6ccd173d0b84b1c0774ce313ad6971dcf84e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d328ee1717b4c6b3779a2e372fa92385e1513154b97eb91741e4b5206f1bc25"
-    sha256 cellar: :any_skip_relocation, ventura:       "d620ccac5d7b693d860e249e705d5e21dd044b45c42309f8cff5b31c2515a696"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c452f485510827673e684f809e9faad64298b823ec87860c0b5c9cbc6adc26d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe08f0101ab2c50c64e636f04546339bc95392522fe569676c7fa4b4ff5d80f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4727076a3db9929e02657cfbbf87e0e555c24ff09b95997aa22bf5b3a43a3d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "183d2ea9f481025729eb51e41b4e8e49bda146056371155a0920b19379800b4d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "702753cd4a85148e74fc0be94ffa461d0f0110e9d2ceb0f6e4f47c651036d389"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e1cbda9d82981729804d0236236167ea1d6c6ed27b3ba617ad7bc60a5711feaa"
+    sha256 cellar: :any_skip_relocation, ventura:       "502025bdca2b091196270daa7550cfed7ffb333a3e5ea323bd39c1f47b7b1807"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2861ab865c14b2873dc78f8afefaccb78039a15efe6e2caf6ee6874519c5c701"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a307aac6aadbc2df5a808f90841c643f42546c27c52de874a3fc0e6e67b8689"
   end
 
   depends_on "pkgconf" => :build

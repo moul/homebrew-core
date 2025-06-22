@@ -3,19 +3,20 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https://www.gitguardian.com"
-  url "https://files.pythonhosted.org/packages/a7/0d/9e5ab1da61c374af4cbf02800d83810f296f5397b53ff5ca0811e6424936/ggshield-1.39.0.tar.gz"
-  sha256 "801d27528a57e6bd6170163635d38d95735a14bfae7406d15de371a3b3f76cc6"
+  url "https://files.pythonhosted.org/packages/da/85/9cf7b609e64c68edec72bad19e581354d9715d3dbf58a23a76b84a3ba0b4/ggshield-1.40.0.tar.gz"
+  sha256 "7ad3ac8ffef6b488a59363539e36e67e60fea58a221e41a08c871b63be956368"
   license "MIT"
+  revision 1
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8e69fb4af4ffbfbce4a4e2a5a1117f442ec7ed9f1b780040e2af8b8262d969a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "c2da9510b9abee13d569557991dda589fceeba2f74578655cca427667f38bedb"
-    sha256 cellar: :any,                 arm64_ventura: "4378a2fa26190b1a44f93923a3abf5c58ba449aa8981582af1ebccba89915df4"
-    sha256 cellar: :any,                 sonoma:        "18f9130c2db279738a6c52e865d7dec6077b685d1bca0551c3e947e3e061ce97"
-    sha256 cellar: :any,                 ventura:       "db423cd8f753f095fae62b6c73cf0d7e032b0f480a974e374c265c4ba6a9cd1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0af56ffb2b75a310ac3b99a2d647b9070402187a8553e65da3447a17fb2838d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c367dd69a5091dba5fe988dc3f0acdbdf29d8e18583e0970524e959087e09e8"
+    sha256 cellar: :any,                 arm64_sequoia: "80c1a5f6d96ee2172da225703c00a1b09aaed0139a3e28c650c68940706c2c13"
+    sha256 cellar: :any,                 arm64_sonoma:  "c0eaa8e123144e3f5ca879db61ce50e95a69815fb1d822c8d7b55d22678a4fc4"
+    sha256 cellar: :any,                 arm64_ventura: "e91013e7f74c03275a2b43cfcdaa966bf738c873a0e611cdc7a973ededdd61ce"
+    sha256 cellar: :any,                 sonoma:        "92373616edd891dc932a93e80e438ad323c1e4694a3ef2b838ccd424eb63f72f"
+    sha256 cellar: :any,                 ventura:       "ae15f21fdcac02d574f4f0c0bf8b31cc81960d76bcea59f8bcdc1fc591540bb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d08536dc5430db36285f933dfcf0ead729db744f2626f6ffb6c7da130c99a62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88884bf4828497b2aacef144a770c9f9b62273fcc51cf960c28e53e6d7367f00"
   end
 
   depends_on "certifi"
@@ -74,8 +75,8 @@ class Ggshield < Formula
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/e9/40/781b19a576ded295b23263ee346dfad4e7b0e7b3fb35b8629f194a9f7bdd/pygitguardian-1.21.0.tar.gz"
-    sha256 "e934ab00ff8ead8c6b149dc358d594ba3de41e68a93c10c95d0b72faf9506dfc"
+    url "https://files.pythonhosted.org/packages/24/55/d55df088734cbfc80bb48608b2fbe3840171396c249e0da8bf93229ebf49/pygitguardian-1.22.0.tar.gz"
+    sha256 "d3e7214e16f06f2ba7c5ca1bc809dc1e1e4dbc9199e09f1c1b2947174d8b043b"
   end
 
   resource "pygments" do
@@ -99,8 +100,8 @@ class Ggshield < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rich" do
@@ -109,8 +110,8 @@ class Ggshield < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/44/80/97e25f0f1e4067677806084b7382a6ff9979f3d15119375c475c288db9d7/setuptools-80.0.0.tar.gz"
-    sha256 "c40a5b3729d58dd749c0f08f1a07d134fb8a0a3d7f87dc33e7c5e1f762138650"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "truststore" do

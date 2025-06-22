@@ -5,6 +5,8 @@ class Intermodal < Formula
   sha256 "4b42fc39246a637e8011a520639019d33beffb337ed4e45110260eb67ecec9cb"
   license "CC0-1.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "852b6c8f3270eac4536874bcd3569c7b356f196095395587b827c19694bc8850"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8a4fd8dbae699ee5489ee270a44217875c278e8dafd4b0d2ab59c0a53c233d7"
@@ -16,10 +18,10 @@ class Intermodal < Formula
   end
 
   depends_on "help2man" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

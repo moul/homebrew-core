@@ -2,19 +2,19 @@ class Sourcekitten < Formula
   desc "Framework and command-line tool for interacting with SourceKit"
   homepage "https://github.com/jpsim/SourceKitten"
   url "https://github.com/jpsim/SourceKitten.git",
-      tag:      "0.37.0",
-      revision: "eb6656ed26bdef967ad8d07c27e2eab34dc582f2"
+      tag:      "0.37.2",
+      revision: "731ffe6a35344a19bab00cdca1c952d5b4fee4d8"
   license "MIT"
   head "https://github.com/jpsim/SourceKitten.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2055c55992adc5704bba47a724cdd7bf91792cd5b9a290edb20fae3f5bfe1040"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45e2029ed37a1151357f877689e017031ec02b3e4a7f3481dee354136a0ef57b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a537fa252a93e87370e05294e70355ef17922b476ce83c924c7a8df11f78e29c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "67c2adcc597c9c81363a31462f77438e9b72df5eeb389860b15c874d2e730fa2"
-    sha256 cellar: :any_skip_relocation, ventura:       "63a0c69b8c07d8d68fc01e1aed95782021417753f6fb3f606e35f214560f7b30"
-    sha256                               arm64_linux:   "ed0d6d4dc2112b6ae320927620de3d216549a1ec2dad90cbfd964d827aaa0994"
-    sha256                               x86_64_linux:  "b2cff74b0c1717829db601f9a6032096c29b52f2c417c699826d21d8b954ce49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34d5a49f50885b3cc0cff8812f6c4770976be709befa058385d404f27487fd06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a68272f86ee89c1dbf1fb19349431a209124f7b2413d6a32152d81dec8978ec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "07ec2e64a18e5ce87c3511be8ba93f17d162d05c737da4dc5a52c477f6e795a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9c64b978d11776e2baa8103bdac80636561f69f157d203411dab05a05c87e294"
+    sha256 cellar: :any_skip_relocation, ventura:       "207bcbf2c8ce58e39afa645836e7798085c39803e9ec1ba728ac80f1b7281713"
+    sha256                               arm64_linux:   "53a805bb690bda85db814fb237af34c3999c8ef3685e9878562b9d0b8a38c355"
+    sha256                               x86_64_linux:  "97515204398c1cd3aec85367e15eba66781a08fbb972aecb2c74a5cafb419ea6"
   end
 
   depends_on xcode: ["14.0", :build]

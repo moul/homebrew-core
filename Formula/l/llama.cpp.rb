@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https://github.com/ggerganov/llama.cpp"
   # CMake uses Git to generate version information.
   url "https://github.com/ggerganov/llama.cpp.git",
-      tag:      "b5400",
-      revision: "c6a2c9e7411f54b0770b319740561bbd6a2ebd27"
+      tag:      "b5720",
+      revision: "8308f98c7fb778e54bf75538f5234d8bd20915e9"
   license "MIT"
   head "https://github.com/ggerganov/llama.cpp.git", branch: "master"
 
@@ -19,20 +19,20 @@ class LlamaCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "929141688c8b9ec50a9b525ecf35c550f92bb917b12614a4c5cd1d2004fd2aef"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a24eff28a2b42e05f1bd2a82c663fe4a95b6ec2be9cc8bfbffb71157da45a50"
-    sha256 cellar: :any,                 arm64_ventura: "411984af41ff068e7f0b720717ee7798a91a1ce65345b19dedeedfa1d3efa27e"
-    sha256 cellar: :any,                 sonoma:        "0525a49ea5d6b3c554e6e94453ba82c6862e43bd86a4b00b61b8dc819ecf8ff2"
-    sha256 cellar: :any,                 ventura:       "4dc6349a43dbd9fab290740df7dc2e45db35ac6f434451637ea242cf9a94900e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6c060f4d8fab7be7f346573de2376bac9f4bb80546eb8a1433d1fe63fb23412"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa016f9677c997baa195d081ee2b853955cfefd02755f7fdcd949ec49345d63"
+    sha256 cellar: :any,                 arm64_sequoia: "6c42ca700f60a3d1141d6307d2da1f49e14ab15ae06017bdd9542afe0c997902"
+    sha256 cellar: :any,                 arm64_sonoma:  "491260e5f4f90e3cea25356fc3b856d64193c7f63b8afcb4d29c4ef22728ab0a"
+    sha256 cellar: :any,                 arm64_ventura: "f021caf26e68a2265cf80f70b2961261874557ea90838467b19c6b99288521d4"
+    sha256 cellar: :any,                 sonoma:        "fd6debbdff7010bc4b3a296889538e13834fc21ae523bbaf5666f3b7954f512b"
+    sha256 cellar: :any,                 ventura:       "78d9e95bfc57f70d43ddb37e4a9303d5a91e901394c29a307ac17698a4650963"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b87ac7bf4e1ad9ba2b7b8044cb2b41d9a2cc7b677d94575b29abdd7433b17946"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b01684cf9f96c3d3466abf65d5d85e0a904bfd437955de865fc1815096ee63a5"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
   uses_from_macos "curl"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openblas"
   end
 

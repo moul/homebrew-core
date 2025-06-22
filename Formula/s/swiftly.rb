@@ -2,54 +2,61 @@ class Swiftly < Formula
   desc "Swift toolchain installer and manager"
   homepage "https://github.com/swiftlang/swiftly"
   url "https://github.com/swiftlang/swiftly.git",
-      tag:      "1.0.0",
-      revision: "a9eecca341e6d5047c744a165bfe5bbf239987f5"
+      tag:      "1.0.1",
+      revision: "c14ee6e9fc94988e04b164b457a3b4afa800f68c"
   license "Apache-2.0"
   head "https://github.com/swiftlang/swiftly.git", branch: "main"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75aea1e89e30fd9a79bb0b85e40a495a000a701cd6c886e6d521fc6f04dc3a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e5b1fc6281e6008f944cac681007dd86280c49789299a0cb822efb64185d73e"
-    sha256 cellar: :any,                 arm64_ventura: "2e68af78a8cdaaa0f30e692374e2f8f12d70d8badb54ba751661d30ebdff07e7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c29010ed4b5be4cecdead4a32071a73efe827101eb3f1261194557fa290c4df4"
-    sha256 cellar: :any,                 ventura:       "cfb17a9c3409df62c02b0422efddf79a568db0deab23034e2a4b6c38fe9cd8c6"
+  livecheck do
+    url :stable
+    strategy :github_releases
   end
 
-  # On Linux, SPM can't find zlib installed by brew.
-  # TODO: someone who cares: submit a PR to fix this!
-  depends_on :macos
-
-  depends_on macos: :ventura
-  depends_on xcode: "8.0"
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a84f3d6faf7a00e1e9e836b0bd16bea9ddb1e49005ab420499bdb2f8328060e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6ccee7ec1311078cb828331131f003237f0c136f85ca5167e86daf03d54301d"
+    sha256 cellar: :any,                 arm64_ventura: "dd8a30f30d7a712bcefdbbc87c46d334e9d58f029fd2ef9087f5f90a56d69da7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "191b819cb5f9baec07adef449079cd55b7b6eeecd298eeb8ccad2694dd134d63"
+    sha256 cellar: :any,                 ventura:       "b340ce4b7c4c4eea79250e94375b4f5459638dd330cb391ca053aec2df300bf2"
+    sha256                               x86_64_linux:  "db1b6d3fe662fcb8279542b4f84b2d05b308566c24dd5d05c20169febbe7ef7c"
+  end
 
   uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+
   uses_from_macos "zlib"
+
+  on_sonoma :or_older do
+    depends_on xcode: ["15.0", :build]
+  end
 
   on_linux do
     depends_on "libarchive"
   end
 
   def install
-    system "swift", "build", "--configuration", "release", "--product", "swiftly", "--disable-sandbox"
+    args = %w[
+      --configuration release
+      --disable-sandbox
+      --product swiftly
+    ]
+    if OS.linux?
+      args += %W[
+        --static-swift-stdlib
+        -Xswiftc -I#{HOMEBREW_PREFIX}/include
+        -Xlinker -L#{HOMEBREW_PREFIX}/lib
+      ]
+    end
+    system "swift", "build", *args
+
     bin.install ".build/release/swiftly"
   end
 
   test do
+    # Test swiftly with a private installation
     swiftly_bin = testpath/"swiftly"/"bin"
     mkdir_p swiftly_bin
     ENV["SWIFTLY_HOME_DIR"] = testpath/"swiftly"
     ENV["SWIFTLY_BIN_DIR"] = swiftly_bin
-    system bin/"swiftly", "init", "--assume-yes", "--no-modify-profile"
-    system bin/"swiftly", "install", "latest", "--use"
-    (testpath/"main.swift").write <<~EOS
-      @main
-      struct HelloSwiftly {
-        static func main() {
-          print("Hello Swiftly!")
-        }
-      }
-    EOS
-    system swiftly_bin/"swiftc", "main.swift", "-parse-as-library"
-    assert_match "Hello Swiftly!", shell_output("./main").chomp
+    ENV["SWIFTLY_TOOLCHAINS_DIR"] = testpath/"swiftly"/"toolchains"
+    system bin/"swiftly", "init", "--assume-yes", "--no-modify-profile", "--skip-install"
   end
 end

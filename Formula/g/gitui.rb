@@ -1,10 +1,12 @@
 class Gitui < Formula
   desc "Blazing fast terminal-ui for git written in rust"
-  homepage "https://github.com/extrawurst/gitui"
-  url "https://github.com/extrawurst/gitui/archive/refs/tags/v0.27.0.tar.gz"
+  homepage "https://github.com/gitui-org/gitui"
+  url "https://github.com/gitui-org/gitui/archive/refs/tags/v0.27.0.tar.gz"
   sha256 "55a85f4a3ce97712b618575aa80f3c15ea4004d554e8899669910d7fb4ff6e4b"
   license "MIT"
   head "https://github.com/gitui-org/gitui.git", branch: "master"
+
+  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2b153db2c3519ec2f197cd128b34732ec2e2b90355d7f05e46629853060e5a9d"
@@ -34,7 +36,7 @@ class Gitui < Formula
   test do
     require "utils/linkage"
 
-    system "git", "clone", "https://github.com/extrawurst/gitui.git"
+    system "git", "clone", "https://github.com/gitui-org/gitui.git"
     (testpath/"gitui").cd { system "git", "checkout", "v0.7.0" }
 
     input, _, wait_thr = Open3.popen2 "script -q screenlog.ansi"

@@ -3,31 +3,32 @@ class TerraformIamPolicyValidator < Formula
 
   desc "CLI to validate AWS IAM policies in Terraform templates for best practices"
   homepage "https://github.com/awslabs/terraform-iam-policy-validator"
-  url "https://files.pythonhosted.org/packages/13/7b/4fba4bbee1931df373f456a34994a1f089059ac13bac5ade29e1ae143956/tf_policy_validator-0.0.8.tar.gz"
-  sha256 "f43359ee0478f10e7b27a3fb7282c284304615cc6f06fd5aa3aa631edbe4811a"
+  url "https://files.pythonhosted.org/packages/89/6b/bdb90f2fcb4a0033f138d52d5b24af9a2f8a84703ef94cbc31d51f0afaed/tf_policy_validator-0.0.9.tar.gz"
+  sha256 "ec8496bb8d45642a61f36dba95c867ac8ca5438bfc5bebafe8e3eec03a50d181"
   license "MIT-0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "579fbf421d2560b9ad43d93f3549e559c099f3811ff09fc62b2ea1637855a0b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "947eca6f3676c6544d596b46c713ba5316c510a2f6b325fdd7d9d0b0bc1b8e13"
-    sha256 cellar: :any,                 arm64_ventura: "b89e2714f23a60a4ddf0fe2719c93a31264a8ecb528549418a978b44a658c8ff"
-    sha256 cellar: :any,                 sonoma:        "4d1256d5c37bf22b127cefc065b33a6a5fbfd46da050044f04ce17b9e23d8b4d"
-    sha256 cellar: :any,                 ventura:       "a3653d4fd8972af3496ebecf50946dca9a12e5e09b208254a4968e4b612565c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e3eee71e3cd93033925ca8532fd942cb1f3da394e08013d6feb1618319a4b7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f630df08d4441513159d5853e5a8eda4d964b436cd5cc3a636ebd64baae400b"
+    sha256 cellar: :any,                 arm64_sequoia: "ea44c5c12ecb377b985e966cdf9b4fb78d667c1afc8551eb404604fd3f0b069c"
+    sha256 cellar: :any,                 arm64_sonoma:  "6fcafd350702b3d9cf103ce0ececd465cdbd535651c7d451b6b7f2194ca86d2d"
+    sha256 cellar: :any,                 arm64_ventura: "60288f1c4b5c0a447e6b0b758776c8ade162a89bc64a91c69f82f7648a637bb4"
+    sha256 cellar: :any,                 sonoma:        "061cc4acea3a16bb4c82a136356ba15505b2fe19f6724da8ad106fa4d62e7247"
+    sha256 cellar: :any,                 ventura:       "23b3423630d67cb0caa04490c29bcfa9418e6655aebe898315220e027ffc8b32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44d3d8ae748a9982f9ae3fb179b81920dbc4c781b573b68f9bdddd70fecfb4a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8eb907b07e2d5ee3655dccb73b2db1eb8ff734d47a86eefa9e45391c3643d8a4"
   end
 
   depends_on "libyaml"
   depends_on "python@3.13"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/d6/50/1183ffa4782408907891af344a8e91d7bc5d7a9bae12e43fca8874da567e/boto3-1.37.13.tar.gz"
-    sha256 "295648f887464ab74c5c301a44982df76f9ba39ebfc16be5b8f071ad1a81fe95"
+    url "https://files.pythonhosted.org/packages/5a/66/a26e7f20039ae3c57524baf26af43216c3959013f23308458f211cce78a5/boto3-1.38.40.tar.gz"
+    sha256 "fcef3e08513d276c97d72d5e7ab8f3ce9950170784b9b5cf4fab327cdb577503"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/18/53/3593b438ab1f9b6837cc90a8582dfa71c71c639e9359a01fd4d110f0566e/botocore-1.37.13.tar.gz"
-    sha256 "60dfb831c54eb466db9b91891a6c8a0c223626caa049969d5d42858ad1e7f8c7"
+    url "https://files.pythonhosted.org/packages/61/23/42cc861466a34e45bd1783c3b3a547d5f723a8d21f6151cd1e3d84adfba6/botocore-1.38.40.tar.gz"
+    sha256 "aefbfe835a7ebe9bbdd88df3999b0f8f484dd025af4ebb3f3387541316ce4349"
   end
 
   resource "jmespath" do
@@ -46,8 +47,8 @@ class TerraformIamPolicyValidator < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/0f/ec/aa1a215e5c126fe5decbee2e107468f51d9ce190b9763cb649f76bb45938/s3transfer-0.11.4.tar.gz"
-    sha256 "559f161658e1cf0a911f45940552c696735f5c74e64362e515f333ebed87d679"
+    url "https://files.pythonhosted.org/packages/ed/5d/9dcc100abc6711e8247af5aa561fc07c4a046f72f659c3adea9a449e191a/s3transfer-0.13.0.tar.gz"
+    sha256 "f5e6db74eb7776a37208001113ea7aa97695368242b364d73e91c981ac522177"
   end
 
   resource "six" do
@@ -56,11 +57,14 @@ class TerraformIamPolicyValidator < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install
+    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+
     virtualenv_install_with_resources
   end
 

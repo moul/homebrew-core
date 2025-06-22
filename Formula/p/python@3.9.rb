@@ -1,8 +1,8 @@
 class PythonAT39 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.9.22/Python-3.9.22.tar.xz"
-  sha256 "8c136d199d3637a1fce98a16adc809c1d83c922d02d41f3614b34f8b6e7d38ec"
+  url "https://www.python.org/ftp/python/3.9.23/Python-3.9.23.tar.xz"
+  sha256 "61a42919e13d539f7673cf11d1c404380e28e540510860b9d242196e165709c9"
   license "Python-2.0"
 
   livecheck do
@@ -10,14 +10,16 @@ class PythonAT39 < Formula
     regex(%r{href=.*?v?(3\.9(?:\.\d+)*)/?["' >]}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
-    sha256 arm64_sequoia: "87f9a866cba5103b6e2551f109781f413d6b69ef7d6bd0137222054dce965dc9"
-    sha256 arm64_sonoma:  "cd7e1f45d0a0f898cca96e61411f3a32360e7cc28276f784be7876a98f064500"
-    sha256 arm64_ventura: "c13bd1128b70283d76c86b38fd2029fd7ee6c2dbdbc7ce7de98f59b217977001"
-    sha256 sonoma:        "f9f06241188b3bc368b5533f3fa175b4deff12a882bdd2d58e1f6d7b72d93292"
-    sha256 ventura:       "16e029a7744e63c97c9e3339ccd664203af5c449eab55a6c2ad6e6e6fdd93e53"
-    sha256 arm64_linux:   "03a115cf797cfa15f8313e3ce113b45c9f99a4fdfe6ad98f4fe775c275a1747c"
-    sha256 x86_64_linux:  "ac113081bcc9fa8d2e4967ba47444aea8df3c07e017e3ef89d5bc6cad8171d4d"
+    sha256 arm64_sequoia: "e088eaa87ecbf35c8c87ffd1e6e864b20509ec1597c4f5f98360fe500d2292e5"
+    sha256 arm64_sonoma:  "c742522959cf677a09ba96071c9c036caaa1e8a9e08b0dba9b8b07babde351f2"
+    sha256 arm64_ventura: "ca973824df91389a033f153a3e2bd5f0e818c42fe4df3b0576e427f3d1d11e84"
+    sha256 sonoma:        "844b1b98b64bb3a0317d8da05ca3674a98b522a361790090332da15372ca195e"
+    sha256 ventura:       "ca3dfb7151380a909adc83c10f0ddcfb8c1c09f9aac93c1b87e91b3a2ab6fa5e"
+    sha256 arm64_linux:   "05fb5b5497827bc1db68ca2e895c0820900c64d174a7ad60b01123d5cea33944"
+    sha256 x86_64_linux:  "4ab2946adbebc2a587565156aa5c2e12b6f850a1e76bed19e5aeac82b358047c"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -55,13 +57,13 @@ class PythonAT39 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/70/53/b309b4a497b09655cb7e07088966881a57d082f48ac3cb54ea729fd2c6cf/pip-25.0.1.tar.gz"
-    sha256 "88f96547ea48b940a3a385494e181e29fb8637898f88d88737c5049780f196ea"
+    url "https://files.pythonhosted.org/packages/59/de/241caa0ca606f2ec5fe0c1f4261b0465df78d786a38da693864a116c37f4/pip-25.1.1.tar.gz"
+    sha256 "3de45d411d308d5054c2168185d8da7f9a2cd753dbac8acbfa88a8909ecd9077"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/a9/5a/0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379/setuptools-78.1.0.tar.gz"
-    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "wheel" do

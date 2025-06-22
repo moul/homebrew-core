@@ -1,19 +1,24 @@
 class Rofi < Formula
   desc "Window switcher, application launcher and dmenu replacement"
   homepage "https://davatorium.github.io/rofi/"
-  url "https://github.com/davatorium/rofi/releases/download/1.7.8/rofi-1.7.8.tar.gz"
-  sha256 "469fba08ad99f286a4a8c65f857c9f66c07e7b9a3496ac1fe3dcd856f3c687d3"
+  url "https://github.com/davatorium/rofi/releases/download/1.7.9.1/rofi-1.7.9.1.tar.gz"
+  sha256 "bb2c0f073b4422acc51a3f97d05275a82464750a33d2f4b120e3d866bb7b9ae5"
   license "MIT"
   head "https://github.com/davatorium/rofi.git", branch: "next"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 arm64_sequoia: "9145e5c0e10e0ad16f63c39596fca4cbbc268f2163764242b1983ccc74beb819"
-    sha256 arm64_sonoma:  "6fc2c12f38a607c36dcea8cb40e1ad8e6bedebe32f6e027ffc1d7db4128a2590"
-    sha256 arm64_ventura: "4521374727e53f0da2f4956fecf809d1f3a3bc6fd7f9bbd8fa731d2c105ffd5b"
-    sha256 sonoma:        "d0e422907890194f159c82e5877b4b4a7df6993de3c778fcd2d96cca62e6b7f9"
-    sha256 ventura:       "d5825c1f770c36b0de8c90fba3c68eb2ec1fe8b2a62e6d5d1d75f908f5918e36"
-    sha256 arm64_linux:   "7fdfa7e381f332b98daf951e158ce891cec5468a158e2388523b8619c0868c99"
-    sha256 x86_64_linux:  "132a7447727b17fdc5983bfeaa2317458d65d4146c6c4624588af2724b502f15"
+    sha256 arm64_sequoia: "5c626909b1b293d203588b80ed5d8221eeabbda74a52eb1097d7c309631a45ad"
+    sha256 arm64_sonoma:  "0b314c3080bb26ad2db79ead55a11c77a6c7e619203b3da7b43bdb061336c261"
+    sha256 arm64_ventura: "15c48971ba5a436e4ffb87b43b6b5a5e4041024e5b3083df70d83b40b57a1177"
+    sha256 sonoma:        "3d87e7e89049147de89401787624bfec3db06fd772ff6f1167d5c6e3c3f458bd"
+    sha256 ventura:       "ebe1fee45adf82c9324374d2ae33eb4af4ab1454b39872a9a1ca2d2620f2b8ad"
+    sha256 arm64_linux:   "162d955726717cd43a5daada701228401f9b1b3ea66e988f44c445f93da05f12"
+    sha256 x86_64_linux:  "73a4c5573499a78fefd0d2a58c15ba6069bf5169b6a3064f2951c650e1dfa889"
   end
 
   depends_on "autoconf" => :build

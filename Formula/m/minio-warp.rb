@@ -1,27 +1,18 @@
 class MinioWarp < Formula
   desc "S3 benchmarking tool"
   homepage "https://github.com/minio/warp"
+  url "https://github.com/minio/warp/archive/refs/tags/v1.1.6.tar.gz"
+  sha256 "c125ce0c8043c62e5683f1519e529ca0fcd43c320e828a3a66255f58c494ede8"
   license "AGPL-3.0-or-later"
   head "https://github.com/minio/warp.git", branch: "master"
 
-  stable do
-    url "https://github.com/minio/warp/archive/refs/tags/v1.1.4.tar.gz"
-    sha256 "1a8055bd4a8fc2e9bee6b93ebf3f0fa5dbbc560c8f9f53832ee885c88566fef5"
-
-    # go.sum update
-    patch do
-      url "https://github.com/minio/warp/commit/c830e94367efce6e6d70c337d490a3b6eba5e558.patch?full_index=1"
-      sha256 "69d59f334cb60fd0d8aaf6426c27a1a995cad494e49024187673baba3bf35ec6"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f96a3959319137654f59cf95f39b802f4294e903b496f1bb818f55a248fedaa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad0cc0c54056c3e1a65140276c1a4859222e6866a75343bbf062a0575c50332c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "34275103e3292958edc850991c4b0fa4cb575366cc4f6077b0fc20676f8224c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8812e75d4f70ae276dcafb3c5e5ce2cfc458b9ad8be9948bad9225ae6abe3231"
-    sha256 cellar: :any_skip_relocation, ventura:       "e51bcfc2fde33bd43e3e9293eb22cec1a3176a3e797487bb1bb654b61210225e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd0deb74bdb394b6f27aa152a0da6eac1ebccaf345233fc5dcf2423910301b82"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4626aab4abb51ca6aefcee735a7affbb87c174829be30ee90bcb853fb4ca7b82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c278b0060df9695bda0e0bf5100cc78d415154dc3a6e8586871865dca9429193"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8731894ab29a296cc82b2f8a1b8d84df820ce197fcda5f1920c51b87645ed1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "796ddd72433e05cd888596f5ab1b075a30d3ea38e2a8f3ac2266b840635fcc8f"
+    sha256 cellar: :any_skip_relocation, ventura:       "37168b7893e3145c4476f70cd3fb5ab8ffa8e6c3830a26e40d26b25f558d0f99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68e0f7b5fa46d86ef81f1c5174110a6dbbe33797b81ae5a09a53a6a70d933e12"
   end
 
   depends_on "go" => :build

@@ -5,19 +5,20 @@ class Icloudpd < Formula
   homepage "https://github.com/icloud-photos-downloader/icloud_photos_downloader"
   # We use a git checkout as scripts/patch_version runs git commands to update SHA
   url "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git",
-      tag:      "v1.27.5",
-      revision: "ee21fdf518569f8836fd9a945c438e25cc9a2065"
+      tag:      "v1.28.1",
+      revision: "ad1a381fb24a82154d07c4469d323ad5fb463ffd"
   license "MIT"
+  revision 1
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f0d54cfaec8c90744723bc432e63f0ae845df3616ed284b4a586b2e0cc3e01c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8ff0aa8ae29dc10f43a31e0d2959f8d0cb857f15ce78938cc01b03be77a0044"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aa483406a5949be879208cf94209a8cea474dae8843aa3377c7575ab0d1b6ae9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c70347d1b14bb624a3f3d877eefaa53c77b4e8e9c042570d4e1e12b3658609c4"
-    sha256 cellar: :any_skip_relocation, ventura:       "93c78c13b30859432920ba01996d69452a6164bfc0dddc9879774d3f390e6599"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d6c620beb5f44ce446c997ea10bf56acc0b0b3ce1330e4e5bfc5dadb35ef8fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4885032aa8be43cfb8ee17b5470a7363a07ad19059fbe948f1d871e6c63f93b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb42bf067398edcbb94dee5b080dbbd04502b1ceb0572a5bbc74f50a0bc3b7eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9af6384a0c175ed10c50e2f4f5d0c79d0a97d715b83063af9da76093ebf8efec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "69a402642cd26619c98b895c0a9cfb868637bb1f80248e628c0d93e676a98401"
+    sha256 cellar: :any_skip_relocation, sonoma:        "169eb03973e3ccb39f34d6ac653ea9691d3661cdd17eb432a8925ca2ec677d3f"
+    sha256 cellar: :any_skip_relocation, ventura:       "d2e8dbe347b546ad3ca5c589d3478237c7d91de0f22c484df154b4a9013dad43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de289a69dc230b34cc08f700af4bbdafffba71b61198c84bd20d45c5e1c9a0ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e6a503a68d14f2857dfd8f9d704724ca8a07c22d09f7499a1d04f2647473633"
   end
 
   depends_on "certifi"
@@ -43,8 +44,8 @@ class Icloudpd < Formula
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/89/50/dff6380f1c7f84135484e176e0cac8690af72fa90e932ad2a0a60e28c69b/flask-3.1.0.tar.gz"
-    sha256 "5f873c5184c897c8d9d1b05df1e3d01b14910ce69607a117bd3277098a5836ac"
+    url "https://files.pythonhosted.org/packages/c0/de/e47735752347f4128bcf354e0da07ef311a78244eba9e3dc1d4a5ab21a98/flask-3.1.1.tar.gz"
+    sha256 "284c7b8f2f58cb737f0cf1c30fd7eaf0ccfcde196099d24ecede3fc2005aa59e"
   end
 
   resource "idna" do
@@ -108,8 +109,8 @@ class Icloudpd < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/3a/31/3c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3f/pytz-2024.2.tar.gz"
-    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
+    url "https://files.pythonhosted.org/packages/f8/bf/abbd3cdfb8fbc7fb3d4d38d320f2441b1e7cbe29be4f23797b4a2b5d8aac/pytz-2025.2.tar.gz"
+    sha256 "360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3"
   end
 
   resource "requests" do
@@ -138,13 +139,13 @@ class Icloudpd < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/04/d3/c19d65ae67636fe63953b20c2e4a8ced4497ea232c43ff8d01db16de8dc0/tzlocal-5.2.tar.gz"
-    sha256 "8d399205578f1a9342816409cc1e46a93ebd5755e39ea2d85334bea911bf0e6e"
+    url "https://files.pythonhosted.org/packages/8b/2e/c14812d3d4d9cd1773c6be938f89e5735a1f11a9f184ac3639b93cef35d5/tzlocal-5.3.1.tar.gz"
+    sha256 "cceffc7edecefea1f595541dbd6e990cb1ea3d19bf01b2809f362a03dd7921fd"
   end
 
   resource "urllib3" do

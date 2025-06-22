@@ -1,8 +1,8 @@
 class Podofo < Formula
   desc "Library to work with the PDF file format"
   homepage "https://github.com/podofo/podofo"
-  url "https://github.com/podofo/podofo/archive/refs/tags/0.10.4.tar.gz"
-  sha256 "6b1b13cdfb2ba5e8bbc549df507023dd4873bc946211bc6942183b8496986904"
+  url "https://github.com/podofo/podofo/archive/refs/tags/1.0.1.tar.gz"
+  sha256 "951ba6d2f5083650b8ebc959d66a232e15ea43b7c737230cedf23ed163f5051f"
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
   head "https://github.com/podofo/podofo.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Podofo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7c435c43229584af3a6dacf57822271969610de7507f61397b457afb83145d13"
-    sha256 cellar: :any,                 arm64_sonoma:  "021956f2a96a9661ce424e048a17c70f4e01a117eccdcf161e8d770122ec5fdf"
-    sha256 cellar: :any,                 arm64_ventura: "6efa2ab68a3d25d65c43adf0ff70d5ecfd3c2d2c132f7ab491225842992335a7"
-    sha256 cellar: :any,                 sonoma:        "5de8cfae5cf79354203b9a6a4138d0aeee038feb186430f9d2bc1a3b94329d75"
-    sha256 cellar: :any,                 ventura:       "8d58c3e164bce391cf4fe8ad987b2d81a79bf2f4f40dde4f0c9b1137ebaa9a4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f46f50ea998e67693cbb46550684b3845902f6c985765ade57e21e207173f45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b850c51ef8df89ab04d0c37364bf7e20a91d7f30c7be86c474141be7add8be52"
+    sha256 cellar: :any,                 arm64_sequoia: "4debfbd98658b333548a51fefe441891a5713a5d927d339b9fe46a23e8f18556"
+    sha256 cellar: :any,                 arm64_sonoma:  "c156ce176e34b54866bb1372f733b7f9290cd09e8ad96edf9fbd4cb2fe0c8faf"
+    sha256 cellar: :any,                 arm64_ventura: "fffe5ed348def5cb2de2bf6b9fd76d0d91472c67b2d2269809b1edd9c6eedb5b"
+    sha256 cellar: :any,                 sonoma:        "144715ffc6d38626db71fb922435ad32ca3dc40479e70fb5d377cc570d263fab"
+    sha256 cellar: :any,                 ventura:       "ef570ef6ade873ecf77c248349084827a36b81324c088fa01d61475c44a445e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbb6ba74be61c02d7f94b2ba9b1aa88f0360667b2fca0bcd55e2887c7cb6bb36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "250317e562b5021279d51e06624a7ed8904ffd4108bec934d1b199d4ea912ffa"
   end
 
   depends_on "cmake" => :build
@@ -35,15 +35,28 @@ class Podofo < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
+  on_ventura :or_older do
+    depends_on "llvm"
+
+    fails_with :clang do
+      cause "error: 'to_chars' is unavailable: introduced in macOS 13.3"
+    end
+  end
+
   def install
+    if OS.mac? && MacOS.version <= :ventura
+      ENV.llvm_clang
+      # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS
+      # rather than LDFLAGS for libc++ in order to correctly link to LLVM's libc++.
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
+      # Workaround for error: call to 'from_chars' is ambiguous
+      inreplace "src/podofo/private/charconv_compat.h", "#define WANT_FROM_CHARS", ""
+    end
+
     args = %W[
       -DCMAKE_INSTALL_NAME_DIR=#{opt_lib}
       -DCMAKE_BUILD_WITH_INSTALL_NAME_DIR=ON
-      -DCMAKE_DISABLE_FIND_PACKAGE_CppUnit=ON
-      -DCMAKE_DISABLE_FIND_PACKAGE_LUA=ON
-      -DPODOFO_BUILD_TOOLS=TRUE
-      -DFREETYPE_INCLUDE_DIR_FT2BUILD=#{Formula["freetype"].opt_include}/freetype2
-      -DFREETYPE_INCLUDE_DIR_FTHEADER=#{Formula["freetype"].opt_include}/freetype2/config/
+      -DPODOFO_BUILD_UNSUPPORTED_TOOLS=TRUE
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

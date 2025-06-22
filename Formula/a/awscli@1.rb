@@ -4,8 +4,8 @@ class AwscliAT1 < Formula
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
   # awscli should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/59/45/76d3fbf5d0f2df3e27420621156603731e71312275dab69f8fe7b66a22cb/awscli-1.40.10.tar.gz"
-  sha256 "c55420f9b95b731104de9837b86021e73391c899a250fb16a2763c47094918de"
+  url "https://files.pythonhosted.org/packages/fe/2c/542994d2a55cb2a5f1e3bc7083ede15c659a59065a33cd00472b6e2d34cd/awscli-1.40.40.tar.gz"
+  sha256 "ea584bd86ad0ae3085867f01aab08e0b3aa5da0e4527d4897b6c67f238bc7430"
   license "Apache-2.0"
 
   livecheck do
@@ -15,13 +15,13 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ea30036f53245a11daa161115b73d343abada76adba7e138aeb6dc28271288a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb7753bf144746a9a9bfd87feaf443fcb1702f76085e093021b76ffe36357fa0"
-    sha256 cellar: :any,                 arm64_ventura: "94dca4b69837b640b529b670663ffc4b5748482a72db9b36cf2952a9c6810cd9"
-    sha256 cellar: :any,                 sonoma:        "1345cd7f2eec74159ff99fbfc70cc1de1c8a5aecaaa228fb4f1f4d767aef29eb"
-    sha256 cellar: :any,                 ventura:       "b2a3597eee02acc39ff7c45690954e83de4fab98227dbc9aa609f5e972f150f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f50f59a25f8118839861021e5c467c69f4eac2257752da176ad427c7e4ce06c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99de1380f426892dda12bdae739e623f662ac185b80638d91b0e0b4adac2dc3c"
+    sha256 cellar: :any,                 arm64_sequoia: "ab66d4ced59ff7b96bc9a2546d6e6f630d8913719564c2e59fe381a9d2bdc5eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "2be86f25a308d22313b32c3ee46a7237e1d54cdc3cab94151749cd2cafbaad64"
+    sha256 cellar: :any,                 arm64_ventura: "8dccb0040e6476eed04dda4fe742355f3299d0d8de346b395c1d7b5beda99323"
+    sha256 cellar: :any,                 sonoma:        "e654f8f02a523fe7094208f65160f239deaf72d3104a83cfd37055a0f4cdf547"
+    sha256 cellar: :any,                 ventura:       "ca9fa3308db79502dcfa847c891d8223c7e198d53a86fcb89de3a58ea76316e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e7b789f1e6bcd0f6fb191ad64471acb46f1e8aa2a53e0b07ae596e8b11610b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d435a121bcc652688d52bf96cbdbe0fb65b2ea1e820f665afb65df64ba08fd09"
   end
 
   keg_only :versioned_formula
@@ -32,8 +32,8 @@ class AwscliAT1 < Formula
   uses_from_macos "mandoc"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/22/5d/96ec53163bb60f16777af91f5412df73beb79675d264fd3f1cd57dcea2fe/botocore-1.38.11.tar.gz"
-    sha256 "44c5cb042fefedbe0b0ae4c3f96aed03f4cab6973d4317410c8d7c6d32807aef"
+    url "https://files.pythonhosted.org/packages/98/46/cb33f5a0b00086a97c4eebbc4e0211fe85d66d45e53a9545b33805f25b31/botocore-1.38.41.tar.gz"
+    sha256 "98e3fed636ebb519320c4b2d078db6fa6099b052b4bb9b5c66632a5a7fe72507"
   end
 
   resource "colorama" do
@@ -72,8 +72,8 @@ class AwscliAT1 < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/fc/9e/73b14aed38ee1f62cd30ab93cd0072dec7fb01f3033d116875ae3e7b8b44/s3transfer-0.12.0.tar.gz"
-    sha256 "8ac58bc1989a3fdb7c7f3ee0918a66b160d038a147c7b5db1500930a607e9a1c"
+    url "https://files.pythonhosted.org/packages/ed/5d/9dcc100abc6711e8247af5aa561fc07c4a046f72f659c3adea9a449e191a/s3transfer-0.13.0.tar.gz"
+    sha256 "f5e6db74eb7776a37208001113ea7aa97695368242b364d73e91c981ac522177"
   end
 
   resource "six" do
@@ -82,8 +82,8 @@ class AwscliAT1 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

@@ -1,19 +1,21 @@
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https://zrok.io"
-  url "https://github.com/openziti/zrok/releases/download/v1.0.4/source-v1.0.4.tar.gz"
-  sha256 "995d5213b85683732360c9bb7633c8a467e80bc9e4b6b3265bbf4507525acbb9"
+  url "https://github.com/openziti/zrok/releases/download/v1.0.6/source-v1.0.6.tar.gz"
+  sha256 "cce522bd8e0ec39f279e92aaba1599cd8504f9d1eebbce833c30f10047f971ca"
   # The main license is Apache-2.0. ACKNOWLEDGEMENTS.md lists licenses for parts of code
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https://github.com/openziti/zrok.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "facbea9b67d3253b62a0d26fbae4fd8b34b4bfe475629ae422e52171838047c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14e23d6ba9863c6e1b43a4112e82ef49df8add2011335ad6f114a7f7a0e7d745"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "250a931684772109107a0e0163758edd50c1fd59d41a9812ee3e3a0b4b896379"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca927933798ac8dbf906990ea3a9bd5eeaf70f37c39bfa91fd6334527afc68a0"
-    sha256 cellar: :any_skip_relocation, ventura:       "ab95e0bbb2198ba4b3b1d2fe46a96cee70dc9eb9cfe8e1db2f737780fdc982bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce187843ffa80bf491a5223bfe9d05fe5f73a3adfa735e85b14e68f745e80d93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5c26032a8345ce11e510234555f588925d84a0ccfcd57eef0dac5d4531d9182"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "629d747b638f04b2c8c862646b89ada3afa7ace25229ada45a6486af3ee1328f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eaae378969ebd79eb87ebe4167b3d75afbca331639a0184605af5b2dcb9ee9e7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea0f9931c4f908c8f1e65bd06275eecb19c5444a61f1469d779cfaf88d1ea5a5"
+    sha256 cellar: :any_skip_relocation, ventura:       "049abb1b5e412bbbf8794d9adea317738374de6760e999a1e162bbd1a89a3edf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1778dd95654224d3e068ba35ccac4261b0b4f4a39e882f3f3f85790ec059c8d"
   end
 
   depends_on "go" => :build

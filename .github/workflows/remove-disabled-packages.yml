@@ -3,6 +3,7 @@ name: Remove disabled packages
 on:
   push:
     branches:
+      - main
       - master
     paths:
       - .github/workflows/remove-disabled-packages.yml
@@ -29,6 +30,7 @@ jobs:
     if: github.repository_owner == 'Homebrew'
     runs-on: ubuntu-latest
     container:
+      # TODO: switch to main when we're pushing those images
       image: ghcr.io/homebrew/ubuntu22.04:master
     env:
       REMOVAL_BRANCH: remove-disabled-packages
@@ -80,7 +82,7 @@ jobs:
         uses: Homebrew/actions/create-pull-request@master
         with:
           token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
-          base: master
+          base: HEAD
           head: ${{env.REMOVAL_BRANCH}}
           title: Remove disabled packages
           labels: CI-no-bottles

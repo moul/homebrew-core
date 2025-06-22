@@ -19,6 +19,8 @@ class HttpLoad < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "3d19f59b28f7f602e80aef16d2455d98513a6886a58910287ac5845bdcd9733b"

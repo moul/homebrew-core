@@ -7,6 +7,8 @@ class BrewCaskCompletion < Formula
   revision 1
   head "https://github.com/xyb/homebrew-cask-completion.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1c72424ca568a228443546a65b49434e69e1c5b1388786281cb7cc3ec5413ecb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9918f7a001ce1fb6bb7817a3aacae658371039789f5243d17e8a326880732d8"
@@ -22,6 +24,8 @@ class BrewCaskCompletion < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "cfa441fcc60e4cab5a4005009c18f286d160b9e515462ab3938d8a15509d5195"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3225d50a5098677d66fd4179c7fb07460129e158fc7f3ba4f1a35adb6bd8901e"
   end
+
+  deprecate! date: "2025-05-17", because: "is now natively supported by `brew`"
 
   def install
     fish_completion.install "brew-cask.fish"

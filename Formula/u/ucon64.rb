@@ -11,6 +11,8 @@ class Ucon64 < Formula
     regex(%r{url=.*?/ucon64[._-]v?(\d+(?:\.\d+)+)-src\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "f55e08ec43d072e3a5e53d38a3244adae7dcaceca71045c2bd525f05a1588609"
     sha256 arm64_sonoma:   "301ce960dee0312e69f72b00da7d4e297091039cfe5e3d10364fe48fb0b49122"
@@ -28,11 +30,6 @@ class Ucon64 < Formula
 
   uses_from_macos "unzip" => [:build, :test]
   uses_from_macos "zlib"
-
-  resource "homebrew-super_bat_puncher_demo" do
-    url "http://morphcat.de/superbatpuncher/Super%20Bat%20Puncher%20Demo.zip"
-    sha256 "d74cb3ba11a4ef5d0f8d224325958ca1203b0d8bb4a7a79867e412d987f0b846"
-  end
 
   def install
     # ucon64's normal install process installs the discmage library in
@@ -62,6 +59,11 @@ class Ucon64 < Formula
   end
 
   test do
+    resource "homebrew-super_bat_puncher_demo" do
+      url "http://morphcat.de/superbatpuncher/Super%20Bat%20Puncher%20Demo.zip"
+      sha256 "d74cb3ba11a4ef5d0f8d224325958ca1203b0d8bb4a7a79867e412d987f0b846"
+    end
+
     resource("homebrew-super_bat_puncher_demo").stage testpath
 
     assert_match "00000000  4e 45 53 1a  08 00 11 00  00 00 00 00  00 00 00 00",

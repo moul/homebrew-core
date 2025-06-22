@@ -6,16 +6,17 @@ class Twine < Formula
   url "https://files.pythonhosted.org/packages/c8/a2/6df94fc5c8e2170d21d7134a565c3a8fb84f9797c1dd65a5976aaf714418/twine-6.1.0.tar.gz"
   sha256 "be324f6272eff91d07ee93f251edf232fc647935dd585ac003539b42404a8dbd"
   license "Apache-2.0"
+  revision 2
   head "https://github.com/pypa/twine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ec3b23c0e332f1c03c3af3425858b2b9aee42d2c619e80b789e73b394e550760"
-    sha256 cellar: :any,                 arm64_sonoma:  "4cafbbad3910a5132eaa302259c34bb87b5073cd1fca4d36ee6f234d4c647472"
-    sha256 cellar: :any,                 arm64_ventura: "1abc11c2a3efbf886021b93059f5e6664e5596b3aaf34857e23e5ab4d4a32129"
-    sha256 cellar: :any,                 sonoma:        "daeb2faecb8c7df9d4f8553420f1f80526f1e07c284ef7627da940862fb502d0"
-    sha256 cellar: :any,                 ventura:       "4abae8b2d936f4cbca561ba3d16fd9e6f72271e5141bda0de392131f43de9086"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70da8af2b49cd69b61f2ce969b345089b3cc22d9bd8239bd27dfb5b204ee2632"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2991356e47daefde97834092663ddac04b776d4761af3a817e7cb5ae18c70456"
+    sha256 cellar: :any,                 arm64_sequoia: "97e7aea69b7c5bab542b20d5fbdc49bf111440bb98b417ae7a9a35742fa1f413"
+    sha256 cellar: :any,                 arm64_sonoma:  "612fa506b1317a53a06f941fd5083f1843bcb2c64e568be47a8780e7a0bf6d0f"
+    sha256 cellar: :any,                 arm64_ventura: "e2ca42a5c645ff4ea11f616ada7f91619431f44fb4073c519c538f1d1b1c6ab7"
+    sha256 cellar: :any,                 sonoma:        "c5949503ab25c49f2e3d2e6bae22e3256a470e9204d72c23ee4adb5cf72a0418"
+    sha256 cellar: :any,                 ventura:       "8a28848ef5bf33d1bd57e4dc19bd5fa12eb9c038e8d6aec4e19ce69dc9d3f4ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cc23007063de60f67ad594b5862c677d93877caf584e628b803754e702d1811"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34c3b51b306fb56f6e6c7ae4341129645514fd3f06e36ec385d81a0caf210ddd"
   end
 
   depends_on "rust" => :build
@@ -23,8 +24,8 @@ class Twine < Formula
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "docutils" do
@@ -57,11 +58,6 @@ class Twine < Formula
     sha256 "70f7e0e2ae076498e212562325e805204fc092d7b4c17e0e86c959e249701a9d"
   end
 
-  resource "jeepney" do
-    url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
-    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
-  end
-
   resource "keyring" do
     url "https://files.pythonhosted.org/packages/70/09/d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37d/keyring-25.6.0.tar.gz"
     sha256 "0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66"
@@ -78,18 +74,18 @@ class Twine < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/88/3b/7fa1fe835e2e93fd6d7b52b2f95ae810cf5ba133e1845f726f5a992d62c2/more-itertools-10.6.0.tar.gz"
-    sha256 "2cd7fad1009c31cc9fb6a035108509e6547547a7a738374f10bd49a09eb3ee3b"
+    url "https://files.pythonhosted.org/packages/ce/a0/834b0cebabbfc7e311f30b46c8188790a37f89fc8d756660346fe5abfd09/more_itertools-10.7.0.tar.gz"
+    sha256 "9fddd5403be01a94b204faadcff459ec3568cf110265d3c54323e1e866ad29d3"
   end
 
   resource "nh3" do
-    url "https://files.pythonhosted.org/packages/46/f2/eb781d94c7855e9129cbbdd3ab09a470441e4176a82a396ae1df270a7333/nh3-0.2.20.tar.gz"
-    sha256 "9705c42d7ff88a0bea546c82d7fe5e59135e3d3f057e485394f491248a1f8ed5"
+    url "https://files.pythonhosted.org/packages/37/30/2f81466f250eb7f591d4d193930df661c8c23e9056bdc78e365b646054d8/nh3-0.2.21.tar.gz"
+    sha256 "4990e7ee6a55490dbf00d61a6f476c9a3258e31e711e13713b2ea7d6616f670e"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pygments" do
@@ -103,8 +99,8 @@ class Twine < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "requests-toolbelt" do
@@ -118,18 +114,13 @@ class Twine < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ab/3a/0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bc/rich-13.9.4.tar.gz"
-    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
-  end
-
-  resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
-    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
+    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
+    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

@@ -3,6 +3,7 @@ name: Bump formulae on schedule or request
 on:
   push:
     branches:
+      - main
       - master
     paths:
       - .github/workflows/autobump.yml
@@ -27,6 +28,7 @@ jobs:
     if: github.repository_owner == 'Homebrew'
     runs-on: ubuntu-latest
     container:
+      # TODO: switch to main when we're pushing those images
       image: ghcr.io/homebrew/ubuntu22.04:master
     env:
       GNUPGHOME: /tmp/gnupghome

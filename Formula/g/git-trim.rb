@@ -6,6 +6,8 @@ class GitTrim < Formula
       revision: "1f39d85ddb242e9933fba9faaecd6f423f2b6a5b"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "f74019b2881c6a2defd6d3dbe28b2f8763d0a720c938d6e1d160b40d6d201ecb"
     sha256 cellar: :any,                 arm64_sonoma:   "df64036ef7f8b4accecdc1219ba8a3f926b00bf05583782c028e878565dd1ee6"
@@ -20,14 +22,11 @@ class GitTrim < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4663a90075b39aa34a60e0b5c097bb69b1820b9a72b1d47c54562fa9e08288de"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   def install
     system "cargo", "install", *std_cargo_args

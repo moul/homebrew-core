@@ -3,20 +3,25 @@ class SyslogNg < Formula
 
   desc "Log daemon with advanced processing pipeline and a wide range of I/O methods"
   homepage "https://www.syslog-ng.com"
-  url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.8.1/syslog-ng-4.8.1.tar.gz"
-  sha256 "e8b8b98c60a5b68b25e3462c4104c35d05b975e6778d38d8a81b8ff7c0e64c5b"
+  url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.8.3/syslog-ng-4.8.3.tar.gz"
+  sha256 "f82732a8e639373037d2b69c0e6d5d6594290f0350350f7a146af4cd8ab9e2c7"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 12
+  revision 2
   head "https://github.com/syslog-ng/syslog-ng.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 arm64_sequoia: "bb698ed0b7dcf3e503c7a955d94b70e1efc80ee89dcecd2ed7be418d9a9c18dd"
-    sha256 arm64_sonoma:  "d3a9688396c9be181b83dfd04f09dad7c745a13d312ce5a9c6127987b627f4ff"
-    sha256 arm64_ventura: "bb1641bd45a0b536e48b83f9e02a5a0a35a1baf6bc74d5cfd14cb0f08efbdc11"
-    sha256 sonoma:        "a0ec3a498c3df9563fa91b6809f9b44eaf5acce4f1c41e0d51b0476b679cb57c"
-    sha256 ventura:       "bf10a02dd697ae556a4dc5efd58b4a50d8285f84cff2c9693af7c9a6c2c96d14"
-    sha256 arm64_linux:   "2f83b1817ac7a1d0c5380ed6fc10f9cd367ffcbb51747e71300a4617a3882cbd"
-    sha256 x86_64_linux:  "c7cff8e38c75625c4953d27367ba7341f015e282a3d7608c9d72140a360fef9a"
+    sha256 arm64_sequoia: "a0dd2aa906edf808365589337925346294631afaa3a72884a67af81e6bc9b9e1"
+    sha256 arm64_sonoma:  "8f3d14f563daf5c81f9126b50d78c3e97009c160b66c81c8683ea393ecfde715"
+    sha256 arm64_ventura: "503dc684479b26464528269d3537f4de4537caf0dc5820709ace2994dcd25e4d"
+    sha256 sonoma:        "05c5019780e23ed7cb7aba1a16f5066c379c446c55a97023b6cecf8ed403aa54"
+    sha256 ventura:       "b165340eb625f85e1a7e7093b7f3633d078b36ea97bb7c78ea6b7309888f1467"
+    sha256 arm64_linux:   "c0c8e1bbc13b0c1372bb6fb04d89c3bcd360550765db5efb3ea1dc08836e9ad6"
+    sha256 x86_64_linux:  "7910edc406a5d90d96e962932d651ab6cb4f876d6dd5416abee812f3e1a8c40f"
   end
 
   depends_on "pkgconf" => :build
@@ -32,7 +37,7 @@ class SyslogNg < Formula
   depends_on "libnet"
   depends_on "libpaho-mqtt"
   depends_on "librdkafka"
-  depends_on "mongo-c-driver"
+  depends_on "mongo-c-driver@1"
   depends_on "net-snmp"
   depends_on "openssl@3"
   depends_on "pcre2"

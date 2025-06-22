@@ -1,27 +1,22 @@
 class Verovio < Formula
   desc "Command-line MEI music notation engraver"
   homepage "https://www.verovio.org"
-  url "https://github.com/rism-digital/verovio/archive/refs/tags/version-5.2.0.tar.gz"
-  sha256 "e1de4e0af9d8a19daaad0ac530764a418fa2b15920c5cf00d9c8c8b6d46d0790"
+  url "https://github.com/rism-digital/verovio/archive/refs/tags/version-5.3.2.tar.gz"
+  sha256 "01e1fc919dbfc1db7f61612057a91257b9e6ac3dfec980b26f779cffbbadbbf6"
   license "LGPL-3.0-only"
   head "https://github.com/rism-digital/verovio.git", branch: "develop"
 
   bottle do
-    sha256 arm64_sequoia: "296ef951a1958de9cce7f46b31abb4b7b579401a24bca0c6d85ab211814a9246"
-    sha256 arm64_sonoma:  "787734091de62bfcc098d156b389a2665ee16d7c50518fb78ff8018280553f6f"
-    sha256 arm64_ventura: "12c070c7f0298fbcec73022fdf7b41066a4f4053f3fc47e23da286eca5836f77"
-    sha256 sonoma:        "ab5785deaab76ee197493865bcbb5e9180f9d0786225b82caad98a61b23ea8c5"
-    sha256 ventura:       "e12265bf1c0540bb659b25d26686a85db0a3996b95ef5058cbc8f66d4c16fc54"
-    sha256 arm64_linux:   "0edb045b79a9ebf9f10e138564f5bd7a6b9a00278131cdf9b8d08c8ebc24189c"
-    sha256 x86_64_linux:  "670d42e80e46cf1409d21b92e9af8bf07acec7720a3a1cdc9ce52225de4f6da2"
+    sha256 arm64_sequoia: "8f6efd1914dc7db0c0eefdf1d7171648b2fe33901a9ae81b94d400438c5811f3"
+    sha256 arm64_sonoma:  "7fbde86cc3ceed5bca9e5faa4384ddb2edac9b36c198cb2c996eff499a92f2ee"
+    sha256 arm64_ventura: "054f95ad544a83570ea94ed46455491ad997f7f160cd1baf281c51ae4399fbd5"
+    sha256 sonoma:        "4be1fe0782be774985f5271539d8a81376c737e457c1d3b8e0829fde06747f7d"
+    sha256 ventura:       "bef859db9b18f9052c8d24f7c3bd25e61f579345d4a5b3201715f6ea2a4f2d45"
+    sha256 arm64_linux:   "90ee04d6a8ef5607cfd0c1a68c65228be812f405289850d93c35033ca3882bd1"
+    sha256 x86_64_linux:  "2b623c69c0ca6bbf8be88fc4a0088249a64194e3268b3f874ca981af755809f1"
   end
 
   depends_on "cmake" => :build
-
-  resource "homebrew-testdata" do
-    url "https://www.verovio.org/examples/downloads/Ahle_Jesu_meines_Herzens_Freud.mei"
-    sha256 "79e6e062f7f0300e8f0f4364c4661835a0baffc3c1468504a555a5b3f9777cc9"
-  end
 
   def install
     system "cmake", "-S", "./cmake", "-B", "tools", *std_cmake_args
@@ -30,6 +25,11 @@ class Verovio < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https://www.verovio.org/examples/downloads/Ahle_Jesu_meines_Herzens_Freud.mei"
+      sha256 "79e6e062f7f0300e8f0f4364c4661835a0baffc3c1468504a555a5b3f9777cc9"
+    end
+
     system bin/"verovio", "--version"
     resource("homebrew-testdata").stage do
       shell_output("#{bin}/verovio Ahle_Jesu_meines_Herzens_Freud.mei -o #{testpath}/output.svg")

@@ -3,20 +3,19 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/13/0a/544e8eb6d46baa99bf16d180b4ddb4509631fa8476e686c8e6c47681afb4/bump_my_version-1.1.2.tar.gz"
-  sha256 "0122845a78502b5a5a635ca17c1efb3e1ec05e77d72d13b2314186b9806882fb"
+  url "https://files.pythonhosted.org/packages/a4/b6/c45043a404e0878e3abeff1c25c87df78777c33760e7459901e0504f003a/bump_my_version-1.2.0.tar.gz"
+  sha256 "5120d798aaf26468a37ca0f127992dc036688b8e5e106adc8870b13c2a2df22d"
   license "MIT"
-  revision 1
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dabd1f3b541b3761f0346c9dcaf84699edfcf370d8f4b2cf62c50f9b67e2b739"
-    sha256 cellar: :any,                 arm64_sonoma:  "9c418bef1d864dd40c41c4071cb6296db118d749f3dc8aa9249a30301d2deeb6"
-    sha256 cellar: :any,                 arm64_ventura: "236ad9f0bcad213d13b242fb4aedcea8053c7ad27133ab87b00a237d4ec339ff"
-    sha256 cellar: :any,                 sonoma:        "d1f62da5dd32593c58a715ddba2f8d0a6308d0cdea80493f5ce67b2c031d7285"
-    sha256 cellar: :any,                 ventura:       "2df17298f6344743445d007d1fbcfc9bf2da1904e796e1659709399483fb3190"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "337a0f0e726a151055c3ded41e4cd878f5dab8ca07a0196dc06b82ba2f2f82b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e4a1f0c3d51ef8a235791514b92c2f2f24c142ffc52c8f151099f6bb5441b24"
+    sha256 cellar: :any,                 arm64_sequoia: "3d955f10b072bbdd66618d4795540c1403313425ec76fe49753ddb2c873b850f"
+    sha256 cellar: :any,                 arm64_sonoma:  "206261c5a514cb1839712c32794f63d0e5aab1c21f6d3618224e6b70ac753c81"
+    sha256 cellar: :any,                 arm64_ventura: "3fec34f0a0b2e0d87672e124a8edf06e93d6c710cd5038445137c248fc0a6d55"
+    sha256 cellar: :any,                 sonoma:        "75ffb88646f7486a0c9de44854909a4b67cacef44d52f8e0dfcba2c3a952de56"
+    sha256 cellar: :any,                 ventura:       "89186bb3ace7ea633afa3ce8a5abba7c059552226b8a440211d6669e1305d9aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4585c18d9125c54ed5f2e2d2549b1d9febac5542c6550d38760483f794ec27f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9561f1b35c520a5209fe9747b5a37b3549de0b1fed2b79e44c9808b9ded1b135"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -43,8 +42,8 @@ class BumpMyVersion < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "h11" do
@@ -83,13 +82,13 @@ class BumpMyVersion < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/10/2e/ca897f093ee6c5f3b0bee123ee4465c50e75431c3d5b6a3b44a47134e891/pydantic-2.11.3.tar.gz"
-    sha256 "7471657138c16adad9322fe3070c0116dd6c3ad8d649300e3cbdfe91f4db4ec3"
+    url "https://files.pythonhosted.org/packages/f0/86/8ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fb/pydantic-2.11.5.tar.gz"
+    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/17/19/ed6a078a5287aea7922de6841ef4c06157931622c89c2a47940837b5eecd/pydantic_core-2.33.1.tar.gz"
-    sha256 "bcc9c6fdb0ced789245b02b7d6603e17d1563064ddcfc36f046b61c0c05dd9df"
+    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
+    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
   end
 
   resource "pydantic-settings" do
@@ -118,8 +117,8 @@ class BumpMyVersion < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/a6/7a/4b78c5997f2a799a8c5c07f3b2145bbcda40115c4d35c76fbadd418a3c89/rich_click-1.8.8.tar.gz"
-    sha256 "547c618dea916620af05d4a6456da797fbde904c97901f44d2f32f89d85d6c84"
+    url "https://files.pythonhosted.org/packages/b7/a8/dcc0a8ec9e91d76ecad9413a84b6d3a3310c6111cfe012d75ed385c78d96/rich_click-1.8.9.tar.gz"
+    sha256 "fd98c0ab9ddc1cf9c0b7463f68daf28b4d0033a74214ceb02f761b3ff2af3136"
   end
 
   resource "sniffio" do
@@ -128,18 +127,18 @@ class BumpMyVersion < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/b1/09/a439bec5888f00a54b8b9f05fa94d7f901d6735ef4e55dcec9bc37b5d8fa/tomlkit-0.13.2.tar.gz"
-    sha256 "fff5fe59a87295b278abd31bec92c15d9bc4a06885ab12bcea52c71119392e79"
+    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
+    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/37/23083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061/typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/82/5c/e6082df02e215b846b4b8c0b887a64d7d08ffaba30605502639d44c06b82/typing_inspection-0.4.0.tar.gz"
-    sha256 "9765c87de36671694a67904bf2c96e395be9c6439bb6c87b5142569dcdd65122"
+    url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
+    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
   end
 
   resource "wcmatch" do

@@ -5,6 +5,8 @@ class Dura < Formula
   sha256 "6486afa167cc2c9b6b6646b9a3cb36e76c1a55e986f280607c8933a045d58cca"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "0b2c2b2aa810e3f4a183d0ebed078c330c830d0512c5e4c38ea44fee654b1d15"
@@ -21,14 +23,11 @@ class Dura < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b01d4685f6aa2d5fe11722b7c7379695600d6827fa48bd72addebc9cfbd16968"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   def install
     system "cargo", "install", *std_cargo_args

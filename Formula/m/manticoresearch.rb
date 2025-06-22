@@ -1,8 +1,8 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/9.5.8.tar.gz"
-  sha256 "879842ec51c274d7d3e66675cd31005980b03b46b181801eaec5c950c650c417"
+  url "https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/10.1.4.tar.gz"
+  sha256 "d655c8a51a87d2a673bd6c0ffdd0b545f1a404a6fb09eb65da764bd0c51b430f"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
@@ -12,20 +12,24 @@ class Manticoresearch < Formula
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
 
-  # Only even patch versions are stable releases
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags. The upstream version scheme uses an even-numbered patch to
+  # indicate stable versions.
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+\.\d*[02468])$/i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 arm64_sequoia: "7a8523b5f0c4bb19206b7b2ecd2d0845a1459c3263f3e8bb89a683223b952526"
-    sha256 arm64_sonoma:  "4e63e2984ecc2a3f3636f30d1c6d911fce8b0a7401d88dcb2945372e03cd5e76"
-    sha256 arm64_ventura: "d50e444a599ec87ca58526b4ed7a4eec8dc07b505dd1584f35fb4b0834731b07"
-    sha256 sonoma:        "3a13ed6ed5b592f73a359c996a6727b738aa23ec7eceed4347b1c690caee9b66"
-    sha256 ventura:       "fd8e6ec8bb32e298268694d9949f01c21888806518c4aba94f9eafc8de65cb23"
-    sha256 arm64_linux:   "342de80bfa4d39df4dc5e45c2b23ab8701b0ca0f6905e9f87f8e7c1283c36cb2"
-    sha256 x86_64_linux:  "2ee403f0a61c121cebfe6b28137a62621cda4cee074e4e75be2cd983dd0840c3"
+    sha256 arm64_sequoia: "1f87fc89a3c8103e9205aa32bf0ce4918499b2e03162257c8658f152ba5019d9"
+    sha256 arm64_sonoma:  "71b5b349c90b1fda6442ff399de8f8b75584a905084141721a15e9f48a9bf5b4"
+    sha256 arm64_ventura: "217874dc0d579a528b286dc5a65e428eb02776fd945f927a991bec994eed7a97"
+    sha256 sonoma:        "8b97c5cfd16d40cf2019c5b75de97515acf68f7515f9ac6f1697a9e5ec2f7058"
+    sha256 ventura:       "0487bb6119fa68b1d05c25eb4978b8f4ca95a332eb1e60aa5376b78f150aa5f0"
+    sha256 arm64_linux:   "6b3aab2fc8f83985f769b1325c87b97ec41278078dab181c61b2e56aec9894dd"
+    sha256 x86_64_linux:  "bdbbac0799c487f1dcd7f333221723e356ece124940b117b4aede39502270054"
   end
 
   depends_on "cmake" => :build

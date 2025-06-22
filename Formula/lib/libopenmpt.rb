@@ -1,11 +1,10 @@
 class Libopenmpt < Formula
   desc "Software library to decode tracked music files"
   homepage "https://lib.openmpt.org/libopenmpt/"
-  url "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.7.13+release.autotools.tar.gz"
-  version "0.7.13"
-  sha256 "dcd7cde4f9c498eb496c4556e1c1b81353e2a74747e8270a42565117ea42e1f1"
+  url "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.8.1+release.autotools.tar.gz"
+  version "0.8.1"
+  sha256 "5ccc291e4457925f3ca3e8144f5b645c4a3dcc2bc05dc9a39651132b32b83bce"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url "https://lib.openmpt.org/files/libopenmpt/src/"
@@ -13,13 +12,13 @@ class Libopenmpt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6b767ef8ae5e15125c2a852db9bec69c57c997c3c151a20368fdcc16197b255f"
-    sha256 cellar: :any,                 arm64_sonoma:  "1bb5f077a947f245ffeaf0eb9f4942cd33c3b5569fd1e9b400127f0d0943a0d6"
-    sha256 cellar: :any,                 arm64_ventura: "62a4ef42a7ed523d0ae62092fec43cbd55e587b009bf030ffe04a5dee2dc0606"
-    sha256 cellar: :any,                 sonoma:        "9fe4c4ccb2ca7eff6f24bbe9eaf963daf681ddb16bd9225c7385539ef6644e53"
-    sha256 cellar: :any,                 ventura:       "75e06237d8e5a42527e7d2f33399feb6bcc6dafcaf2f8ac43123d6a915fda6fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cf870131606dcee1e4dd0fff1ac1fa410921fe708d310139d81934d507c2055"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7ed3050c7743f0fed603d3a001463d2e9c039526561b128492032841a83ff8c"
+    sha256 cellar: :any,                 arm64_sequoia: "af3b10e8707f87ff9b9ba39f1b1355dd08953d9ff68faa352ce4f7e3d2ef6d81"
+    sha256 cellar: :any,                 arm64_sonoma:  "c392eb043cdd93821d177096d604ac4eddbe74fc49b4579a8ba05d5ffe1a7419"
+    sha256 cellar: :any,                 arm64_ventura: "41b31c3435eca9e992b84019752ec3f09f2e38d8fd5d7a1780d85f7f292f0f64"
+    sha256 cellar: :any,                 sonoma:        "5273f9e14b610eb4ab5b7099b831ba7e59b76c659aef5829b09a4fc24b85b62c"
+    sha256 cellar: :any,                 ventura:       "a4050cd448ab8671ddf95077beaabd0fe5e560899239e0061d42237079d55613"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65c297e0d0a5e4a53a681480087c14a90779cd8ac94074550666db6eb50825ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0c485f965853e9c5c8e6babe16e591610bbdc716c27f8c0299a09de01d8566e"
   end
 
   depends_on "pkgconf" => :build
@@ -37,11 +36,6 @@ class Libopenmpt < Formula
     depends_on "pulseaudio"
   end
 
-  resource "homebrew-mystique.s3m" do
-    url "https://api.modarchive.org/downloads.php?moduleid=54144#mystique.s3m"
-    sha256 "e9a3a679e1c513e1d661b3093350ae3e35b065530d6ececc0a96e98d3ffffaf4"
-  end
-
   def install
     system "./configure", "--disable-silent-rules",
                           "--without-vorbisfile",
@@ -51,6 +45,11 @@ class Libopenmpt < Formula
   end
 
   test do
+    resource "homebrew-mystique.s3m" do
+      url "https://api.modarchive.org/downloads.php?moduleid=54144#mystique.s3m"
+      sha256 "e9a3a679e1c513e1d661b3093350ae3e35b065530d6ececc0a96e98d3ffffaf4"
+    end
+
     resource("homebrew-mystique.s3m").stage do
       output = shell_output("#{bin}/openmpt123 --probe mystique.s3m")
       assert_match "Success", output

@@ -6,17 +6,17 @@ class Cf2tf < Formula
   url "https://files.pythonhosted.org/packages/ba/c4/cd7ddd8c942b71a2db200c42e9ed8c336111db94e2399d3903db6e77eef2/cf2tf-0.9.1.tar.gz"
   sha256 "cc334b8373412745b3790bed9db71e02d4c41e274e1774b3b23626bdd78bf357"
   license "GPL-3.0-only"
+  revision 2
   head "https://github.com/DontShaveTheYak/cf2tf.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "9484c90240dd27b16aaa154443d3f9004fd6cf3c5f0f90d1bd9bafeb1d0e8a3e"
-    sha256 cellar: :any,                 arm64_sonoma:  "96c44f6db8e583cada2c0eb0f4f633768701febb1963cef35d95fc01dbcae232"
-    sha256 cellar: :any,                 arm64_ventura: "2443965de239f1418ee045b96292132b9f8db08d7e43bdae45dfbe34914ee111"
-    sha256 cellar: :any,                 sonoma:        "a47edb766183a195086eb42c08a9e430138a94dde90a85676f238b95e7cb2e33"
-    sha256 cellar: :any,                 ventura:       "95781872e0f5985c51cf6f83aea2838e6a3e0f6ff296fec2ecd446b8bea9c75f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3139a1bcc40d3c0126f344447499af8a4f1c23f3b28138ee170fb7887151f057"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ade866bb2254c75d5cace101298f1b7480b1d5c19933f648fa3dd9644badefc9"
+    sha256 cellar: :any,                 arm64_sequoia: "dee1cafafadbec76e76e6c1067d69834d4480f1c4d29418dd62d6b8170960448"
+    sha256 cellar: :any,                 arm64_sonoma:  "4c9da4fe4a216d2582bf4697113ae11fdb702de033e9c0c3de21a8fd0b188f85"
+    sha256 cellar: :any,                 arm64_ventura: "89c3cbd0df422c3f664b890e1276a4bceb32f4d5f3f915e5b2c2b5783d629be6"
+    sha256 cellar: :any,                 sonoma:        "64848649aa0251117c930deb6127da1131312ec5c901326171534bdb167bcb5c"
+    sha256 cellar: :any,                 ventura:       "58f4d020aa5449fbe06a5c7e799cb7d8ff9bdd2175e68b8b4f9fa975aeb42818"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c126b8ca45243d4eac7bec1c1c47f3d303ad3d46c5eb91090b38929f80255980"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "292c68f1d889a89319aec7ff6cb21e40f8e5530f1fe48435a0d3e53e739a5602"
   end
 
   depends_on "cmake" => :build
@@ -30,13 +30,13 @@ class Cf2tf < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "click-log" do
@@ -65,18 +65,23 @@ class Cf2tf < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/96/2d/02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6/pluggy-1.5.0.tar.gz"
-    sha256 "2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/ae/3c/c9d525a414d506893f0cd8a8d0de7706446213181570cdbd766691164e40/pytest-8.3.5.tar.gz"
-    sha256 "f4efe70cc14e511565ac476b57c279e12a855b11f48f212af1080ef2263d3845"
+    url "https://files.pythonhosted.org/packages/08/ba/45911d754e8eba3d5a841a5ce61a65a685ff1798421ac054f85aa8747dfb/pytest-8.4.1.tar.gz"
+    sha256 "7c67fd69174877359ed9371ec3af8a3d2b04741818c51e5e99cc1742251fa93c"
   end
 
   resource "pyyaml" do
@@ -90,8 +95,8 @@ class Cf2tf < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "six" do
@@ -110,8 +115,8 @@ class Cf2tf < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

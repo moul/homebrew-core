@@ -1,8 +1,8 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https://simdutf.github.io/simdutf/"
-  url "https://github.com/simdutf/simdutf/archive/refs/tags/v7.0.0.tar.gz"
-  sha256 "5a166016ffb8af4cfda9e9d1efcd5613311a4f9e7aabd1f2e11043bcdf727bec"
+  url "https://github.com/simdutf/simdutf/archive/refs/tags/v7.3.1.tar.gz"
+  sha256 "357da74bae9a130ddaa9df2508622de983a8be56db319891afef4184efa858bf"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b3b261bc8e27e6197d6b24a8ed49a9eda13d7a87fb638b7a4e330e04d44352a5"
-    sha256 cellar: :any,                 arm64_sonoma:  "d7d1eaf9fd5a8778e75d0c4e5197839e54d924261d07439d3214f1ea9d424828"
-    sha256 cellar: :any,                 arm64_ventura: "bb01579574ac56a5b14b3c964051d50e7b2b3a9b571d067b01ffb6af4ff04e84"
-    sha256 cellar: :any,                 sonoma:        "95af84ead1e1c2ce43f96a745ba015d24b227e98a055d5ff24564de6549e175d"
-    sha256 cellar: :any,                 ventura:       "9b18ed226c81c8829b1743ab67e6fd0ec7296dc2f66bfc1e4e14739c84a6953e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22612118e95f41c2654abeca3b956fae8c63f0333924c46b500c746644ec939f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff4f0b41a0e0d7e685b7be927ae8f6b18a24b90dd53446df6b8ad21cba89ff94"
+    sha256 cellar: :any,                 arm64_sequoia: "22f20ea2a72b4ba398b699e8e7c63e080e2f2ca7b75dfe5f678dfe4d20eb8e6e"
+    sha256 cellar: :any,                 arm64_sonoma:  "e48a01edca981b998312a5bcef929859f8a526c68433b848fa6dd50eff1b020d"
+    sha256 cellar: :any,                 arm64_ventura: "90280bba99b3782aba0552b5f1d4a9c1cb44cee83f095a41f672a96fbfa22b2d"
+    sha256 cellar: :any,                 sonoma:        "0bfb1790e3f85a06961a5ca6c0c7d830ca071b8ba9f869c1361f3e695bfe192f"
+    sha256 cellar: :any,                 ventura:       "0d15d0fedc4d9c7ed3c90240f1edba99ccaec134ed019a8ad0360f97a3af6cd9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99e15e4c689f27f18a631c4236a3f2a210fa3ef0faa11758cd95cbf5d7bf8753"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5a7696f5b377f78c4045d33c39548d4f1debc4324e9e73b56a1cf0825fb2d76"
   end
 
   depends_on "cmake" => :build

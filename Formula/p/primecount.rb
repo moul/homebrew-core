@@ -1,18 +1,18 @@
 class Primecount < Formula
   desc "Fast prime counting function program and C/C++ library"
   homepage "https://github.com/kimwalisch/primecount"
-  url "https://github.com/kimwalisch/primecount/archive/refs/tags/v7.17.tar.gz"
-  sha256 "f42abde9cdf133d66ef20296c871e7326ee9bf7a026de5885be6cb8b18affcb7"
+  url "https://github.com/kimwalisch/primecount/archive/refs/tags/v7.19.tar.gz"
+  sha256 "0ecb63282c02e3056707671b3d6c5bdb783b64a33c911f0fd4abe6e79e9f8a34"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dd191a8713e1cebb4c9e7c63e727a3d98a4c2c59cf139f3183680dab65300f11"
-    sha256 cellar: :any,                 arm64_sonoma:  "3571b935c636074a568b1de2ff672864cf96aed1dea511253212b01a975d3b9f"
-    sha256 cellar: :any,                 arm64_ventura: "bf6acf0ab6d48b10a667f2dd8674fc1a96b9d380988240cf3cf116bd8bbec91b"
-    sha256 cellar: :any,                 sonoma:        "79a1ea2c7bd5124d5882caa28609c293d22b68a71bca2ede05ad5fbe147e38dc"
-    sha256 cellar: :any,                 ventura:       "ffff8ef56217acc89e263130120e1977114a76b4fe14883685fc9425ab76f33d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8197787ecf566640c18ce142183ce7ba90d37c315c6e55e45e5550503b7c1ea1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "175a17d85159304392d9a7011a9fb19b2ae46fa0553bb02d4a387758b273e1be"
+    sha256 cellar: :any,                 arm64_sequoia: "3b11d5023b905870365a96e7b4233a5dd6d601c54632a066ca7bddccc46e56f4"
+    sha256 cellar: :any,                 arm64_sonoma:  "76877d4a667be28a6213be4003ad9449bc3857d6c8765f4fcc683fe4b254bccb"
+    sha256 cellar: :any,                 arm64_ventura: "a7189f7a075892d62aa776d7e7dcd153eaa8e1597567d8d3216a37e0a1d3e716"
+    sha256 cellar: :any,                 sonoma:        "3fc3ceae1e26ad44c2601d19a8f7380e9842c75e0562b98c6e2ddec670925365"
+    sha256 cellar: :any,                 ventura:       "1ed880bc9fd10c30438f8dd7e5340d7993ecebeef3f9d52baaff9173102efa8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6978a7c73429ee018db844be5eded68421b7852055724b49f24dfff872c96e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "848dced425035cb0ca9084512c2e1926e5b1f4b1004a2c9e97cf5a2dbb21c7dc"
   end
 
   depends_on "cmake" => :build

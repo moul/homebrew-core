@@ -5,6 +5,8 @@ class Negfix8 < Formula
   sha256 "2f360b0dd16ca986fbaebf5873ee55044cae591546b573bb17797cbf569515bd"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "8cfaf079531e850a4938db52d6a99d4626142eba30165284a39d9349d805a18b"
@@ -12,6 +14,7 @@ class Negfix8 < Formula
 
   # https://github.com/chrishunt/negfix8/pull/2#issuecomment-1956815369
   deprecate! date: "2024-06-10", because: :unmaintained
+  disable! date: "2025-06-21", because: :unmaintained
 
   depends_on "imagemagick"
 

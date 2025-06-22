@@ -6,6 +6,8 @@ class Antiword < Formula
   sha256 "8e2c000fcbc6d641b0e6ff95e13c846da3ff31097801e86702124a206888f5ac"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "f3a917d197df7b1a9e21a9e604593783436adff1b8c6854a85ef417abc3ca21b"
     sha256 arm64_sonoma:   "393500bd0690bd7fdb9ed258a1ce7882f518db42ec14d380421f771467080bf6"
@@ -26,6 +28,7 @@ class Antiword < Formula
   end
 
   deprecate! date: "2024-06-19", because: :repo_removed
+  disable! date: "2025-06-21", because: :repo_removed
 
   resource "testdoc.doc" do
     url "https://github.com/rsdoiel/antiword/raw/fe4b579067122a2d9d62647efb1ee7cfe3ca92bb/Docs/testdoc.doc"

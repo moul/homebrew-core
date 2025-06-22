@@ -1,8 +1,8 @@
 class R < Formula
   desc "Software environment for statistical computing"
   homepage "https://www.r-project.org/"
-  url "https://cran.r-project.org/src/base/R-4/R-4.5.0.tar.gz"
-  sha256 "3b33ea113e0d1ddc9793874d5949cec2c7386f66e4abfb1cef9aec22846c3ce1"
+  url "https://cran.r-project.org/src/base/R-4/R-4.5.1.tar.gz"
+  sha256 "b42a7921400386645b10105b91c68728787db5c4c83c9f6c30acdce632e1bb70"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "48e4817e21ff16cd70fe7a3bd11ffb6b117f43b4a6a710d7bbb3c70bb374e239"
-    sha256 arm64_sonoma:  "f2f3b9c3ea83b6a6418ef6d277b46cbaaf58da22fb1bf98bd40ceb4be5bc3bd3"
-    sha256 arm64_ventura: "b4eeb8e81c83ee1d4d2c3e346c06abb71cfcb173f26cf351011edf5304cf660b"
-    sha256 sonoma:        "87bde25906088da3adaec6dfe8526b8e6992532ffcadfa76039d215cd8dcef72"
-    sha256 ventura:       "6af721dd46ae2605802e8b4719f20d9a8be745da7a8742ad06d9dc40a9bf9316"
-    sha256 arm64_linux:   "d21463fdd1a28126e092e84c3ff604dfc51d21c8a612c5aa4de89b986a070b37"
-    sha256 x86_64_linux:  "030a0cc88f27535c502c31118d10cae6d8398c519df565b275c15dea3d1b9379"
+    sha256 arm64_sequoia: "d753abe587df5c9500f56f3a589462ed11b86cd6284081c0c98faf24b217836f"
+    sha256 arm64_sonoma:  "127a83c5bf25c9de162fcc812a7e66ce8d128a419ecca454059fb79cec83128b"
+    sha256 arm64_ventura: "3ebe453a6028dc839b9b2e318011ae5c3e3c602ab7672edcc0fbf1a59019db73"
+    sha256 sonoma:        "9c0ad635c88d8eabe6489e6a515ad9789a16bc08b8b3cc2f85a029a2c62f52ad"
+    sha256 ventura:       "a8a79876ee7c1db3b26018beb389237410c3f78a48c3dd7b0441365abc10d3b1"
+    sha256 arm64_linux:   "281413b2064577687bf51a4e51f8bc74e1dd70ab457081478d6d94c1556981cf"
+    sha256 x86_64_linux:  "f54b8ce1a0b25f071d97ad12bf0d6bc2f0152b26f67cdfbf20cb1fddd6efbfdd"
   end
 
   depends_on "pkgconf" => :build
